@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hermes-ios.github.io/decision-object.json",
+  "$id": "https://robfuj.github.io/decision-object.json",
   "title": "DecisionObject",
   "description": "docx S9. Every recurring decision is a state-based structure with these fields.",
   "type": "object",

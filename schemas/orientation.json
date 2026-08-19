@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hermes-ios.github.io/orientation.json",
+  "$id": "https://robfuj.github.io/orientation.json",
   "title": "AgentOrientation",
   "description": "Captured during first-run orientation; drives research + sibling registration.",
   "type": "object",
