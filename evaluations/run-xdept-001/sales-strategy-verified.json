@@ -1,0 +1,78 @@
+{
+  "synapsis": {
+    "conclusion": "Develop targeted marketing campaigns for early-stage buyers with streamlined decision-making content and leverage third-party validation to appeal to ROI-conscious buyers during the shortlisting and decision-making phases.",
+    "transformations": [
+      {
+        "name": "RECORD",
+        "state_kind": "record",
+        "output": "Category buyer behavior from benchmark report."
+      },
+      {
+        "name": "EVIDENCE",
+        "state_kind": "evidence",
+        "output": {
+          "shortlisting_period": {
+            "weeks": 1,
+            "vendors_shortlisted": 3
+          },
+          "decision_period": {
+            "weeks": 3
+          },
+          "buyer_distrust_reasons": [
+            "Vendor-written ROI claims"
+          ]
+        },
+        "consumes": [
+          {
+            "producer": "marketing.EVIDENCE",
+            "state_provenance": "sibling-verified"
+          }
+        ],
+        "source_citation": "marketing.EVIDENCE (sibling-verified, SaaS benchmark report)"
+      },
+      {
+        "name": "INTERPRETATION",
+        "state_kind": "interpretation",
+        "output": {
+          "segmentation_implications": [
+            {
+              "target_segment": "early-stage buyers",
+              "strategy": "offer concise, compelling information to streamline their decision-making process"
+            },
+            {
+              "target_segment": "ROI-conscious buyers",
+              "strategy": "emphasize third-party validation of ROI claims"
+            }
+          ],
+          "messaging_advice": {
+            "shortlisting_phase": "Highlight the unique value proposition and competitive edge in a clear, digestible manner.",
+            "decision_making_phase": "Provide robust evidence from independent sources to support ROI claims."
+          }
+        },
+        "consumes": [
+          {
+            "producer": "marketing.INTERPRETATION",
+            "state_provenance": "sibling-verified"
+          }
+        ]
+      },
+      {
+        "name": "STRATEGY",
+        "state_kind": "strategy",
+        "output": "Develop targeted marketing campaigns for early-stage buyers with streamlined decision-making content and leverage third-party validation to appeal to ROI-conscious buyers during the shortlisting and decision-making phases.",
+        "consumes": [
+          {
+            "producer": "marketing.INTERPRETATION",
+            "state_provenance": "sibling-verified"
+          }
+        ]
+      },
+      {
+        "name": "BRAIN",
+        "state_kind": "coordination",
+        "no_origination": true,
+        "output": "Route to INTERACTION."
+      }
+    ]
+  }
+}

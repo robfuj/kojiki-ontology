@@ -1,0 +1,36 @@
+{
+  "record": {
+    "timestamp": "2023-10-05",
+    "source": "SaaS industry benchmark report",
+    "signal_type": "behavioral trend",
+    "description": "The SaaS benchmark report highlights that buyers in our category are now shortlisting only three vendors during the first week of their evaluation process and making a decision by the third week. Additionally, there is an observed distrust towards ROI claims made by vendors themselves."
+  },
+  "evidence": {
+    "shortlisting_period": {
+      "weeks": 1,
+      "vendors_shortlisted": 3
+    },
+    "decision_period": {
+      "weeks": 3
+    },
+    "buyer_distrust_reasons": [
+      "Vendor-written ROI claims"
+    ]
+  },
+  "interpretation": {
+    "segmentation_implications": [
+      {
+        "target_segment": "early-stage buyers",
+        "strategy": "offer concise, compelling information to streamline their decision-making process"
+      },
+      {
+        "target_segment": "ROI-conscious buyers",
+        "strategy": "emphasize third-party validation of ROI claims"
+      }
+    ],
+    "messaging_advice": {
+      "shortlisting_phase": "Highlight the unique value proposition and competitive edge in a clear, digestible manner.",
+      "decision_making_phase": "Provide robust evidence from independent sources to support ROI claims."
+    }
+  }
+}

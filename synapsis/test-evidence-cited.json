@@ -1,0 +1,8 @@
+{
+  "synapsis": {"conclusion": "Act on the benchmark finding.",
+    "transformations": [
+      {"name": "RECORD", "state_kind": "record", "output": "Category benchmark report received."},
+      {"name": "EVIDENCE", "state_kind": "evidence", "output": "Buyers distrust vendor ROI claims (per report).", "source_citation": "Salesforce B2B Benchmark 2026, p.12"},
+      {"name": "INTERPRETATION", "state_kind": "interpretation", "output": "Lead with third-party proof."}
+    ]}
+}

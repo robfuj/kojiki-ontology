@@ -1,0 +1,105 @@
+{
+  "$schema": "https://kojiki-ontology/synapsis/transformations.schema.json",
+  "name": "kojiki-synapsis-transformations",
+  "version": "1.1.0",
+  "chain": ["SOURCE", "RECORD", "EVIDENCE", "INTERPRETATION", "STRATEGY", "INTERACTION", "OUTPUT", "OUTCOME", "LEARNING"],
+  "standalone_guarantee": {
+    "rule": "Every SYNAPSIS transformation MUST be executable locally. Cross-department inputs are OPTIONAL accelerators.",
+    "fallback_policy": "If a declared optional sibling input is absent (sibling not installed/registered), the bot synthesizes the input itself and tags it state_provenance='self-generated'. Absence of a sibling NEVER breaks the chain.",
+    "verified_tag": "sibling-verified",
+    "self_tag": "self-generated"
+  },
+  "cross_department_handoff": {
+    "contract": "A sibling output is exchanged as a typed SYNAPSIS object (matching this schema's state_kind). No repo/package download is required — the ontology (already installed with every department) defines the schema; live outputs arrive peer-to-peer via the Agent Inbox / handoffs registry.",
+    "request_flow": "Brain checks handoffs/registry.json for the producing sibling. If registered -> request typed output. If absent -> synthesize locally (fallback).",
+    "provenance_field": "Every consumed input carries state_provenance: 'sibling-verified' or 'self-generated'.",
+    "examples": [
+      {"consumer": "sales.STRATEGY", "optional_input": "marketing.INTERPRETATION", "fallback": "synthesize segment interpretation locally"},
+      {"consumer": "*.STRATEGY", "optional_input": "legal.AUDIT", "fallback": "proceed without independent audit; tag decision unaudited"},
+      {"consumer": "finance.EVIDENCE", "optional_input": "sales.OUTCOME", "fallback": "use internal forecast assumptions"}
+    ]
+  },
+  "transformations": {
+    "RECORD": {
+      "authority": "What happened, when, involving whom, and where can it be verified?",
+      "must_not_become": ["INTERPRETATION", "STRATEGY"],
+      "inputs": ["SOURCE"],
+      "outputs": ["record"],
+      "state_kind": "record"
+    },
+    "EVIDENCE": {
+      "authority": "What does the source actually establish?",
+      "must_not_become": ["INTERPRETATION", "analysis"],
+      "inputs": ["RECORD"],
+      "outputs": ["evidence"],
+      "state_kind": "evidence",
+      "dedicated_bot": "bots/evidence (per-department SYNAPSIS specialist)",
+      "requires_source_citation": true,
+      "note": "Verifiable/document-backed evidence MUST carry a source_citation (URL, file, record id). Interaction-derived, client-scoped evidence (transcripts/notes) is tracked as evidence_type='interaction-derived' and gets a reflective step in v2 — see synapsis/ROADMAP.md."
+    },
+    "INTERPRETATION": {
+      "authority": "What does accepted evidence mean for one defined analytical question?",
+      "must_not_become": ["STRATEGY"],
+      "inputs": ["EVIDENCE"],
+      "outputs": ["interpretation"],
+      "state_kind": "interpretation"
+    },
+    "STRATEGY": {
+      "authority": "What is the binding constraint and next commitment to seek?",
+      "must_not_become": ["EVIDENCE retrieval", "INTERACTION drafting"],
+      "inputs": ["INTERPRETATION"],
+      "outputs": ["strategy"],
+      "state_kind": "strategy"
+    },
+    "INTERACTION": {
+      "authority": "How should a supplied objective be pursued with this stakeholder?",
+      "must_not_become": ["choosing the objective (STRATEGY)"],
+      "inputs": ["STRATEGY"],
+      "outputs": ["interaction_plan"],
+      "state_kind": "plan"
+    },
+    "OUTPUT": {
+      "authority": "How should an approved decision be rendered as an artifact?",
+      "must_not_become": ["reconstructing customer/source truth"],
+      "inputs": ["STRATEGY", "INTERACTION"],
+      "outputs": ["artifact"],
+      "state_kind": "artifact"
+    },
+    "AUDIT": {
+      "authority": "Does the supplied claim graph survive challenge against the supplied standard?",
+      "must_not_become": ["the specialist's preferred conclusion"],
+      "inputs": ["EVIDENCE", "INTERPRETATION", "STRATEGY"],
+      "outputs": ["audit_verdict"],
+      "state_kind": "audit",
+      "independent": true,
+      "dedicated_bot": "synapsis/audit-bot (SHARED across all departments)"
+    },
+    "LEARNING": {
+      "authority": "What patterns appear across outcomes, under what conditions and uncertainty?",
+      "must_not_become": ["permission to rewrite doctrine"],
+      "inputs": ["OUTCOME"],
+      "outputs": ["learning_hypothesis", "rule_update_proposal"],
+      "state_kind": "learning",
+      "cannot_rewrite_doctrine": true,
+      "dedicated_bot": "synapsis/learning-bot (SHARED across all departments)"
+    },
+    "BRAIN": {
+      "authority": "What work is needed, what outputs are accepted, what should route next?",
+      "must_not_become": ["originating the specialist analysis it adjudicates"],
+      "inputs": ["any"],
+      "outputs": ["routing", "batch_barriers", "adjudication"],
+      "state_kind": "coordination",
+      "no_origination": true
+    }
+  },
+  "invariants": [
+    "evidence_is_not_interpretation",
+    "memory_is_not_belief",
+    "acknowledgement_is_not_verified_persistence",
+    "audit_is_not_authority",
+    "completion_is_not_success",
+    "synchronization_is_not_adjudication",
+    "learning_is_not_permission_to_rewrite_doctrine",
+    "evaluation_is_not_origination"
+  ]
+}

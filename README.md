@@ -1,49 +1,78 @@
-# Kojiki Ontology
+# Kojiki Ontology — the shared brain for the Kojiki Decision System
 
-**Kojiki Ontology** is the shared brain for the Kojiki Decision System — a family of 20+ AI decision agents. It stores the canonical schemas, taxonomy, decision-rights, and agent-handoff standards as one coherent model, so every department agent reasons across the org with the same definitions instead of inventing its own.
-
-An agent doesn't query a black-box prompt — it loads the ontology: the decision object, the learning ledger, the orientation protocol, and the handoff standard. Every decision is captured as a Decision Object + Learning Ledger entry, with provenance for every rule. The result is an organization that becomes more intelligent each time it decides.
-
-Full introduction: [How it fits together](#how-the-pieces-fit-together).
-
-## Why Kojiki Ontology
-
-- **One model for every line.** Every department agent (Sales, Legal, Product, …) references these canonical schemas, so they speak one language and can hand off to each other deterministically.
-- **Decisions, not documents.** The unit of memory is a *decision* — its evidence, outcome, and the learning extracted — not a file you hope an agent reads.
-- **Explicit ownership and uncertainty.** Decision rights (Own / Approve / Consult / Execute / Escalate) and evidence thresholds are first-class, so an agent knows what it may decide and what it must route.
-- **Self-improving.** Every outcome feeds the Learning Ledger; rules are versioned, never silently rewritten. Exceptions become organizational knowledge.
-- **Observable by design.** Each agent runs the Kojiki Orientation Protocol on first activation, then records its Decision Objects + Ledger entries where you can read them.
-- **Harness-agnostic.** Plain markdown + JSON. Installs into Hermes (Bot Mode), Claude, or any LLM with no vendor lock-in.
-
-## How the pieces fit together
+Kojiki is a local-first, open-source framework that turns a normal LLM into a
+decision-centric organization. Every department agent reasons through one shared
+**SYNAPSIS transformation chain** — and the chain is the structure of this repo.
 
 ```
-kojiki-ontology/
-├── schemas/                 # Canonical JSON Schemas (the contract every agent shares)
-│   ├── decision-object.json   # docx S9 — one decision: owner, evidence, risk, delegation
-│   ├── learning-ledger.json   # docx S7 — case → decision → assumption → action → learning → rule
-│   └── orientation.json       # first-run protocol every agent executes
-├── ontology/                # The definition chain (docx S2)
-│   ├── organization.md        # ORG → LINE → FUNCTION → ROLE → DECISION → ACTION →
-│   ├── functions.md           #   EVIDENCE → OUTCOME → LEARNING → RULE
-│   ├── learning-taxonomy.md    # docx S8 — 10-type learning taxonomy
-│   └── kpi-architecture.md     # docx S12 — activity / quality / outcome KPI layers
-├── prompts/                 # Reusable reasoning prompts
-│   ├── orientation.md          # Kojiki Orientation Protocol (Q1–Q5)
-│   ├── universal-function-architecture.md   # docx S4
-│   └── line-prompts.md         # docx S6 — specialized prompt per line
-├── decision-rights/         # Own / Approve / Consult / Execute / Escalate / Automate (S10)
-├── handoffs/                # Cross-Functional Handoff Standard (S11)
-│   └── registry.json          # sibling-agent discovery (group_id)
-├── learning/                # the ledger lands here, cross-line
-│   ├── cases/  patterns/  rules/  exceptions/  rule-changelog/
-└── evaluations/             # how to test an agent follows the protocol + schemas
+SOURCE → RECORD → EVIDENCE → INTERPRETATION → STRATEGY → INTERACTION → OUTPUT → OUTCOME → LEARNING
+                                                            │
+                                                      ORGANIZATIONAL MEMORY
 ```
 
-Every department repo (`kojiki-<line>-department`) mirrors `schemas/` so it runs offline, but the **source of truth** is here. When you install a department, the ontology travels with it (`install.sh` clones this repo if missing).
+Each stage is a **bounded transformation** with one authority and an explicit "what it
+must NOT silently become" (evidence ≠ interpretation ≠ belief ≠ doctrine). A **Brain**
+orchestrates; an independent **Adversarial Audit** challenges. The full spec lives in
+[`synapsis/`](synapsis/SYNAPSIS.md). This README is organized around the chain.
 
-## The 20 lines (each its own repo)
+---
 
+## 1. SOURCE → RECORD — what happened
+The origin of every decision. `RECORD` captures what happened, when, involving whom,
+and where it can be verified. It is never interpretation.
+- Backed by: `ontology/organization.md` (ORG → LINE → FUNCTION → ROLE chain, docx S2).
+- Every department runs RECORD locally; cross-department SOURCE arrives peer-to-peer.
+
+## 2. EVIDENCE — what the source actually establishes
+`EVIDENCE` extracts what the source *proves*, separate from what anyone infers.
+- Schema: `schemas/evidence` (mirrored in every department's `schema/`).
+- Invariant: **evidence is not interpretation.**
+
+## 3. INTERPRETATION — what evidence means for one question
+`INTERPRETATION` answers a single defined analytical question. It must not become
+strategy. Interpretations are the natural **cross-department handoff** unit
+(e.g. Marketing's interpretation feeds Sales' strategy).
+- See [`synapsis/synapse-xdept.md`](synapsis/synapsis-xdept.md) for the optional,
+  fallback-safe handoff protocol.
+
+## 4. STRATEGY — the binding constraint and next commitment
+`STRATEGY` picks the objective to pursue. It consumes INTERPRETATION; it does not
+choose the interaction.
+- Decision rights (Own / Approve / Consult / Execute / Escalate / Automate) live in
+  `decision-rights/` (docx S10).
+
+## 5. INTERACTION — how to pursue the objective with a stakeholder
+`INTERACTION` designs the approach to a specific stakeholder. It may not redefine the
+objective.
+
+## 6. OUTPUT — render the approved decision as an artifact
+`OUTPUT` produces the message, plan, or artifact. It does not reconstruct truth.
+
+## 7. OUTCOME — what actually happened
+`OUTCOME` records reality vs expectation. This is the input to learning.
+
+## 8. LEARNING — extract the pattern (Organizational Memory)
+`LEARNING` extracts a pattern under uncertainty. It may *propose* a rule update but
+never silently rewrite doctrine. Landed in `learning/` (cases / patterns / rules /
+exceptions / rule-changelog) — cross-line organizational memory.
+- Schema: `schemas/learning-ledger.json` (docx S7) and `schemas/decision-object.json` (docx S9).
+- Invariant: **learning is not permission to rewrite doctrine.**
+
+---
+
+## Brain & Adversarial Audit (the coordination layer)
+- **Brain** routes, sequences, and adjudicates — but never originates the specialist
+  analysis it judges. Executive Strategy (`01-executive-strategy`) is the org-level meta-Brain.
+- **Adversarial Audit** challenges a claim graph against a standard; it cannot replace
+  the specialist's conclusion. Invariant: **audit is not authority; evaluation is not origination.**
+
+## Cross-department handoff (standalone guarantee)
+Every transformation runs locally. Sibling departments are **optional accelerators**:
+when present, consume their typed output (`sibling-verified`); when absent, synthesize
+locally (`self-generated`). No other package download is required. Proven at runtime:
+`evaluations/run-xdept-001/`.
+
+## The 20 lines (each its own repo, each runs the chain)
 - `01 — Executive / Strategy` → [`01-executive-strategy`](https://github.com/robfuj/kojiki-executive-strategy)
 - `02 — Finance` → [`02-finance`](https://github.com/robfuj/kojiki-finance-department)
 - `03 — Marketing` → [`03-marketing`](https://github.com/robfuj/kojiki-marketing-department)
@@ -65,43 +94,33 @@ Every department repo (`kojiki-<line>-department`) mirrors `schemas/` so it runs
 - `19 — Communications / Public Affairs` → [`19-communications-public-affairs`](https://github.com/robfuj/kojiki-communications-public-affairs-department)
 - `20 — Executive Office / Chief of Staff` → [`20-executive-office`](https://github.com/robfuj/kojiki-executive-office-department)
 
-## Orientation Protocol
+## Orientation Protocol (first run)
+Every agent must: (1) name + function, (2) industry, (3) jurisdiction (country/region/
+regime), (4) geography + business model, (5) register sibling agents in
+`handoffs/registry.json`. See `prompts/orientation.md`.
 
-Every agent, on first run, must: (1) be named + state its function, (2) state industry, (3) state jurisdiction (country/region/regime), (4) state geography + business model, (5) discover/register sibling agents. See `prompts/orientation.md`.
-
-## Design principles (docx S19, summary)
-
-Model decisions not documents · explicit ownership · explicit uncertainty · exceptions are learning · never silently rewrite rules (version them) · separate activity from outcome metrics · capture dissent · explicit cross-functional deps · prefer evidence thresholds + state transitions · humans/software/agents share one framework at different authority levels · provenance for every rule.
+## Design principles (docx S19)
+Model decisions not documents · explicit ownership · explicit uncertainty · exceptions
+are learning · never silently rewrite rules (version them) · separate activity from
+outcome · capture dissent · explicit cross-functional deps · prefer evidence thresholds
++ state transitions · provenance for every rule.
 
 ## Memory backend (optional)
-
-For long-term, observable agent memory, Kojiki agents can use **[OpenViking](https://github.com/volcengine/OpenViking)** — an open-source context database that stores memories, resources, and skills under a `viking://` virtual filesystem with tiered (L0/L1/L2) on-demand loading and a watchable retrieval trajectory. This repo ships an **[OpenViking Agent Plugin](openviking-plugin/README.md)** (Agent Plugins 1.0): point a department agent's host at `openviking-plugin/` and it gains `find` / `search` / `read` / `remember` / `write` over its Decision Objects + Ledger entries. OpenViking is an external project (AGPL-3.0); it is not bundled — the plugin fetches OpenViking's stdio proxy at install time. Wire it in at the host agent's config.
+For durable, observable memory, point a department agent at **[OpenViking](https://github.com/volcengine/OpenViking)**
+via the [`synapsis/openviking-plugin`](synapsis/openviking-plugin/README.md) (Agent Plugins 1.0).
+External project (AGPL-3.0); not bundled.
 
 ## Quick start
-
-Install the whole package (ontology + 20 departments + the two meta agents) in one command:
-
 ```bash
-bash install-all.sh            # -> ./kojiki-decision-system/ with everything
-```
-
-Or install one department and let it pull the ontology:
-
-```bash
-git clone https://github.com/robfuj/kojiki-marketing-department.git
-cd kojiki-marketing-department
-bash install.sh                # clones kojiki-ontology sibling if absent, then this dept
-```
-
-Install as a Hermes Bot-Mode profile (local-first, Ollama `qwen2.5:14b`):
-
-```bash
+bash install-all.sh            # whole package: ontology + 20 depts + 2 meta agents
+# or one department (clones the ontology sibling if missing):
+bash install.sh
+# or as a Hermes Bot-Mode profile (local-first, Ollama qwen2.5:14b):
 hermes profile install https://github.com/robfuj/kojiki-ontology
 hermes profile install https://github.com/robfuj/kojiki-marketing-department
 ```
-
-After install, open the bot's chat — it runs the Kojiki Orientation Protocol, then installs its own sub-function bots via `bots/install_bots.py <slugs>`.
+After install, the bot runs the Orientation Protocol, then runs its work through the
+SYNAPSIS chain and validates with `synapsis/validate.py`.
 
 ## License
-
 MIT — see [LICENSE](LICENSE).

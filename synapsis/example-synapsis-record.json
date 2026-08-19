@@ -1,0 +1,63 @@
+{
+  "synapsis": {
+    "conclusion": "Pursue deadline-pressure framing with this stakeholder; seek written October commitment.",
+    "transformations": [
+      {
+        "name": "RECORD",
+        "state_kind": "record",
+        "output": "Customer said 'We need this live by October.'"
+      },
+      {
+        "name": "EVIDENCE",
+        "state_kind": "evidence",
+        "output": "Source establishes a stated October go-live target.",
+        "source_citation": "Sales_V2_Why_Transformation_Based_Architecture_Is_Different.docx"
+      },
+      {
+        "name": "INTERPRETATION",
+        "state_kind": "interpretation",
+        "output": "Stated target implies time pressure on this stakeholder."
+      },
+      {
+        "name": "STRATEGY",
+        "state_kind": "strategy",
+        "output": "Seek written October commitment; use deadline framing.",
+        "consumes": [
+          {
+            "producer": "marketing.INTERPRETATION",
+            "state_provenance": "sibling-verified"
+          }
+        ]
+      },
+      {
+        "name": "AUDIT",
+        "state_kind": "audit",
+        "independent": true,
+        "output": "Claim graph survives: target on-record, interpretation bounded, strategy follows.",
+        "reimplements_specialist_transformation": false
+      },
+      {
+        "name": "INTERACTION",
+        "state_kind": "plan",
+        "output": "Ask for confirmed October date in next touch."
+      },
+      {
+        "name": "OUTPUT",
+        "state_kind": "artifact",
+        "output": "Follow-up email requesting written commitment."
+      },
+      {
+        "name": "LEARNING",
+        "state_kind": "learning",
+        "output": "Deadline framing effective with this stakeholder pattern.",
+        "applied_to_doctrine_directly": false
+      },
+      {
+        "name": "BRAIN",
+        "state_kind": "coordination",
+        "no_origination": true,
+        "output": "Route to Interaction; do not author strategy."
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+```mermaid
+graph TD
+    K[KOJIKI — Organizational Architecture]
+    K --> S1[SALES]
+    K --> S2[FINANCE]
+    K --> S3[PRODUCT]
+
+    S1 --> SY1[SYNAPSIS]
+    S2 --> SY2[SYNAPSIS]
+    S3 --> SY3[SYNAPSIS]
+
+    subgraph SYNAPSIS_CHAIN[SYNAPSIS transformation chain]
+      direction LR
+      SRC[SOURCE] --> REC[RECORD]
+      REC --> EVID[EVIDENCE]
+      EVID --> INT[INTERPRETATION]
+      INT --> STR[STRATEGY]
+      STR --> INT2[INTERACTION]
+      INT2 --> OUT[OUTPUT]
+      OUT --> OCF[OUTCOME]
+      OCF --> LRN[LEARNING]
+      AUD[AUDIT — independent] -. challenge .- INT
+      AUD -. challenge .- STR
+      BRN[BRAIN — route/adjudicate, no-origination] -. coordinate .- SYNAPSIS_CHAIN
+    end
+
+    SY1 --> SYNAPSIS_CHAIN
+    SY2 --> SYNAPSIS_CHAIN
+    SY3 --> SYNAPSIS_CHAIN
+
+    LRN --> OM[ORGANIZATIONAL MEMORY]
+    OCF --> OM
+```
