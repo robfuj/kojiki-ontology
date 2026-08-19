@@ -1,4 +1,4 @@
-# 00 — Hermes Ontology (shared)
+# 00 — Kojiki Ontology (shared)
 
 The shared foundation for the 20 line repos. Every line repo references this one
 for the **canonical schemas, taxonomy, decision-rights, handoffs, and prompts** so
