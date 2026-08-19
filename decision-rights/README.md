@@ -1,4 +1,4 @@
-# Decision Rights Model (docx S10)
+# Decision Rights Model
 
 ## Own
 Function/role has final decision authority within defined boundaries.

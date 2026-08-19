@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kojiki-viking-memory",
+  "version": "1.0.0",
+  "description": "OpenViking-backed long-term memory for Kojiki Decision System agents. Lets a department agent recall and persist Decision Objects + Learning Ledger entries via the viking:// context filesystem, so organizational learning survives across sessions. Wraps the OpenViking MCP server.",
+  "author": {
+    "name": "robfuj",
+    "url": "https://github.com/robfuj"
+  },
+  "homepage": "https://github.com/robfuj/kojiki-ontology",
+  "repository": "https://github.com/robfuj/kojiki-ontology",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "long-term-memory",
+    "context-engine",
+    "kojiki",
+    "decision-system",
+    "openviking",
+    "mcp"
+  ]
+}

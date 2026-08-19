@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://robfuj.github.io/learning-ledger.json",
   "title": "LearningLedger",
-  "description": "docx S7. Every material case reduces to this structure.",
+  "description": ". Every material case reduces to this structure.",
   "type": "object",
   "required": [
     "case",

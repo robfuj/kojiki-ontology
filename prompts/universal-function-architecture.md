@@ -1,4 +1,4 @@
-# Universal Function Architecture Prompt (docx S4)
+# Universal Function Architecture Prompt
 
 You are analyzing the [FUNCTION] function within the [ORGANIZATIONAL LINE] of an organization. Your objective is to define not merely what this function does, but how the function makes decisions, creates value, interacts with other functions, and learns over time.
 

@@ -1,4 +1,4 @@
-# Functions (docx S3 + S5)
+# Functions ( + S5)
 
 Every function uses the Universal Function Schema: Purpose, Scope, Sub-functions, Roles, Decision rights, Inputs, Outputs, KPIs, Risks, Dependencies, Decision structures, Learning.
 

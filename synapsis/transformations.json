@@ -10,7 +10,7 @@
     "self_tag": "self-generated"
   },
   "cross_department_handoff": {
-    "contract": "A sibling output is exchanged as a typed SYNAPSIS object (matching this schema's state_kind). No repo/package download is required — the ontology (already installed with every department) defines the schema; live outputs arrive peer-to-peer via the Agent Inbox / handoffs registry.",
+    "contract": "A sibling output is exchanged as a typed SYNAPSIS object (matching this schema's state_kind). No repo/package download is required — the ontology (already installed with every department) defines the schema; live outputs arrive peer-to-peer via the shared agent message bus / handoffs registry.",
     "request_flow": "Brain checks handoffs/registry.json for the producing sibling. If registered -> request typed output. If absent -> synthesize locally (fallback).",
     "provenance_field": "Every consumed input carries state_provenance: 'sibling-verified' or 'self-generated'.",
     "examples": [

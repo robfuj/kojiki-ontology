@@ -1,4 +1,4 @@
-# Learning Taxonomy (docx S8)
+# Learning Taxonomy
 
 ## 01 Signal
 An early observable indicator that may predict an outcome.

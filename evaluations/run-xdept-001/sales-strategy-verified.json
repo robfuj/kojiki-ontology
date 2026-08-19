@@ -1,6 +1,6 @@
 {
   "synapsis": {
-    "conclusion": "Develop targeted marketing campaigns for early-stage buyers with streamlined decision-making content and leverage third-party validation to appeal to ROI-conscious buyers during the shortlisting and decision-making phases.",
+    "conclusion": "Focus marketing initiatives on the initial weeks of the buyer journey (1-3) by highlighting third-party verified ROI claims to enhance visibility and build trust among potential customers.",
     "transformations": [
       {
         "name": "RECORD",
@@ -11,43 +11,26 @@
         "name": "EVIDENCE",
         "state_kind": "evidence",
         "output": {
-          "shortlisting_period": {
-            "weeks": 1,
-            "vendors_shortlisted": 3
+          "buyer_behavior_pattern": {
+            "shortlisting_period": "week 1",
+            "decision_making_period": "by week 3"
           },
-          "decision_period": {
-            "weeks": 3
-          },
-          "buyer_distrust_reasons": [
-            "Vendor-written ROI claims"
-          ]
+          "distrust_towards_vendor_roi_claims": true
         },
+        "source_citation": "Kojiki source specification (marketing.EVIDENCE)",
         "consumes": [
           {
             "producer": "marketing.EVIDENCE",
             "state_provenance": "sibling-verified"
           }
-        ],
-        "source_citation": "marketing.EVIDENCE (sibling-verified, SaaS benchmark report)"
+        ]
       },
       {
         "name": "INTERPRETATION",
         "state_kind": "interpretation",
         "output": {
-          "segmentation_implications": [
-            {
-              "target_segment": "early-stage buyers",
-              "strategy": "offer concise, compelling information to streamline their decision-making process"
-            },
-            {
-              "target_segment": "ROI-conscious buyers",
-              "strategy": "emphasize third-party validation of ROI claims"
-            }
-          ],
-          "messaging_advice": {
-            "shortlisting_phase": "Highlight the unique value proposition and competitive edge in a clear, digestible manner.",
-            "decision_making_phase": "Provide robust evidence from independent sources to support ROI claims."
-          }
+          "segmentation_implication": "Target marketing efforts towards early stages of the buyer journey (weeks 1-3) to maximize visibility and influence.",
+          "messaging_adjustment": "Emphasize transparent, third-party verified ROI claims over vendor-written ones to build trust among buyers."
         },
         "consumes": [
           {
@@ -59,7 +42,7 @@
       {
         "name": "STRATEGY",
         "state_kind": "strategy",
-        "output": "Develop targeted marketing campaigns for early-stage buyers with streamlined decision-making content and leverage third-party validation to appeal to ROI-conscious buyers during the shortlisting and decision-making phases.",
+        "output": "Focus marketing initiatives on the initial weeks of the buyer journey (1-3) by highlighting third-party verified ROI claims to enhance visibility and build trust among potential customers.",
         "consumes": [
           {
             "producer": "marketing.INTERPRETATION",

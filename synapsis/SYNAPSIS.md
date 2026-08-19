@@ -81,9 +81,10 @@ recommend consequential actions, and stay auditable over time. State the cost op
 more interfaces, more contracts, more artifacts that can fail, higher latency.
 
 ## Source
-Condensed from *Sales V2 — Why a Transformation-Based AI Architecture Is Different*
-(leadership case for cognitive decomposition). SYNAPSIS generalizes that argument from
-Sales to every Kojiki department.
+SYNAPSIS generalizes the transformation-based AI architecture argument — originally
+articulated as a case study on cognitive decomposition — from that
+case study to every Kojiki department. The chain (SOURCE → … → LEARNING) keeps each
+reasoning step a bounded transformation with one authority.
 
 ## Cross-department handoff
 See [`synapsis-xdept.md`](synapsis-xdept.md) — the optional-handoff protocol that keeps

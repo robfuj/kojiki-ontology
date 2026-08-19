@@ -1,4 +1,4 @@
-# KPI Architecture (docx S12)
+# KPI Architecture
 
 ## Activity
 - Purpose: How much work occurred?

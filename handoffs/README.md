@@ -1,4 +1,4 @@
-# Cross-Functional Handoff Standard (docx S11)
+# Cross-Functional Handoff Standard
 
 A handoff is complete only when the receiving function can act. For agent-to-agent handoffs, register in `registry.json`.
 
@@ -25,6 +25,6 @@ What should change in the handoff based on outcomes?
 A JSON array of registered agents:
 ```json
 [
-  {"agent_name": "...", "function_line": "...", "group_id": "...", "endpoint": "...", "registered_at": "..."}
+ {"agent_name": "...", "function_line": "...", "group_id": "...", "endpoint": "...", "registered_at": "..."}
 ]
 ```

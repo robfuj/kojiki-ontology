@@ -6,8 +6,8 @@ decision-centric organization. Every department agent reasons through one shared
 
 ```
 SOURCE → RECORD → EVIDENCE → INTERPRETATION → STRATEGY → INTERACTION → OUTPUT → OUTCOME → LEARNING
-                                                            │
-                                                      ORGANIZATIONAL MEMORY
+ │
+ ORGANIZATIONAL MEMORY
 ```
 
 Each stage is a **bounded transformation** with one authority and an explicit "what it
@@ -20,7 +20,7 @@ orchestrates; an independent **Adversarial Audit** challenges. The full spec liv
 ## 1. SOURCE → RECORD — what happened
 The origin of every decision. `RECORD` captures what happened, when, involving whom,
 and where it can be verified. It is never interpretation.
-- Backed by: `ontology/organization.md` (ORG → LINE → FUNCTION → ROLE chain, docx S2).
+- Backed by: `ontology/organization.md` (ORG → LINE → FUNCTION → ROLE chain).
 - Every department runs RECORD locally; cross-department SOURCE arrives peer-to-peer.
 
 ## 2. EVIDENCE — what the source actually establishes
@@ -33,13 +33,13 @@ and where it can be verified. It is never interpretation.
 strategy. Interpretations are the natural **cross-department handoff** unit
 (e.g. Marketing's interpretation feeds Sales' strategy).
 - See [`synapsis/synapse-xdept.md`](synapsis/synapsis-xdept.md) for the optional,
-  fallback-safe handoff protocol.
+ fallback-safe handoff protocol.
 
 ## 4. STRATEGY — the binding constraint and next commitment
 `STRATEGY` picks the objective to pursue. It consumes INTERPRETATION; it does not
 choose the interaction.
 - Decision rights (Own / Approve / Consult / Execute / Escalate / Automate) live in
-  `decision-rights/` (docx S10).
+ `decision-rights/`.
 
 ## 5. INTERACTION — how to pursue the objective with a stakeholder
 `INTERACTION` designs the approach to a specific stakeholder. It may not redefine the
@@ -55,16 +55,16 @@ objective.
 `LEARNING` extracts a pattern under uncertainty. It may *propose* a rule update but
 never silently rewrite doctrine. Landed in `learning/` (cases / patterns / rules /
 exceptions / rule-changelog) — cross-line organizational memory.
-- Schema: `schemas/learning-ledger.json` (docx S7) and `schemas/decision-object.json` (docx S9).
+- Schema: `schemas/learning-ledger.json` and `schemas/decision-object.json`.
 - Invariant: **learning is not permission to rewrite doctrine.**
 
 ---
 
 ## Brain & Adversarial Audit (the coordination layer)
 - **Brain** routes, sequences, and adjudicates — but never originates the specialist
-  analysis it judges. Executive Strategy (`01-executive-strategy`) is the org-level meta-Brain.
+ analysis it judges. Executive Strategy (`01-executive-strategy`) is the org-level meta-Brain.
 - **Adversarial Audit** challenges a claim graph against a standard; it cannot replace
-  the specialist's conclusion. Invariant: **audit is not authority; evaluation is not origination.**
+ the specialist's conclusion. Invariant: **audit is not authority; evaluation is not origination.**
 
 ## Cross-department handoff (standalone guarantee)
 Every transformation runs locally. Sibling departments are **optional accelerators**:
@@ -99,7 +99,7 @@ Every agent must: (1) name + function, (2) industry, (3) jurisdiction (country/r
 regime), (4) geography + business model, (5) register sibling agents in
 `handoffs/registry.json`. See `prompts/orientation.md`.
 
-## Design principles (docx S19)
+## Design principles
 Model decisions not documents · explicit ownership · explicit uncertainty · exceptions
 are learning · never silently rewrite rules (version them) · separate activity from
 outcome · capture dissent · explicit cross-functional deps · prefer evidence thresholds
@@ -112,15 +112,17 @@ External project (AGPL-3.0); not bundled.
 
 ## Quick start
 ```bash
-bash install-all.sh            # whole package: ontology + 20 depts + 2 meta agents
+bash install-all.sh # whole package: ontology + 20 depts + 2 meta agents
 # or one department (clones the ontology sibling if missing):
 bash install.sh
-# or as a Hermes Bot-Mode profile (local-first, Ollama qwen2.5:14b):
-hermes profile install https://github.com/robfuj/kojiki-ontology
-hermes profile install https://github.com/robfuj/kojiki-marketing-department
 ```
-After install, the bot runs the Orientation Protocol, then runs its work through the
+After install, the agent runs the Orientation Protocol, then runs its work through the
 SYNAPSIS chain and validates with `synapsis/validate.py`.
+
+## Runtime (any LLM)
+This repo is provider-agnostic. Point any LLM (Claude, GPT, a local model, or an
+agent harness) at `AGENT.md` as the entry point and follow the Kojiki Orientation
+Protocol. No specific runtime or vendor is required.
 
 ## License
 MIT — see [LICENSE](LICENSE).

@@ -5,7 +5,7 @@ Two ways to install.
 ## A) The whole package (recommended for first run)
 Clone the ontology + all 20 line departments + the two meta agents in one command:
 ```bash
-bash install-all.sh            # -> ./kojiki-decision-system/ with everything
+bash install-all.sh # -> ./kojiki-decision-system/ with everything
 ```
 This always includes `kojiki-ontology` (the shared standard) so every department can
 reference canonical schemas and register siblings.
@@ -16,7 +16,7 @@ it is missing, then the department:
 ```bash
 git clone https://github.com/robfuj/kojiki-marketing-department.git
 cd kojiki-marketing-department
-bash install.sh                # clones kojiki-ontology sibling if absent, then this dept
+bash install.sh # clones kojiki-ontology sibling if absent, then this dept
 ```
 (After orientation + research, the department installs its own working bots via
 `bots/install_bots.py <slugs>` — see its AGENT.md.)

@@ -16,7 +16,7 @@ with zero other packages downloaded.
 - The **schema** for every transformation lives in `00-kojiki-ontology/synapsis/`
   (already installed with every department via `install.sh` / the installer).
 - Live sibling outputs are exchanged **peer-to-peer** as typed JSON objects via the
-  Agent Inbox / `handoffs/registry.json` — not by cloning another repo.
+  Shared agent message bus / `handoffs/registry.json` — not by cloning another repo.
 - So "connecting to another department" means *messaging a registered sibling*, not
   *installing its code*.
 

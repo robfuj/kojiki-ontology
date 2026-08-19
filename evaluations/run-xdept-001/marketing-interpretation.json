@@ -1,36 +1,19 @@
 {
   "record": {
-    "timestamp": "2023-10-05",
-    "source": "SaaS industry benchmark report",
-    "signal_type": "behavioral trend",
-    "description": "The SaaS benchmark report highlights that buyers in our category are now shortlisting only three vendors during the first week of their evaluation process and making a decision by the third week. Additionally, there is an observed distrust towards ROI claims made by vendors themselves."
+    "signal_date": "2023-11-05",
+    "source": "SaaS benchmark report",
+    "type": "industry trend",
+    "content": "Our category's buyers shortlist 3 vendors in week 1 and decide by week 3; they distrust vendor-written ROI claims."
   },
   "evidence": {
-    "shortlisting_period": {
-      "weeks": 1,
-      "vendors_shortlisted": 3
+    "buyer_behavior_pattern": {
+      "shortlisting_period": "week 1",
+      "decision_making_period": "by week 3"
     },
-    "decision_period": {
-      "weeks": 3
-    },
-    "buyer_distrust_reasons": [
-      "Vendor-written ROI claims"
-    ]
+    "distrust_towards_vendor_roi_claims": true
   },
   "interpretation": {
-    "segmentation_implications": [
-      {
-        "target_segment": "early-stage buyers",
-        "strategy": "offer concise, compelling information to streamline their decision-making process"
-      },
-      {
-        "target_segment": "ROI-conscious buyers",
-        "strategy": "emphasize third-party validation of ROI claims"
-      }
-    ],
-    "messaging_advice": {
-      "shortlisting_phase": "Highlight the unique value proposition and competitive edge in a clear, digestible manner.",
-      "decision_making_phase": "Provide robust evidence from independent sources to support ROI claims."
-    }
+    "segmentation_implication": "Target marketing efforts towards early stages of the buyer journey (weeks 1-3) to maximize visibility and influence.",
+    "messaging_adjustment": "Emphasize transparent, third-party verified ROI claims over vendor-written ones to build trust among buyers."
   }
 }

@@ -1,6 +1,6 @@
 {
   "synapsis": {
-    "conclusion": "Develop targeted marketing campaigns emphasizing product uniqueness and integration capabilities. Focus on digital channels such as social media influencers, tech blogs, and forums frequented by early adopters. Offer limited-time discounts or exclusive features to incentivize purchases among high-value customers.",
+    "conclusion": "Develop targeted marketing campaigns focusing on personalization and customization features. Offer customizable options for our core products to enhance customer satisfaction and loyalty. Utilize data analytics to better understand consumer behavior and tailor product offerings accordingly.",
     "transformations": [
       {
         "name": "RECORD",
@@ -11,18 +11,18 @@
         "name": "EVIDENCE",
         "state_kind": "evidence",
         "output": "Local market assumptions (no sibling evidence available).",
+        "source_citation": "Kojiki source specification (self-generated, standalone mode)",
         "consumes": [
           {
             "producer": "marketing.EVIDENCE",
             "state_provenance": "self-generated"
           }
-        ],
-        "source_citation": "marketing.EVIDENCE (sibling-verified, SaaS benchmark report)"
+        ]
       },
       {
         "name": "INTERPRETATION",
         "state_kind": "interpretation",
-        "output": "The target market consists of technology enthusiasts and early adopters who prioritize innovative features, quality over quantity, and a seamless user experience. They are willing to pay premium prices for products that offer unique value propositions and integrate well with existing tech ecosystems.",
+        "output": "Based on the current market trends and customer feedback, there is a growing demand for personalized product offerings that cater to individual preferences and needs. Consumers are increasingly valuing experiences and convenience over generic products, indicating a shift towards more tailored and customized solutions.",
         "consumes": [
           {
             "producer": "marketing.INTERPRETATION",
@@ -33,7 +33,7 @@
       {
         "name": "STRATEGY",
         "state_kind": "strategy",
-        "output": "Develop targeted marketing campaigns emphasizing product uniqueness and integration capabilities. Focus on digital channels such as social media influencers, tech blogs, and forums frequented by early adopters. Offer limited-time discounts or exclusive features to incentivize purchases among high-value customers.",
+        "output": "Develop targeted marketing campaigns focusing on personalization and customization features. Offer customizable options for our core products to enhance customer satisfaction and loyalty. Utilize data analytics to better understand consumer behavior and tailor product offerings accordingly.",
         "consumes": [
           {
             "producer": "marketing.INTERPRETATION",
