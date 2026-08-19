@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-ios.github.io/orientation.json",
+  "title": "AgentOrientation",
+  "description": "Captured during first-run orientation; drives research + sibling registration.",
+  "type": "object",
+  "required": [
+    "agent_name",
+    "function_line",
+    "industry",
+    "country",
+    "regulatory_regime",
+    "geography",
+    "business_model",
+    "group_id"
+  ],
+  "properties": {
+    "agent_name": {
+      "type": "string"
+    },
+    "function_line": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "regulatory_regime": {
+      "type": "string"
+    },
+    "geography": {
+      "type": "string"
+    },
+    "business_model": {
+      "type": "string"
+    },
+    "group_id": {
+      "type": "string"
+    },
+    "sibling_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

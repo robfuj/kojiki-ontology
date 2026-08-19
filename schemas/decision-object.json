@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-ios.github.io/decision-object.json",
+  "title": "DecisionObject",
+  "description": "docx S9. Every recurring decision is a state-based structure with these fields.",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "decision_name",
+    "owning_function",
+    "trigger_condition",
+    "current_state",
+    "available_options",
+    "decision_criteria",
+    "expected_outcome",
+    "verification_method",
+    "rule_version"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "decision_name": {
+      "type": "string"
+    },
+    "owning_function": {
+      "type": "string"
+    },
+    "decision_owner_role": {
+      "type": "string"
+    },
+    "trigger_condition": {
+      "type": "string"
+    },
+    "current_state": {
+      "type": "string"
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_threshold": {
+      "type": "string"
+    },
+    "available_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_criteria": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "delegation_level": {
+      "type": "string",
+      "enum": [
+        "Own",
+        "Recommend",
+        "Consult",
+        "Execute",
+        "Approve",
+        "Escalate",
+        "Automate"
+      ]
+    },
+    "escalation_conditions": {
+      "type": "string"
+    },
+    "expected_outcome": {
+      "type": "string"
+    },
+    "verification_method": {
+      "type": "string"
+    },
+    "actual_outcome": {
+      "type": "string"
+    },
+    "learning_extracted": {
+      "type": "string"
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "last_reviewed": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

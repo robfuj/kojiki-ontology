@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-ios.github.io/learning-ledger.json",
+  "title": "LearningLedger",
+  "description": "docx S7. Every material case reduces to this structure.",
+  "type": "object",
+  "required": [
+    "case",
+    "decision",
+    "assumption",
+    "action",
+    "expected_result",
+    "actual_result",
+    "variance",
+    "cause",
+    "learning",
+    "rule_update"
+  ],
+  "properties": {
+    "case": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "assumption": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "expected_result": {
+      "type": "string"
+    },
+    "actual_result": {
+      "type": "string"
+    },
+    "variance": {
+      "type": "string"
+    },
+    "cause": {
+      "type": "string"
+    },
+    "learning": {
+      "type": "string"
+    },
+    "rule_update": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
