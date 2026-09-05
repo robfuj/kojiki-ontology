@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MYCELIUM Signal Schema",
+  "type": "object",
+  "required": ["id", "origin_kr", "event", "new_status", "diagnosed_cause", "diagnosed_cause_category", "status", "subgraph", "fired_at"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Signal identifier (e.g., 'sig-0001')"
+    },
+    "origin_kr": {
+      "type": "string",
+      "description": "KR ID where the status change originated"
+    },
+    "event": {
+      "type": "string",
+      "enum": ["status_change", "confidence_change", "target_met", "new_dependency"],
+      "description": "Type of event that triggered the signal"
+    },
+    "new_status": {
+      "type": "string",
+      "enum": ["on_track", "at_risk", "off_track"],
+      "description": "New status of the origin KR"
+    },
+    "diagnosed_cause": {
+      "type": "string",
+      "description": "Required: diagnosed cause sourced from department's Learning-stage CAUSE field"
+    },
+    "diagnosed_cause_category": {
+      "type": "string",
+      "enum": ["Signal", "Pattern", "Cause", "Assumption", "Decision", "Action", "Exception", "Failure", "Success", "Rule", "Threshold", "Automation", "Escalation", "Memory"],
+      "description": "MUST be one of the 14 Hermes Learning Taxonomy categories"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ROUTED", "APPLIED_UNVERIFIED", "CLOSED_VERIFIED", "WITHDRAWN"],
+      "description": "Signal status — forward-only transitions via append, never in-place edit"
+    },
+    "subgraph": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "KR IDs in the decision subgraph that received this signal"
+    },
+    "fired_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when signal was fired"
+    }
+  },
+  "additionalProperties": false
+}

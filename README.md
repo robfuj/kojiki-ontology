@@ -33,13 +33,13 @@ and where it can be verified. It is never interpretation.
 strategy. Interpretations are the natural **cross-department handoff** unit
 (e.g. Marketing's interpretation feeds Sales' strategy).
 - See [`synapsis/synapse-xdept.md`](synapsis/synapsis-xdept.md) for the optional,
- fallback-safe handoff protocol.
+fallback-safe handoff protocol.
 
 ## 4. STRATEGY — the binding constraint and next commitment
 `STRATEGY` picks the objective to pursue. It consumes INTERPRETATION; it does not
 choose the interaction.
 - Decision rights (Own / Approve / Consult / Execute / Escalate / Automate) live in
- `decision-rights/`.
+`decision-rights/`.
 
 ## 5. INTERACTION — how to pursue the objective with a stakeholder
 `INTERACTION` designs the approach to a specific stakeholder. It may not redefine the
@@ -62,9 +62,9 @@ exceptions / rule-changelog) — cross-line organizational memory.
 
 ## Brain & Adversarial Audit (the coordination layer)
 - **Brain** routes, sequences, and adjudicates — but never originates the specialist
- analysis it judges. Executive Strategy (`01-executive-strategy`) is the org-level meta-Brain.
+analysis it judges. Executive Strategy (`01-executive-strategy`) is the org-level meta-Brain.
 - **Adversarial Audit** challenges a claim graph against a standard; it cannot replace
- the specialist's conclusion. Invariant: **audit is not authority; evaluation is not origination.**
+the specialist's conclusion. Invariant: **audit is not authority; evaluation is not origination.**
 
 ## Cross-department handoff (standalone guarantee)
 Every transformation runs locally. Sibling departments are **optional accelerators**:
@@ -72,27 +72,25 @@ when present, consume their typed output (`sibling-verified`); when absent, synt
 locally (`self-generated`). No other package download is required. Proven at runtime:
 `evaluations/run-xdept-001/`.
 
-## The 20 lines (each its own repo, each runs the chain)
-- `01 — Executive / Strategy` → [`01-executive-strategy`](https://github.com/robfuj/kojiki-executive-strategy)
-- `02 — Finance` → [`02-finance`](https://github.com/robfuj/kojiki-finance-department)
-- `03 — Marketing` → [`03-marketing`](https://github.com/robfuj/kojiki-marketing-department)
-- `04 — Sales` → [`04-sales`](https://github.com/robfuj/kojiki-sales-department)
-- `05 — Business Development` → [`05-business-development`](https://github.com/robfuj/kojiki-business-development)
-- `06 — Customer Success` → [`06-customer-success`](https://github.com/robfuj/kojiki-customer-success)
-- `07 — Product` → [`07-product`](https://github.com/robfuj/kojiki-product-department)
-- `08 — Engineering / Technology` → [`08-engineering`](https://github.com/robfuj/kojiki-engineering-department)
-- `09 — Operations` → [`09-operations`](https://github.com/robfuj/kojiki-operations-department)
-- `10 — Supply Chain / Procurement` → [`10-supply-chain-procurement`](https://github.com/robfuj/kojiki-supply-chain-procurement-department)
-- `11 — Data / Analytics` → [`11-data-analytics`](https://github.com/robfuj/kojiki-data-analytics)
-- `12 — AI / Intelligence` → [`12-ai-intelligence`](https://github.com/robfuj/kojiki-ai-intelligence-department)
-- `13 — IT` → [`13-it`](https://github.com/robfuj/kojiki-IT-department)
-- `14 — Security` → [`14-security`](https://github.com/robfuj/kojiki-security-department)
-- `15 — Legal` → [`15-legal`](https://github.com/robfuj/kojiki-legal-department)
-- `16 — Risk / Compliance` → [`16-risk-compliance`](https://github.com/robfuj/kojiki-risk-compliance-department)
-- `17 — People / HR` → [`17-people-hr`](https://github.com/robfuj/kojiki-hr-department)
-- `18 — Corporate Development` → [`18-corporate-development`](https://github.com/robfuj/kojiki-corporate-development-department)
-- `19 — Communications / Public Affairs` → [`19-communications-public-affairs`](https://github.com/robfuj/kojiki-communications-public-affairs-department)
-- `20 — Executive Office / Chief of Staff` → [`20-executive-office`](https://github.com/robfuj/kojiki-executive-office-department)
+## The 18 lines (each its own repo, each runs the chain)
+- `01 — Executive / Strategy` → [`01-executive-strategy`](../01-executive-strategy)
+- `02 — Finance` → [`02-finance`](../02-finance)
+- `03 — Marketing` → [`03-marketing`](../03-marketing)
+- `04 — Sales` → [`04-sales`](../04-sales)
+- `05 — Business Development` → [`05-business-development`](../05-business-development)
+- `06 — Customer Success` → [`06-customer-success`](../06-customer-success)
+- `07 — Product` → [`07-product`](../07-product)
+- `08 — Engineering / Technology` → [`08-engineering`](../08-engineering)
+- `09 — Operations` → [`09-operations`](../09-operations)
+- `10 — Supply Chain / Procurement` → [`10-supply-chain-procurement`](../10-supply-chain-procurement)
+- `11 — IT` → [`11-it`](../11-it)
+- `12 — Security` → [`12-security`](../12-security)
+- `13 — Legal` → [`13-legal`](../13-legal)
+- `14 — People / HR` → [`14-people-hr`](../14-people-hr)
+- `15 — Corporate Development` → [`15-corporate-development`](../15-corporate-development)
+- `16 — Communications / Public Affairs` → [`16-communications-public-affairs`](../16-communications-public-affairs)
+- `17 — Executive Org Builder` → [`17-executive-org-builder`](../17-executive-org-builder)
+- `18 — Decision System Installer` → [`18-decision-system-installer`](../18-decision-system-installer)
 
 ## Orientation Protocol (first run)
 Every agent must: (1) name + function, (2) industry, (3) jurisdiction (country/region/
@@ -112,7 +110,7 @@ External project (AGPL-3.0); not bundled.
 
 ## Quick start
 ```bash
-bash install-all.sh # whole package: ontology + 20 depts + 2 meta agents
+bash install-all.sh # whole package: ontology + 18 depts + 2 meta agents
 # or one department (clones the ontology sibling if missing):
 bash install.sh
 ```
