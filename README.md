@@ -5,7 +5,6 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
 [![Tests Passing](https://img.shields.io/badge/Tests-All%20Passing-brightgreen.svg)](#testing)
-[![OpenViking Compatible](https://img.shields.io/badge/OpenViking-Compatible-orange.svg)](https://github.com/volcengine/OpenViking)
 
 ---
 
@@ -22,6 +21,8 @@ Kojiki gives any LLM (Claude, GPT, local models, agent harnesses) a **shared, au
 ```
 RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → OUTCOME → LEARNING
 ```
+
+> ⚠️ **Open question, not yet resolved:** the canonical spec (*Cognitive Transformation Architecture*, thesis §III.1) separates STRATEGY (deciding the objective) from a distinct INTERACTION DESIGN stage (designing the approach to a specific stakeholder) — two different judgments that can independently be right or wrong. This implementation currently runs STRATEGY straight into OUTPUT with no INTERACTION stage in between (see the 5 pipeline files under each bot's `pipeline/`, and the stage table below). **This needs an explicit decision — was INTERACTION cut on purpose for v1, or does it need to be added back — before this is treated as final,** rather than silently diverging from the spec it claims to implement.
 
 Each stage is a **bounded transformation** with explicit authority and an explicit "what it must NOT silently become" (evidence ≠ interpretation ≠ belief ≠ doctrine). A **Brain** orchestrates; an independent **Adversarial Audit** challenges. Cross-department coordination happens through the **MYCELIUM canopy tier** — a decentralized, need-driven substrate modeled on mycorrhizal networks.
 
@@ -65,7 +66,7 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Three Axes
+### Three Vertical Axes
 
 | Axis | Component | Purpose |
 |------|-----------|---------|
@@ -95,8 +96,8 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 ## 🚀 Quick Start
 
 ```bash
-# Clone the decision systems
-git clone https://github.com/robfuj/Narro  # or your fork
+# Clone the ontology repo
+git clone https://github.com/robfuj/kojiki-ontology  # or your fork
 cd decision-systems
 
 # Install the full package: ontology + 20 departments + 2 meta agents
@@ -131,7 +132,7 @@ decision-systems/
 │   ├── synapsis/                # SYNAPSIS chain + validator
 │   │   ├── SYNAPSIS.md          # Full specification
 │   │   ├── validate.py          # Invariant checker (stdlib only)
-│   │   ├── REFERENCES.md        # Consultant framework mappings
+│   │   ├── REFERENCES.md        # Design-time framework mappings (see note)
 │   │   └── transformations.json # Stage definitions
 │   ├── schemas/                 # Core JSON schemas (mirrored in bots)
 │   │   ├── evidence.json
@@ -142,15 +143,15 @@ decision-systems/
 │   │   └── decision-object.json
 │   ├── mycelium/                # Canopy tier (emergent coordination)
 │   │   ├── schemas/             # node, objective, key_result, edge, signal, provenance_token
-│   │   ├── engine/              # registry, graph, reinforcement, propagate, prune, sentinel, saccade
-│   │   ├── neuraxis/            # Vertical axis: experience, problem, gate_request, escalation
-│   │   ├── tests/               # All passing
-│   │   └── examples/            # demo_marketing_sales.py
-│   ├── learning/                # Organizational memory (cases, patterns, rules)
-│   ├── handoffs/                # Cross-department registry + handoff standard
-│   ├── decision-rights/         # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-│   ├── consultant/              # yoichiojima-2/consultant (copied, MIT, design-time reference)
-│   └── build_repos.py           # Generates the 20 department repos
+│   │   ├── engine/               # registry, graph, reinforcement, propagate, prune, sentinel, saccade
+│   │   ├── neuraxis/             # Vertical axis: experience, problem, gate_request, escalation
+│   │   ├── tests/                 # All passing
+│   │   └── examples/              # demo_marketing_sales.py
+│   ├── learning/                 # Organizational memory (cases, patterns, rules)
+│   ├── handoffs/                 # Cross-department registry + handoff standard
+│   ├── decision-rights/           # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
+│   ├── consultant/                # 50+ consulting frameworks (copied, MIT, design-time reference)
+│   └── build_repos.py             # Generates the 20 department repos
 │
 ├── 01-executive-strategy/       # Department repos (each independent)
 ├── 02-finance/
@@ -171,7 +172,7 @@ Each department repo contains:
 │   └── <slug>/                  # One per sub-function (e.g., brand, growth)
 │       ├── AGENT.md             # Entry point + orientation protocol
 │       ├── runner.py            # Context-scoped pipeline executor
-│       ├── pipeline/            # 5 stage prompts
+│       ├── pipeline/            # Stage prompts — see open question above re: INTERACTION
 │       │   ├── 01-saccade.md
 │       │   ├── 02-evidence.md
 │       │   ├── 03-interpretation.md
@@ -336,7 +337,7 @@ The SYNAPSIS stages map to standard consulting frameworks — not as runtime dep
 | **Sensitivity Analysis** | γ / decay_rate / threshold calibration | *Open item* |
 
 Full mapping: `synapsis/REFERENCES.md`  
-Frameworks copied from: `consultant/` (yoichiojima-2/consultant, MIT, no `.git`)
+Frameworks copied from: `consultant/` (MIT-licensed, vendored copy, no `.git`)
 
 ---
 
@@ -344,7 +345,7 @@ Frameworks copied from: `consultant/` (yoichiojima-2/consultant, MIT, no `.git`)
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| **v1** | Rigid tier (SYNAPSIS) + Canopy tier (MYCELIUM) + NEURAXIS + SENTINEL | ✅ Complete |
+| **v1** | Rigid tier (SYNAPSIS) + Canopy tier (MYCELIUM) + NEURAXIS + SENTINEL | ✅ Complete (pending INTERACTION-stage decision above) |
 | **v2** | Deterministic grading for Task 3, CI with py_compile, pass/fail thresholds, schema versioning, expanded demo matrix | 📋 Planned |
 | **v3** | Adversarial re-derivation of stage outputs, retrofitting all 20 depts, artifact cross-check | 📋 Planned |
 
