@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "Executive.Strategy",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Finance",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Marketing",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Sales",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Business.Development",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Customer.Success",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Product",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Engineering.Technology",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Operations",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Supply.Chain.Procurement",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Data.Analytics",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "AI.Intelligence",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "IT",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Security",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Legal",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Compliance.Risk",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "People.HR",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Corporate.Development",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Communications.Public.Affairs",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  },
+  {
+    "id": "Executive.Office.Chief.of.Staff",
+    "parent": null,
+    "spawn_reason": "root department",
+    "public_key": "ed25519:pending_issuance",
+    "key_issued_at": "2026-09-05T00:00:00Z",
+    "key_status": "active",
+    "key_revoked_at": null
+  }
+]
