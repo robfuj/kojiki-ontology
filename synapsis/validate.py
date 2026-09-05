@@ -10,12 +10,12 @@ preserves the SYNAPSIS epistemic boundaries:
   - cross-department inputs carry state_provenance; a 'sibling-verified' input
     whose producer is NOT in the supplied registry is flagged (should have fallen
     back to 'self-generated' per the standalone guarantee)
+  - MYCELIUM naming/lineage validation (additive hook): non-root node IDs must
+    start with parent_id + ".", orphan nodes rejected, 20 root departments unchanged
 
-Usage: python3 validate.py [--registry reg.json] <record.json> [record2.json ...]
-  --registry: JSON mapping of which sibling producers are installed/registered,
-              e.g. {"marketing.INTERPRETATION": true}. If omitted, all inputs are
-              treated as self-generated (standalone mode) and only the hard
-              invariants are checked.
+Usage: python3 validate.py [--registry reg.json] [--mycelium-registry reg.json] <record.json> [record2.json ...]
+  --registry: JSON file mapping producer keys -> bool (installed?)
+  --mycelium-registry: JSON file mapping node IDs -> {parent, public_key, ...} for lineage validation
 """
 import json, sys, os, argparse
 
@@ -25,11 +25,61 @@ TRANSFORMATIONS = json.load(open(os.path.join(HERE, "transformations.json")))["t
 LEGAL_STATE_KINDS = set(t.get("state_kind") for t in TRANSFORMATIONS.values())
 INDEPENDENT = {"AUDIT", "BRAIN"}
 
+# 20 canonical root departments (from Hermes Organizational Decision System Specification)
+ROOT_DEPARTMENTS = {
+    "Executive.Strategy", "Finance", "Marketing", "Sales", "Business.Development",
+    "Customer.Success", "Product", "Engineering.Technology", "Operations",
+    "Supply.Chain.Procurement", "Data.Analytics", "AI.Intelligence", "IT",
+    "Security", "Legal", "Compliance.Risk", "People.HR", "Corporate.Development",
+    "Communications.Public.Affairs", "Executive.Office.Chief.of.Staff"
+}
+
 def err(m):
     print("FAIL: " + m)
     return False
 
-def validate(path, registry):
+def validate_mycelium_naming(mycelium_registry):
+    """Validate MYCELIUM node naming and lineage conventions.
+    
+    This is an additive, separately-callable check per §IV.9 of the thesis.
+    """
+    ok = True
+    if not mycelium_registry:
+        return True
+    
+    for node in mycelium_registry:
+        node_id = node.get("id")
+        parent_id = node.get("parent")
+        
+        if not node_id:
+            ok = err("MYCELIUM node missing 'id'")
+            continue
+        
+        # Root departments: no parent, must be in canonical set
+        if parent_id is None:
+            if node_id not in ROOT_DEPARTMENTS:
+                ok = err(f"MYCELIUM root node '{node_id}' not in canonical 20 departments")
+            continue
+        
+        # Non-root: must have parent, parent must exist, ID must follow lineage
+        if parent_id not in [n.get("id") for n in mycelium_registry]:
+            ok = err(f"MYCELIUM node '{node_id}': parent '{parent_id}' not in registry")
+            continue
+        
+        expected_prefix = parent_id + "."
+        if not node_id.startswith(expected_prefix) or node_id == parent_id:
+            ok = err(f"MYCELIUM node '{node_id}': invalid lineage — must start with '{expected_prefix}'")
+    
+    # Check for orphan nodes (non-root with no parent)
+    for node in mycelium_registry:
+        node_id = node.get("id")
+        parent_id = node.get("parent")
+        if node_id not in ROOT_DEPARTMENTS and parent_id is None:
+            ok = err(f"MYCELIUM node '{node_id}': orphan non-root node (missing parent)")
+    
+    return ok
+
+def validate(path, registry, mycelium_registry=None):
     ok = True
     rec = json.load(open(path))
     steps = rec.get("synapsis", {}).get("transformations", rec.get("transformations", []))
@@ -76,22 +126,31 @@ def validate(path, registry):
             ok = err("conclusion has no RECORD origin")
         if "evidence" not in seen_kinds:
             ok = err("conclusion has no EVIDENCE basis")
+    
+    # MYCELIUM naming/lineage validation (additive hook)
+    if mycelium_registry is not None:
+        ok &= validate_mycelium_naming(mycelium_registry)
+    
     return ok
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--registry", help="JSON file mapping producer keys -> bool (installed?)")
+    ap.add_argument("--mycelium-registry", help="JSON file with MYCELIUM node registry for lineage validation")
     ap.add_argument("records", nargs="*")
     args = ap.parse_args()
     registry = None
     if args.registry:
         registry = json.load(open(args.registry))
+    mycelium_registry = None
+    if args.mycelium_registry:
+        mycelium_registry = json.load(open(args.mycelium_registry))
     targets = args.records or [os.path.join(HERE, "example-synapsis-record.json")]
     all_ok = True
     for t in targets:
         print("== " + t)
         try:
-            all_ok &= validate(t, registry)
+            all_ok &= validate(t, registry, mycelium_registry)
         except Exception as e:
             print("FAIL: " + str(e)); all_ok = False
     print("ALL VALID" if all_ok else "VALIDATION FAILED")
@@ -99,4 +158,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

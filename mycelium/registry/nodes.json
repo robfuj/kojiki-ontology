@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "id": "Executive.Office.Chief.of.Staff",
+      "domain": "executive/office/chief/of/staff",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/executive-office-chief-of-staff/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Sales",
+      "domain": "sales",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/sales/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Finance",
+      "domain": "finance",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/finance/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Security",
+      "domain": "security",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/security/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Communications.Public.Affairs",
+      "domain": "communications/public/affairs",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/communications-public-affairs/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Product",
+      "domain": "product",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/product/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Marketing",
+      "domain": "marketing",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/marketing/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Customer.Success",
+      "domain": "customer/success",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/customer-success/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Legal",
+      "domain": "legal",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/legal/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Business.Development",
+      "domain": "business/development",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/business-development/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Data.Analytics",
+      "domain": "data/analytics",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/data-analytics/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "IT",
+      "domain": "it",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/it/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Executive.Strategy",
+      "domain": "executive/strategy",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/executive-strategy/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "AI.Intelligence",
+      "domain": "ai/intelligence",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/ai-intelligence/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "People.HR",
+      "domain": "people/hr",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/people-hr/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Engineering.Technology",
+      "domain": "engineering/technology",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/engineering-technology/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Operations",
+      "domain": "operations",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/operations/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Compliance.Risk",
+      "domain": "compliance/risk",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/compliance-risk/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Supply.Chain.Procurement",
+      "domain": "supply/chain/procurement",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/supply-chain-procurement/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    },
+    {
+      "id": "Corporate.Development",
+      "domain": "corporate/development",
+      "type": "agent",
+      "status": "active",
+      "pipeline_manifest_ref": "bots/corporate-development/manifest.json#transformation_pipeline",
+      "pipeline_validated": false
+    }
+  ]
+}

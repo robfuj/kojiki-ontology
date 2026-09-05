@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NEURAXIS Experience Schema",
+  "type": "object",
+  "required": ["id", "problem_id", "hypothesis", "agents", "action", "expected", "observed", "error_classification", "escalation", "redefinition", "learning_ref", "propagation_targets"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Experience identifier (e.g., 'EXP-0001')"
+    },
+    "problem_id": {
+      "type": "string",
+      "description": "Problem ID this experience relates to"
+    },
+    "hypothesis": {
+      "type": "string",
+      "description": "The hypothesis being tested"
+    },
+    "agents": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Nodes/agents involved in this experience"
+    },
+    "action": {
+      "type": "string",
+      "description": "Action taken"
+    },
+    "expected": {
+      "type": "string",
+      "description": "Expected outcome"
+    },
+    "observed": {
+      "type": "string",
+      "description": "Actual observed outcome"
+    },
+    "error_classification": {
+      "type": "string",
+      "enum": ["Information error", "Execution error", "Reasoning error", "Assumption error", "Model/representation error", "Meta error"],
+      "description": "Error class determining escalation layer"
+    },
+    "escalation": {
+      "type": "object",
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "type": "string",
+          "enum": ["L0_execution", "L1_reasoning", "L2_problem_representation", "L3_ontology", "L4_meta_strategy"]
+        },
+        "to": {
+          "type": "string",
+          "enum": ["L0_execution", "L1_reasoning", "L2_problem_representation", "L3_ontology", "L4_meta_strategy"]
+        }
+      },
+      "description": "Escalation path for this error"
+    },
+    "redefinition": {
+      "type": "object",
+      "required": ["previous_problem", "new_problem"],
+      "properties": {
+        "previous_problem": {"type": "string"},
+        "new_problem": {"type": "string"}
+      },
+      "description": "Problem redefinition if escalation reaches L2"
+    },
+    "learning_ref": {
+      "type": "string",
+      "description": "Reference to learning ledger entry produced, if any"
+    },
+    "propagation_targets": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Layers to propagate revision to (e.g., ['strategy_layer'])"
+    }
+  },
+  "additionalProperties": false
+}

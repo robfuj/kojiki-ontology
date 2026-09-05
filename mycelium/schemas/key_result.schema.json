@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MYCELIUM Key Result Schema",
+  "type": "object",
+  "required": ["id", "objective_id", "owner", "metric", "target", "current", "status", "confidence", "depends_on"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Key Result identifier (e.g., 'kr-2026Q4-marketing-01-a')"
+    },
+    "objective_id": {
+      "type": "string",
+      "description": "Parent Objective ID"
+    },
+    "owner": {
+      "type": "string",
+      "description": "Primary owner node ID"
+    },
+    "co_owners": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Joint owner node IDs for shared KRs at real dependency edges"
+    },
+    "metric": {
+      "type": "string",
+      "description": "Measurable metric name (e.g., 'qualified_pipeline_pct_lift')"
+    },
+    "target": {
+      "type": "number",
+      "description": "Target value for this metric"
+    },
+    "current": {
+      "type": "number",
+      "description": "Current value for this metric"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["on_track", "at_risk", "off_track"],
+      "description": "Current KR status"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence score for current status"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Array of KR IDs this KR depends on (cross-node dependencies)"
+    }
+  },
+  "additionalProperties": false
+}

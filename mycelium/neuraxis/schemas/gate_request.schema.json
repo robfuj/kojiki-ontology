@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NEURAXIS Gate Request Schema",
+  "type": "object",
+  "required": ["id", "layer", "proposed_change", "evidence", "recommend", "consult", "approve_role", "sla_deadline", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Gate request identifier (e.g., 'gate-0001')"
+    },
+    "layer": {
+      "type": "string",
+      "enum": ["L3", "L4"],
+      "description": "Governance layer (L3=ontology, L4=meta-strategy)"
+    },
+    "proposed_change": {
+      "type": "string",
+      "description": "Description of proposed ontology/meta-strategy change"
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["repetition_count", "experience_refs"],
+      "properties": {
+        "repetition_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of distinct Experience objects attributing failure to same representation"
+        },
+        "experience_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "References to Experience objects supporting this request"
+        }
+      },
+      "description": "Evidence supporting the gate request"
+    },
+    "recommend": {
+      "type": "string",
+      "description": "Escalating node / NEURAXIS output making the recommendation"
+    },
+    "consult": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Nodes structurally connected to the ontology element (from MYCELIUM subgraph)"
+    },
+    "approve_role": {
+      "type": "string",
+      "description": "Named human role or governance body that must approve (never an agent, never Automate)"
+    },
+    "sla_deadline": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 deadline for approval decision"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "APPROVED", "REJECTED", "MODIFIED", "ESCALATED", "EXPIRED"],
+      "description": "Gate request status — forward-only transitions"
+    },
+    "decision_reason": {
+      "type": ["string", "null"],
+      "description": "Reason for approval/rejection/modification"
+    },
+    "applied_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Timestamp when change was applied"
+    }
+  },
+  "additionalProperties": false
+}

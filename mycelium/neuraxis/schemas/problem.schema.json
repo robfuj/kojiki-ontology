@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NEURAXIS Problem Schema",
+  "type": "object",
+  "required": ["id", "supersedes", "reason", "goal", "constraints", "assumptions", "unknowns"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Problem identifier (e.g., 'P-0002')"
+    },
+    "supersedes": {
+      "type": "string",
+      "description": "Previous problem ID this supersedes"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for supersession (e.g., 'assumption invalidated by EXP-0001')"
+    },
+    "goal": {
+      "type": "string",
+      "description": "The goal this problem addresses"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Constraints on the solution"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Explicit assumptions"
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Known unknowns"
+    }
+  },
+  "additionalProperties": false
+}

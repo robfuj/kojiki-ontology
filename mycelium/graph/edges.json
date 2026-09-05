@@ -1,0 +1,43 @@
+{
+  "edges": {
+    "kr-2026Q4-marketing-seo-01->kr-2026Q4-marketing-01": {
+      "from": "kr-2026Q4-marketing-seo-01",
+      "to": "kr-2026Q4-marketing-01",
+      "weight": 0.85,
+      "reciprocal_exchanges": 5,
+      "one_directional_exchanges": 0,
+      "trigger": "Marketing.Head KR-01 status change",
+      "required_data": "keyword strategy direction",
+      "acceptance_criteria": "SEO can act on strategy without clarification",
+      "sla": "within 1 review cycle",
+      "exception_path": "REQUEST escalates to Marketing.Head",
+      "last_reinforced": "2026-09-05T22:54:28.836058Z"
+    },
+    "kr-2026Q4-marketing-01->kr-2026Q4-sales-03": {
+      "from": "kr-2026Q4-marketing-01",
+      "to": "kr-2026Q4-sales-03",
+      "weight": 0.62,
+      "reciprocal_exchanges": 3,
+      "one_directional_exchanges": 0,
+      "trigger": "Sales.Head KR-03 status change",
+      "required_data": "qualified lead volume by segment",
+      "acceptance_criteria": "Marketing can act on the figure without further clarification",
+      "sla": "within 1 review cycle",
+      "exception_path": "REQUEST escalates to Sales.Head",
+      "last_reinforced": "2026-09-05T18:39:32.188478Z"
+    },
+    "kr-2026Q4-sales-03->kr-2026Q4-marketing-01": {
+      "from": "kr-2026Q4-sales-03",
+      "to": "kr-2026Q4-marketing-01",
+      "weight": 0.62,
+      "reciprocal_exchanges": 3,
+      "one_directional_exchanges": 1,
+      "trigger": "Sales.Head KR-03 status change",
+      "required_data": "qualified lead volume by segment",
+      "acceptance_criteria": "Marketing can act on the figure without further clarification",
+      "sla": "within 1 review cycle",
+      "exception_path": "REQUEST escalates to Sales.Head",
+      "last_reinforced": "2026-09-05T22:54:28.838643Z"
+    }
+  }
+}

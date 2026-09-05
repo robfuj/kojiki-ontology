@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MYCELIUM Node Schema",
+  "type": "object",
+  "required": ["id", "domain", "type", "status", "pipeline_manifest_ref", "pipeline_validated", "public_key", "key_issued_at", "key_status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Node identifier. For non-root nodes, MUST equal parent + '.' + <local-name>"
+    },
+    "parent": {
+      "type": "string",
+      "description": "Parent node ID. Omitted for the 20 root department nodes."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain path for this node (e.g., 'marketing/seo')"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["agent", "sub-agent"],
+      "description": "Node type"
+    },
+    "spawn_reason": {
+      "type": "string",
+      "description": "Why this node was spawned"
+    },
+    "spawned_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when node was created"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "archived"],
+      "description": "Current node status"
+    },
+    "pipeline_manifest_ref": {
+      "type": "string",
+      "description": "Pointer to bot's manifest.json#transformation_pipeline (resolvability check only)"
+    },
+    "pipeline_validated": {
+      "type": "boolean",
+      "description": "Whether the bot's transformation pipeline has been validated by its own validator"
+    },
+    "public_key": {
+      "type": "string",
+      "pattern": "^ed25519:[a-f0-9]+$",
+      "description": "Ed25519 public key issued at node creation by registry"
+    },
+    "key_issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when key was issued"
+    },
+    "key_status": {
+      "type": "string",
+      "enum": ["active", "revoked", "rotated"],
+      "description": "Key status - forward-only transitions"
+    },
+    "key_revoked_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Timestamp when key was revoked (if applicable)"
+    }
+  },
+  "additionalProperties": false
+}

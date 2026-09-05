@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MYCELIUM Objective Schema",
+  "type": "object",
+  "required": ["id", "owner", "title", "horizon", "cycle", "key_results"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Objective identifier (e.g., 'obj-2026Q4-marketing-01')"
+    },
+    "owner": {
+      "type": "string",
+      "description": "Node ID that owns this objective"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable objective title"
+    },
+    "horizon": {
+      "type": "string",
+      "description": "Objective lifespan (e.g., 'quarterly', 'annual', '2-weeks', 'monthly') — not forced to 'quarterly'"
+    },
+    "cycle": {
+      "type": "string",
+      "description": "Cycle identifier (e.g., '2026-Q4')"
+    },
+    "key_results": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Array of Key Result IDs belonging to this objective"
+    }
+  },
+  "additionalProperties": false
+}
