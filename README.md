@@ -65,7 +65,7 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Three Vertical Axes
+### Three Axes
 
 | Axis | Component | Purpose |
 |------|-----------|---------|
