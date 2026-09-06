@@ -356,10 +356,8 @@ See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
 ## 🤝 Contributing
 
 1. **No closed-source dependencies** — all code MIT, external refs AGPL-3.0 (OpenViking) only
-2. **Local-first** — runs on qwen2.5:14b (M1 Max 32GB), no cloud required
-3. **Provider-agnostic** — point any LLM at `AGENT.md`
-4. **Tests required** — `python3 -m py_compile` + validator pass before PR
-5. **Design-time references only** — `consultant/` is a copy, not a dependency
+2. **Provider-agnostic** — point any LLM at `AGENT.md`
+3. **Tests required** — `python3 -m py_compile` + validator pass before PR
 
 ---
 
