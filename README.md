@@ -365,8 +365,6 @@ See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
 
 MIT — see [LICENSE](LICENSE).
 
-OpenViking (optional memory backend) is AGPL-3.0, external, not bundled.
-
 ---
 
 ## 🔗 Links
