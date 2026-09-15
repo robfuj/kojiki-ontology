@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STRATEGY Stage Output Schema",
+  "type": "object",
+  "required": ["strategy_id", "interpretation_ref", "objective", "rationale", "timeline", "success_criteria", "escalation_conditions", "decision_rights"],
+  "properties": {
+    "strategy_id": {"type": "string", "pattern": "^STRAT-\\d{3}$"},
+    "interpretation_ref": {"type": "string", "pattern": "^INT-\\d{3}$"},
+    "objective": {"type": "string", "minLength": 1},
+    "rationale": {"type": "string", "minLength": 1},
+    "timeline": {"type": "string"},
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "metric", "target", "operator", "weight"],
+        "properties": {
+          "name": {"type": "string"},
+          "metric": {"type": "string"},
+          "target": {"type": "number"},
+          "operator": {"type": "string", "enum": [">=", "<=", ">", "<", "=="]},
+          "weight": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "escalation_conditions": {"type": "array", "items": {"type": "string"}},
+    "decision_rights": {
+      "type": "object",
+      "required": ["own", "consult", "inform"],
+      "properties": {
+        "own": {"type": "string"},
+        "consult": {"type": "array", "items": {"type": "string"}},
+        "inform": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DECK Stage Output Schema",
+  "type": "object",
+  "required": ["deck_id", "output_ref", "title", "audience", "slides", "format", "generated_at"],
+  "properties": {
+    "deck_id": {
+      "type": "string",
+      "description": "Deck identifier (e.g., 'DECK-001')"
+    },
+    "output_ref": {
+      "type": "string",
+      "description": "Reference to OUTPUT stage output this deck communicates"
+    },
+    "title": {
+      "type": "string",
+      "description": "Deck title"
+    },
+    "audience": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Target departments/roles"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slide_id", "title", "layout", "content"],
+        "properties": {
+          "slide_id": { "type": "string" },
+          "title": { "type": "string", "description": "Slide title — should tell the story alone" },
+          "layout": {
+            "type": "string",
+            "enum": ["answer_first", "context", "problem", "question", "mece_grouped", "dependencies", "decision", "custom"],
+            "description": "Slide layout type"
+          },
+          "content": {
+            "type": "object",
+            "description": "Slide content — structure varies by layout"
+          }
+        }
+      },
+      "description": "Ordered slides"
+    },
+    "format": {
+      "type": "string",
+      "enum": ["markdown_slides", "html", "pdf", "pptx"],
+      "description": "Output format"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "merged_from": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "If cross-department deck: contributing department output_refs"
+    }
+  },
+  "additionalProperties": false
+}

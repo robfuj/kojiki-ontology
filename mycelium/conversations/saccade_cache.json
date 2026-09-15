@@ -1,0 +1,1366 @@
+{
+  "cache": [
+    {
+      "problem_id": "P-ABCDEF12",
+      "goal": "Define lead quality measurable terms agreed by Sales/Marketing",
+      "constraints": [
+        "2-week deadline",
+        "Use existing CRM fields"
+      ],
+      "assumptions": [
+        "CRM data accurate",
+        "Good faith engagement"
+      ],
+      "unknowns": [
+        "Current conversion by source",
+        "Sales definition of quality"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T18:44:53.552923Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "6012a6a414b8cae9"
+    },
+    {
+      "problem_id": "P-20260914185047",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T18:50:47.922231Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914185619",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T18:56:19.394371Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914195716",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T19:57:16.657300Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914200606",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T20:06:06.546342Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914201946",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T20:19:46.639249Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914204048",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T20:40:48.053116Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914204944",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T20:49:44.058403Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914221226",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:12:26.733507Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260914221227",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:12:27.931346Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260914221228",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:12:28.749164Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260914221229",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:12:29.252790Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260914223646",
+      "goal": "Create a premium yuzu drink brand for the Japanese market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:36:46.814079Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ad08a738c92727e0"
+    },
+    {
+      "problem_id": "P-20260914225813",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T22:58:13.450622Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914231049",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:10:49.143908Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914231114",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:11:14.609682Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914231732",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:17:32.587898Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232443",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:24:43.143558Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232449",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:24:49.104204Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232455",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:24:55.636029Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232808",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:28:08.085286Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232813",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:28:13.596049Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232834",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:28:34.885346Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232943",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:29:43.898352Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914232958",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:29:58.847815Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-9F8E7D6C",
+      "goal": "Develop a defined brand strategy and product specification for a premium yuzu beverage targeting US high\u2011end consumers, with a go\u2011to\u2011market plan ready for launch within 6 months",
+      "constraints": [
+        "Must comply with FDA beverage regulations",
+        "Budget limited to $2,000,000 for development and launch",
+        "Use sustainably sourced yuzu fruit",
+        "Brand positioning must align with high\u2011end market expectations",
+        "Launch timeline fixed at 6 months from project start"
+      ],
+      "assumptions": [
+        "US consumers are willing to pay a premium for exotic citrus flavors",
+        "Supply chain can provide consistent, high\u2011quality yuzu year\u2011round",
+        "Existing premium beverage distribution channels are accessible"
+      ],
+      "unknowns": [
+        "Size and purchasing power of the target high\u2011end consumer segment",
+        "Willingness to pay (price elasticity) for a premium yuzu drink",
+        "Optimal flavor profile and formulation that appeals to US high\u2011end palate",
+        "Regulatory clearance timeline and any additional labeling requirements",
+        "Cost per unit at projected production volumes",
+        "Key competitive brands and differentiation opportunities",
+        "Most effective marketing and retail channels for reaching high\u2011end consumers"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:46:40.064778Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "30201f0f87836a89"
+    },
+    {
+      "problem_id": "P-8F3A9C1D",
+      "goal": "Design, develop, and launch a premium yuzu beverage brand targeting US high-end consumers within 12 months",
+      "constraints": [
+        "Must comply with US FDA beverage regulations",
+        "Total development and launch budget must not exceed $5,000,000",
+        "Packaging must be sustainable and convey premium positioning",
+        "Brand positioning must be clearly premium in all marketing materials",
+        "Launch timeline limited to 12 months from project start",
+        "Initial distribution limited to upscale retailers and specialty stores"
+      ],
+      "assumptions": [
+        "US consumers have interest in exotic citrus flavors and are willing to pay a premium",
+        "Reliable supply chain can provide high\u2011quality yuzu at required volumes",
+        "Premium pricing strategy will be acceptable to target market",
+        "Regulatory approval process for the beverage formulation will not exceed three months"
+      ],
+      "unknowns": [
+        "Size and growth rate of the US premium yuzu (or exotic citrus) beverage market",
+        "Key competitors and their positioning in the premium beverage segment",
+        "Exact cost per unit for sourcing premium yuzu and sustainable packaging",
+        "Consumer price sensitivity and optimal price point for a premium yuzu drink",
+        "Specific FDA labeling and ingredient requirements for yuzu\u2011based beverages",
+        "Potential distribution partners and their willingness to carry a new premium brand"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:30:47.081922Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "d6d2d470370c1add"
+    },
+    {
+      "problem_id": "P-1A2B3C4D",
+      "goal": "Develop a complete brand and product definition for a premium yuzu beverage targeting US high\u2011end consumers, including brand positioning, product formulation, pricing strategy, and go\u2011to\u2011market plan, to be delivered within 6 weeks",
+      "constraints": [
+        "Must comply with US FDA beverage regulations",
+        "Price point must position the product in the top 10% of the premium non\u2011alcoholic beverage market",
+        "Ingredient sourcing must ensure \u226580% of yuzu content is from sustainable farms",
+        "Total development budget limited to $500,000",
+        "Brand assets must be deliverable in formats suitable for both retail and e\u2011commerce channels"
+      ],
+      "assumptions": [
+        "There is sufficient consumer awareness and interest in yuzu flavor among US high\u2011end shoppers",
+        "Supply chain can provide consistent, high\u2011quality yuzu fruit or concentrate within the project timeline",
+        "Target market values sustainability and premium packaging",
+        "Existing distribution partners can handle premium niche products"
+      ],
+      "unknowns": [
+        "Size of the addressable US high\u2011end market for yuzu\u2011flavored beverages",
+        "Willingness to pay and price elasticity for a premium yuzu drink",
+        "Key competitive brands and their positioning in the premium non\u2011alcoholic segment",
+        "Regulatory requirements specific to yuzu extracts and labeling claims",
+        "Cost per unit for sustainable yuzu sourcing and premium packaging options"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:37:03.070097Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "ea49659fca626ad2"
+    },
+    {
+      "problem_id": "P-9F3A2B1C",
+      "goal": "Design and launch a premium yuzu beverage brand for the US high-end market, including brand identity, product formulation, pricing strategy, and distribution plan, with a go-live target within 12 months",
+      "constraints": [
+        "Must comply with US FDA beverage regulations and labeling requirements",
+        "Initial launch budget limited to $2 million USD",
+        "Product must use sustainably sourced packaging and meet premium quality standards",
+        "Launch timeline cannot exceed 12 months from project start",
+        "Brand positioning must target consumers with annual disposable income above $100k"
+      ],
+      "assumptions": [
+        "Sufficient supply of high-quality yuzu can be secured at acceptable cost",
+        "US high-end consumers are receptive to exotic citrus flavors",
+        "Premium pricing will be accepted if product quality and branding are compelling",
+        "Existing distribution channels for premium beverages can be leveraged",
+        "Regulatory approval process will not encounter unexpected delays"
+      ],
+      "unknowns": [
+        "Size and growth rate of the US premium citrus beverage market",
+        "Consumer willingness to pay for a yuzu-based premium drink",
+        "Key competitors and their market share in the premium segment",
+        "Optimal price point that balances margin and demand",
+        "Preferred packaging formats for target consumers",
+        "Effective marketing channels to reach high-income demographics",
+        "Cost structure for sourcing yuzu and sustainable packaging"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:43:41.042815Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "7872787169870b3e"
+    },
+    {
+      "problem_id": "P-20260914A1",
+      "goal": "Develop a complete brand concept, product formulation, packaging design, and go-to-market strategy for a premium yuzu beverage targeting US high-end consumers, ready for stakeholder review within 8 weeks",
+      "constraints": [
+        "Total development budget must not exceed $500,000",
+        "All ingredients and labeling must comply with FDA food and beverage regulations",
+        "Packaging must use recyclable premium materials",
+        "Launch timeline limited to 8 weeks from project start",
+        "Brand positioning must align with high-end market expectations (price point $6\u2011$8 per unit)"
+      ],
+      "assumptions": [
+        "High-quality yuzu fruit or juice can be sourced reliably at scale",
+        "There is sufficient consumer demand for exotic, premium citrus beverages in the US luxury segment",
+        "Distribution partners for premium beverage channels (upscale retailers, specialty stores, premium e\u2011commerce) are accessible",
+        "The marketing team can allocate resources for high\u2011impact branding and experiential campaigns"
+      ],
+      "unknowns": [
+        "Preferred flavor profile nuances and sweetness levels for US high-end consumers",
+        "Willingness to pay and optimal price point within the $6\u2011$8 range",
+        "Key competitive brands and their market share in the premium citrus beverage category",
+        "Regulatory requirements specific to yuzu-derived ingredients (e.g., allergen labeling, organic certification)",
+        "Supply chain lead times and cost structure for premium packaging materials"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:44:29.498965Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "06c7c7d08d71e694"
+    },
+    {
+      "problem_id": "P-9F2A3B4C",
+      "goal": "Design, develop, and launch a premium yuzu beverage brand targeting US high-end consumers, achieving at least $1M in sales within the first 12 months of launch",
+      "constraints": [
+        "Initial product development budget not to exceed $500,000",
+        "Compliance with FDA food and beverage regulations",
+        "Use of sustainably sourced yuzu and premium packaging materials",
+        "Brand positioning must align with luxury market expectations",
+        "Launch timeline limited to 9 months from project start",
+        "Distribution limited to upscale retail and specialty channels in the US"
+      ],
+      "assumptions": [
+        "There is sufficient consumer interest in premium citrus-based beverages in the US luxury segment",
+        "High-quality yuzu can be sourced reliably at scale",
+        "Premium packaging will be perceived as adding value by target customers",
+        "Marketing budget will be allocated to reach high-income demographics",
+        "Regulatory approval can be obtained within the project timeline"
+      ],
+      "unknowns": [
+        "Exact price elasticity and willingness to pay of US high-end consumers for a yuzu drink",
+        "Competitive landscape and positioning of existing premium citrus beverages",
+        "Cost per unit for sustainably sourced yuzu and premium packaging at target volumes",
+        "Key distribution partners and their acceptance criteria for new luxury beverage brands",
+        "Regulatory hurdles specific to yuzu as an ingredient in the US market"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:47:18.439792Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "1d40f59da90989b3"
+    },
+    {
+      "problem_id": "P-9F8E7D4C",
+      "goal": "Develop a launch strategy for a premium yuzu beverage brand targeting US high-end consumers, including brand positioning, product formulation, pricing, packaging, and distribution plan, to be completed within 8 weeks",
+      "constraints": [
+        "Must comply with US FDA beverage regulations",
+        "Total budget \u2264 $500,000",
+        "Packaging must be sustainable (e.g., recyclable or biodegradable)",
+        "Target retail price point $5\u2013$7 per unit",
+        "Launch timeline of 8 weeks from project start",
+        "Brand must differentiate from existing citrus and premium ready\u2011to\u2011drink beverages"
+      ],
+      "assumptions": [
+        "There is measurable demand for premium exotic citrus drinks in the US high\u2011end market",
+        "A reliable supply chain for high\u2011quality yuzu fruit or concentrate can be secured",
+        "Target consumers value sustainability, exotic flavors, and premium branding",
+        "Regulatory approval timelines follow standard FDA processes for non\u2011alcoholic beverages"
+      ],
+      "unknowns": [
+        "Current market size and growth rate for premium citrus/ready\u2011to\u2011drink beverages in the US",
+        "Consumer willingness to pay $5\u2013$7 for a yuzu\u2011based drink",
+        "Availability, seasonality, and cost of premium yuzu fruit or concentrate",
+        "Key competitors and their positioning in the high\u2011end RTD segment",
+        "Regulatory classification of yuzu (fruit juice vs flavoring) and any specific labeling requirements",
+        "Preferred packaging formats (glass bottle, aluminum can, etc.) among the target segment"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:48:13.552385Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "35b4d83af300d759"
+    },
+    {
+      "problem_id": "P-20260914234924",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:49:24.953792Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914234942",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:49:42.854493Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914234957",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:49:57.062170Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235158",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:51:58.439275Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235214",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:52:14.086647Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235222",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:52:22.173537Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235728",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:57:28.331722Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235756",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:57:56.556787Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260914235856",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-14T23:58:56.057535Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915000723",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:07:23.863820Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915001000",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:10:00.725285Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915001037",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:10:37.932871Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915001305",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:13:05.492976Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915001540",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:15:40.559666Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915001626",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:16:26.202858Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915002128",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:21:28.058132Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915002148",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:21:48.435603Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915002313",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:23:13.675424Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915002351",
+      "goal": "I'm trying to figure out what market would be best to start a business",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:23:51.572601Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "f5ab6a951a047126"
+    },
+    {
+      "problem_id": "P-20260915005346",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:53:46.321839Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915005658",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T00:56:58.057668Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915012216",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T01:22:16.529825Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915012252",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T01:22:52.204440Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
+    }
+  ]
+}

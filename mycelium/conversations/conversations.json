@@ -1,0 +1,2729 @@
+{
+  "conversations": [
+    {
+      "id": "CONV-DFB7BECA71E6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:35:59.554335Z",
+      "updated_at": "2026-09-12T07:35:59.554339Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0A2B4015DC8A",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:39:55.526644Z",
+      "updated_at": "2026-09-12T07:39:55.526646Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8D0FA08A029D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:45:57.981067Z",
+      "updated_at": "2026-09-12T07:45:57.981069Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3A802FEAD0A5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:45:58.693216Z",
+      "updated_at": "2026-09-12T07:45:58.693218Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6B47C4093FB8",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:45:58.940650Z",
+      "updated_at": "2026-09-12T07:45:58.940652Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7FEDECE304DF",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:45:59.172412Z",
+      "updated_at": "2026-09-12T07:45:59.172414Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D0C023FCF3FE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:46:01.351440Z",
+      "updated_at": "2026-09-12T07:46:01.351442Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F599F80E49F5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:57:30.880625Z",
+      "updated_at": "2026-09-12T07:57:30.880627Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-71479529999F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:58:04.921783Z",
+      "updated_at": "2026-09-12T07:58:04.921785Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4C9E116C2BD2",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:58:05.725901Z",
+      "updated_at": "2026-09-12T07:58:05.725903Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AA49B5DD167A",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:58:05.932838Z",
+      "updated_at": "2026-09-12T07:58:05.932841Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-18D0AFAE022B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T07:58:06.188454Z",
+      "updated_at": "2026-09-12T07:58:06.188456Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A0FA7AB3D1B7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T07:58:08.760378Z",
+      "updated_at": "2026-09-12T07:58:08.760385Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F6170B8F7DA9",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:05:41.663176Z",
+      "updated_at": "2026-09-12T08:05:41.663179Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3CF98A98D730",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:05:42.430606Z",
+      "updated_at": "2026-09-12T08:05:42.430608Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D137A77A1689",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:05:42.631854Z",
+      "updated_at": "2026-09-12T08:05:42.631857Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-34333763DBFF",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:05:42.856884Z",
+      "updated_at": "2026-09-12T08:05:42.856885Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1CA17218FC96",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:05:45.266333Z",
+      "updated_at": "2026-09-12T08:05:45.266336Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DD1D25F05564",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:18:11.334046Z",
+      "updated_at": "2026-09-12T08:18:11.334048Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-359A6C32FA50",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:18:12.366745Z",
+      "updated_at": "2026-09-12T08:18:12.366747Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7BCAE910FCF3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:18:12.645007Z",
+      "updated_at": "2026-09-12T08:18:12.645010Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7AC0FD6C2DAF",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:18:12.941106Z",
+      "updated_at": "2026-09-12T08:18:12.941109Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D3A259FD144E",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:18:15.715696Z",
+      "updated_at": "2026-09-12T08:18:15.715698Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D732EFEDEE89",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:21:24.444253Z",
+      "updated_at": "2026-09-12T08:21:24.444255Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1EBE3D7D2064",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:21:25.276642Z",
+      "updated_at": "2026-09-12T08:21:25.276645Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3AA4821BBFDE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:21:25.539834Z",
+      "updated_at": "2026-09-12T08:21:25.539838Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-55BE613C49E7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:21:25.838836Z",
+      "updated_at": "2026-09-12T08:21:25.838840Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-68680416FA5F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:21:28.619063Z",
+      "updated_at": "2026-09-12T08:21:28.619065Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3DF58B1741BE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:24:51.466426Z",
+      "updated_at": "2026-09-12T08:24:51.466428Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A55C63849DD0",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:24:52.294440Z",
+      "updated_at": "2026-09-12T08:24:52.294446Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0D1A7AEA4BDC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:24:52.530060Z",
+      "updated_at": "2026-09-12T08:24:52.530063Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1D35D57E0417",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:24:52.786057Z",
+      "updated_at": "2026-09-12T08:24:52.786059Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B9C0E5DB733B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:24:55.687921Z",
+      "updated_at": "2026-09-12T08:24:55.687924Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-85B57242C98B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:25:31.924645Z",
+      "updated_at": "2026-09-12T08:25:31.924648Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-03954AD3AC7F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering.Technology"
+      ],
+      "created_at": "2026-09-12T08:38:44.862468Z",
+      "updated_at": "2026-09-12T08:38:44.862471Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A378199C7978",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:38:45.830851Z",
+      "updated_at": "2026-09-12T08:38:45.830853Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-58507EB2AC6F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:38:46.111966Z",
+      "updated_at": "2026-09-12T08:38:46.111969Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AF92184BA619",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:38:46.405257Z",
+      "updated_at": "2026-09-12T08:38:46.405262Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1C7C318D522B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering.Technology",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T08:38:49.564054Z",
+      "updated_at": "2026-09-12T08:38:49.564056Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EFC9BF22C140",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:08:14.450030Z",
+      "updated_at": "2026-09-12T09:08:14.450032Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DB439D5C54F6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:13:15.453108Z",
+      "updated_at": "2026-09-12T09:13:15.453109Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-622BA7177266",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:16:32.739963Z",
+      "updated_at": "2026-09-12T09:16:32.739965Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8B69B9CFBBE3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:16:56.321432Z",
+      "updated_at": "2026-09-12T09:16:56.321434Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EF49DBE820F5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:16:56.950176Z",
+      "updated_at": "2026-09-12T09:16:56.950178Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-247D14150F22",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:16:57.148247Z",
+      "updated_at": "2026-09-12T09:16:57.148250Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-209BBD8A11AD",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:16:57.374940Z",
+      "updated_at": "2026-09-12T09:16:57.374942Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B8CE54928D89",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:17:01.128911Z",
+      "updated_at": "2026-09-12T09:17:01.128912Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-100CE295B4C5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:26:16.904114Z",
+      "updated_at": "2026-09-12T09:26:16.904117Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-10BCFDD63167",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:27:23.001069Z",
+      "updated_at": "2026-09-12T09:27:23.001071Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-70D7DDACCD33",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T09:28:39.358657Z",
+      "updated_at": "2026-09-12T09:28:39.358659Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9035E304F34D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T09:35:09.351705Z",
+      "updated_at": "2026-09-12T09:35:09.351707Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-503C9AA0B507",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:03:19.122263Z",
+      "updated_at": "2026-09-12T10:03:19.122265Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-876358F76D37",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T10:03:45.978909Z",
+      "updated_at": "2026-09-12T10:03:45.978912Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-83521BC7E54E",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:03:46.814475Z",
+      "updated_at": "2026-09-12T10:03:46.814477Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-86DBD7D8D820",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:03:47.089832Z",
+      "updated_at": "2026-09-12T10:03:47.089834Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-072A8A6CBBCB",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T10:03:47.379743Z",
+      "updated_at": "2026-09-12T10:03:47.379744Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7620A47472AA",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T10:03:50.396284Z",
+      "updated_at": "2026-09-12T10:03:50.396286Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BCD408FACAA2",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:13:41.206770Z",
+      "updated_at": "2026-09-12T10:13:41.206772Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DBB8E21BC4AC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:14:01.171400Z",
+      "updated_at": "2026-09-12T10:14:01.171403Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1BDCABAE3EA5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:14:02.131612Z",
+      "updated_at": "2026-09-12T10:14:02.131615Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EF0DB2AD9E3E",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:14:02.417936Z",
+      "updated_at": "2026-09-12T10:14:02.417939Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6374AA07FCFE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T10:14:02.725560Z",
+      "updated_at": "2026-09-12T10:14:02.725564Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-91F46B0B0779",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:14:06.125255Z",
+      "updated_at": "2026-09-12T10:14:06.125257Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-464BEF85E0E5",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:16:09.584437Z",
+      "updated_at": "2026-09-12T10:16:09.584439Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-47E40A94A964",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:17:11.368170Z",
+      "updated_at": "2026-09-12T10:17:11.368172Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A41170D866ED",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:17:12.256721Z",
+      "updated_at": "2026-09-12T10:17:12.256725Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AB5EC1ED8856",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-12T10:17:12.556877Z",
+      "updated_at": "2026-09-12T10:17:12.556880Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FD038EB534B7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:17:12.873684Z",
+      "updated_at": "2026-09-12T10:17:12.873688Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-78D3252CFC59",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-12T10:17:16.360469Z",
+      "updated_at": "2026-09-12T10:17:16.360471Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-ECD035F209B8",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:34:57.414873Z",
+      "updated_at": "2026-09-13T01:34:57.414877Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A38AA06D9A3C",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:34:58.306518Z",
+      "updated_at": "2026-09-13T01:34:58.306520Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-902490DCAC7D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:34:58.633972Z",
+      "updated_at": "2026-09-13T01:34:58.633974Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-2E21616A3564",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T01:34:58.935729Z",
+      "updated_at": "2026-09-13T01:34:58.935731Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6EF41A1A21E7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:35:03.021837Z",
+      "updated_at": "2026-09-13T01:35:03.021841Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-382338898D55",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:39:22.791885Z",
+      "updated_at": "2026-09-13T01:39:22.791887Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5BAC80ADFC84",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T01:39:23.774082Z",
+      "updated_at": "2026-09-13T01:39:23.774085Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-478B6E4F903B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:39:24.079017Z",
+      "updated_at": "2026-09-13T01:39:24.079020Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-16E7635A74C3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T01:39:24.380896Z",
+      "updated_at": "2026-09-13T01:39:24.380899Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-076C5EAB6CD2",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T01:39:28.398917Z",
+      "updated_at": "2026-09-13T01:39:28.398919Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9C9EB5C581EF",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:02:02.903200Z",
+      "updated_at": "2026-09-13T02:02:02.903202Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-61C7C29E68EA",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:02:03.859550Z",
+      "updated_at": "2026-09-13T02:02:03.859552Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-73580981390C",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:02:04.131848Z",
+      "updated_at": "2026-09-13T02:02:04.131850Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D27CA320154B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:02:04.425520Z",
+      "updated_at": "2026-09-13T02:02:04.425523Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-22EB4E515F24",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:02:08.657217Z",
+      "updated_at": "2026-09-13T02:02:08.657219Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9D0D7F397733",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:09:18.427290Z",
+      "updated_at": "2026-09-13T02:09:18.427292Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-37CFF9CEF4CC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:09:19.288187Z",
+      "updated_at": "2026-09-13T02:09:19.288189Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-669140DBE71C",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:09:19.555756Z",
+      "updated_at": "2026-09-13T02:09:19.555758Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-ABC6754E3425",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:09:19.838624Z",
+      "updated_at": "2026-09-13T02:09:19.838625Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DFCC1FC38793",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:09:23.604381Z",
+      "updated_at": "2026-09-13T02:09:23.604383Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BACE323CE0D0",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:33:30.970686Z",
+      "updated_at": "2026-09-13T02:33:30.970688Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9EA02CA19179",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:33:31.804847Z",
+      "updated_at": "2026-09-13T02:33:31.804849Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0AD685A694C7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:33:32.080080Z",
+      "updated_at": "2026-09-13T02:33:32.080082Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BB578B81021B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T02:33:32.350739Z",
+      "updated_at": "2026-09-13T02:33:32.350742Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-65BF18869FFC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T02:33:36.205445Z",
+      "updated_at": "2026-09-13T02:33:36.205447Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A3C00BE20A16",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:10:55.475089Z",
+      "updated_at": "2026-09-13T03:10:55.475093Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3800ED4CFEBC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:10:56.235974Z",
+      "updated_at": "2026-09-13T03:10:56.235975Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4299A3C40CD3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:10:56.471682Z",
+      "updated_at": "2026-09-13T03:10:56.471684Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D7E45800E3C6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:10:56.738317Z",
+      "updated_at": "2026-09-13T03:10:56.738319Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E5842C3CAAF6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:11:00.262077Z",
+      "updated_at": "2026-09-13T03:11:00.262079Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C2959B3369D7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:36:04.612610Z",
+      "updated_at": "2026-09-13T03:36:04.612613Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E9062E4CA5C0",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:36:05.473986Z",
+      "updated_at": "2026-09-13T03:36:05.473991Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FF8B914A120F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:36:05.730809Z",
+      "updated_at": "2026-09-13T03:36:05.730811Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9DBE74567B44",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:36:06.098598Z",
+      "updated_at": "2026-09-13T03:36:06.098600Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EB845EEAE761",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:36:10.219946Z",
+      "updated_at": "2026-09-13T03:36:10.219948Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-71F9AB6F44FE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:44:15.320991Z",
+      "updated_at": "2026-09-13T03:44:15.320993Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EEE161874195",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:44:16.225666Z",
+      "updated_at": "2026-09-13T03:44:16.225668Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BBBB6AA6E566",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:44:16.498739Z",
+      "updated_at": "2026-09-13T03:44:16.498741Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E52B7DC0A0B3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T03:44:16.863335Z",
+      "updated_at": "2026-09-13T03:44:16.863336Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DFC597525F41",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T03:44:17.316965Z",
+      "updated_at": "2026-09-13T03:44:17.316968Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F1EC18CD6C66",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:02:12.387060Z",
+      "updated_at": "2026-09-13T04:02:12.387062Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AC84520E1A9D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:02:13.177805Z",
+      "updated_at": "2026-09-13T04:02:13.177808Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-76178BB216CE",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:02:13.435554Z",
+      "updated_at": "2026-09-13T04:02:13.435556Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-91AD4AF26EA7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:02:13.716586Z",
+      "updated_at": "2026-09-13T04:02:13.716588Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-64C4A18E4CC3",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:02:14.135562Z",
+      "updated_at": "2026-09-13T04:02:14.135565Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-96DED96F4E38",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:10:08.149095Z",
+      "updated_at": "2026-09-13T04:10:08.149097Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-96D97D568534",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:10:08.932278Z",
+      "updated_at": "2026-09-13T04:10:08.932280Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0F2544EE02E7",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:10:09.176846Z",
+      "updated_at": "2026-09-13T04:10:09.176848Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8A353CD0F03F",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:10:09.430198Z",
+      "updated_at": "2026-09-13T04:10:09.430199Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D9CC34D3F706",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:10:09.935929Z",
+      "updated_at": "2026-09-13T04:10:09.935932Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-36E046D82997",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:21:12.792635Z",
+      "updated_at": "2026-09-13T04:21:12.792637Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D092AAC44EA8",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:21:13.653278Z",
+      "updated_at": "2026-09-13T04:21:13.653280Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3D8E7936519C",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:21:13.916159Z",
+      "updated_at": "2026-09-13T04:21:13.916160Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8AA196B24544",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T04:21:14.181245Z",
+      "updated_at": "2026-09-13T04:21:14.181250Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9F9A5FC6BC72",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T04:21:14.635143Z",
+      "updated_at": "2026-09-13T04:21:14.635145Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-066099F852E2",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T07:44:37.891552Z",
+      "updated_at": "2026-09-13T07:44:37.891555Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-36C5E46ABC40",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T07:44:38.762167Z",
+      "updated_at": "2026-09-13T07:44:38.762169Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B0A14D3B6BF8",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T07:44:39.021980Z",
+      "updated_at": "2026-09-13T07:44:39.021982Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-827B5F1D60A6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T07:44:39.299542Z",
+      "updated_at": "2026-09-13T07:44:39.299544Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A5BA48A8865B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T07:44:39.779862Z",
+      "updated_at": "2026-09-13T07:44:39.779865Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-126E4F36860A",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T08:37:40.268138Z",
+      "updated_at": "2026-09-13T08:37:40.268140Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8A1E8AD68B56",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T08:37:41.122843Z",
+      "updated_at": "2026-09-13T08:37:41.122846Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7F40D1C92D5B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T08:37:41.411981Z",
+      "updated_at": "2026-09-13T08:37:41.411983Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-42C25D04E7A1",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T08:37:41.750684Z",
+      "updated_at": "2026-09-13T08:37:41.750688Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C63C679CB844",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T08:37:42.191144Z",
+      "updated_at": "2026-09-13T08:37:42.191146Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3D1F900E6F8A",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T14:43:40.191047Z",
+      "updated_at": "2026-09-13T14:43:40.191050Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-37CD3E437925",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T14:43:40.965426Z",
+      "updated_at": "2026-09-13T14:43:40.965427Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B71B9EA7D922",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T14:43:41.217209Z",
+      "updated_at": "2026-09-13T14:43:41.217211Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C3B980B44BB4",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-13T14:43:41.486472Z",
+      "updated_at": "2026-09-13T14:43:41.486476Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-79EB20C50A22",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-13T14:43:41.922586Z",
+      "updated_at": "2026-09-13T14:43:41.922587Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3D73F3251AC6",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the Japanese",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Finance",
+        "Marketing",
+        "Sales",
+        "Legal",
+        "Engineering",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T20:49:44.367934Z",
+      "updated_at": "2026-09-14T20:49:44.367940Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7D90E09B0DEC",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Marketing",
+        "Legal",
+        "People & Comms",
+        "Engineering",
+        "Sales",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T22:12:26.963164Z",
+      "updated_at": "2026-09-14T22:12:26.963166Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5319AF78C0F4",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Finance",
+        "Operations",
+        "Sales",
+        "Marketing",
+        "Legal",
+        "Engineering"
+      ],
+      "created_at": "2026-09-14T22:12:28.181275Z",
+      "updated_at": "2026-09-14T22:12:28.181279Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D4D4585197BD",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "People & Comms",
+        "Engineering",
+        "Finance",
+        "Sales",
+        "Marketing",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T22:12:28.582480Z",
+      "updated_at": "2026-09-14T22:12:28.582481Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7F7F883A61B4",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Operations",
+        "Sales",
+        "Engineering",
+        "Legal",
+        "Marketing",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T22:12:28.986207Z",
+      "updated_at": "2026-09-14T22:12:28.986211Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4FC069369C71",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Legal",
+        "Operations",
+        "Finance",
+        "People & Comms",
+        "Engineering",
+        "Sales"
+      ],
+      "created_at": "2026-09-14T22:12:29.409082Z",
+      "updated_at": "2026-09-14T22:12:29.409085Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F033EE75E002",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the Japanese",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Engineering",
+        "Marketing",
+        "Finance",
+        "Operations",
+        "Legal",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T22:36:47.159207Z",
+      "updated_at": "2026-09-14T22:36:47.159209Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-88A464A11A62",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Marketing",
+        "People & Comms",
+        "Sales",
+        "Engineering",
+        "Finance",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T22:58:13.717954Z",
+      "updated_at": "2026-09-14T22:58:13.717959Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FE7592705521",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Legal",
+        "Finance",
+        "Sales",
+        "Marketing",
+        "Engineering",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T23:10:49.419999Z",
+      "updated_at": "2026-09-14T23:10:49.420002Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A02DA0738EC1",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Finance",
+        "People & Comms",
+        "Marketing",
+        "Legal",
+        "Sales",
+        "Engineering"
+      ],
+      "created_at": "2026-09-14T23:11:14.815331Z",
+      "updated_at": "2026-09-14T23:11:14.815333Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5D9DBAAB1CAC",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Finance",
+        "Sales",
+        "People & Comms",
+        "Marketing",
+        "Engineering",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T23:17:32.816696Z",
+      "updated_at": "2026-09-14T23:17:32.816697Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AF8F80C584DA",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Operations",
+        "Engineering",
+        "Finance",
+        "Sales",
+        "People & Comms",
+        "Marketing"
+      ],
+      "created_at": "2026-09-14T23:24:43.366293Z",
+      "updated_at": "2026-09-14T23:24:43.366295Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4D1FBADD4CE5",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Marketing",
+        "Operations",
+        "Engineering",
+        "Sales",
+        "People & Comms",
+        "Finance"
+      ],
+      "created_at": "2026-09-14T23:24:49.320830Z",
+      "updated_at": "2026-09-14T23:24:49.320833Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7E570C7B03D6",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Legal",
+        "People & Comms",
+        "Finance",
+        "Sales",
+        "Operations",
+        "Marketing"
+      ],
+      "created_at": "2026-09-14T23:24:55.862514Z",
+      "updated_at": "2026-09-14T23:24:55.862519Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-72A99771C80D",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Sales",
+        "Legal",
+        "Engineering",
+        "Operations",
+        "Marketing",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T23:28:08.336818Z",
+      "updated_at": "2026-09-14T23:28:08.336822Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B4111FA06AE2",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Marketing",
+        "Engineering",
+        "Sales",
+        "Legal",
+        "Finance",
+        "Operations"
+      ],
+      "created_at": "2026-09-14T23:28:13.797156Z",
+      "updated_at": "2026-09-14T23:28:13.797157Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7C2E03CB981E",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Operations",
+        "Legal",
+        "Engineering",
+        "Finance",
+        "People & Comms",
+        "Marketing"
+      ],
+      "created_at": "2026-09-14T23:28:35.087650Z",
+      "updated_at": "2026-09-14T23:28:35.087652Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AF1A57AFA252",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Operations",
+        "Marketing",
+        "Engineering",
+        "Legal",
+        "Finance",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T23:29:45.864940Z",
+      "updated_at": "2026-09-14T23:29:45.864943Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1C54BB5411B9",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Engineering",
+        "People & Comms",
+        "Operations",
+        "Finance",
+        "Legal",
+        "Sales"
+      ],
+      "created_at": "2026-09-14T23:30:00.775925Z",
+      "updated_at": "2026-09-14T23:30:00.775927Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BA47374C53CF",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Marketing",
+        "Legal",
+        "Operations",
+        "Engineering",
+        "Finance",
+        "Sales"
+      ],
+      "created_at": "2026-09-14T23:49:36.024819Z",
+      "updated_at": "2026-09-14T23:49:36.024822Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3F8910AE633E",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Legal",
+        "Finance",
+        "Operations",
+        "Engineering",
+        "Marketing",
+        "Sales"
+      ],
+      "created_at": "2026-09-14T23:49:51.690978Z",
+      "updated_at": "2026-09-14T23:49:51.690980Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-01B290419D02",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing",
+        "Finance",
+        "Sales",
+        "People & Comms",
+        "Operations",
+        "Legal"
+      ],
+      "created_at": "2026-09-14T23:50:02.243235Z",
+      "updated_at": "2026-09-14T23:50:02.243238Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-507895A5857E",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Legal",
+        "Operations",
+        "Sales",
+        "People & Comms",
+        "Finance",
+        "Marketing"
+      ],
+      "created_at": "2026-09-14T23:52:07.811097Z",
+      "updated_at": "2026-09-14T23:52:07.811100Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3E3EB5FD594C",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Marketing",
+        "Operations",
+        "Engineering",
+        "Finance",
+        "Legal",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T23:52:16.027666Z",
+      "updated_at": "2026-09-14T23:52:16.027669Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4565C86B6ED0",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Operations",
+        "Engineering",
+        "Legal",
+        "Sales",
+        "People & Comms",
+        "Marketing"
+      ],
+      "created_at": "2026-09-14T23:52:28.086826Z",
+      "updated_at": "2026-09-14T23:52:28.086829Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A0322245B5DF",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Operations",
+        "Sales",
+        "Finance",
+        "People & Comms",
+        "Marketing",
+        "Legal"
+      ],
+      "created_at": "2026-09-14T23:57:37.633440Z",
+      "updated_at": "2026-09-14T23:57:37.633446Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-30854CB93CE7",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Marketing",
+        "Sales",
+        "Legal",
+        "Engineering",
+        "Operations",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-14T23:58:01.869511Z",
+      "updated_at": "2026-09-14T23:58:01.869515Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-675DE00E77A0",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "People & Comms",
+        "Operations",
+        "Engineering",
+        "Marketing",
+        "Legal",
+        "Finance"
+      ],
+      "created_at": "2026-09-14T23:59:01.832623Z",
+      "updated_at": "2026-09-14T23:59:01.832625Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A3CB245E612E",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Operations",
+        "Marketing",
+        "Legal",
+        "Engineering",
+        "Finance",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T00:07:25.850543Z",
+      "updated_at": "2026-09-15T00:07:25.850549Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DAFEC34442E5",
+      "title": "Cross-Dept Coordination: I'm trying to figure out what market would be best",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Sales",
+        "Marketing",
+        "Legal",
+        "Engineering",
+        "People & Comms",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T00:10:11.833475Z",
+      "updated_at": "2026-09-15T00:10:11.833477Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-ED6A10B5A1A0",
+      "title": "Cross-Dept Coordination: I'm trying to figure out what market would be best",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Engineering",
+        "Sales",
+        "Operations",
+        "Marketing",
+        "People & Comms",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T00:10:44.931064Z",
+      "updated_at": "2026-09-15T00:10:44.931066Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EF306D0B0BEF",
+      "title": "Cross-Dept Coordination: I'm trying to figure out what market would be best",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Sales",
+        "Legal",
+        "Engineering",
+        "Operations",
+        "Finance",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T00:13:23.107403Z",
+      "updated_at": "2026-09-15T00:13:23.107406Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    }
+  ]
+}
