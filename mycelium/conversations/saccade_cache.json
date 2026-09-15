@@ -1100,27 +1100,25 @@
     },
     {
       "problem_id": "P-20260915001305",
-      "goal": "I'm trying to figure out what market would be best to start a business",
+      "goal": "Create a beef broth brand for the Canadian market",
       "constraints": [
-        "Timeline as specified",
-        "Budget as specified",
-        "Regulatory compliance"
+        "Operate within Canadian food regulations",
+        "Maintain production costs under $500,000 per year"
       ],
       "assumptions": [
-        "Stakeholders will engage",
-        "Data is accessible",
-        "Team capacity available"
+        "There is consumer demand for premium beef broth in Canada",
+        "Existing beef broth brands do not fully meet customer needs"
       ],
       "unknowns": [
-        "Detailed requirements",
-        "Technical feasibility",
-        "Market conditions"
+        "Target customer segments and their preferences",
+        "Optimal pricing and packaging for the Canadian market",
+        "Production and distribution capabilities required"
       ],
       "department": "Marketing",
-      "created_at": "2026-09-15T00:13:05.492976Z",
+      "created_at": "2026-09-15T22:49:57.062767Z",
       "usage_count": 0,
       "last_used": "",
-      "similarity_hash": "f5ab6a951a047126"
+      "similarity_hash": "58b417e3dd67975d"
     },
     {
       "problem_id": "P-20260915001540",
@@ -1385,6 +1383,662 @@
       "usage_count": 0,
       "last_used": "",
       "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-12345678",
+      "goal": "Design a conversation app where agents and a narrator engage in a story, similar to Kyarapu, within 4 weeks",
+      "constraints": [
+        "Must be a text-based interface",
+        "Narrator must be a distinct agent",
+        "User must be able to control the story"
+      ],
+      "assumptions": [
+        "Users will engage with the app for at least 30 minutes",
+        "The story will be engaging and coherent"
+      ],
+      "unknowns": [
+        "What is the optimal narrative structure for user engagement",
+        "How to balance user control and story coherence",
+        "What is the ideal number of agents for a compelling story"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T06:00:34.525973Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "c4bedc71a8d88bfd"
+    },
+    {
+      "problem_id": "P-COS-SAC-202609150645",
+      "goal": "Define a conversation app where the narrator is the head agent and the story features agents as characters",
+      "constraints": [
+        "Similar to kyarapu, but with agents and narrator",
+        "Must be a conversation app",
+        "Head agent is the narrator"
+      ],
+      "assumptions": [
+        "Kyarapu's conversation flow can be adapted",
+        "Agents and narrator can be effectively used in a conversation app"
+      ],
+      "unknowns": [
+        "Current conversation app design principles",
+        "Effective ways to integrate agents and narrator",
+        "Best practices for storytelling in conversation apps"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T06:45:26.276744Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "4f3b8f4bcea4ba86"
+    },
+    {
+      "problem_id": "P001",
+      "goal": "Design a sustainable and efficient public transportation system for a metropolitan area with a population of over 1 million people.",
+      "constraints": {
+        "financial": "Budget of $500 million for the initial phase.",
+        "regulatory": "Compliance with existing transportation laws and regulations.",
+        "environmental": "Minimize carbon footprint and reduce air pollution."
+      },
+      "assumptions": {
+        "population growth": "Assume a 2% annual population growth rate.",
+        "transportation demand": "Assume a 10% increase in transportation demand over the next 5 years."
+      },
+      "unknowns": {
+        "public acceptance": "How will the public react to the new transportation system?",
+        "infrastructure costs": "What will be the total cost of building and maintaining the infrastructure?"
+      },
+      "department": "Marketing",
+      "created_at": "2026-09-15T07:51:00.768671Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "3100eebd5c2dedb0"
+    },
+    {
+      "problem_id": "001",
+      "goal": "Develop a personalized meal planning system for individuals with dietary restrictions",
+      "constraints": "Limited user engagement, strict data privacy, and scalability for large user bases",
+      "assumptions": "Users will have a smartphone with internet access, and a willingness to input dietary information",
+      "unknowns": "Optimal user interface design, effective data collection methods, and potential biases in user input",
+      "department": "Marketing",
+      "created_at": "2026-09-15T14:30:01.183862Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "effe9923ad2c8af6"
+    },
+    {
+      "problem_id": "P-202309260001",
+      "goal": "Develop a digital platform to streamline the process of coordinating with stakeholders for large-scale events.",
+      "constraints": [
+        "Timeline: 6 months",
+        "Budget: $200,000",
+        "Regulatory compliance with GDPR and CCPA",
+        "Integration with existing CRM system"
+      ],
+      "assumptions": [
+        "Stakeholders will be willing to adopt the new platform",
+        "The platform will be user-friendly and intuitive",
+        "The existing CRM system will be compatible with the new platform"
+      ],
+      "unknowns": [
+        "The exact requirements of the stakeholders",
+        "The potential technical challenges in integrating with the existing CRM system",
+        "The optimal user interface and user experience for the platform"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T14:50:51.904928Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "d330c7f2a847f4bd"
+    },
+    {
+      "problem_id": "P-202209150001",
+      "goal": "Increase sales by 15% within the next 6 months",
+      "constraints": [
+        "Budget under $500K",
+        "Timeline: 6 months",
+        "Regulatory compliance with GDPR"
+      ],
+      "assumptions": [
+        "Customer demand for our product remains stable",
+        "Competitor pricing will not significantly impact our sales"
+      ],
+      "unknowns": [
+        "Effect of seasonal fluctuations on sales",
+        "Potential impact of new competitor entry on market share"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T15:00:50.660031Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "a11d8f9abe2d4633"
+    },
+    {
+      "problem_id": "P-20230915001305",
+      "goal": "Design and develop a conversation app where users engage with a story featuring agents as characters, with the head agent serving as the narrator.",
+      "constraints": [
+        "Target audience: users familiar with interactive storytelling",
+        "Story length: 10-20 minutes",
+        "User interface: mobile-friendly and accessible",
+        "Technical requirements: integration with existing chat platforms"
+      ],
+      "assumptions": [
+        "Users will engage with the story and interact with the agents",
+        "The head agent will effectively guide the user through the story",
+        "The story will be engaging and immersive enough to hold user attention"
+      ],
+      "unknowns": [
+        "Optimal story length for user engagement",
+        "Effective ways to convey the narrator's role and agency",
+        "Technical limitations of existing chat platforms and potential workarounds"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T15:09:31.040898Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "3eda9bf3dedc2ee6"
+    },
+    {
+      "problem_id": "P-20260915160510",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T16:05:10.589610Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915163635",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T16:36:35.869941Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915164657",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T16:46:57.944125Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915165352",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T16:53:52.767638Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915165855",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T16:58:55.817389Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915171239",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T17:12:39.802664Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915172340",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T17:23:40.868789Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915181823",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:18:23.912801Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915182405",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:24:05.958888Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915183628",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:36:28.300578Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915184136",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:41:36.790627Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915184434",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:44:34.816390Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915184905",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:49:05.146563Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915185137",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:51:37.600826Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915185358",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:53:58.960382Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260915185400",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T18:54:00.311349Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260915193054",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T19:30:54.854346Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915193147",
+      "goal": "I want to create a conversation app, similar to kyarapu but the characters in the story are agents and the head agent is the narrator",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T19:31:47.566431Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "91f281a9b8fd7fb2"
+    },
+    {
+      "problem_id": "P-20260915193616",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T19:36:16.206625Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20260915193617",
+      "goal": "Launch a referral program to shift 30% of paid budget to referral channel and improve lead quality.",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T19:36:17.326669Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "55ab30b8f775237e"
+    },
+    {
+      "problem_id": "P-20230415001305",
+      "goal": "Create a conversation app where the characters are agents and the head agent is the narrator, similar to kyarapu",
+      "constraints": [
+        "App must be developed within 6 months",
+        "Development budget cannot exceed $200,000",
+        "App must comply with all applicable data privacy regulations"
+      ],
+      "assumptions": [
+        "There is a market demand for a conversation app with agent characters and a narrator",
+        "The necessary technologies (e.g., natural language processing, dialogue management) are available and can be integrated into the app",
+        "The development team has the required skills and experience to build the app"
+      ],
+      "unknowns": [
+        "The specific features and functionalities that users would find most engaging",
+        "The optimal monetization model for the app (e.g., in-app purchases, subscription, advertising)",
+        "The level of competition in the conversation app market and how to differentiate the product"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T19:57:29.793236Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "e59ed151bbe23cc1"
     }
   ]
 }

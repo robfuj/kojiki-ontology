@@ -206,8 +206,18 @@ def call_model(prompt: str, context: Dict[str, Any], tools: List, schema: Dict =
     Call the model with scoped context.
     In production, this calls the actual LLM. Raises if no LLM configured.
     """
+    # Extract task_id from context if it's a ScopedContext with dispatch
+    task_id = ""
+    if hasattr(context, 'dispatch') and isinstance(context.dispatch, dict):
+        task_id = str(context.dispatch.get('task_id', ''))
+    elif isinstance(context, dict):
+        task_id = str(context.get('task_id', ''))
+    elif hasattr(context, 'get'):
+        task_id = str(context.get('task_id', ''))
+
     print(f"  [MODEL CALL] Context keys: {list(context.keys())}")
     print(f"  [MODEL CALL] Tools allowed: {[t.name if hasattr(t, 'name') else t for t in tools] if tools else []}")
+    print(f"  [MODEL CALL] task_id: {task_id}")
 
     # Execute tools if any
     tool_results = {}
@@ -236,7 +246,8 @@ def call_model(prompt: str, context: Dict[str, Any], tools: List, schema: Dict =
         if not effective_schema and effective_stage_name and hasattr(context, '_schema'):
             effective_schema = context.get('_schema')
 
-    real_output = _call_real_llm(prompt, context, tools, tool_results, effective_schema, effective_stage_name)
+    # Pass task_id to _call_real_llm for stub matching
+    real_output = _call_real_llm(prompt, context, tools, tool_results, effective_schema, effective_stage_name, task_id)
     if real_output is not None:
         return real_output
 
@@ -260,7 +271,7 @@ def call_model(prompt: str, context: Dict[str, Any], tools: List, schema: Dict =
     )
 
 
-def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_results: Dict, schema: Dict = None, stage_name: str = "") -> Optional[Dict[str, Any]]:
+def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_results: Dict, schema: Dict = None, stage_name: str = "", task_id: str = "") -> Optional[Dict[str, Any]]:
     """Call real LLM API if configured via environment variables."""
     import os
     import json
@@ -274,7 +285,6 @@ def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_resul
         return None  # No API key configured, use stubs
 
     # Chief of Staff strategy - skip hardcoded stub, let real LLM handle it
-    task_id = str(context.get("task_id", ""))
     if (context.get("dept_head") == "ChiefOfStaff" or "cos-decomp" in task_id or "cos-saccade" in task_id) and stage_name == "strategy":
         # Fall through to real LLM
         pass
@@ -287,12 +297,58 @@ def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_resul
         if schema:
             schema_guidance = f"\n\nRESPONSE MUST BE VALID JSON matching this schema:\n{json.dumps(schema, indent=2)}\n\nReturn ONLY the JSON object, no markdown, no extra text, no explanation."
 
-        # Build messages
-        system_prompt = prompt + schema_guidance + "\n\nCRITICAL: Your entire response must be a single valid JSON object. Do not include any explanation, reasoning, or markdown code fences. Start with { and end with }."
+        # Build messages - FORCE JSON output
+        system_prompt = prompt + schema_guidance + "\n\nCRITICAL: Your entire response must be a single valid JSON object. Do not include any explanation, reasoning, or markdown code fences. Start with { and end with }. NO PREAMBLE, NO ACKNOWLEDGMENT, NO CONVERSATION.\n\nIMPORTANT: In this system, 'SACCADE' means 'A Priori Problem Framing' (not eye movement). It means sharpening a raw goal into a structured Problem object with fields: problem_id, goal, constraints, assumptions, unknowns."
+
+        # Extract actual problem context from context
+        raw_goal = ""
+        accepted_problem = {}
+        evidence = {}
+        if hasattr(context, 'dispatch'):
+            raw_goal = str(context.dispatch.get('raw_record', ''))
+            accepted_problem = context.dispatch.get('accepted_problem', {})
+            evidence = context.dispatch.get('evidence', {})
+        elif isinstance(context, dict):
+            raw_goal = str(context.get('raw_record', ''))
+            accepted_problem = context.get('accepted_problem', {})
+            evidence = context.get('evidence', {})
+        elif hasattr(context, 'get'):
+            raw_goal = str(context.get('raw_record', ''))
+            accepted_problem = context.get('accepted_problem', {})
+            evidence = context.get('evidence', {})
+
+        # Also check stage_outputs for evidence (from previous stages in same runner)
+        if not evidence and hasattr(context, 'stage_outputs'):
+            stage_evidence = context.stage_outputs.get('evidence', {})
+            if stage_evidence:
+                evidence = stage_evidence
+
+        # Also check stage_outputs for accepted_problem (from SACCADE)
+        if not accepted_problem and hasattr(context, 'stage_outputs'):
+            stage_saccade = context.stage_outputs.get('saccade', {})
+            if stage_saccade:
+                accepted_problem = stage_saccade
+
+        # Build stage-specific user message with ACTUAL context
+        if stage_name == "saccade":
+            user_message = f"RAW GOAL TO FRAME: {raw_goal}\n\nGenerate the Problem JSON object for the SACCADE (A Priori Problem Framing) stage. Return ONLY the JSON with fields: problem_id, goal, constraints, assumptions, unknowns."
+        elif stage_name == "evidence":
+            problem_summary = f"Goal: {accepted_problem.get('goal', 'N/A')}\nConstraints: {accepted_problem.get('constraints', [])}\nAssumptions: {accepted_problem.get('assumptions', [])}\nUnknowns: {accepted_problem.get('unknowns', [])}"
+            user_message = f"PROBLEM TO GATHER EVIDENCE FOR:\n{problem_summary}\n\nGenerate the Evidence JSON object with fields: evidence_id, findings (array of source/finding/confidence/citations), evidence_gaps, collection_plan. Base findings on THIS specific problem."
+        elif stage_name == "interpretation":
+            problem_summary = f"Goal: {accepted_problem.get('goal', 'N/A')}\nConstraints: {accepted_problem.get('constraints', [])}\nAssumptions: {accepted_problem.get('assumptions', [])}\nUnknowns: {accepted_problem.get('unknowns', [])}"
+            evidence_summary = f"Findings: {evidence.get('findings', [])}\nEvidence Gaps: {evidence.get('evidence_gaps', [])}"
+            user_message = f"PROBLEM TO INTERPRET:\n{problem_summary}\n\nEVIDENCE TO SYNTHESIZE:\n{evidence_summary}\n\nGenerate the Interpretation JSON object with fields: interpretation_id, synthesis, confidence, key_insights, contradictions, evidence_gaps, department_requirements. Base output on THIS specific problem and evidence."
+        elif stage_name == "strategy":
+            problem_summary = f"Goal: {accepted_problem.get('goal', 'N/A')}\nConstraints: {accepted_problem.get('constraints', [])}\nAssumptions: {accepted_problem.get('assumptions', [])}\nUnknowns: {accepted_problem.get('unknowns', [])}"
+            evidence_summary = f"Findings: {evidence.get('findings', [])}"
+            user_message = f"PROBLEM TO DECOMPOSE:\n{problem_summary}\n\nEVIDENCE:\n{evidence_summary}\n\nGenerate the Strategy JSON object with fields: strategy_id, interpretation_ref, objective, rationale, timeline, success_criteria, escalation_conditions, actions (array of department objectives with owner, description, dependencies, success_criteria). Base actions on THIS specific problem."
+        else:
+            user_message = f"Execute {stage_name} transformation. Return valid JSON only."
 
         messages = [
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": json.dumps(context, default=str)[:6000]}
+            {"role": "user", "content": user_message}
         ]
 
         # Build tool definitions for function calling
@@ -311,8 +367,9 @@ def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_resul
         payload = {
             "model": model,
             "messages": messages,
-            "temperature": 0.2,
+            "temperature": 0.0,  # Zero temperature for deterministic JSON
             "max_tokens": 3000,
+            "response_format": {"type": "json_object"}  # Force JSON mode
         }
 
         if tool_defs:
@@ -345,6 +402,7 @@ def _call_real_llm(prompt: str, context: Dict[str, Any], tools: List, tool_resul
 
         # Parse response as JSON
         content = message.get("content", "{}")
+        print(f"  [LLM RAW RESPONSE] {content[:500]}")
         try:
             return json.loads(content)
         except json.JSONDecodeError:

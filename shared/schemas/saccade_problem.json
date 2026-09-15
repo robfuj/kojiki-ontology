@@ -8,8 +8,8 @@
   "properties": {
     "problem_id": {
       "type": "string",
-      "pattern": "^P-[A-Z0-9]{8}$",
-      "description": "Unique problem identifier"
+      "pattern": "^P-[A-Z0-9]{10,}$",
+      "description": "Unique problem identifier (P- + 10+ alphanumeric chars)"
     },
     "goal": {
       "type": "string",

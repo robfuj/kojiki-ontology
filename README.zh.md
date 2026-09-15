@@ -41,8 +41,14 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 ┌─────────────────────────────────────────────────────────────┐
 │  MYCELIUM Canopy Tier（涌现协调）                            │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │ 7      │
+│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │  8     │
 │  │  Head   │  │  Head   │  │  Head   │  │  Head   │ lines  │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
+│       │            │            │            │              │
+│       ▼            ▼            ▼            ▼              │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
+│  │Operations│  │ Legal   │  │People & │  │Tech Plat│        │
+│  │  Head   │  │  Head   │  │ Comms   │  │  Head   │        │
 │  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
 │       │            │            │            │              │
 │       ▼            ▼            ▼            ▼              │
@@ -78,7 +84,7 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 
 ---
 
-## 🏛️ 7 个合并部门
+## 🏛️ 8 个合并部门
 
 | 部门 | 范围 |
 |------|------|
@@ -89,7 +95,7 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 | **Operations** | Supply chain, procurement, day-to-day ops |
 | **Legal** | Compliance, Risk, contracts, regulatory |
 | **People & Comms** | HR, Internal comms, Public Affairs |
-| **Technology Platform** | AI, IT, Security, Data Analytics |
+| **Technology Platform** | AI strategy, models, governance, InfoSec, identity, tools |
 
 ---
 
@@ -163,15 +169,15 @@ decision-systems/
 │   │   ├── runner.py           # Slim orchestrator（约500行）
 │   │   ├── stages/             # 8 阶段执行子
 │   │   └── __init__.py         # Specialist loader, call_model, schemas
-│   ├── specialists/            # 7 specialist configurations
-│   │   ├── ai-intelligence/
-│   │   ├── engineering-platform/
-│   │   ├── finance-accounting/
-│   │   ├── legal-compliance/
-│   │   ├── marketing-brand/
-│   │   ├── operations-ops/
-│   │   ├── people-hr/
-│   │   └── sales-outbound/
+├── specialists/            # 8 specialist configurations
+│   ├── ai-intelligence/
+│   ├── engineering-platform/
+│   ├── finance-accounting/
+│   ├── legal-compliance/
+│   ├── marketing-brand/
+│   ├── operations-ops/
+│   ├── people-hr/
+│   └── sales-outbound/
 │   ├── configs/                # 部门负责人 + 参谋长配置
 │   │   ├── dept-heads/
 │   │   └── chief-of-staff.yaml

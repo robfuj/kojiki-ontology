@@ -134,6 +134,74 @@ def get_interpretation_dept_head_stub() -> Dict[str, Any]:
     }
 
 
+def get_evidence_cos_stub() -> Dict[str, Any]:
+    """Chief of Staff Evidence - cross-department context gathering"""
+    return {
+        "evidence_id": "EVD-COS-001",
+        "findings": [
+            {
+                "source": "Marketing",
+                "finding": "Market size for interactive storytelling apps: $2.3B TAM, 18% CAGR. Key competitors: Character.ai, NovelAI, AI Dungeon.",
+                "confidence": 0.85,
+                "citations": []
+            },
+            {
+                "source": "Engineering",
+                "finding": "Technical feasibility: LLM orchestration + real-time chat + state management. Estimated 4-6 months for MVP with 3 engineers.",
+                "confidence": 0.8,
+                "citations": []
+            },
+            {
+                "source": "Legal",
+                "finding": "Regulatory: COPPA compliance for under-13 users, content moderation requirements, IP considerations for user-generated stories.",
+                "confidence": 0.7,
+                "citations": []
+            },
+            {
+                "source": "Finance",
+                "finding": "Unit economics: Freemium model with $15/mo premium. Projected CAC $8, LTV $180. Break-even at 5K premium users.",
+                "confidence": 0.75,
+                "citations": []
+            }
+        ],
+        "evidence_gaps": [
+            "Exact LLM cost per conversation turn at scale",
+            "Content moderation infrastructure requirements"
+        ],
+        "collection_plan": "Validate LLM costs with API providers; prototype moderation pipeline"
+    }
+
+
+def get_interpretation_cos_stub() -> Dict[str, Any]:
+    """Chief of Staff Interpretation - cross-department gap analysis"""
+    return {
+        "interpretation_id": "INT-COS-001",
+        "synthesis": "Interactive storytelling app has strong market demand and feasible tech stack. Key risk is content moderation at scale and LLM cost management.",
+        "confidence": 0.8,
+        "key_insights": [
+            "Marketing: Strong TAM but crowded market - differentiation via agent-narrator hybrid is key",
+            "Engineering: Real-time LLM orchestration is the technical differentiator - invest in custom orchestration layer",
+            "Legal: COPPA + content moderation are non-negotiable gates - build compliance in from day 1",
+            "Finance: Freemium economics work but require 5K premium users for break-even - focus on retention"
+        ],
+        "contradictions": [],
+        "evidence_gaps": [
+            "LLM cost projections at 100K+ DAU",
+            "Moderation team scaling plan"
+        ],
+        "department_requirements": {
+            "Marketing": "Define agent-narrator brand positioning and launch GTM for creator community",
+            "Engineering": "Build LLM orchestration layer with conversation state management and moderation hooks",
+            "Legal": "Draft COPPA-compliant terms, content moderation policy, and IP framework for user stories",
+            "Finance": "Model unit economics with sensitivity analysis on LLM costs and retention curves",
+            "Operations": "Plan moderation team scaling and community management workflows",
+            "Sales": "Design creator partnership program for story/agent templates",
+            "People & Comms": "Hire founding team: ML engineer, moderation lead, community manager",
+            "Technology Platform": "Evaluate LLM providers for cost/quality tradeoffs; set up observability"
+        }
+    }
+
+
 def get_strategy_marketing_stub() -> Dict[str, Any]:
     """Marketing Strategy - objective decision only"""
     return {
@@ -159,7 +227,7 @@ def get_strategy_marketing_stub() -> Dict[str, Any]:
 def get_strategy_cos_stub() -> Dict[str, Any]:
     """Chief of Staff Strategy - returns department-level actions for decomposition"""
     return {
-        "strategy_id": f"STRAT-COS-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
+        "strategy_id": "STRAT-COS-001",
         "interpretation_ref": "INT-001",
         "objective": "Decompose goal into department-level objectives",
         "rationale": "Chief of Staff decomposition for multi-department coordination",
@@ -171,7 +239,7 @@ def get_strategy_cos_stub() -> Dict[str, Any]:
         "actions": [
             {
                 "owner": "Marketing",
-                "description": "Define yuzu drink brand positioning, messaging, and go-to-market strategy for US high-end market",
+                "description": "Define conversation app brand positioning, messaging, and go-to-market strategy for creator community",
                 "dependencies": [],
                 "success_criteria": [
                     {"name": "brand_positioning", "metric": "brand_concept_approved", "target": 1, "operator": ">=", "weight": 1.0},
@@ -179,58 +247,65 @@ def get_strategy_cos_stub() -> Dict[str, Any]:
                 ]
             },
             {
-                "owner": "Legal",
-                "description": "Secure FDA approval and ensure full regulatory compliance for formulation and labeling",
+                "owner": "Engineering",
+                "description": "Build LLM orchestration layer with conversation state management and moderation hooks",
                 "dependencies": [],
                 "success_criteria": [
-                    {"name": "fda_approval", "metric": "approval_status", "target": 1, "operator": "==", "weight": 0.6},
-                    {"name": "label_compliance", "metric": "audit_pass_rate", "target": 100, "operator": "==", "weight": 0.4}
+                    {"name": "orchestration_layer", "metric": "api_ready", "target": 1, "operator": ">=", "weight": 1.0},
+                    {"name": "moderation_hooks", "metric": "integration_complete", "target": 1, "operator": ">=", "weight": 1.0}
+                ]
+            },
+            {
+                "owner": "Legal",
+                "description": "Draft COPPA-compliant terms, content moderation policy, and IP framework for user stories",
+                "dependencies": [],
+                "success_criteria": [
+                    {"name": "coppa_compliance", "metric": "legal_approval", "target": 1, "operator": "==", "weight": 0.6},
+                    {"name": "moderation_policy", "metric": "policy_approved", "target": 1, "operator": "==", "weight": 0.4}
                 ]
             },
             {
                 "owner": "Finance",
-                "description": "Build lean financial plan for yuzu brand launch ($50K-100K bootstrap), path to profitability in 12 months",
-                "dependencies": [],
+                "description": "Model unit economics with sensitivity analysis on LLM costs and retention curves",
+                "dependencies": ["Engineering"],
                 "success_criteria": [
-                    {"name": "bootstrap_budget", "metric": "total_budget", "target": 100000, "operator": "<=", "weight": 0.4},
-                    {"name": "unit_economics", "metric": "contribution_margin", "target": 0.40, "operator": ">=", "weight": 0.3},
-                    {"name": "break_even", "metric": "months_to_breakeven", "target": 12, "operator": "<=", "weight": 0.3}
-                ]
-            },
-            {
-                "owner": "Engineering",
-                "description": "Develop and validate premium yuzu beverage formulation meeting quality and regulatory standards",
-                "dependencies": ["Operations", "Legal"],
-                "success_criteria": [
-                    {"name": "formulation_approval", "metric": "qa_signoff", "target": 1, "operator": "==", "weight": 0.4},
-                    {"name": "sensory_score", "metric": "panel_rating", "target": 8, "operator": ">=", "weight": 0.3}
+                    {"name": "unit_economics", "metric": "model_validated", "target": 1, "operator": "==", "weight": 0.6},
+                    {"name": "sensitivity_analysis", "metric": "scenarios_tested", "target": 5, "operator": ">=", "weight": 0.4}
                 ]
             },
             {
                 "owner": "Operations",
-                "description": "Establish sustainable supply chain and packaging meeting FDA compliance and launch timeline",
-                "dependencies": ["Legal", "Finance"],
+                "description": "Plan moderation team scaling and community management workflows",
+                "dependencies": ["Legal"],
                 "success_criteria": [
-                    {"name": "supplier_contracts", "metric": "contracts_signed", "target": 2, "operator": "==", "weight": 0.3},
-                    {"name": "sustainable_packaging", "metric": "certification", "target": 1, "operator": "==", "weight": 0.3}
+                    {"name": "moderation_team", "metric": "hiring_plan_complete", "target": 1, "operator": ">=", "weight": 0.6},
+                    {"name": "community_workflows", "metric": "processes_documented", "target": 1, "operator": ">=", "weight": 0.4}
                 ]
             },
             {
                 "owner": "Sales",
-                "description": "Secure upscale retail distribution and achieve revenue targets",
-                "dependencies": ["Marketing", "Operations"],
+                "description": "Design creator partnership program for story/agent templates",
+                "dependencies": ["Marketing"],
                 "success_criteria": [
-                    {"name": "retail_accounts", "metric": "accounts_secured", "target": 25, "operator": ">=", "weight": 0.5},
-                    {"name": "revenue_target", "metric": "first_year_revenue", "target": 10000000, "operator": ">=", "weight": 0.5}
+                    {"name": "creator_partnerships", "metric": "partners_signed", "target": 10, "operator": ">=", "weight": 0.6},
+                    {"name": "template_library", "metric": "templates_available", "target": 20, "operator": ">=", "weight": 0.4}
                 ]
             },
             {
                 "owner": "People & Comms",
-                "description": "Build brand team and execute internal/external communications",
-                "dependencies": ["Finance", "Operations"],
+                "description": "Hire founding team: ML engineer, moderation lead, community manager",
+                "dependencies": [],
                 "success_criteria": [
-                    {"name": "team_built", "metric": "key_roles_filled", "target": 5, "operator": ">=", "weight": 0.5},
-                    {"name": "comms_ready", "metric": "launch_comms_plan", "target": 1, "operator": "==", "weight": 0.5}
+                    {"name": "founding_team", "metric": "roles_filled", "target": 3, "operator": ">=", "weight": 1.0}
+                ]
+            },
+            {
+                "owner": "Technology Platform",
+                "description": "Evaluate LLM providers for cost/quality tradeoffs; set up observability",
+                "dependencies": ["Engineering"],
+                "success_criteria": [
+                    {"name": "llm_evaluation", "metric": "provider_selected", "target": 1, "operator": "==", "weight": 0.6},
+                    {"name": "observability", "metric": "dashboards_live", "target": 1, "operator": "==", "weight": 0.4}
                 ]
             }
         ]
@@ -361,18 +436,11 @@ def get_learning_stub() -> Dict[str, Any]:
 
 _STUB_DISPATCH = {
     ("saccade", "a priori problem framing"): get_saccade_marketing_stub,
-    ("saccade", "chief of staff"): get_saccade_stub,
-    ("saccade", "cos-saccade"): get_saccade_stub,
-    ("saccade", "cos-decomp"): get_saccade_stub,
-    ("saccade", "department head decomposition"): get_saccade_dept_head_stub,
     ("evidence", "verified extracts only"): get_evidence_marketing_stub,
     ("evidence", "team capability assessment"): get_evidence_dept_head_stub,
     ("interpretation", "diagnosis only"): get_interpretation_marketing_stub,
     ("interpretation", "gap analysis"): get_interpretation_dept_head_stub,
     ("strategy", "objective decision only"): get_strategy_marketing_stub,
-    ("strategy", "chief of staff"): get_strategy_cos_stub,
-    ("strategy", "decompose"): get_strategy_cos_stub,
-    ("strategy", "department-level"): get_strategy_cos_stub,
     ("strategy", "team okr"): get_strategy_dept_head_engineering_stub,
     ("output", "execution plan"): get_output_marketing_stub,
     ("output", "action plan"): get_output_marketing_stub,
@@ -387,22 +455,85 @@ _STUB_DISPATCH = {
 def get_stub(prompt: str, context: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """Get stub response for given prompt and context."""
     prompt_lower = prompt.lower()
-
-    # Check for Chief of Staff Strategy FIRST (before general SACCADE)
     task_id = str(context.get("task_id", ""))
-    if (("cos-decomp" in task_id) or ("cos-saccade" in task_id) or context.get("dept_head") == "ChiefOfStaff"):
+
+    # ===== DEBUG =====
+    print(f"[DEBUG get_stub] task_id={task_id}, prompt_lower[:100]={prompt_lower[:100]}")
+    # ===== END DEBUG =====
+
+    # ===== EXPLICIT TASK_ID MATCHES (highest priority) =====
+    # Chief of Staff Propose stages (cos-propose-*)
+    if "cos-propose" in task_id:
+        print(f"[DEBUG] Entered cos-propose block")
+        # Check strategy BEFORE interpretation (since "strategy" prompt may contain "interpretation" as substring)
+        if "strategy" in prompt_lower:
+            print(f"[DEBUG] Matched strategy")
+            return get_strategy_cos_stub()
+        # Check interpretation BEFORE evidence (since "interpretation" contains "evidence" as substring)
+        if "interpretation" in prompt_lower:
+            print(f"[DEBUG] Matched interpretation")
+            return get_interpretation_cos_stub()
+        if "evidence" in prompt_lower:
+            print(f"[DEBUG] Matched evidence")
+            result = get_evidence_cos_stub()
+            print(f"[DEBUG] get_evidence_cos_stub returned: {result is not None}")
+            print(f"[DEBUG] About to return result")
+            return result
+        if "saccade" in prompt_lower or "a priori" in prompt_lower:
+            print(f"[DEBUG] Matched saccade")
+            return get_saccade_stub(context)
+        print(f"[DEBUG] No match in cos-propose, returning None")
+        return None
+
+    # Chief of Staff Decomposition (cos-decomp-*)
+    if "cos-decomp" in task_id:
         if "strategy" in prompt_lower:
             return get_strategy_cos_stub()
+        if "saccade" in prompt_lower or "a priori" in prompt_lower:
+            return get_saccade_stub(context)
+        return None
 
-    # Check for Chief of Staff SACCADE
-    if ("cos-saccade" in task_id) or ("cos-decomp" in task_id) or ("chief of staff" in prompt_lower and "a priori" in prompt_lower):
+    # Chief of Staff SACCADE (cos-saccade-*)
+    if "cos-saccade" in task_id:
         return get_saccade_stub(context)
 
-    # Check for department head SACCADE
+    # Department Head SACCADE (dh-saccade-*)
     if "dh-saccade" in task_id:
         return get_saccade_dept_head_stub(context)
 
-    # Match by prompt keywords
+    # Consultation (consult-*)
+    if "consult-" in task_id:
+        # Consultation uses generic SACCADE
+        return get_saccade_stub(context)
+
+    # ===== DEPT_HEAD BASED CHECKS (for stages without specific task_id) =====
+    dept_head = context.get("dept_head", "")
+    
+    # Chief of Staff stages (without specific task_id prefix)
+    if dept_head == "ChiefOfStaff":
+        if "interpretation" in prompt_lower:
+            return get_interpretation_cos_stub()
+        if "evidence" in prompt_lower:
+            return get_evidence_cos_stub()
+        if "strategy" in prompt_lower:
+            return get_strategy_cos_stub()
+        if "saccade" in prompt_lower or "a priori" in prompt_lower:
+            return get_saccade_stub(context)
+        return None
+
+    # Department Head stages
+    if dept_head and dept_head != "ChiefOfStaff" and dept_head != "marketing":
+        if "saccade" in prompt_lower or "a priori" in prompt_lower:
+            return get_saccade_dept_head_stub(context)
+        if "evidence" in prompt_lower:
+            return get_evidence_dept_head_stub()
+        if "interpretation" in prompt_lower or "gap analysis" in prompt_lower:
+            return get_interpretation_dept_head_stub()
+        if "strategy" in prompt_lower or "team okr" in prompt_lower:
+            return get_strategy_dept_head_engineering_stub()
+        return None
+
+    # ===== KEYWORD MATCHING (fallback) =====
     for keywords, stub_fn in _STUB_DISPATCH.items():
         if all(k in prompt_lower for k in keywords):
             return stub_fn()

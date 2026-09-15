@@ -6,6 +6,7 @@
   "required": ["findings"],
   "additionalProperties": false,
   "properties": {
+    "evidence_id": {"type": "string", "pattern": "^EVD-\\d{3}$"},
     "findings": {
       "type": "array",
       "minItems": 1,
@@ -62,6 +63,25 @@
           }
         }
       }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {"type": "string", "maxLength": 200},
+      "maxItems": 5,
+      "description": "Questions still unanswered after evidence gathering"
+    },
+    "collection_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action", "target"],
+        "properties": {
+          "action": {"type": "string", "enum": ["RETRIEVE", "COMPUTE", "SURVEY", "INTERVIEW"]},
+          "target": {"type": "string", "maxLength": 300}
+        }
+      },
+      "maxItems": 5,
+      "description": "Plan to address evidence gaps"
     }
   }
 }

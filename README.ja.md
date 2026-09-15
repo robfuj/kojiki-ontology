@@ -41,8 +41,14 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 ┌─────────────────────────────────────────────────────────────┐
 │  MYCELIUM Canopy Tier（涌現調整）                            │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │ 7      │
+│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │  8     │
 │  │  Head   │  │  Head   │  │  Head   │  │  Head   │ lines  │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
+│       │            │            │            │              │
+│       ▼            ▼            ▼            ▼              │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
+│  │Operations│  │ Legal   │  │People & │  │Tech Plat│        │
+│  │  Head   │  │  Head   │  │ Comms   │  │  Head   │        │
 │  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
 │       │            │            │            │              │
 │       ▼            ▼            ▼            ▼              │
@@ -78,7 +84,7 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 
 ---
 
-## 🏛️ 7つの統合部門
+## 🏛️ 8つの統合部門
 
 | 部門 | 範囲 |
 |------|------|
@@ -89,6 +95,7 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 | **Operations** | Supply chain, procurement, day-to-day ops |
 | **Legal** | Compliance, Risk, contracts, regulatory |
 | **People & Comms** | HR, Internal comms, Public Affairs |
+| **Technology Platform** | AI strategy, models, governance, InfoSec, identity, tools |
 
 ---
 
@@ -164,15 +171,15 @@ decision-systems/
 │   │   ├── runner.py           # Slim orchestrator（約500行）
 │   │   ├── stages/             # 8ステージ実行子
 │   │   └── __init__.py         # Specialist loader, call_model, schemas
-│   ├── specialists/            # 7 specialist configurations
-│   │   ├── ai-intelligence/
-│   │   ├── engineering-platform/
-│   │   ├── finance-accounting/
-│   │   ├── legal-compliance/
-│   │   ├── marketing-brand/
-│   │   ├── operations-ops/
-│   │   ├── people-hr/
-│   │   └── sales-outbound/
+├── specialists/            # 8 specialist configurations
+│   ├── ai-intelligence/
+│   ├── engineering-platform/
+│   ├── finance-accounting/
+│   ├── legal-compliance/
+│   ├── marketing-brand/
+│   ├── operations-ops/
+│   ├── people-hr/
+│   └── sales-outbound/
 │   ├── configs/                # 部門長 + 参謀長設定
 │   │   ├── dept-heads/
 │   │   └── chief-of-staff.yaml
@@ -398,7 +405,7 @@ SYNAPSISステージは標準コンサルティングフレームワークにマ
 ## 🤝 貢献
 
 1. **クローズドソース依存なし** — すべてMITコード
-2. **ローカルファースト** — qwen2.5:14b (M1 Max 32GB) でローカル実行、クラウド不要
+2. **ローカルファースト** — ローカルLLM (Ollama, LM Studio) で実行、クラウド不要
 3. **プロバイダ非依存** — 任意のLLMを `AGENT.md` に向ける
 4. **テスト必須** — PR前に `python3 -m py_compile` + バリデータ通過
 5. **設計時参照のみ** — `consultant/` はコピー、依存ではない

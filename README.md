@@ -41,8 +41,14 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 ┌─────────────────────────────────────────────────────────────┐
 │  MYCELIUM Canopy Tier (emergent coordination)               │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │ 7      │
+│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │  8     │
 │  │  Head   │  │  Head   │  │  Head   │  │  Head   │ lines  │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
+│       │            │            │            │              │
+│       ▼            ▼            ▼            ▼              │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
+│  │Operations│  │ Legal   │  │People & │  │Tech Plat│        │
+│  │  Head   │  │  Head   │  │ Comms   │  │  Head   │        │
 │  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
 │       │            │            │            │              │
 │       ▼            ▼            ▼            ▼              │
@@ -78,7 +84,7 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 
 ---
 
-## 🏛️ The 7 Consolidated Departments
+## 🏛️ The 8 Consolidated Departments
 
 | Department | Scope |
 |------------|-------|
@@ -89,6 +95,7 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 | **Operations** | Supply chain, procurement, day-to-day ops |
 | **Legal** | Compliance, Risk, contracts, regulatory |
 | **People & Comms** | HR, Internal comms, Public Affairs |
+| **Technology Platform** | AI strategy, models, governance, InfoSec, identity, tools |
 
 ---
 
@@ -105,7 +112,7 @@ pip install -r requirements.txt
 # Run a specialist
 python -m kojiki.core.runner marketing-brand dispatch.json
 
-# Run all 7 specialists
+# Run all 8 specialists
 python scripts/verify_all_runners.py
 ```
 
@@ -148,7 +155,7 @@ decision-systems/
 │   │   ├── runner.py           # Slim orchestrator (~500 lines)
 │   │   ├── stages/             # 8 stage executors
 │   │   └── __init__.py         # Specialist loader, call_model, schemas
-├── specialists/            # 7 specialist configurations
+├── specialists/            # 8 specialist configurations
 │   ├── ai-intelligence/
 │   ├── engineering-platform/
 │   ├── finance-accounting/
@@ -412,7 +419,7 @@ See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
 ## 🤝 Contributing
 
 1. **No closed-source dependencies** — all code MIT
-2. **Local-first** — runs on qwen2.5:14b (M1 Max 32GB), no cloud required
+2. **Local-first** — runs on local LLMs (Ollama, LM Studio), no cloud required
 3. **Provider-agnostic** — point any LLM at `AGENT.md`
 4. **Tests required** — `python3 -m py_compile` + validator pass before PR
 5. **Design-time references only** — `consultant/` is a copy, not a dependency

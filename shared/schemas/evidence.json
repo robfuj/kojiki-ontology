@@ -4,21 +4,47 @@
   "type": "object",
   "required": ["findings"],
   "properties": {
+    "evidence_id": {"type": "string"},
     "findings": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["finding_id", "question", "extract", "speaker", "locator", "retrieval_state", "contradiction_info", "coverage_limits", "sufficiency"],
+        "required": ["source", "finding", "confidence"],
         "properties": {
-          "finding_id": {"type": "string", "pattern": "^FE-\\d{3}$"},
+          "finding_id": {"type": "string"},
+          "source": {"type": "string"},
+          "finding": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "citations": {"type": "array", "items": {"type": "string"}},
           "question": {"type": "string"},
-          "extract": {"type": "string"},
+          "answer": {"type": "string"},
           "speaker": {"type": "string"},
           "locator": {"type": "string"},
           "retrieval_state": {"type": "string", "enum": ["RETRIEVED", "BLOCKED", "PARTIAL", "UNKNOWN", "SOURCE_VERIFICATION_REQUIRED"]},
           "contradiction_info": {"type": "string"},
           "coverage_limits": {"type": "string"},
           "sufficiency": {"type": "string", "enum": ["SUFFICIENT", "INSUFFICIENT", "PARTIAL"]}
+        }
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gap_id": {"type": "string"},
+          "question": {"type": "string"},
+          "retrieval_state": {"type": "string"}
+        }
+      }
+    },
+    "collection_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {"type": "string"},
+          "target": {"type": "string"}
         }
       }
     }

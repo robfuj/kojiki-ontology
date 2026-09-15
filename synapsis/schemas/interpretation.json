@@ -3,9 +3,10 @@
   "$id": "https://kojiki.org/schemas/interpretation.json",
   "title": "INTERPRETATION Stage Output",
   "type": "object",
-  "required": ["synthesis", "confidence", "key_insights"],
+  "required": ["interpretation_id", "synthesis", "confidence", "key_insights", "evidence_refs", "department_requirements"],
   "additionalProperties": false,
   "properties": {
+    "interpretation_id": {"type": "string", "pattern": "^INT-[A-Z0-9]{3,}$"},
     "synthesis": {
       "type": "string",
       "minLength": 10,
@@ -20,13 +21,16 @@
     },
     "key_insights": {
       "type": "array",
-      "items": {
-        "type": "string",
-        "maxLength": 300
-      },
+      "items": {"type": "string", "maxLength": 300},
       "minItems": 1,
       "maxItems": 5,
       "description": "Atomic insights extracted from evidence"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^EVD-\\d{3}$"},
+      "minItems": 1,
+      "description": "References to evidence findings supporting this interpretation"
     },
     "contradictions": {
       "type": "array",
@@ -37,7 +41,7 @@
         "properties": {
           "finding_ids": {
             "type": "array",
-            "items": { "type": "string", "pattern": "^FE-\\d{3}$" },
+            "items": {"type": "string", "pattern": "^FE-\\d{3}$"},
             "minItems": 2,
             "description": "Conflicting finding IDs"
           },
@@ -58,9 +62,14 @@
     },
     "evidence_gaps": {
       "type": "array",
-      "items": { "type": "string", "maxLength": 200 },
+      "items": {"type": "string", "maxLength": 200},
       "maxItems": 5,
       "description": "Questions still unanswered after evidence"
+    },
+    "department_requirements": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "maxLength": 500},
+      "description": "What each department must achieve based on interpretation"
     }
   }
 }

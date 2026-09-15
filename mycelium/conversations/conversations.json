@@ -2864,6 +2864,2966 @@
       "signals": [],
       "resolution": null,
       "escalation_ref": null
+    },
+    {
+      "id": "CONV-E85B920F81CB",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:34:07.403643Z",
+      "updated_at": "2026-09-15T05:34:07.403648Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C0B24319B588",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:34:07.412162Z",
+      "updated_at": "2026-09-15T05:34:07.412167Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D4C09CBB75AE",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:34:07.415691Z",
+      "updated_at": "2026-09-15T05:34:07.415694Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-051DC15457A5",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:34:07.419647Z",
+      "updated_at": "2026-09-15T05:34:07.419649Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B7609D2D2E65",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:34:07.425231Z",
+      "updated_at": "2026-09-15T05:34:07.425236Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3EBBF7E166A8",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:34:07.429102Z",
+      "updated_at": "2026-09-15T05:34:07.429104Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-74A9C1C43F9F",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:34:07.434318Z",
+      "updated_at": "2026-09-15T05:34:07.434323Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7AB4FD92B92C",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:34:07.438299Z",
+      "updated_at": "2026-09-15T05:34:07.438307Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FAB462D4E8FE",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:34:07.441862Z",
+      "updated_at": "2026-09-15T05:34:07.441867Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-76E318E6C288",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:34:07.445794Z",
+      "updated_at": "2026-09-15T05:34:07.445797Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-59B15E1A98D3",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:34:07.449699Z",
+      "updated_at": "2026-09-15T05:34:07.449704Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-38B05DA80161",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:34:07.454005Z",
+      "updated_at": "2026-09-15T05:34:07.454007Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4C01C7D40EAA",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:34:07.457789Z",
+      "updated_at": "2026-09-15T05:34:07.457794Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0CD16FEB4002",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:34:07.462056Z",
+      "updated_at": "2026-09-15T05:34:07.462058Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3303F6D7CEEE",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Marketing",
+        "Engineering",
+        "People & Comms",
+        "Operations",
+        "Sales",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:34:07.493374Z",
+      "updated_at": "2026-09-15T05:34:07.493376Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CDBBA554D9FF",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:38:37.048632Z",
+      "updated_at": "2026-09-15T05:38:37.048636Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-46755436CE05",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:38:37.052840Z",
+      "updated_at": "2026-09-15T05:38:37.052844Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5EBFC7498AA6",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:38:37.056668Z",
+      "updated_at": "2026-09-15T05:38:37.056670Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-94D488B85247",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:38:37.060533Z",
+      "updated_at": "2026-09-15T05:38:37.060538Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CD3C3EBAFC10",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:38:37.064651Z",
+      "updated_at": "2026-09-15T05:38:37.064653Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8078B90E50BC",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:38:37.069454Z",
+      "updated_at": "2026-09-15T05:38:37.069458Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CCD1916656B2",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:38:37.074202Z",
+      "updated_at": "2026-09-15T05:38:37.074204Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E9AF278DD3E1",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:38:37.077819Z",
+      "updated_at": "2026-09-15T05:38:37.077822Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C2F17E15F76C",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:38:37.082321Z",
+      "updated_at": "2026-09-15T05:38:37.082322Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-2B3705D9029A",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:38:37.085893Z",
+      "updated_at": "2026-09-15T05:38:37.085896Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8E0F28D80256",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:38:37.089673Z",
+      "updated_at": "2026-09-15T05:38:37.089674Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C3F8ECCCE53D",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:38:37.093988Z",
+      "updated_at": "2026-09-15T05:38:37.093992Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D0D0E51BF2F7",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:38:37.098416Z",
+      "updated_at": "2026-09-15T05:38:37.098418Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D8601A818B8C",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:38:37.102264Z",
+      "updated_at": "2026-09-15T05:38:37.102268Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1799B720557C",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Marketing",
+        "Sales",
+        "Operations",
+        "Finance",
+        "People & Comms",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:38:37.138234Z",
+      "updated_at": "2026-09-15T05:38:37.138235Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-39027AFDA364",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:24.327812Z",
+      "updated_at": "2026-09-15T05:41:24.327819Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-25C2A4266761",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:24.332921Z",
+      "updated_at": "2026-09-15T05:41:24.332926Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E192C168B8E0",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:24.337570Z",
+      "updated_at": "2026-09-15T05:41:24.337575Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BC12DBCFAEDA",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:24.341855Z",
+      "updated_at": "2026-09-15T05:41:24.341862Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6FA38EFAF226",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:24.346147Z",
+      "updated_at": "2026-09-15T05:41:24.346150Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B02CB46448F7",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:24.350464Z",
+      "updated_at": "2026-09-15T05:41:24.350467Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-680EA6E7EF94",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:24.354921Z",
+      "updated_at": "2026-09-15T05:41:24.354927Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8D1FDF5AFBC1",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:24.359510Z",
+      "updated_at": "2026-09-15T05:41:24.359517Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-75DAA309BCA4",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:24.364432Z",
+      "updated_at": "2026-09-15T05:41:24.364438Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1DC82B298954",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:24.368616Z",
+      "updated_at": "2026-09-15T05:41:24.368619Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1B41AE4E38A2",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:24.373037Z",
+      "updated_at": "2026-09-15T05:41:24.373043Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BCA103AD1462",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:24.377381Z",
+      "updated_at": "2026-09-15T05:41:24.377386Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-2A32001A1F1C",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:24.381613Z",
+      "updated_at": "2026-09-15T05:41:24.381617Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C625076836F4",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:24.387201Z",
+      "updated_at": "2026-09-15T05:41:24.387206Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-947F44A54091",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Operations",
+        "People & Comms",
+        "Finance",
+        "Sales",
+        "Legal",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:24.431681Z",
+      "updated_at": "2026-09-15T05:41:24.431684Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-41A7F9F04E0B",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.026893Z",
+      "updated_at": "2026-09-15T05:41:25.026898Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DFE1E36903A2",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.035186Z",
+      "updated_at": "2026-09-15T05:41:25.035189Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BE31673FC44F",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.042602Z",
+      "updated_at": "2026-09-15T05:41:25.042609Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CAEAE0051F42",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.049808Z",
+      "updated_at": "2026-09-15T05:41:25.049814Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C6D3E523B0AD",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.054258Z",
+      "updated_at": "2026-09-15T05:41:25.054262Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9C81775EFE96",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.059078Z",
+      "updated_at": "2026-09-15T05:41:25.059080Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-46D8AB456BAC",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.063190Z",
+      "updated_at": "2026-09-15T05:41:25.063200Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AAC6573F471E",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.075175Z",
+      "updated_at": "2026-09-15T05:41:25.075181Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6DD5DB8FAE33",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.080162Z",
+      "updated_at": "2026-09-15T05:41:25.080167Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C54CA480719C",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.086205Z",
+      "updated_at": "2026-09-15T05:41:25.086210Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-553D0A44D315",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.091356Z",
+      "updated_at": "2026-09-15T05:41:25.091359Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FC526885BC05",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.095471Z",
+      "updated_at": "2026-09-15T05:41:25.095475Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5E0DCCA01384",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.101080Z",
+      "updated_at": "2026-09-15T05:41:25.101081Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E7D473FEAEA4",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.105395Z",
+      "updated_at": "2026-09-15T05:41:25.105399Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6200FA93949B",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Sales",
+        "Finance",
+        "Engineering",
+        "Operations",
+        "People & Comms",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.135031Z",
+      "updated_at": "2026-09-15T05:41:25.135034Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-93E0F0416D90",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.314426Z",
+      "updated_at": "2026-09-15T05:41:25.314433Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D53B25722AA3",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.319631Z",
+      "updated_at": "2026-09-15T05:41:25.319636Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-139DBC1F273F",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.326224Z",
+      "updated_at": "2026-09-15T05:41:25.326228Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-68A7446AC243",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.330626Z",
+      "updated_at": "2026-09-15T05:41:25.330631Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E0788F246C5A",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.341707Z",
+      "updated_at": "2026-09-15T05:41:25.341716Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-30E2BB707FE0",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.346673Z",
+      "updated_at": "2026-09-15T05:41:25.346675Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A97BA64A4D39",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.351261Z",
+      "updated_at": "2026-09-15T05:41:25.351263Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-01294B4758FF",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.355799Z",
+      "updated_at": "2026-09-15T05:41:25.355804Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-78E382DDC99B",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.360884Z",
+      "updated_at": "2026-09-15T05:41:25.360888Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0630746CF938",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.369337Z",
+      "updated_at": "2026-09-15T05:41:25.369342Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3158BE86F112",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.374213Z",
+      "updated_at": "2026-09-15T05:41:25.374215Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-35B0169C3B60",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.386872Z",
+      "updated_at": "2026-09-15T05:41:25.386877Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1FE8F61B368A",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.392028Z",
+      "updated_at": "2026-09-15T05:41:25.392030Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1EB6BF736768",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.396667Z",
+      "updated_at": "2026-09-15T05:41:25.396672Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CCD1866740EA",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "People & Comms",
+        "Operations",
+        "Sales",
+        "Finance",
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.417033Z",
+      "updated_at": "2026-09-15T05:41:25.417035Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0640D6328E99",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.618740Z",
+      "updated_at": "2026-09-15T05:41:25.618746Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-94B70C808BDC",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.624209Z",
+      "updated_at": "2026-09-15T05:41:25.624211Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8BE3F8C5788E",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.628978Z",
+      "updated_at": "2026-09-15T05:41:25.628982Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-55A4029B22A6",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.633702Z",
+      "updated_at": "2026-09-15T05:41:25.633704Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DFD2FB616C44",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.638630Z",
+      "updated_at": "2026-09-15T05:41:25.638636Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6BF06E0ED034",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.644643Z",
+      "updated_at": "2026-09-15T05:41:25.644647Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0BFDA31B7AE4",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.649664Z",
+      "updated_at": "2026-09-15T05:41:25.649665Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4C7E4FC1C71E",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.654153Z",
+      "updated_at": "2026-09-15T05:41:25.654156Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A146F8FD550E",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.659208Z",
+      "updated_at": "2026-09-15T05:41:25.659212Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-65BAC5BBE12B",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.663968Z",
+      "updated_at": "2026-09-15T05:41:25.663971Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-98867AE0A627",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.669114Z",
+      "updated_at": "2026-09-15T05:41:25.669119Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-785278F8CDFB",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:25.674183Z",
+      "updated_at": "2026-09-15T05:41:25.674185Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4701DE1F56FD",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:25.678680Z",
+      "updated_at": "2026-09-15T05:41:25.678684Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-2D471EBF3F59",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:25.683738Z",
+      "updated_at": "2026-09-15T05:41:25.683740Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-673E6B75496C",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Engineering",
+        "People & Comms",
+        "Marketing",
+        "Legal",
+        "Sales",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.720178Z",
+      "updated_at": "2026-09-15T05:41:25.720179Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D19128BF87C8",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:25.982633Z",
+      "updated_at": "2026-09-15T05:41:25.982637Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DFBC97461C40",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:25.987753Z",
+      "updated_at": "2026-09-15T05:41:25.987757Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F925933BF8B7",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:25.992284Z",
+      "updated_at": "2026-09-15T05:41:25.992287Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8915212EC173",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:25.998062Z",
+      "updated_at": "2026-09-15T05:41:25.998068Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8FD5ED2B9C5C",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:26.005748Z",
+      "updated_at": "2026-09-15T05:41:26.005754Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-46D96FF72579",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:26.010210Z",
+      "updated_at": "2026-09-15T05:41:26.010211Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EF0677240A48",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:26.015353Z",
+      "updated_at": "2026-09-15T05:41:26.015358Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-39DB466A2CBF",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T05:41:26.020957Z",
+      "updated_at": "2026-09-15T05:41:26.020960Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C5DFEFA9BB8A",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T05:41:26.025864Z",
+      "updated_at": "2026-09-15T05:41:26.025868Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-00D27048FC67",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T05:41:26.030661Z",
+      "updated_at": "2026-09-15T05:41:26.030665Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CE9679BFDF29",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T05:41:26.039968Z",
+      "updated_at": "2026-09-15T05:41:26.039973Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F78FCAA12F10",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T05:41:26.045400Z",
+      "updated_at": "2026-09-15T05:41:26.045405Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7238F530EE1A",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:26.050500Z",
+      "updated_at": "2026-09-15T05:41:26.050502Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-635E78458708",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T05:41:26.055559Z",
+      "updated_at": "2026-09-15T05:41:26.055563Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1FEC640D31DB",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Finance",
+        "Legal",
+        "Engineering",
+        "Marketing",
+        "People & Comms",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T05:41:26.087469Z",
+      "updated_at": "2026-09-15T05:41:26.087471Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A7689C70C52D",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:06.276141Z",
+      "updated_at": "2026-09-15T06:21:06.276149Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7326564FFE78",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:06.282185Z",
+      "updated_at": "2026-09-15T06:21:06.282187Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C1EBF5975898",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:06.287518Z",
+      "updated_at": "2026-09-15T06:21:06.287523Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CFA38A667F9D",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:06.294028Z",
+      "updated_at": "2026-09-15T06:21:06.294033Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-125334C4CF49",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:06.300834Z",
+      "updated_at": "2026-09-15T06:21:06.300842Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3635E44095F3",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:06.320616Z",
+      "updated_at": "2026-09-15T06:21:06.320624Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7801A88237DA",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:06.327570Z",
+      "updated_at": "2026-09-15T06:21:06.327577Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0C1BCFF56900",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:06.333858Z",
+      "updated_at": "2026-09-15T06:21:06.333865Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D9426FC4ABFB",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:06.339369Z",
+      "updated_at": "2026-09-15T06:21:06.339375Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-2C6B1AA4B30C",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:06.346930Z",
+      "updated_at": "2026-09-15T06:21:06.346935Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-29D450214FCE",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:06.352993Z",
+      "updated_at": "2026-09-15T06:21:06.352999Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-31F9A5B54B41",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:06.359191Z",
+      "updated_at": "2026-09-15T06:21:06.359198Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-9F3488772AC0",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:06.365052Z",
+      "updated_at": "2026-09-15T06:21:06.365055Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5E8A2CE3B20B",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:06.371350Z",
+      "updated_at": "2026-09-15T06:21:06.371353Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6AEFC5127F15",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Operations",
+        "Finance",
+        "Sales",
+        "Legal",
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:06.435203Z",
+      "updated_at": "2026-09-15T06:21:06.435207Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-549DEA6F6927",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.147934Z",
+      "updated_at": "2026-09-15T06:21:07.147941Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6A974972D2BA",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.154315Z",
+      "updated_at": "2026-09-15T06:21:07.154321Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-242242150CC5",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.167813Z",
+      "updated_at": "2026-09-15T06:21:07.167822Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-232B65C3D0A1",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.173622Z",
+      "updated_at": "2026-09-15T06:21:07.173626Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7B1F25AFC071",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.180133Z",
+      "updated_at": "2026-09-15T06:21:07.180138Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7B6A326A3DD0",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.186292Z",
+      "updated_at": "2026-09-15T06:21:07.186298Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7B8DFDAF9A30",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:07.196711Z",
+      "updated_at": "2026-09-15T06:21:07.196716Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BFCFA709BF53",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.202839Z",
+      "updated_at": "2026-09-15T06:21:07.202848Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-01039E6AABD2",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.211888Z",
+      "updated_at": "2026-09-15T06:21:07.211894Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-108D3476FFED",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.218770Z",
+      "updated_at": "2026-09-15T06:21:07.218773Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-26F25282C261",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.238473Z",
+      "updated_at": "2026-09-15T06:21:07.238481Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-492C45C65D29",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.245422Z",
+      "updated_at": "2026-09-15T06:21:07.245427Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A73D3F882DA0",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.251066Z",
+      "updated_at": "2026-09-15T06:21:07.251072Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8BA03BC4DA01",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:07.256708Z",
+      "updated_at": "2026-09-15T06:21:07.256714Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B847BF34A157",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Engineering",
+        "People & Comms",
+        "Finance",
+        "Sales",
+        "Operations",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.291660Z",
+      "updated_at": "2026-09-15T06:21:07.291666Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1A97EF844DC9",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.540008Z",
+      "updated_at": "2026-09-15T06:21:07.540015Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A29955359073",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.545856Z",
+      "updated_at": "2026-09-15T06:21:07.545862Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FE43FE3E2BA4",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.552491Z",
+      "updated_at": "2026-09-15T06:21:07.552497Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F75002649DC8",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.573316Z",
+      "updated_at": "2026-09-15T06:21:07.573325Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-4525ADB9B00E",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.580657Z",
+      "updated_at": "2026-09-15T06:21:07.580663Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-480845CA170A",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.587625Z",
+      "updated_at": "2026-09-15T06:21:07.587628Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D4E1029971D2",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:07.594200Z",
+      "updated_at": "2026-09-15T06:21:07.594203Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-1F243B41A1A8",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.600650Z",
+      "updated_at": "2026-09-15T06:21:07.600655Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8BC8833D3709",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.606614Z",
+      "updated_at": "2026-09-15T06:21:07.606619Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A54D31B2EB1E",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.613052Z",
+      "updated_at": "2026-09-15T06:21:07.613058Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-CD19B6A360D9",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.618745Z",
+      "updated_at": "2026-09-15T06:21:07.618750Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-030C47AD4A47",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.624410Z",
+      "updated_at": "2026-09-15T06:21:07.624416Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-53C4BA9C2767",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.631867Z",
+      "updated_at": "2026-09-15T06:21:07.631872Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6B3C90330ED1",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:07.638160Z",
+      "updated_at": "2026-09-15T06:21:07.638165Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-071C8E33C97E",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Marketing",
+        "Legal",
+        "Sales",
+        "People & Comms",
+        "Engineering",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.665805Z",
+      "updated_at": "2026-09-15T06:21:07.665807Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-66E4D67D4FE0",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.882193Z",
+      "updated_at": "2026-09-15T06:21:07.882201Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D3419C32576C",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.888866Z",
+      "updated_at": "2026-09-15T06:21:07.888872Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F0F3638D3C47",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.895173Z",
+      "updated_at": "2026-09-15T06:21:07.895179Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B497350DBCC5",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.902077Z",
+      "updated_at": "2026-09-15T06:21:07.902084Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8F5513D35780",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.919026Z",
+      "updated_at": "2026-09-15T06:21:07.919033Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-58B160C9B4FF",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.925921Z",
+      "updated_at": "2026-09-15T06:21:07.925930Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-01FB567629D2",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:07.931591Z",
+      "updated_at": "2026-09-15T06:21:07.931593Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-93D7E87392D4",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:07.938002Z",
+      "updated_at": "2026-09-15T06:21:07.938008Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-56CB8A82FE3A",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:07.959538Z",
+      "updated_at": "2026-09-15T06:21:07.959545Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AC33BF9A44DB",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:07.966112Z",
+      "updated_at": "2026-09-15T06:21:07.966117Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-3A47A86A897B",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:07.972050Z",
+      "updated_at": "2026-09-15T06:21:07.972055Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7DE1A628663D",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:07.979312Z",
+      "updated_at": "2026-09-15T06:21:07.979315Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AB1F4D47DFBD",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:07.993399Z",
+      "updated_at": "2026-09-15T06:21:07.993407Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-FCDE00025101",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:08.000286Z",
+      "updated_at": "2026-09-15T06:21:08.000300Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BAFBA64403AD",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Engineering",
+        "Operations",
+        "Legal",
+        "Finance",
+        "People & Comms",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:08.062320Z",
+      "updated_at": "2026-09-15T06:21:08.062322Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B532761D6588",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:08.327192Z",
+      "updated_at": "2026-09-15T06:21:08.327197Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-0CD20A85C2A9",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:08.334785Z",
+      "updated_at": "2026-09-15T06:21:08.334792Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B856ECC05ACE",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:08.343042Z",
+      "updated_at": "2026-09-15T06:21:08.343069Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7507A9DD6E06",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:08.349428Z",
+      "updated_at": "2026-09-15T06:21:08.349432Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-8EFDF9A014E3",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:08.355560Z",
+      "updated_at": "2026-09-15T06:21:08.355566Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-75F0AEFC8B10",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:08.363757Z",
+      "updated_at": "2026-09-15T06:21:08.363764Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-61A8662E49A2",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:08.370018Z",
+      "updated_at": "2026-09-15T06:21:08.370024Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-C98BC9E1A082",
+      "title": "Consultation: Marketing -> Marketing",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T06:21:08.377042Z",
+      "updated_at": "2026-09-15T06:21:08.377048Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-DE849226E6B1",
+      "title": "Consultation: Legal -> Legal",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T06:21:08.384253Z",
+      "updated_at": "2026-09-15T06:21:08.384260Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-E2461CD9D366",
+      "title": "Consultation: Finance -> Finance",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T06:21:08.390253Z",
+      "updated_at": "2026-09-15T06:21:08.390255Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BCBEC9F6C8C6",
+      "title": "Consultation: Engineering -> Engineering",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T06:21:08.403581Z",
+      "updated_at": "2026-09-15T06:21:08.403588Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-98DF8705F9F7",
+      "title": "Consultation: Operations -> Operations",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:08.419131Z",
+      "updated_at": "2026-09-15T06:21:08.419137Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-80FD317756A0",
+      "title": "Consultation: Sales -> Sales",
+      "conversation_type": "coordination",
+      "participants": [
+        "Sales",
+        "Sales"
+      ],
+      "created_at": "2026-09-15T06:21:08.428567Z",
+      "updated_at": "2026-09-15T06:21:08.428572Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-BFAB1E4213AC",
+      "title": "Consultation: People & Comms -> People & Comms",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T06:21:08.435131Z",
+      "updated_at": "2026-09-15T06:21:08.435134Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EBFF720F9B86",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Engineering",
+        "Marketing",
+        "Finance",
+        "Sales",
+        "Legal",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T06:21:08.473997Z",
+      "updated_at": "2026-09-15T06:21:08.474015Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-60C7A77A8BEC",
+      "title": "Cross-Dept Coordination: I want to create a conversation app, similar to ky",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Operations",
+        "Technology Platform",
+        "Sales",
+        "Marketing",
+        "Legal",
+        "People & Comms",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T18:51:37.757748Z",
+      "updated_at": "2026-09-15T18:51:37.757750Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5F1BD0F195A6",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Engineering",
+        "Sales",
+        "Operations",
+        "Finance",
+        "People & Comms",
+        "Marketing",
+        "Technology Platform"
+      ],
+      "created_at": "2026-09-15T18:53:59.093395Z",
+      "updated_at": "2026-09-15T18:53:59.093399Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-7D99F4F22754",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "People & Comms",
+        "Sales",
+        "Technology Platform",
+        "Legal",
+        "Operations",
+        "Finance",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T18:54:00.158223Z",
+      "updated_at": "2026-09-15T18:54:00.158225Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-25E3AEBD064D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "People & Comms",
+        "Operations",
+        "Finance",
+        "Sales",
+        "Technology Platform",
+        "Marketing",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T18:54:00.437921Z",
+      "updated_at": "2026-09-15T18:54:00.437924Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-D1F5D436336E",
+      "title": "Cross-Dept Coordination: I want to create a conversation app, similar to ky",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Engineering",
+        "Legal",
+        "Technology Platform",
+        "Finance",
+        "Operations",
+        "Sales",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T19:31:47.681009Z",
+      "updated_at": "2026-09-15T19:31:47.681011Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-812D5DB71B16",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Engineering",
+        "Sales",
+        "People & Comms",
+        "Technology Platform",
+        "Finance",
+        "Marketing",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T19:36:16.314065Z",
+      "updated_at": "2026-09-15T19:36:16.314067Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-A633DFFA818D",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Engineering",
+        "Operations",
+        "Technology Platform",
+        "Marketing",
+        "Legal",
+        "Finance",
+        "Sales",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T19:36:17.191010Z",
+      "updated_at": "2026-09-15T19:36:17.191013Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-83E1EAE16855",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Legal",
+        "Technology Platform",
+        "Engineering",
+        "Sales",
+        "Marketing",
+        "People & Comms",
+        "Finance"
+      ],
+      "created_at": "2026-09-15T19:36:17.439850Z",
+      "updated_at": "2026-09-15T19:36:17.439853Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6B10D514B7A6",
+      "title": "Cross-Dept Coordination: Create a beef broth brand for the Canadian market",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Engineering",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T20:16:38.029207Z",
+      "updated_at": "2026-09-15T20:16:38.029212Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-B8A2D5548660",
+      "title": "Cross-Dept Coordination: Create a beef broth brand for the Canadian market",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Marketing",
+        "Technology Platform"
+      ],
+      "created_at": "2026-09-15T22:50:48.663366Z",
+      "updated_at": "2026-09-15T22:50:48.663369Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
     }
   ]
 }
