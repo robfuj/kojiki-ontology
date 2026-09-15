@@ -122,7 +122,7 @@ python scripts/verify_all_runners.py
 その後、エージェントはSYNAPSISチェーンで作業を実行し、以下で検証します：
 
 ```bash
-python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-kojiki-ontology/handoffs/registry.json bot-output.json
+python3 ../synapsis/validate.py --mycelium-registry ../handoffs/registry.json bot-output.json
 ```
 
 ---
@@ -131,60 +131,66 @@ python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-koj
 
 ```
 decision-systems/
-├── 00-kojiki-ontology/          # 共通ブレイン（コア）
-│   ├── synapsis/                # SYNAPSISチェーン + バリデータ
-│   │   ├── SYNAPSIS.md          # 完全仕様
-│   │   ├── validate.py          # 不変条件チェッカー（標準ライブラリのみ）
-│   │   ├── REFERENCES.md        # コンサルフレームワークマッピング
-│   │   └── transformations.json # ステージ定義
-│   ├── schemas/                 # コアJSONスキーマ（Botでミラー）
-│   │   ├── evidence.json
-│   │   ├── interpretation.json
-│   │   ├── strategy.json
-│   │   ├── problem.json
-│   │   ├── learning-ledger.json
-│   │   └── decision-object.json
-│   ├── mycelium/                # Canopy層（涌現調整）
-│   │   ├── schemas/             # node, objective, key_result, edge, signal, provenance_token
-│   │   ├── engine/              # registry, graph, reinforcement, propagate, prune, sentinel, saccade
-│   │   ├── neuraxis/            # 垂直軸: experience, problem, gate_request, escalation
-│   │   ├── tests/               # すべて通過
-│   │   └── examples/            # demo_marketing_sales.py
-│   ├── learning/                # 組織記憶（ケース、パターン、ルール）
-│   ├── handoffs/                # 跨部門レジストリ + ハンドオフ標準
-│   ├── decision-rights/         # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-│   ├── consultant/              # 50+ コンサルフレームワーク（コピー、MIT、設計時参照）
-│   └── build_repos.py           # 部門リポジトリ生成
-│
-├── kojiki/                      # NEW: 統一ランタイム
-│   ├── core/                    # 共有実行エンジン
-│   │   ├── runner.py            # Slim orchestrator（約500行）
-│   │   ├── stages/              # 8ステージ実行子
-│   │   └── registry.py          # 専門家自動発見
-│   ├── specialists/             # 専門家設定（7部門に統合）
-│   │   ├── marketing-brand/
-│   │   ├── marketing-growth/
+├── synapsis/                    # SYNAPSISチェーン + バリデータ
+│   ├── SYNAPSIS.md             # 完全仕様
+│   ├── validate.py             # 不変条件チェッカー（標準ライブラリのみ）
+│   ├── REFERENCES.md           # コンサルフレームワークマッピング
+│   └── transformations.json    # ステージ定義
+├── schemas/                    # コアJSONスキーマ
+│   ├── evidence.json
+│   ├── interpretation.json
+│   ├── strategy.json
+│   ├── problem.json
+│   ├── learning-ledger.json
+│   └── decision-object.json
+├── mycelium/                   # Canopy層（涌現調整）
+│   ├── schemas/                # node, objective, key_result, edge, signal, provenance_token
+│   ├── engine/                 # Core MYCELIUM engine modules
+│   ├── neuraxis/               # 垂直軸: experience, problem, gate_request, escalation
+│   ├── tests/                  # すべて通過
+│   └── examples/               # demo_marketing_sales.py
+├── sentinel/                   # 来歴: Ed25519, ハッシュチェーン
+├── learning/                   # 組織記憶（ケース、パターン、ルール）
+├── handoffs/                   # 跨部門レジストリ + ハンドオフ標準
+├── decision-rights/            # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
+├── consultant/                 # 50+ コンサルフレームワーク（コピー、MIT、設計時参照）
+├── var/                        # ランタイムデータ（gitignore: ログ、鍵）
+├── README.md / .ja.md / .zh.md
+├── PROMO.md
+└── LICENSE
+
+├── kojiki/                     # 統一ランタイム
+│   ├── core/                   # 共有実行エンジン
+│   │   ├── runner.py           # Slim orchestrator（約500行）
+│   │   ├── stages/             # 8ステージ実行子
+│   │   └── __init__.py         # Specialist loader, call_model, schemas
+│   ├── specialists/            # 7 specialist configurations
+│   │   ├── ai-intelligence/
+│   │   ├── engineering-platform/
 │   │   ├── finance-accounting/
-│   │   └── ... (7統合部門)
-│   ├── configs/                 # 部門長 + 参謀長設定
+│   │   ├── legal-compliance/
+│   │   ├── marketing-brand/
+│   │   ├── operations-ops/
+│   │   ├── people-hr/
+│   │   └── sales-outbound/
+│   ├── configs/                # 部門長 + 参謀長設定
 │   │   ├── dept-heads/
 │   │   └── chief-of-staff.yaml
-│   └── cli.py                   # シンプルCLI: `kojiki decide "goal"`
-│
-├── scripts/                     # 検証とCI
+│   └── cli.py                  # 簡単CLI: `kojiki decide "goal"`
+
+├── scripts/                    # 検証とCI
 │   ├── verify_all_runners.py
 │   ├── verify_causal_signatures.py
 │   └── test_runner_group.py
-│
-├── shared/                      # 共有リソース（シンボリックリンク）
-│   ├── prompts/                 # 8ステージプロンプト
-│   └── schemas/                 # 11 JSONスキーマ
-│
-├── test_governance_loop.py      # エンドツーエンドガバナンステスト
-├── install-all.sh               # 本体 + 7部門 + メタをインストール
-├── README.md
-├── README.ja.md
-├── README.zh.md
+
+├── shared/                     # 共有リソース（シンボリックリンク）
+│   ├── prompts/                # 8ステージプロンプト
+│   └── schemas/                # 11 JSONスキーマ
+
+├── test_governance_loop.py     # エンドツーエンドガバナンステスト
+├── requirements.txt
+├── .github/workflows/ci.yml
+├── README.md / .ja.md / .zh.md
 └── LICENSE
 ```
 

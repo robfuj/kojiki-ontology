@@ -1,0 +1,44 @@
+{
+  "dept_head": "Marketing",
+  "specialist": "marketing-brand",
+  "team_okrs": [
+    {
+      "team": "Marketing.Growth",
+      "objective_id": "OKR-Marketing.Growth-P-ABCDEF12-001",
+      "dependencies": [
+        {
+          "target_team": "Engineering.Technology.Referral",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "team": "Marketing.Brand",
+      "objective_id": "OKR-Marketing.Brand-P-ABCDEF12-002",
+      "dependencies": []
+    },
+    {
+      "team": "Marketing.Content",
+      "objective_id": "OKR-Marketing.Content-P-ABCDEF12-003",
+      "dependencies": [
+        {
+          "target_team": "Marketing.Brand",
+          "weight": 0.5
+        }
+      ]
+    }
+  ],
+  "mycelium_edges": [
+    {
+      "from": "Marketing",
+      "to": "Engineering.Technology.Referral",
+      "weight": 0.8
+    },
+    {
+      "from": "Marketing",
+      "to": "Marketing.Brand",
+      "weight": 0.5
+    }
+  ],
+  "last_reinforcement": "2026-09-15T00:13:23.106348Z"
+}

@@ -1,0 +1,8 @@
+{
+  "synapsis": {"conclusion": "Tailor next touch to this client.",
+    "transformations": [
+      {"name": "RECORD", "state_kind": "record", "output": "Discovery call with Client A on 2026-08-19."},
+      {"name": "EVIDENCE", "state_kind": "evidence", "evidence_type": "interaction-derived", "client_id": "client-A", "output": "Client A said they are re-evaluating ROI tooling this quarter."},
+      {"name": "INTERPRETATION", "state_kind": "interpretation", "output": "Surface ROI proof early for Client A."}
+    ]}
+}

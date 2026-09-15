@@ -1361,6 +1361,30 @@
       "usage_count": 0,
       "last_used": "",
       "similarity_hash": "0a6890fdb5e644d8"
+    },
+    {
+      "problem_id": "P-20260915015033",
+      "goal": "Create a premium yuzu drink brand for the US high-end market",
+      "constraints": [
+        "Timeline as specified",
+        "Budget as specified",
+        "Regulatory compliance"
+      ],
+      "assumptions": [
+        "Stakeholders will engage",
+        "Data is accessible",
+        "Team capacity available"
+      ],
+      "unknowns": [
+        "Detailed requirements",
+        "Technical feasibility",
+        "Market conditions"
+      ],
+      "department": "Marketing",
+      "created_at": "2026-09-15T01:50:33.301298Z",
+      "usage_count": 0,
+      "last_used": "",
+      "similarity_hash": "0a6890fdb5e644d8"
     }
   ]
 }

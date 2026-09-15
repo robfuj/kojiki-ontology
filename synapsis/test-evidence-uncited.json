@@ -1,0 +1,8 @@
+{
+  "synapsis": {"conclusion": "Act on the finding (BUT it is unverifiable).",
+    "transformations": [
+      {"name": "RECORD", "state_kind": "record", "output": "Some market signal noted."},
+      {"name": "EVIDENCE", "state_kind": "evidence", "output": "Buyers prefer short sales cycles."},
+      {"name": "INTERPRETATION", "state_kind": "interpretation", "output": "Compress the funnel."}
+    ]}
+}

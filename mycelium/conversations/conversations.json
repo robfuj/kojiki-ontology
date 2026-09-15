@@ -2724,6 +2724,146 @@
       "signals": [],
       "resolution": null,
       "escalation_ref": null
+    },
+    {
+      "id": "CONV-AA21939B01AC",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "People & Comms",
+        "Engineering",
+        "Sales",
+        "Operations",
+        "Marketing",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T01:53:57.688125Z",
+      "updated_at": "2026-09-15T01:53:57.688126Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-6B7E05EE39FC",
+      "title": "Cross-Dept Coordination: Create a premium yuzu drink brand for the US high-",
+      "conversation_type": "coordination",
+      "participants": [
+        "Finance",
+        "Legal",
+        "Engineering",
+        "Sales",
+        "People & Comms",
+        "Operations",
+        "Marketing"
+      ],
+      "created_at": "2026-09-15T03:16:58.440099Z",
+      "updated_at": "2026-09-15T03:16:58.440105Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-13CF3C9FAF92",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Legal",
+        "Engineering",
+        "Sales",
+        "Finance",
+        "Marketing",
+        "Operations",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T03:18:16.825888Z",
+      "updated_at": "2026-09-15T03:18:16.825889Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-5DB45687A87A",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Operations",
+        "Legal",
+        "Marketing",
+        "Finance",
+        "Sales",
+        "Engineering",
+        "People & Comms"
+      ],
+      "created_at": "2026-09-15T03:18:17.578198Z",
+      "updated_at": "2026-09-15T03:18:17.578211Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-AFAAD11FCFFB",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "People & Comms",
+        "Sales",
+        "Marketing",
+        "Finance",
+        "Operations",
+        "Engineering",
+        "Legal"
+      ],
+      "created_at": "2026-09-15T03:18:17.806633Z",
+      "updated_at": "2026-09-15T03:18:17.806635Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-EC083E5CB933",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Legal",
+        "Sales",
+        "Operations",
+        "People & Comms",
+        "Finance",
+        "Engineering"
+      ],
+      "created_at": "2026-09-15T03:18:18.055440Z",
+      "updated_at": "2026-09-15T03:18:18.055441Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
+    },
+    {
+      "id": "CONV-F215A9DC1CCA",
+      "title": "Cross-Dept Coordination: Launch a referral program to shift 30% of paid bud",
+      "conversation_type": "coordination",
+      "participants": [
+        "Marketing",
+        "Finance",
+        "Sales",
+        "Engineering",
+        "Legal",
+        "People & Comms",
+        "Operations"
+      ],
+      "created_at": "2026-09-15T03:18:18.337065Z",
+      "updated_at": "2026-09-15T03:18:18.337069Z",
+      "status": "ACTIVE",
+      "signals": [],
+      "resolution": null,
+      "escalation_ref": null
     }
   ]
 }

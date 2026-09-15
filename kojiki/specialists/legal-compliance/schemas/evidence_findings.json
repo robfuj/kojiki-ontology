@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "finding_id": { "type": "string", "pattern": "^FE-[A-Z0-9-]+$" },
+          "question": { "type": "string" },
+          "answer": { "type": "string" },
+          "source": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "retrieval_state": { "type": "string", "enum": ["RETRIEVED", "PARTIAL", "FAILED"] },
+          "coverage_limits": { "type": "string" },
+          "sufficiency": { "type": "string", "enum": ["SUFFICIENT", "INSUFFICIENT"] }
+        },
+        "required": ["finding_id", "question", "answer", "source", "confidence", "retrieval_state", "coverage_limits", "sufficiency"],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["findings"],
+  "additionalProperties": false
+}

@@ -9,7 +9,7 @@ import os
 import sys
 from datetime import datetime
 
-sys.path.insert(0, '/Users/Fujita/Documents/AI Filing System/decision-systems/00-kojiki-ontology/mycelium/engine')
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'mycelium/engine'))
 
 from escalation import EscalationEngine, Experience, ErrorClass, Layer
 from registry import NodeRegistry

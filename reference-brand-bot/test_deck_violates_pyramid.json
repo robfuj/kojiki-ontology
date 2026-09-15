@@ -1,0 +1,28 @@
+{
+  "deck_id": "DECK-TEST-001",
+  "output_ref": "OUT-001",
+  "title": "Test Deck - Violates Pyramid (answer buried)",
+  "audience": ["Test.Lead"],
+  "slides": [
+    {
+      "slide_id": "S-001",
+      "title": "Background: We have a problem",
+      "layout": "context",
+      "content": {"metrics": ["Things are bad"]}
+    },
+    {
+      "slide_id": "S-002",
+      "title": "The Answer: Fix it now",
+      "layout": "answer_first",
+      "content": {"answer": "Do X", "impact": "Better"}
+    },
+    {
+      "slide_id": "S-003",
+      "title": "Supporting argument",
+      "layout": "bullets",
+      "content": {"points": ["Reason 1", "Reason 2"]}
+    }
+  ],
+  "format": "markdown_slides",
+  "generated_at": "2026-09-07T10:00:00Z"
+}

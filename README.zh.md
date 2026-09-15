@@ -116,12 +116,12 @@ bash bots/install_bots.py brand growth
 2. **Industry / sector** — 触发研究
 3. **Jurisdiction**（国家 / 地区 / 监管）
 4. **Geography + business model**
-5. **Sibling registration** — 在 `handoffs/registry.json` 中父 `group_id` 下注册
+5. **Sibling registration** — `handoffs/registry.json` 中父 `group_id` 下注册
 
 随后 Agent 通过 SYNAPSIS 链运行工作，并用以下命令验证：
 
 ```bash
-python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-kojiki-ontology/handoffs/registry.json bot-output.json
+python3 ../synapsis/validate.py --mycelium-registry ../handoffs/registry.json bot-output.json
 ```
 
 ---
@@ -130,60 +130,66 @@ python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-koj
 
 ```
 decision-systems/
-├── 00-kojiki-ontology/          # 共享大脑（核心）
-│   ├── synapsis/                # SYNAPSIS 链 + 验证器
-│   │   ├── SYNAPSIS.md          # 完整规范
-│   │   ├── validate.py          # 不变量检查器（仅标准库）
-│   │   ├── REFERENCES.md        # 咨询框架映射表
-│   │   └── transformations.json # 阶段定义
-│   ├── schemas/                 # 核心 JSON Schema（在 Bot 中镜像）
-│   │   ├── evidence.json
-│   │   ├── interpretation.json
-│   │   ├── strategy.json
-│   │   ├── problem.json
-│   │   ├── learning-ledger.json
-│   │   └── decision-object.json
-│   ├── mycelium/                # Canopy 层（涌现协调）
-│   │   ├── schemas/             # node, objective, key_result, edge, signal, provenance_token
-│   │   ├── engine/              # registry, graph, reinforcement, propagate, prune, sentinel, saccade
-│   │   ├── neuraxis/            # 垂直轴: experience, problem, gate_request, escalation
-│   │   ├── tests/               # 全部通过
-│   │   └── examples/            # demo_marketing_sales.py
-│   ├── learning/                # 组织记忆（案例、模式、规则）
-│   ├── handoffs/                # 跨部门注册表 + 交接标准
-│   ├── decision-rights/         # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-│   ├── consultant/              # 50+ 咨询框架（复制，MIT，设计时参考）
-│   └── build_repos.py           # 生成部门仓库
-│
-├── kojiki/                      # NEW: 统一运行时
-│   ├── core/                    # 共享执行引擎
-│   │   ├── runner.py            # Slim orchestrator（约500行）
-│   │   ├── stages/              # 8 阶段执行子
-│   │   └── registry.py          # 专家自动发现
-│   ├── specialists/             # 专家配置（合并为 7 部门）
-│   │   ├── marketing-brand/
-│   │   ├── marketing-growth/
+├── synapsis/                    # SYNAPSIS 链 + 验证器
+│   ├── SYNAPSIS.md             # 完整规范
+│   ├── validate.py             # 不变量检查器（仅标准库）
+│   ├── REFERENCES.md           # 咨询框架映射表
+│   └── transformations.json    # 阶段定义
+├── schemas/                    # 核心 JSON Schema
+│   ├── evidence.json
+│   ├── interpretation.json
+│   ├── strategy.json
+│   ├── problem.json
+│   ├── learning-ledger.json
+│   └── decision-object.json
+├── mycelium/                   # Canopy 层（涌现协调）
+│   ├── schemas/                # node, objective, key_result, edge, signal, provenance_token
+│   ├── engine/                 # Core MYCELIUM engine modules
+│   ├── neuraxis/               # 垂直轴: experience, problem, gate_request, escalation
+│   ├── tests/                  # 全部通过
+│   └── examples/               # demo_marketing_sales.py
+├── sentinel/                   # 来源层: Ed25519, 哈希链
+├── learning/                   # 组织记忆（案例、模式、规则）
+├── handoffs/                   # 跨部门注册表 + 交接标准
+├── decision-rights/            # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
+├── consultant/                 # 50+ 咨询框架（复制，MIT，设计时参考）
+├── var/                        # 运行时数据（gitignore: 日志、哨兵密钥）
+├── README.md / .ja.md / .zh.md
+├── PROMO.md
+└── LICENSE
+
+├── kojiki/                      # 统一运行时
+│   ├── core/                   # 共享执行引擎
+│   │   ├── runner.py           # Slim orchestrator（约500行）
+│   │   ├── stages/             # 8 阶段执行子
+│   │   └── __init__.py         # Specialist loader, call_model, schemas
+│   ├── specialists/            # 7 specialist configurations
+│   │   ├── ai-intelligence/
+│   │   ├── engineering-platform/
 │   │   ├── finance-accounting/
-│   │   └── ... (7 合并部门)
-│   ├── configs/                 # 部门负责人 + 参谋长配置
+│   │   ├── legal-compliance/
+│   │   ├── marketing-brand/
+│   │   ├── operations-ops/
+│   │   ├── people-hr/
+│   │   └── sales-outbound/
+│   ├── configs/                # 部门负责人 + 参谋长配置
 │   │   ├── dept-heads/
 │   │   └── chief-of-staff.yaml
-│   └── cli.py                   # 简单 CLI: `kojiki decide "goal"`
-│
-├── scripts/                     # 验证和 CI
+│   └── cli.py                  # 简单 CLI: `kojiki decide "goal"`
+
+├── scripts/                    # 验证和 CI
 │   ├── verify_all_runners.py
 │   ├── verify_causal_signatures.py
 │   └── test_runner_group.py
-│
-├── shared/                      # 共享资源（符号链接）
-│   ├── prompts/                 # 8 阶段提示词
-│   └── schemas/                 # 11 JSON Schema
-│
-├── test_governance_loop.py      # 端到端治理测试
-├── install-all.sh               # 安装本体 + 7 部门 + 元
-├── README.md
-├── README.ja.md
-├── README.zh.md
+
+├── shared/                     # 共享资源（符号链接）
+│   ├── prompts/                # 8 阶段提示词
+│   └── schemas/                # 11 JSON Schema
+
+├── test_governance_loop.py     # 端到端治理测试
+├── requirements.txt
+├── .github/workflows/ci.yml
+├── README.md / .ja.md / .zh.md
 └── LICENSE
 ```
 

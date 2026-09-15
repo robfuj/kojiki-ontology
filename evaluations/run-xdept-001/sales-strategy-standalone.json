@@ -1,0 +1,52 @@
+{
+  "synapsis": {
+    "conclusion": "Develop targeted marketing campaigns that highlight the unique customization options and eco-friendly attributes of our product line. Utilize influencer partnerships on social media to reach potential customers effectively, focusing on content that showcases real-life usage scenarios which resonate well with urban millennials.",
+    "transformations": [
+      {
+        "name": "RECORD",
+        "state_kind": "record",
+        "output": "Category buyer behavior (local assumption)."
+      },
+      {
+        "name": "EVIDENCE",
+        "state_kind": "evidence",
+        "output": "Local market assumptions (no sibling evidence available).",
+        "source_citation": "Kojiki source specification (self-generated, standalone mode)",
+        "consumes": [
+          {
+            "producer": "marketing.EVIDENCE",
+            "state_provenance": "self-generated"
+          }
+        ]
+      },
+      {
+        "name": "INTERPRETATION",
+        "state_kind": "interpretation",
+        "output": "The market analysis indicates a growing trend towards personalized and sustainable products among consumers, especially those in urban areas aged between 25-40 years old. This demographic is highly engaged with social media platforms where they seek recommendations and reviews before making purchasing decisions.",
+        "consumes": [
+          {
+            "producer": "marketing.INTERPRETATION",
+            "state_provenance": "self-generated"
+          }
+        ]
+      },
+      {
+        "name": "STRATEGY",
+        "state_kind": "strategy",
+        "output": "Develop targeted marketing campaigns that highlight the unique customization options and eco-friendly attributes of our product line. Utilize influencer partnerships on social media to reach potential customers effectively, focusing on content that showcases real-life usage scenarios which resonate well with urban millennials.",
+        "consumes": [
+          {
+            "producer": "marketing.INTERPRETATION",
+            "state_provenance": "self-generated"
+          }
+        ]
+      },
+      {
+        "name": "BRAIN",
+        "state_kind": "coordination",
+        "no_origination": true,
+        "output": "Route to INTERACTION."
+      }
+    ]
+  }
+}

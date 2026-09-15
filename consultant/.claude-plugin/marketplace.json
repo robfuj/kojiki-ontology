@@ -1,0 +1,14 @@
+{
+  "name": "consultant",
+  "owner": {
+    "name": "robfuj"
+  },
+  "plugins": [
+    {
+      "name": "consulting",
+      "source": "./",
+      "description": "50+ consulting frameworks used by top firms for structured problem-solving",
+      "version": "1.2.0"
+    }
+  ]
+}

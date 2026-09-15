@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "problem_id": {
+      "type": "string",
+      "pattern": "^P-[A-Z0-9]{8}$"
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 10
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["problem_id", "goal", "constraints", "assumptions", "unknowns"],
+  "additionalProperties": false
+}

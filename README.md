@@ -34,8 +34,8 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 
 | Tier | Purpose | Key Property |
 |------|---------|--------------|
-| **Root (Rigid)** | Single bot's internal pipeline | Enforced order, context isolation, `EVALUATION ≠ ORIGINATION` |
-| **Canopy (Emergent)** | Cross-bot coordination | Redundant routing, reciprocal reinforcement, no central controller |
+| **Root (Rigid)** | Single specialist's internal pipeline | Enforced order, context isolation, `EVALUATION ≠ ORIGINATION` |
+| **Canopy (Emergent)** | Cross-specialist coordination | Redundant routing, reciprocal reinforcement, no central controller |
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -54,7 +54,7 @@ Each stage is a **bounded transformation** with explicit authority and an explic
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  SYNAPSIS Root Tier (per-bot rigid pipeline)                │
+│  SYNAPSIS Root Tier (per-specialist rigid pipeline)         │
 │  RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY    │
 │       → OUTPUT → OUTCOME → LEARNING                          │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
@@ -89,7 +89,6 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 | **Operations** | Supply chain, procurement, day-to-day ops |
 | **Legal** | Compliance, Risk, contracts, regulatory |
 | **People & Comms** | HR, Internal comms, Public Affairs |
-| **Technology Platform** | AI, IT, Security, Data Analytics |
 
 ---
 
@@ -100,26 +99,14 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 git clone <your-repo-url>
 cd decision-systems
 
-# Install the full package: ontology + 7 departments + meta agents
-bash install-all.sh
+# Install dependencies
+pip install -r requirements.txt
 
-# Or install a single department (clones ontology sibling if missing)
-cd 03-marketing
-bash bots/install_bots.py brand growth
-```
+# Run a specialist
+python -m kojiki.core.runner marketing-brand dispatch.json
 
-### After Install
-
-Each agent runs the **Kojiki Orientation Protocol** on first run:
-1. **Name + function** — who am I?
-2. **Industry / sector** — triggers research
-3. **Jurisdiction** (country / region / regulatory)
-4. **Geography + business model**
-5. **Sibling registration** under parent `group_id` in `handoffs/registry.json`
-
-Then the agent runs work through the SYNAPSIS chain and validates with:
-```bash
-python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-kojiki-ontology/handoffs/registry.json bot-output.json
+# Run all 7 specialists
+python scripts/verify_all_runners.py
 ```
 
 ---
@@ -128,62 +115,98 @@ python3 ../00-kojiki-ontology/synapsis/validate.py --mycelium-registry ../00-koj
 
 ```
 decision-systems/
-├── 00-kojiki-ontology/          # Shared brain (this is the core)
-│   ├── synapsis/                # SYNAPSIS chain + validator
-│   │   ├── SYNAPSIS.md          # Full specification
-│   │   ├── validate.py          # Invariant checker (stdlib only)
-│   │   ├── REFERENCES.md        # Consultant framework mappings
-│   │   └── transformations.json # Stage definitions
-│   ├── schemas/                 # Core JSON schemas (mirrored in bots)
-│   │   ├── evidence.json
-│   │   ├── interpretation.json
-│   │   ├── strategy.json
-│   │   ├── problem.json
-│   │   ├── learning-ledger.json
-│   │   └── decision-object.json
-│   ├── mycelium/                # Canopy tier (emergent coordination)
-│   │   ├── schemas/             # node, objective, key_result, edge, signal, provenance_token
-│   │   ├── engine/              # registry, graph, reinforcement, propagate, prune, sentinel, saccade
-│   │   ├── neuraxis/            # Vertical axis: experience, problem, gate_request, escalation
-│   │   ├── tests/               # All passing
-│   │   └── examples/            # demo_marketing_sales.py
-│   ├── learning/                # Organizational memory (cases, patterns, rules)
-│   ├── handoffs/                # Cross-department registry + handoff standard
-│   ├── decision-rights/         # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-│   ├── consultant/              # 50+ consulting frameworks (copied, MIT, design-time reference)
-│   └── build_repos.py           # Generates the department repos
-│
-├── kojiki/                      # NEW: Unified runtime (slim orchestrator)
-│   ├── core/                    # Shared execution engine
-│   │   ├── runner.py            # Slim orchestrator (~500 lines)
-│   │   ├── stages/              # 8 stage executors
-│   │   └── registry.py          # Specialist auto-discovery
-│   ├── specialists/             # Specialist configurations (consolidated to 7 depts)
-│   │   ├── marketing-brand/
-│   │   ├── marketing-growth/
-│   │   ├── finance-accounting/
-│   │   └── ... (7 consolidated departments)
-│   ├── configs/                 # Dept Head + Chief of Staff configs
+├── synapsis/                    # SYNAPSIS chain + validator
+│   ├── SYNAPSIS.md             # Full specification
+│   ├── validate.py             # Invariant checker (stdlib only)
+│   ├── REFERENCES.md           # Consultant framework mappings
+│   └── transformations.json    # Stage definitions
+├── schemas/                    # Core JSON schemas
+│   ├── evidence.json
+│   ├── interpretation.json
+│   ├── strategy.json
+│   ├── problem.json
+│   ├── learning-ledger.json
+│   └── decision-object.json
+├── mycelium/                   # Canopy tier (emergent coordination)
+│   ├── schemas/                # node, objective, key_result, edge, signal, provenance_token
+│   ├── engine/                 # Core MYCELIUM engine modules (see below)
+│   ├── neuraxis/               # Vertical axis: experience, problem, gate_request, escalation
+│   ├── tests/                  # All passing (48 tests)
+│   └── examples/               # demo_marketing_sales.py
+├── sentinel/                   # Provenance: Ed25519, hash-chained logs
+├── learning/                   # Organizational memory (cases, patterns, rules)
+├── handoffs/                   # Cross-department registry + handoff standard
+├── decision-rights/            # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
+├── consultant/                 # 50+ consulting frameworks (copied, MIT, design-time reference)
+├── var/                        # Runtime data (gitignored: logs, sentinel keys)
+├── README.md / .ja.md / .zh.md
+├── PROMO.md
+└── LICENSE
+
+├── kojiki/                     # Unified runtime
+│   ├── core/                   # Shared execution engine
+│   │   ├── runner.py           # Slim orchestrator (~500 lines)
+│   │   ├── stages/             # 8 stage executors
+│   │   └── __init__.py         # Specialist loader, call_model, schemas
+├── specialists/            # 7 specialist configurations
+│   ├── ai-intelligence/
+│   ├── engineering-platform/
+│   ├── finance-accounting/
+│   ├── legal-compliance/
+│   ├── marketing-brand/
+│   ├── operations-ops/
+│   ├── people-hr/
+│   └── sales-outbound/
+│   ├── configs/                # Dept Head + Chief of Staff configs
 │   │   ├── dept-heads/
 │   │   └── chief-of-staff.yaml
-│   └── cli.py                   # Simple CLI: `kojiki decide "goal"`
-│
-├── scripts/                     # Verification & CI
+│   └── cli.py                  # Simple CLI: `kojiki decide "goal"`
+
+├── scripts/                    # Verification & CI
 │   ├── verify_all_runners.py
 │   ├── verify_causal_signatures.py
 │   └── test_runner_group.py
-│
-├── shared/                      # Shared resources (symlinked)
-│   ├── prompts/                 # 8 stage prompts
-│   └── schemas/                 # 11 JSON schemas
-│
-├── test_governance_loop.py      # End-to-end governance test
-├── install-all.sh               # Installs ontology + 7 depts + meta
-├── README.md
-├── README.ja.md
-├── README.zh.md
+
+├── shared/                     # Shared resources (symlinked)
+│   ├── prompts/                # 8 stage prompts
+│   └── schemas/                # 11 JSON schemas
+
+├── test_governance_loop.py     # End-to-end governance test
+├── requirements.txt
+├── .github/workflows/ci.yml
+├── README.md / .ja.md / .zh.md
 └── LICENSE
 ```
+
+---
+
+## 🔧 MYCELIUM Engine Modules (`00-kojiki-ontology/mycelium/engine/`)
+
+| Module | Purpose |
+|--------|---------|
+| `registry.py` | JSON file-based node registry with lineage validation & SENTINEL key lifecycle |
+| `postgres_registry.py` | PostgreSQL-backed registry (optional sync target, not canonical) |
+| `postgres_persistence.py` | PostgreSQL connection pooling & cursor management |
+| `graph.py` / `graph_csr.py` | Graph structures for MYCELIUM topology |
+| `propagate.py` | Signal propagation across subgraph-bounded edges |
+| `reinforcement.py` | Tero-style discrete reinforcement/decay (γ efficiency–redundancy tradeoff) |
+| `prune.py` | Parasitism guard: prune edges with weight < 0.05 or reciprocity < 0.2 |
+| `sentinel.py` | SENTINEL: Ed25519 keys, hash-chained provenance logs, signing/verification |
+| `saccade.py` | SACCADE: a priori problem framing (Pyramid/SCQ/MECE) |
+| `kaizen_loop.py` | PDCA continuous improvement with 14-category error taxonomy |
+| `kaizen_compression.py` | Context compression for Kaizen learning (ESSENTIAL/DETAILED/FULL) |
+| `okr_engine.py` | BCG-style OKR engine with weighted progress, maturity scoring |
+| `governance_handler.py` | L3/L4 governance gates with SLA, decision rights, fail-closed default |
+| `escalation.py` | NEURAXIS: L0–L4 escalation with repetition threshold & decision rights |
+| `decision_rights.py` | Decision Rights gating (Own/Recommend/Consult/Approve/Execute/Escalate/Automate) |
+| `conversation.py` | MYCELIUM Conversation Layer: cross-dept signal propagation + NEURAXIS |
+| `measurement_adapter.py` | Adapter registry for real BI/analytics (Postgres, HubSpot, etc.) |
+| `deck_dna_cache.py` | Deck DNA caching for slide generation |
+| `models.py` | Shared SQLAlchemy models (Postgres backend) |
+| `alembic/` | Database migrations for Postgres (optional) |
+
+**Canonical persistence:** JSON file registry (`registry.py`) — local-first, stdlib only, no external dependencies.  
+**PostgreSQL (`postgres_registry.py` + `alembic/`):** Optional sync target for production deployments; not required for local development.
 
 ---
 
@@ -193,10 +216,11 @@ decision-systems/
 |-------|---------|-------|
 | **KOJIKI** | What exists — the ontology | Entities, relationships, the 7 consolidated departments |
 | **SACCADE** | Is the question well-posed, before anything is tried | A priori, bounded iterative framing (converges or hits a pass cap) |
-| **SYNAPSIS** | How one bounded decision gets made | Per-bot, rigid, auditable — Evidence ≠ Interpretation ≠ Strategy |
+| **SYNAPSIS** | How one bounded decision gets made | Per-specialist, rigid, auditable — Evidence ≠ Interpretation ≠ Strategy |
 | **NEURAXIS** | How far up the abstraction ladder a failure needs to go to be explained | A posteriori, escalates only on real divergence, governed at L3/L4 |
 | **MYCELIUM** | How many decisions, across many departments, stay coordinated | Emergent OKR-dependency graph, subgraph-scoped signals, never a directive |
 | **SENTINEL** | Who actually said that | Signed, hash-chained, non-fungible provenance for every cross-node claim |
+| **CHIEF OF STAFF** | Who decomposes and synthesizes | Goal → decomposition → parallel execution → synthesis |
 
 ---
 
@@ -280,12 +304,22 @@ Governance gate: repetition threshold (N distinct experiences), Decision Rights 
 | **Redefinition capture** | Experiences include superseding Problem objects |
 | **Learning ledger** | Versioned cases, patterns, rules — never silently overwritten |
 
+### OKR Engine (BCG Methodology)
+
+| Capability | Implementation |
+|------------|----------------|
+| **Corporate objectives** | Top-level strategy with weighted KRs, horizon flexibility |
+| **Department objectives** | Decomposed from corporate, owner + key results with status/confidence |
+| **Team OKRs** | Auto-generated by Chief of Staff, lineage-enforced, depends_on[] |
+| **Progress rollup** | Weighted progress from Team → Dept → Corporate, maturity scoring |
+| **Governance integration** | L3/L4 gate for objective changes, depends_on[] blocks rollout |
+
 ### Chief of Staff (Coordinator)
 
 | Capability | Implementation |
 |------------|----------------|
 | **Goal decomposition** | Pattern matching + LLM planning → specialist tasks |
-| **Specialist discovery** | Registry auto-discovers `specialists/<dept>/<agent>/` |
+| **Specialist discovery** | Registry auto-discovers `kojiki/specialists/<dept>/<agent>/` |
 | **Parallel execution** | Runs independent specialists simultaneously |
 | **Dependency management** | Sales waits for Product spec; Finance waits for Eng estimate |
 | **Conflict resolution** | Detect overlapping decision rights; escalate to governance |
@@ -298,39 +332,45 @@ Governance gate: repetition threshold (N distinct experiences), Decision Rights 
 The architecture is grounded in peer-reviewed research across four independent fields:
 
 ### Biology (Mycorrhizal Networks)
+
 | Study | Finding | Architecture Mapping |
 |-------|---------|---------------------|
-| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula (§IV.6.1), γ efficiency-redundancy tradeoff |
-| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis (§II.2, §IV.6.3) |
+| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula, γ efficiency-redundancy tradeoff |
+| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis |
 | Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | Defense-signal propagation ("priming") | Scoped, subgraph-only Signal propagation |
 | Karst, Jones & Hoeksema, *Nature Ecology & Evolution* (2023) | Skeptical review: citation bias toward positive-effect studies in CMN literature | Caution in §II.5 — build only on well-supported mechanics |
 | Frew et al., *Functional Ecology* special issue (2025) | CMNs are heterogeneous, context/host/fungal-type dependent | Reinforces §II.5 caution |
 | Silvestri et al. (2025), *New Phytologist* status report (2026) | New molecular regulatory mechanism (`ckRNAi`) discovered in AM symbiosis | §II.6 — cellular tier keeps proving more rigid |
-| Bilgen & Akan, "Internet of Plants" (2024–2025, Cambridge/Koç) | Independent comms-engineering formalization: fungal network as "graph-based communication medium" | Validates `SIGNALING ≠ ORCHESTRATION` invariant (§IV.3, §II.7) |
+| Bilgen & Akan, "Internet of Plants" (2024–2025, Cambridge/Koç) | Independent comms-engineering formalization: fungal network as "graph-based communication medium" | Validates `SIGNALING ≠ ORCHESTRATION` invariant |
 | Adamatzky, *Royal Society Open Science* (2022) | Fungal electrical spikes show statistical structure resembling rudimentary code | Flagged as speculative (§II.4), not load-bearing |
 
 ### Neuroscience (Hierarchical Predictive Coding)
+
 | Study | Finding | Architecture Mapping |
 |-------|---------|---------------------|
-| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder (§VII.5.2) — exact computational structure |
+| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder — exact computational structure |
 | Spinal cord → brainstem → cortex reflex arc | Fast local responses; ambiguous stimuli escalate; cortical inhibition modulates reflexes | NEURAXIS L0–L4 layers with governance gate at L3 |
 
 ### Immunology (Innate/Adaptive Boundary)
+
 | Study | Finding | Architecture Mapping |
 |-------|---------|---------------------|
-| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate with learned layer; never rewrites innate recognition machinery | NEURAXIS governance gate: L0–L2 autonomous, L3–L4 require external validation (§VII.5.2, §VII.5.5) |
+| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate with learned layer; never rewrites innate recognition machinery | NEURAXIS governance gate: L0–L2 autonomous, L3–L4 require external validation |
 
 ### RL-for-LLM Research
+
 | Study | Finding | Architecture Mapping |
 |-------|---------|---------------------|
 | Sparse trajectory-level reward → Process-level credit assignment | Per-step credit assignment produces better learning with less data | SYNAPSIS per-stage decomposition with `diagnosed_cause_category` from Learning Taxonomy |
 
 ### Enterprise Multi-Agent Reference Architectures
+
 | Source | Finding | Architecture Mapping |
 |--------|---------|---------------------|
 | Microsoft multi-agent reference architecture (real deployments) | Registry → Orchestrator → Knowledge/State → Async replay-aware communication | Same component separation arrived at independently |
 
 ### Recursive Self-Improvement Taxonomy
+
 | Study | Finding | Architecture Mapping |
 |-------|---------|---------------------|
 | Bounded (L3) vs Unbounded (L4/L5) self-improvement | Bounded: improvement mechanism externally maintained | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` invariant keeps system at L3 |

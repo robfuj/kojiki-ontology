@@ -2,6 +2,7 @@
 """Verify all specialists pass."""
 
 import sys
+import os
 from pathlib import Path
 import subprocess
 
@@ -22,19 +23,22 @@ def run_specialist(specialist_name):
         "raw_source": {},
         "prior_accepted_evidence": []
     }
-    
+
     import json
     dispatch_file = f"/tmp/dispatch_{specialist_name}.json"
     with open(dispatch_file, 'w') as f:
         json.dump(test_dispatch, f)
-    
+
     try:
+        env = os.environ.copy()
+        env["KOJIKI_TEST_MODE"] = "true"
         result = subprocess.run(
             [sys.executable, "-m", "kojiki.core.runner", specialist_name, dispatch_file],
             capture_output=True,
             text=True,
             timeout=60,
-            cwd="/Users/Fujita/Documents/AI Filing System/decision-systems"
+            cwd="/Users/Fujita/Documents/AI Filing System/decision-systems",
+            env=env
         )
         if result.returncode == 0 and "PIPELINE COMPLETE" in result.stdout:
             return True, None

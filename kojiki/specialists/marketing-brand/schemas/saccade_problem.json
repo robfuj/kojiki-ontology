@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kojiki.org/schemas/saccade_problem.json",
+  "title": "SACCADE Problem Output",
+  "type": "object",
+  "required": ["problem_id", "goal", "constraints", "assumptions", "unknowns"],
+  "additionalProperties": false,
+  "properties": {
+    "problem_id": {
+      "type": "string",
+      "pattern": "^P-[A-Z0-9]{8}$",
+      "description": "Unique problem identifier"
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500,
+      "description": "Single-sentence goal statement"
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 200 },
+      "minItems": 1,
+      "maxItems": 7,
+      "description": "Hard constraints on the solution"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 200 },
+      "minItems": 0,
+      "maxItems": 7,
+      "description": "Assumptions that must hold for goal to be achievable"
+    },
+    "unknowns": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 200 },
+      "minItems": 0,
+      "maxItems": 7,
+      "description": "Key unknowns that need evidence"
+    },
+    "supersedes": {
+      "type": "string",
+      "pattern": "^P-[A-Z0-9]{8}(-v\\d+)?$",
+      "description": "Previous problem this supersedes (for lineage)"
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Why this problem supersedes the previous"
+    }
+  }
+}

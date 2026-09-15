@@ -1,0 +1,74 @@
+{
+  "dept_head": "Engineering.Technology",
+  "specialist": "engineering-platform",
+  "team_okrs": [
+    {
+      "team": "Engineering.Technology.Platform",
+      "objective_id": "OKR-Engineering.Technology.Platform-P-ABCDEF12-001",
+      "dependencies": [
+        {
+          "target_team": "Engineering.Technology.Infrastructure",
+          "weight": 0.7
+        }
+      ]
+    },
+    {
+      "team": "Engineering.Technology.Referral",
+      "objective_id": "OKR-Engineering.Technology.Referral-P-ABCDEF12-002",
+      "dependencies": [
+        {
+          "target_team": "Engineering.Technology.Platform",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "team": "Engineering.Technology.API",
+      "objective_id": "OKR-Engineering.Technology.API-P-ABCDEF12-003",
+      "dependencies": [
+        {
+          "target_team": "Engineering.Technology.Platform",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "team": "Engineering.Technology.Infrastructure",
+      "objective_id": "OKR-Engineering.Technology.Infrastructure-P-ABCDEF12-004",
+      "dependencies": []
+    },
+    {
+      "team": "Engineering.Technology.Data",
+      "objective_id": "OKR-Engineering.Technology.Data-P-ABCDEF12-005",
+      "dependencies": [
+        {
+          "target_team": "Engineering.Technology.Infrastructure",
+          "weight": 0.6
+        }
+      ]
+    }
+  ],
+  "mycelium_edges": [
+    {
+      "from": "Engineering.Technology",
+      "to": "Engineering.Technology.Infrastructure",
+      "weight": 0.7
+    },
+    {
+      "from": "Engineering.Technology",
+      "to": "Engineering.Technology.Platform",
+      "weight": 0.8
+    },
+    {
+      "from": "Engineering.Technology",
+      "to": "Engineering.Technology.Platform",
+      "weight": 0.8
+    },
+    {
+      "from": "Engineering.Technology",
+      "to": "Engineering.Technology.Infrastructure",
+      "weight": 0.6
+    }
+  ],
+  "last_reinforcement": "2026-09-12T08:38:46.394262Z"
+}

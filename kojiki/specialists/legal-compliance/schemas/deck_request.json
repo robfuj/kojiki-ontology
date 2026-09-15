@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "deck_type": { "type": "string", "enum": ["decision", "status", "review", "planning", "retrospective"] },
+    "audience": { "type": "string" },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slide_id": { "type": "string" },
+          "title": { "type": "string" },
+          "layout": { "type": "string" },
+          "content": { "type": "object" },
+          "data_refs": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["slide_id", "title", "layout", "content"],
+        "additionalProperties": false
+      },
+      "minItems": 3
+    },
+    "deck_dna": {
+      "type": "object",
+      "properties": {
+        "department": { "type": "string" },
+        "mode": { "type": "string" },
+        "template_version": { "type": "string" }
+      },
+      "required": ["department", "mode", "template_version"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["deck_type", "audience", "slides", "deck_dna"],
+  "additionalProperties": false
+}

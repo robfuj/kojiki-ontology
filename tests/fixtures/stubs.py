@@ -388,15 +388,15 @@ def get_stub(prompt: str, context: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """Get stub response for given prompt and context."""
     prompt_lower = prompt.lower()
 
-    # Check for Chief of Staff SACCADE
+    # Check for Chief of Staff Strategy FIRST (before general SACCADE)
     task_id = str(context.get("task_id", ""))
-    if ("cos-saccade" in task_id) or ("cos-decomp" in task_id) or ("chief of staff" in prompt_lower and "a priori" in prompt_lower):
-        return get_saccade_stub(context)
-
-    # Check for Chief of Staff Strategy
-    if ("cos-decomp" in task_id) or ("cos-saccade" in task_id) or context.get("dept_head") == "ChiefOfStaff":
+    if (("cos-decomp" in task_id) or ("cos-saccade" in task_id) or context.get("dept_head") == "ChiefOfStaff"):
         if "strategy" in prompt_lower:
             return get_strategy_cos_stub()
+
+    # Check for Chief of Staff SACCADE
+    if ("cos-saccade" in task_id) or ("cos-decomp" in task_id) or ("chief of staff" in prompt_lower and "a priori" in prompt_lower):
+        return get_saccade_stub(context)
 
     # Check for department head SACCADE
     if "dh-saccade" in task_id:

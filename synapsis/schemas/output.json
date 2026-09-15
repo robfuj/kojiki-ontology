@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kojiki.org/schemas/output.json",
+  "title": "OUTPUT Stage Output",
+  "type": "object",
+  "required": ["output_id", "content", "confidence", "format"],
+  "additionalProperties": false,
+  "properties": {
+    "output_id": {
+      "type": "string",
+      "pattern": "^OUT-\\d{3}$",
+      "description": "Unique output identifier"
+    },
+    "content": {
+      "type": "object",
+      "description": "Structured deliverable content (varies by type)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence in output correctness"
+    },
+    "format": {
+      "type": "string",
+      "enum": ["json", "markdown", "deck_plan", "email", "report"],
+      "description": "Output format type"
+    },
+    "validated_against": {
+      "type": "string",
+      "description": "Schema or contract this output was validated against"
+    },
+    "trace": {
+      "type": "object",
+      "required": ["problem_id", "evidence_ids", "strategy_id"],
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": { "type": "string", "pattern": "^P-[A-Z0-9]{8}$" },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^FE-\\d{3}$" }
+        },
+        "strategy_id": { "type": "string" }
+      },
+      "description": "Causal trace to upstream stages"
+    }
+  }
+}

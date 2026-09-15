@@ -1,0 +1,79 @@
+{
+  "deck_id": "DECK-TEST-002",
+  "output_ref": "OUT-001",
+  "title": "Test Deck - Valid SCQ + Pyramid + MECE",
+  "audience": ["Test.Lead"],
+  "slides": [
+    {
+      "slide_id": "S-001",
+      "title": "Launch referral program by Nov 1 to grow pipeline 15%",
+      "layout": "answer_first",
+      "content": {"answer": "Approve 3-touch email sequence + landing page + CRM automation", "impact": "+15% qualified pipeline, $2.3M attributed revenue", "owner": "Brand", "deadline": "2026-11-01"}
+    },
+    {
+      "slide_id": "S-002",
+      "title": "Situation: Referral channel flat at 3% of pipeline",
+      "layout": "context",
+      "content": {"metrics": ["3% pipeline from referrals", "0.8% conversion rate", "No automated workflow"]}
+    },
+    {
+      "slide_id": "S-003",
+      "title": "Complication: Manual process caps scale; competitors at 12%",
+      "layout": "problem",
+      "content": {"drivers": ["No incentive structure", "Manual CRM entry loses 40% leads", "Sales not prompted to ask"]}
+    },
+    {
+      "slide_id": "S-004",
+      "title": "Question: How to unlock referral channel at scale?",
+      "layout": "question",
+      "content": {}
+    },
+    {
+      "slide_id": "S-005",
+      "title": "Answer: 3-touch automated sequence + incentive + Sales enablement",
+      "layout": "answer_first",
+      "content": {"intervention": "Email sequence (D0/D3/D7) + landing page + CRM auto-enrollment", "incentive": "$50 per qualified referral", "enablement": "Sales battlecard + Slack reminder workflow"}
+    },
+    {
+      "slide_id": "S-006",
+      "title": "Supporting arguments (MECE)",
+      "layout": "mece_grouped",
+      "content": {
+        "groups": [
+          {
+            "label": "Demand generation",
+            "points": ["Incentive unlocks latent advocate base", "Automation removes friction"]
+          },
+          {
+            "label": "Sales execution",
+            "points": ["Battlecard equips reps", "Slack workflow ensures ask"]
+          },
+          {
+            "label": "Measurement",
+            "points": ["Weekly referral submissions", "Referral-to-opportunity conversion", "Attributed pipeline $"]
+          }
+        ]
+      }
+    },
+    {
+      "slide_id": "S-007",
+      "title": "Dependencies & Risks",
+      "layout": "dependencies",
+      "content": {
+        "dependencies": ["Marketing.Head budget approval", "Engineering referral API"],
+        "risks": [
+          {"risk": "Engineering API delay", "mitigation": "Staggered launch: email first, API week 2"},
+          {"risk": "Low Sales adoption", "mitigation": "Leaderboard + weekly Slack nudge"}
+        ]
+      }
+    },
+    {
+      "slide_id": "S-008",
+      "title": "Next Steps & Decision Required",
+      "layout": "decision",
+      "content": {"ask": "Approve budget $15K + Engineering sprint allocation", "decision_deadline": "2026-10-15", "decision_maker": "Marketing.Head"}
+    }
+  ],
+  "format": "markdown_slides",
+  "generated_at": "2026-09-07T10:00:00Z"
+}

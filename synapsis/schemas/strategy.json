@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kojiki.org/schemas/strategy.json",
+  "title": "STRATEGY Stage Output",
+  "type": "object",
+  "required": ["objective", "owner", "actions", "success_criteria", "risks"],
+  "additionalProperties": false,
+  "properties": {
+    "objective": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500,
+      "description": "Single measurable objective"
+    },
+    "owner": {
+      "type": "string",
+      "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$",
+      "description": "Decision Rights Owner (e.g., 'Marketing.Growth')"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action_id", "description", "owner", "due_date"],
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "pattern": "^ACT-\\d{3}$"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "owner": {
+            "type": "string",
+            "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$"
+          },
+          "due_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^ACT-\\d{3}$" },
+            "maxItems": 3
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 7
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "metric", "target", "operator", "weight"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "maxLength": 50 },
+          "metric": { "type": "string", "maxLength": 50 },
+          "target": { "type": "number" },
+          "operator": { "type": "string", "enum": [">=", "<=", "==", ">", "<"] },
+          "weight": { "type": "number", "minimum": 0.1, "maximum": 2.0 }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "Measurable success criteria (feed Kaizen Loop)"
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["risk_id", "description", "likelihood", "impact", "mitigation"],
+        "additionalProperties": false,
+        "properties": {
+          "risk_id": { "type": "string", "pattern": "^RSK-\\d{3}$" },
+          "description": { "type": "string", "maxLength": 300 },
+          "likelihood": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "impact": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "mitigation": { "type": "string", "maxLength": 300 }
+        }
+      },
+      "maxItems": 5
+    },
+    "decision_rights": {
+      "type": "object",
+      "required": ["own", "consult", "inform"],
+      "additionalProperties": false,
+      "properties": {
+        "own": { "type": "string", "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$" },
+        "consult": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$" },
+          "maxItems": 5
+        },
+        "inform": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$" },
+          "maxItems": 5
+        }
+      },
+      "description": "Explicit Decision Rights assignment"
+    }
+  }
+}
