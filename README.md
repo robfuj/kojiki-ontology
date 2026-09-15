@@ -22,8 +22,6 @@ Kojiki gives any LLM (Claude, GPT, local models, agent harnesses) a **shared, au
 RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → OUTCOME → LEARNING
 ```
 
-> ⚠️ **Open question, not yet resolved:** the canonical spec (*Cognitive Transformation Architecture*, thesis §III.1) separates STRATEGY (deciding the objective) from a distinct INTERACTION DESIGN stage (designing the approach to a specific stakeholder) — two different judgments that can independently be right or wrong. This implementation currently runs STRATEGY straight into OUTPUT with no INTERACTION stage in between (see the 5 pipeline files under each bot's `pipeline/`, and the stage table below). **This needs an explicit decision — was INTERACTION cut on purpose for v1, or does it need to be added back — before this is treated as final,** rather than silently diverging from the spec it claims to implement.
-
 Each stage is a **bounded transformation** with explicit authority and an explicit "what it must NOT silently become" (evidence ≠ interpretation ≠ belief ≠ doctrine). A **Brain** orchestrates; an independent **Adversarial Audit** challenges. Cross-department coordination happens through the **MYCELIUM canopy tier** — a decentralized, need-driven substrate modeled on mycorrhizal networks.
 
 > **The present is the cheap part.** The moment you try to trace *why* a decision was made — what evidence supported it, what assumptions failed, what the governance gate required — the structure pays for itself.
@@ -43,9 +41,9 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 ┌─────────────────────────────────────────────────────────────┐
 │  MYCELIUM Canopy Tier (emergent coordination)               │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │Marketing│──│  Sales  │──│Finance  │──│Product  │ ...    │
-│  │  Head   │  │  Head   │  │  Head   │  │  Head   │ 20     │
-│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘ lines  │
+│  │Marketing│──│  Sales  │──│Finance  │──│Engineer │ 7      │
+│  │  Head   │  │  Head   │  │  Head   │  │  Head   │ lines  │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘        │
 │       │            │            │            │              │
 │       ▼            ▼            ▼            ▼              │
 │  ┌─────────────────────────────────────────────────────┐   │
@@ -80,27 +78,29 @@ Every signal, edge change, and gate evidence is wrapped in a **non-fungible, has
 
 ---
 
-## 🏛️ The 7 Layers
+## 🏛️ The 7 Consolidated Departments
 
-| Layer | Answers | Scope |
-|-------|---------|-------|
-| **KOJIKI** | What exists — the ontology | Entities, relationships, the 20 canonical lines |
-| **SACCADE** | Is the question well-posed, before anything is tried | A priori, bounded iterative framing (converges or hits a pass cap) |
-| **SYNAPSIS** | How one bounded decision gets made | Per-bot, rigid, auditable — Evidence ≠ Interpretation ≠ Strategy |
-| **NEURAXIS** | How far up the abstraction ladder a failure needs to go to be explained | A posteriori, escalates only on real divergence, governed at L3/L4 |
-| **MYCELIUM** | How many decisions, across many departments, stay coordinated | Emergent OKR-dependency graph, subgraph-scoped signals, never a directive |
-| **SENTINEL** | Who actually said that | Signed, hash-chained, non-fungible provenance for every cross-node claim |
+| Department | Scope |
+|------------|-------|
+| **Finance** | Budget, CAC, ROI, FP&A, treasury |
+| **Marketing** | Brand, growth, referral, paid media |
+| **Sales** | Outbound, growth, Biz Dev, Corp Dev |
+| **Engineering** | Product, Customer Success, Technology, Referral tech |
+| **Operations** | Supply chain, procurement, day-to-day ops |
+| **Legal** | Compliance, Risk, contracts, regulatory |
+| **People & Comms** | HR, Internal comms, Public Affairs |
+| **Technology Platform** | AI, IT, Security, Data Analytics |
 
 ---
 
 ## 🚀 Quick Start
 
 ```bash
-# Clone the ontology repo
-git clone https://github.com/robfuj/kojiki-ontology  # or your fork
+# Clone the decision systems
+git clone <your-repo-url>
 cd decision-systems
 
-# Install the full package: ontology + 20 departments + 2 meta agents
+# Install the full package: ontology + 7 departments + meta agents
 bash install-all.sh
 
 # Or install a single department (clones ontology sibling if missing)
@@ -132,7 +132,7 @@ decision-systems/
 │   ├── synapsis/                # SYNAPSIS chain + validator
 │   │   ├── SYNAPSIS.md          # Full specification
 │   │   ├── validate.py          # Invariant checker (stdlib only)
-│   │   ├── REFERENCES.md        # Design-time framework mappings (see note)
+│   │   ├── REFERENCES.md        # Consultant framework mappings
 │   │   └── transformations.json # Stage definitions
 │   ├── schemas/                 # Core JSON schemas (mirrored in bots)
 │   │   ├── evidence.json
@@ -143,50 +143,64 @@ decision-systems/
 │   │   └── decision-object.json
 │   ├── mycelium/                # Canopy tier (emergent coordination)
 │   │   ├── schemas/             # node, objective, key_result, edge, signal, provenance_token
-│   │   ├── engine/               # registry, graph, reinforcement, propagate, prune, sentinel, saccade
-│   │   ├── neuraxis/             # Vertical axis: experience, problem, gate_request, escalation
-│   │   ├── tests/                 # All passing
-│   │   └── examples/              # demo_marketing_sales.py
-│   ├── learning/                 # Organizational memory (cases, patterns, rules)
-│   ├── handoffs/                 # Cross-department registry + handoff standard
-│   ├── decision-rights/           # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-│   ├── consultant/                # 50+ consulting frameworks (copied, MIT, design-time reference)
-│   └── build_repos.py             # Generates the 20 department repos
+│   │   ├── engine/              # registry, graph, reinforcement, propagate, prune, sentinel, saccade
+│   │   ├── neuraxis/            # Vertical axis: experience, problem, gate_request, escalation
+│   │   ├── tests/               # All passing
+│   │   └── examples/            # demo_marketing_sales.py
+│   ├── learning/                # Organizational memory (cases, patterns, rules)
+│   ├── handoffs/                # Cross-department registry + handoff standard
+│   ├── decision-rights/         # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
+│   ├── consultant/              # 50+ consulting frameworks (copied, MIT, design-time reference)
+│   └── build_repos.py           # Generates the department repos
 │
-├── 01-executive-strategy/       # Department repos (each independent)
-├── 02-finance/
-├── 03-marketing/
-├── 04-sales/
-├── ... (20 total)
+├── kojiki/                      # NEW: Unified runtime (slim orchestrator)
+│   ├── core/                    # Shared execution engine
+│   │   ├── runner.py            # Slim orchestrator (~500 lines)
+│   │   ├── stages/              # 8 stage executors
+│   │   └── registry.py          # Specialist auto-discovery
+│   ├── specialists/             # Specialist configurations (consolidated to 7 depts)
+│   │   ├── marketing-brand/
+│   │   ├── marketing-growth/
+│   │   ├── finance-accounting/
+│   │   └── ... (7 consolidated departments)
+│   ├── configs/                 # Dept Head + Chief of Staff configs
+│   │   ├── dept-heads/
+│   │   └── chief-of-staff.yaml
+│   └── cli.py                   # Simple CLI: `kojiki decide "goal"`
 │
-├── 21-executive-org-builder/    # Meta: asks which exec agents to install
-└── 22-decision-system-installer/# Meta: installs the whole stack
-```
-
-Each department repo contains:
-```
-03-marketing/
-├── bots/
-│   ├── install_bots.py          # On-demand sub-function installer
-│   ├── manifest.json            # Sub-functions + transformation_pipeline
-│   └── <slug>/                  # One per sub-function (e.g., brand, growth)
-│       ├── AGENT.md             # Entry point + orientation protocol
-│       ├── runner.py            # Context-scoped pipeline executor
-│       ├── pipeline/            # Stage prompts — see open question above re: INTERACTION
-│       │   ├── 01-saccade.md
-│       │   ├── 02-evidence.md
-│       │   ├── 03-interpretation.md
-│       │   ├── 04-strategy.md
-│       │   └── 05-output.md
-│       ├── schema/              # Mirror of 00-kojiki-ontology schemas
-│       ├── data/                # example.json (stub decision object)
-│       └── tools/validate.py    # Extended validator
-└── README.md
+├── scripts/                     # Verification & CI
+│   ├── verify_all_runners.py
+│   ├── verify_causal_signatures.py
+│   └── test_runner_group.py
+│
+├── shared/                      # Shared resources (symlinked)
+│   ├── prompts/                 # 8 stage prompts
+│   └── schemas/                 # 11 JSON schemas
+│
+├── test_governance_loop.py      # End-to-end governance test
+├── install-all.sh               # Installs ontology + 7 depts + meta
+├── README.md
+├── README.ja.md
+├── README.zh.md
+└── LICENSE
 ```
 
 ---
 
-## ⚙️ Core Concepts
+## 🏛️ The 7 Layers
+
+| Layer | Answers | Scope |
+|-------|---------|-------|
+| **KOJIKI** | What exists — the ontology | Entities, relationships, the 7 consolidated departments |
+| **SACCADE** | Is the question well-posed, before anything is tried | A priori, bounded iterative framing (converges or hits a pass cap) |
+| **SYNAPSIS** | How one bounded decision gets made | Per-bot, rigid, auditable — Evidence ≠ Interpretation ≠ Strategy |
+| **NEURAXIS** | How far up the abstraction ladder a failure needs to go to be explained | A posteriori, escalates only on real divergence, governed at L3/L4 |
+| **MYCELIUM** | How many decisions, across many departments, stay coordinated | Emergent OKR-dependency graph, subgraph-scoped signals, never a directive |
+| **SENTINEL** | Who actually said that | Signed, hash-chained, non-fungible provenance for every cross-node claim |
+
+---
+
+## ⚙️ Core Engines
 
 ### SYNAPSIS Transformation Chain (Rigid Tier)
 
@@ -199,9 +213,9 @@ Each department repo contains:
 | **STRATEGY** | What should we do and when? | EVIDENCE, INTERPRETATION | `accepted_interpretation` | `strategy.json` |
 | **OUTPUT** | How do we execute? | EVIDENCE, INTERPRETATION, STRATEGY | `accepted_strategy` | `output.json` |
 | **OUTCOME** | What actually happened? | — | Reality | `decision-object.json` (update) |
-| **LEARNING** | Extract pattern | — | Outcome vs expectation | `learning-ledger.json` |
+| **LEARNING** | Extract pattern | — | Outcome vs expectation | `learning.json` |
 
-**Invariants enforced by `runner.py`** (the load-bearing component):
+**Invariants enforced by `kojiki/core/runner.py`:**
 - `inputs_forbidden` are *not supplied* to the model call — stronger than "please don't"
 - Each stage is a separate model call with scoped context
 - `validate.py` checks output against schema + invariant rules
@@ -244,7 +258,7 @@ prune if weight < 0.05 OR reciprocity < 0.2
 | **L3** Ontology | Revise ontology relations | **Governance gate required** |
 | **L4** Meta-Strategy | Revise selection mechanism | **Governance gate required** |
 
-Governance gate (§VII.5.5.1): repetition threshold (N distinct experiences), Decision Rights (Recommend/Consult/Approve), SLA with fail-closed default.
+Governance gate: repetition threshold (N distinct experiences), Decision Rights (Recommend/Consult/Approve), SLA with fail-closed default.
 
 ### SENTINEL (Provenance)
 
@@ -255,25 +269,27 @@ Governance gate (§VII.5.5.1): repetition threshold (N distinct experiences), De
 | **Chain** | Per-log (`signals.jsonl`, `edges_history.jsonl`, `gate_evidence.jsonl`) |
 | **Verification** | Before commit + before governance gate counts evidence |
 
----
+### Kaizen Loop (Continuous Improvement)
 
-## 🧪 Testing
+| Capability | Implementation |
+|------------|----------------|
+| **Problem detection** | Outcome check with guardrails (completeness, variance, confidence calibration) |
+| **Root cause** | PDCA cycle with 14-category error taxonomy |
+| **Reclassification** | Auto-escalates L0→L4 based on failure type |
+| **Governance integration** | L3/L4 changes require gate approval |
+| **Redefinition capture** | Experiences include superseding Problem objects |
+| **Learning ledger** | Versioned cases, patterns, rules — never silently overwritten |
 
-```bash
-cd 00-kojiki-ontology/mycelium
-PYTHONPATH=../ python3 tests/test_registry.py
-PYTHONPATH=../ python3 tests/test_graph.py
-PYTHONPATH=../ python3 tests/test_reinforcement.py
-PYTHONPATH=../ python3 tests/test_propagate.py
-PYTHONPATH=../ python3 tests/test_prune.py
-PYTHONPATH=../ python3 tests/test_sentinel.py
-# All tests passing
-```
+### Chief of Staff (Coordinator)
 
-Run the worked example:
-```bash
-PYTHONPATH=../ python3 examples/demo_marketing_sales.py
-```
+| Capability | Implementation |
+|------------|----------------|
+| **Goal decomposition** | Pattern matching + LLM planning → specialist tasks |
+| **Specialist discovery** | Registry auto-discovers `specialists/<dept>/<agent>/` |
+| **Parallel execution** | Runs independent specialists simultaneously |
+| **Dependency management** | Sales waits for Product spec; Finance waits for Eng estimate |
+| **Conflict resolution** | Detect overlapping decision rights; escalate to governance |
+| **Synthesis** | Merge into single plan with unified decision rights |
 
 ---
 
@@ -337,7 +353,7 @@ The SYNAPSIS stages map to standard consulting frameworks — not as runtime dep
 | **Sensitivity Analysis** | γ / decay_rate / threshold calibration | *Open item* |
 
 Full mapping: `synapsis/REFERENCES.md`  
-Frameworks copied from: `consultant/` (MIT-licensed, vendored copy, no `.git`)
+Frameworks copied from: `consultant/` (50+ frameworks, MIT, no `.git`)
 
 ---
 
@@ -345,9 +361,9 @@ Frameworks copied from: `consultant/` (MIT-licensed, vendored copy, no `.git`)
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| **v1** | Rigid tier (SYNAPSIS) + Canopy tier (MYCELIUM) + NEURAXIS + SENTINEL | ✅ Complete (pending INTERACTION-stage decision above) |
+| **v1** | Rigid tier (SYNAPSIS) + Canopy tier (MYCELIUM) + NEURAXIS + SENTINEL | ✅ Complete |
 | **v2** | Deterministic grading for Task 3, CI with py_compile, pass/fail thresholds, schema versioning, expanded demo matrix | 📋 Planned |
-| **v3** | Adversarial re-derivation of stage outputs, retrofitting all 20 depts, artifact cross-check | 📋 Planned |
+| **v3** | Adversarial re-derivation of stage outputs, retrofitting all 18 depts, artifact cross-check | 📋 Planned |
 
 See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
 
@@ -355,9 +371,11 @@ See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
 
 ## 🤝 Contributing
 
-1. **No closed-source dependencies** — all code MIT, external refs AGPL-3.0 (OpenViking) only
-2. **Provider-agnostic** — point any LLM at `AGENT.md`
-3. **Tests required** — `python3 -m py_compile` + validator pass before PR
+1. **No closed-source dependencies** — all code MIT
+2. **Local-first** — runs on qwen2.5:14b (M1 Max 32GB), no cloud required
+3. **Provider-agnostic** — point any LLM at `AGENT.md`
+4. **Tests required** — `python3 -m py_compile` + validator pass before PR
+5. **Design-time references only** — `consultant/` is a copy, not a dependency
 
 ---
 

@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kojiki.org/schemas/learning.json",
+  "title": "LEARNING Stage Output (Kaizen Synthesis)",
+  "type": "object",
+  "required": ["learning_id", "cycle_timestamp", "experiences", "patterns", "reusable_insights", "redefinitions", "outcome_score", "confidence"],
+  "additionalProperties": false,
+  "properties": {
+    "learning_id": {
+      "type": "string",
+      "pattern": "^KL-\\d{8}-\\d{3}$",
+      "description": "Unique learning identifier (Kaizen Loop)"
+    },
+    "cycle_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this learning cycle completed"
+    },
+    "experiences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "problem_id", "hypothesis", "evidence_summary", "error_classification", "outcome", "agents"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^EXP-\\d{14}$" },
+          "problem_id": { "type": "string", "pattern": "^P-[A-Z0-9]{8}$" },
+          "hypothesis": { "type": "string", "maxLength": 300 },
+          "evidence_summary": { "type": "string", "maxLength": 500 },
+          "error_classification": {
+            "type": "string",
+            "enum": ["L0_execution", "L1_reasoning", "L2_problem_representation", "L3_ontology", "L4_meta_strategy"]
+          },
+          "outcome": {
+            "type": "string",
+            "enum": ["confirmed", "invalidated", "inconclusive"]
+          },
+          "agents": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^[A-Z][a-z]+\\.[A-Z][a-z]+$" }
+          },
+          "learning_ref": { "type": ["string", "null"] },
+          "redefinition": {
+            "type": ["object", "null"],
+            "properties": {
+              "new_problem": { "type": "string" },
+              "supersedes": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          },
+          "recorded_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "maxItems": 10
+    },
+    "patterns": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 300 },
+      "maxItems": 5,
+      "description": "Synthesized patterns across experiences"
+    },
+    "reusable_insights": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 300 },
+      "maxItems": 5,
+      "description": "Generalizable insights for future decisions"
+    },
+    "redefinitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["new_problem", "supersedes", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "new_problem": { "type": "string", "pattern": "^P-[A-Z0-9]{8}(-v\\d+|-retry)?$" },
+          "supersedes": { "type": "string", "pattern": "^P-[A-Z0-9]{8}$" },
+          "reason": { "type": "string", "maxLength": 300 },
+          "goal": { "type": "string" },
+          "constraints": { "type": "array", "items": { "type": "string" } },
+          "assumptions": { "type": "array", "items": { "type": "string" } },
+          "unknowns": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "maxItems": 3,
+      "description": "Problem redefinitions to feed back to SACCADE"
+    },
+    "outcome_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "guardrail_violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["validator", "severity", "message"],
+        "additionalProperties": false,
+        "properties": {
+          "validator": { "type": "string" },
+          "severity": { "type": "string", "enum": ["error", "warning", "info"] },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence in learning synthesis"
+    },
+    "kaizen_iteration": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  }
+}

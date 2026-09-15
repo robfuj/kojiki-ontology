@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EVIDENCE Stage Output Schema",
+  "type": "object",
+  "required": ["findings"],
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["finding_id", "question", "extract", "speaker", "locator", "retrieval_state", "contradiction_info", "coverage_limits", "sufficiency"],
+        "properties": {
+          "finding_id": {"type": "string", "pattern": "^FE-\\d{3}$"},
+          "question": {"type": "string"},
+          "extract": {"type": "string"},
+          "speaker": {"type": "string"},
+          "locator": {"type": "string"},
+          "retrieval_state": {"type": "string", "enum": ["RETRIEVED", "BLOCKED", "PARTIAL", "UNKNOWN", "SOURCE_VERIFICATION_REQUIRED"]},
+          "contradiction_info": {"type": "string"},
+          "coverage_limits": {"type": "string"},
+          "sufficiency": {"type": "string", "enum": ["SUFFICIENT", "INSUFFICIENT", "PARTIAL"]}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
