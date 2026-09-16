@@ -1,0 +1,42 @@
+agent:
+  name: "people-hr"
+  department: "People & Comms"
+  description: "HR, Internal comms, Public Affairs"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - org_designer
+  - compensation_analyzer
+  - talent_acquisition
+  - engagement_survey
+  - comms_drafter
+  - policy_communicator
+
+decision_rights:
+  own: ["org_structure", "compensation_bands", "hiring_policy", "culture_initiatives", "internal_comms"]
+  recommend: ["headcount_plan", "performance_framework", "learning_budget", "dei_strategy"]
+  consult: ["department_headcount", "role_definitions", "promotion_cases", "employee_relations"]
+  approve: ["executive_compensation", "major_policy_changes", "crisis_communications", "public_statements"]
+  execute: ["recruiting", "onboarding", "performance_reviews", "communications", "events", "policy_rollout"]
+  escalate: ["executive_departure", "harassment_claim", "whistleblower", "labor_dispute", "reputation_crisis"]
+  automate: ["job_posting", "candidate_screening", "onboarding_checklist", "survey_distribution", "policy_acknowledgment"]
+
+handoffs:
+  - target: "finance-accounting"
+    trigger: "headcount_budget_request"
+    payload_schema: "schemas/handoff-headcount-budget.json"
+  - target: "legal-compliance"
+    trigger: "employment_law_review"
+    payload_schema: "schemas/handoff-employment-law.json"
+  - target: "engineering-platform"
+    trigger: "technical_hiring_plan"
+    payload_schema: "schemas/handoff-tech-hiring.json"

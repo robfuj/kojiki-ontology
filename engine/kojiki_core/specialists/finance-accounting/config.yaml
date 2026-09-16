@@ -1,0 +1,41 @@
+agent:
+  name: "finance-accounting"
+  department: "Finance"
+  description: "Budget, CAC, ROI, FP&A, treasury"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - financial_modeling
+  - treasury_management
+  - budget_analysis
+  - cac_calculator
+  - roi_analyzer
+
+decision_rights:
+  own: ["budget_allocation", "treasury_policy", "financial_reporting"]
+  recommend: ["pricing_strategy", "investment_decisions", "cost_optimization"]
+  consult: ["product_roadmap", "engineering_capacity", "marketing_budget"]
+  approve: ["capital_expenditure_over_50k", "vendor_contracts_over_25k"]
+  execute: ["monthly_close", "forecast_updates", "expense_processing"]
+  escalate: ["budget_variance_over_10pct", "cash_flow_crisis", "audit_findings"]
+  automate: ["expense_categorization", "recurring_journal_entries", "bank_reconciliation"]
+
+handoffs:
+  - target: "engineering-platform"
+    trigger: "feature_cost_estimate"
+    payload_schema: "schemas/handoff-cost-estimate.json"
+  - target: "marketing-brand"
+    trigger: "campaign_roi_review"
+    payload_schema: "schemas/handoff-roi-review.json"
+  - target: "sales-outbound"
+    trigger: "pipeline_revenue_forecast"
+    payload_schema: "schemas/handoff-pipeline-forecast.json"

@@ -1,0 +1,39 @@
+agent:
+  name: "content-creator"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Multi-platform content, editorial calendars, copywriting, brand storytelling"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.5
+  max_tokens: 4000
+
+tools:
+  - editorial_calendar
+  - copy_optimizer
+  - content_repurposer
+  - brand_voice_checker
+  - content_performance_analyzer
+
+decision_rights:
+  own: ["content_topics", "editorial_calendar", "brand_voice", "content_formats"]
+  recommend: ["content_distribution", "repurposing_strategy"]
+  consult: ["seo_keywords", "paid_social_themes", "email_nurture_flows"]
+  approve: ["published_content", "content_calendar"]
+  execute: ["article_writing", "social_copy", "video_scripts", "newsletter_content"]
+  escalate: ["brand_voice_violation", "legal_review_needed", "crisis_communication"]
+  automate: ["content_scheduling", "performance_tracking", "repurposing_workflows"]
+
+handoffs:
+  - target: "seo-specialist"
+    trigger: "content_optimization_needed"
+    payload_schema: "schemas/handoff-content-optimization.json"
+  - target: "email-strategist"
+    trigger: "newsletter_content_ready"
+    payload_schema: "schemas/handoff-newsletter.json"

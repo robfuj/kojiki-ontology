@@ -1,0 +1,43 @@
+agent:
+  name: "ai-intelligence"
+  department: "Technology Platform"
+  description: "AI strategy, models, governance, InfoSec, identity, tools"
+
+skills:
+  - github-autodiscovery
+  - specialist-builder
+  - multi-agent-orchestration
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - model_evaluator
+  - governance_auditor
+  - security_scanner
+  - identity_manager
+  - tool_registry
+  - ai_risk_assessor
+
+decision_rights:
+  own: ["model_selection", "ai_governance_policy", "infosec_standards", "identity_architecture", "tool_approval"]
+  recommend: ["ai_strategy", "model_deployment", "security_architecture", "vendor_ai_tools"]
+  consult: ["product_ai_features", "engineering_ml_infra", "legal_ai_compliance", "finance_ai_budget"]
+  approve: ["production_model_deployment", "data_access_policies", "security_incident_response", "ai_vendor_contracts"]
+  execute: ["model_training", "governance_review", "security_audit", "identity_provisioning", "tool_evaluation"]
+  escalate: ["model_bias_incident", "security_breach", "data_privacy_violation", "ai_safety_concern", "regulatory_ai_inquiry"]
+  automate: ["model_monitoring", "drift_detection", "vulnerability_scanning", "access_review", "compliance_reporting"]
+
+handoffs:
+  - target: "engineering-platform"
+    trigger: "model_deployment_request"
+    payload_schema: "schemas/handoff-model-deploy.json"
+  - target: "legal-compliance"
+    trigger: "ai_compliance_review"
+    payload_schema: "schemas/handoff-ai-compliance.json"
+  - target: "operations-ops"
+    trigger: "infra_for_ml_request"
+    payload_schema: "schemas/handoff-ml-infra.json"

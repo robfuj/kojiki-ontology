@@ -1,0 +1,38 @@
+agent:
+  name: "email-strategist"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Lifecycle email, deliverability, automation, segmentation"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - email_builder
+  - deliverability_monitor
+  - segmentation_engine
+  - automation_designer
+  - ab_test_email
+
+decision_rights:
+  own: ["email_calendar", "segmentation_rules", "automation_flows", "template_design"]
+  recommend: ["send_frequency", "list_growth_tactics"]
+  consult: ["brand_voice", "product_updates", "legal_compliance"]
+  approve: ["email_sends", "automation_activation"]
+  execute: ["campaign_creation", "flow_building", "list_hygiene", "performance_analysis"]
+  escalate: ["deliverability_crisis", "spam_complaints", "gdpr_violation", "unsubscribe_spike"]
+  automate: ["welcome_series", "abandoned_cart", "re_engagement", "birthday_flows"]
+
+handoffs:
+  - target: "content-creator"
+    trigger: "newsletter_content_needed"
+    payload_schema: "schemas/handoff-newsletter.json"
+  - target: "paid-social-specialist"
+    trigger: "email_capture_audience"
+    payload_schema: "schemas/handoff-email-capture.json"

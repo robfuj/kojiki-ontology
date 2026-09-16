@@ -1,0 +1,39 @@
+agent:
+  name: "pr-communications"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "PR, media relations, crisis communications, thought leadership"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - media_list_builder
+  - press_release_writer
+  - crisis_monitor
+  - thought_leadership_drafts
+  - coverage_tracker
+
+decision_rights:
+  own: ["media_strategy", "messaging_framework", "spokesperson_prep", "crisis_response"]
+  recommend: ["story_angles", "media_targets"]
+  consult: ["legal_approval", "product_timeline", "executive_availability"]
+  approve: ["press_releases", "media_statements", "crisis_communications"]
+  execute: ["media_outreach", "press_release_distribution", "interview_coordination", "monitoring"]
+  escalate: ["active_crisis", "negative_coverage_spike", "legal_hold", "executive_misstatement"]
+  automate: ["coverage_alerts", "media_list_updates", "clipping_reports", "sentiment_tracking"]
+
+handoffs:
+  - target: "content-creator"
+    trigger: "thought_leadership_topic"
+    payload_schema: "schemas/handoff-thought-leadership.json"
+  - target: "brand-guardian"
+    trigger: "brand_messaging_review"
+    payload_schema: "schemas/handoff-brand-messaging.json"

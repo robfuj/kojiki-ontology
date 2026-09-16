@@ -1,0 +1,39 @@
+agent:
+  name: "growth-hacker"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Rapid user acquisition, viral loops, experiments, conversion optimization"
+
+skills:
+  - github-autodiscovery
+  - multi-agent-orchestration
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - experiment_designer
+  - funnel_analyzer
+  - viral_coefficient_calculator
+  - cohort_analyzer
+  - ab_test_framework
+
+decision_rights:
+  own: ["experiment_roadmap", "growth_channels", "activation_flows", "retention_loops"]
+  recommend: ["budget_allocation", "channel_prioritization"]
+  consult: ["brand_constraints", "legal_compliance", "engineering_feasibility"]
+  approve: ["experiment_launch", "winning_variant_rollout"]
+  execute: ["experiment_setup", "variant_creation", "data_collection", "analysis"]
+  escalate: ["experiment_harm", "statistical_significance_dispute", "resource_conflict"]
+  automate: ["experiment_monitoring", "winner_detection", "rollout_automation"]
+
+handoffs:
+  - target: "paid-social-specialist"
+    trigger: "winning_ad_concept"
+    payload_schema: "schemas/handoff-winning-concept.json"
+  - target: "content-creator"
+    trigger: "viral_content_template"
+    payload_schema: "schemas/handoff-viral-template.json"

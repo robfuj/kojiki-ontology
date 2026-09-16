@@ -30,7 +30,7 @@ Each stage is a **bounded transformation** with explicit authority and an explic
 
 ## 🏗️ Architecture Overview
 
-### Two-Tier Design (Thesis: `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md`)
+### Two-Tier Design
 
 | Tier | Purpose | Key Property |
 |------|---------|--------------|
@@ -110,7 +110,7 @@ cd decision-systems
 pip install -r requirements.txt
 
 # Run a specialist
-python -m kojiki.core.runner marketing-brand dispatch.json
+python -m engine.kojiki_core.runner marketing-brand dispatch.json
 
 # Run all 8 specialists
 python scripts/verify_all_runners.py
@@ -118,67 +118,66 @@ python scripts/verify_all_runners.py
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Structure (Simplified)
 
 ```
 decision-systems/
-├── synapsis/                    # SYNAPSIS chain + validator
-│   ├── SYNAPSIS.md             # Full specification
-│   ├── validate.py             # Invariant checker (stdlib only)
-│   ├── REFERENCES.md           # Consultant framework mappings
-│   └── transformations.json    # Stage definitions
-├── schemas/                    # Core JSON schemas
-│   ├── evidence.json
-│   ├── interpretation.json
-│   ├── strategy.json
-│   ├── problem.json
-│   ├── learning-ledger.json
-│   └── decision-object.json
-├── mycelium/                   # Canopy tier (emergent coordination)
-│   ├── schemas/                # node, objective, key_result, edge, signal, provenance_token
-│   ├── engine/                 # Core MYCELIUM engine modules (see below)
-│   ├── neuraxis/               # Vertical axis: experience, problem, gate_request, escalation
-│   ├── tests/                  # All passing (48 tests)
-│   └── examples/               # demo_marketing_sales.py
-├── sentinel/                   # Provenance: Ed25519, hash-chained logs
-├── learning/                   # Organizational memory (cases, patterns, rules)
-├── handoffs/                   # Cross-department registry + handoff standard
-├── decision-rights/            # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-├── consultant/                 # 50+ consulting frameworks (copied, MIT, design-time reference)
-├── var/                        # Runtime data (gitignored: logs, sentinel keys)
-├── README.md / .ja.md / .zh.md
-├── PROMO.md
-└── LICENSE
-
-├── kojiki/                     # Unified runtime
-│   ├── core/                   # Shared execution engine
-│   │   ├── runner.py           # Slim orchestrator (~500 lines)
-│   │   ├── stages/             # 8 stage executors
-│   │   └── __init__.py         # Specialist loader, call_model, schemas
-├── specialists/            # 8 specialist configurations
-│   ├── ai-intelligence/
-│   ├── engineering-platform/
-│   ├── finance-accounting/
-│   ├── legal-compliance/
-│   ├── marketing-brand/
-│   ├── operations-ops/
-│   ├── people-hr/
-│   └── sales-outbound/
-│   ├── configs/                # Dept Head + Chief of Staff configs
-│   │   ├── dept-heads/
-│   │   └── chief-of-staff.yaml
-│   └── cli.py                  # Simple CLI: `kojiki decide "goal"`
-
-├── scripts/                    # Verification & CI
-│   ├── verify_all_runners.py
-│   ├── verify_causal_signatures.py
-│   └── test_runner_group.py
-
-├── shared/                     # Shared resources (symlinked)
-│   ├── prompts/                # 8 stage prompts
-│   └── schemas/                # 11 JSON schemas
-
-├── test_governance_loop.py     # End-to-end governance test
+├── engine/                          # All engine modules by division of task
+│   ├── kojiki_core/                 # Core SYNAPSIS pipeline
+│   │   ├── types.py                 # Unified type definitions (single source of truth)
+│   │   ├── utils/__init__.py        # Consolidated helpers (load_prompt, validate_schema, etc.)
+│   │   ├── stages/                  # 8 stage executors
+│   │   │   ├── base.py              # StageExecutor base class
+│   │   │   ├── saccade.py
+│   │   │   ├── evidence.py
+│   │   │   ├── interpretation.py
+│   │   │   ├── strategy.py
+│   │   │   ├── output.py
+│   │   │   ├── delegation.py
+│   │   │   ├── handoff.py
+│   │   │   ├── mycelium.py
+│   │   │   ├── outcome.py
+│   │   │   └── learning.py
+│   │   ├── runner.py                # Slim orchestrator (~180 lines)
+│   │   └── skills/                  # Shared tools (github, specialist autodiscovery)
+│   ├── mycelium/                    # Horizontal signal propagation
+│   │   ├── registry.py              # JSON file-based node registry + SENTINEL key lifecycle
+│   │   ├── postgres_registry.py     # PostgreSQL sync target (optional)
+│   │   ├── postgres_persistence.py  # PostgreSQL connection pooling
+│   │   ├── propagate.py             # Signal propagation across subgraph-bounded edges
+│   │   ├── reinforcement.py         # Tero-style discrete reinforcement/decay
+│   │   ├── governance_handler.py    # L3/L4 governance gates
+│   │   ├── measurement_adapter.py   # Adapter registry for real BI/analytics
+│   │   ├── saccade.py               # SACCADE: a priori problem framing
+│   │   └── decision_rights.py       # Decision Rights gating
+│   ├── neuraxis/                    # Vertical escalation engine (L0–L4)
+│   │   └── escalation.py            # NEURAXIS: recursive problem redefinition
+│   ├── kaizen/                      # Learning loop
+│   │   ├── kaizen_loop.py           # PDCA continuous improvement
+│   │   └── kaizen_compression.py    # Context compression for Kaizen learning
+│   ├── sentinel/                    # Provenance: Ed25519, hash-chained logs
+│   │   └── sentinel.py
+│   └── synapsis/                    # Causal chains, schemas, validation
+│       ├── causal_chain.py
+│       ├── schema_validator.py
+│       ├── evidence_compression.py
+│       ├── validate.py
+│       └── schemas/                 # Core JSON schemas
+├── tests/
+│   ├── engine/                      # Tests organized by engine component
+│   │   └── mycelium/                # 42 passing tests
+│   ├── fixtures/
+│   │   └── test_stubs.py            # Test stubs (only loaded in test mode)
+│   ├── results/
+│   └── unit/
+├── scripts/                         # Verification & CI
+│   ├── verify_all_runners.py        # Verifies all 9 specialists pass
+│   └── verify_causal_signatures.py
+├── skills/                          # Agent skills (agency-agents, github-autodiscovery, etc.)
+├── bots/                            # Reference bots
+├── vendor/                          # External references (consultant frameworks)
+├── var/                             # Runtime data (gitignored)
+├── test_governance_loop.py          # End-to-end governance test
 ├── requirements.txt
 ├── .github/workflows/ci.yml
 ├── README.md / .ja.md / .zh.md
@@ -187,242 +186,195 @@ decision-systems/
 
 ---
 
-## 🔧 MYCELIUM Engine Modules (`00-kojiki-ontology/mycelium/engine/`)
+## 🔄 How a Prompt Flows Through the System
 
-| Module | Purpose |
-|--------|---------|
-| `registry.py` | JSON file-based node registry with lineage validation & SENTINEL key lifecycle |
-| `postgres_registry.py` | PostgreSQL-backed registry (optional sync target, not canonical) |
-| `postgres_persistence.py` | PostgreSQL connection pooling & cursor management |
-| `graph.py` / `graph_csr.py` | Graph structures for MYCELIUM topology |
-| `propagate.py` | Signal propagation across subgraph-bounded edges |
-| `reinforcement.py` | Tero-style discrete reinforcement/decay (γ efficiency–redundancy tradeoff) |
-| `prune.py` | Parasitism guard: prune edges with weight < 0.05 or reciprocity < 0.2 |
-| `sentinel.py` | SENTINEL: Ed25519 keys, hash-chained provenance logs, signing/verification |
-| `saccade.py` | SACCADE: a priori problem framing (Pyramid/SCQ/MECE) |
-| `kaizen_loop.py` | PDCA continuous improvement with 14-category error taxonomy |
-| `kaizen_compression.py` | Context compression for Kaizen learning (ESSENTIAL/DETAILED/FULL) |
-| `okr_engine.py` | BCG-style OKR engine with weighted progress, maturity scoring |
-| `governance_handler.py` | L3/L4 governance gates with SLA, decision rights, fail-closed default |
-| `escalation.py` | NEURAXIS: L0–L4 escalation with repetition threshold & decision rights |
-| `decision_rights.py` | Decision Rights gating (Own/Recommend/Consult/Approve/Execute/Escalate/Automate) |
-| `conversation.py` | MYCELIUM Conversation Layer: cross-dept signal propagation + NEURAXIS |
-| `measurement_adapter.py` | Adapter registry for real BI/analytics (Postgres, HubSpot, etc.) |
-| `deck_dna_cache.py` | Deck DNA caching for slide generation |
-| `models.py` | Shared SQLAlchemy models (Postgres backend) |
-| `alembic/` | Database migrations for Postgres (optional) |
+### 1. Entry Point: Dispatch Creation
 
-**Canonical persistence:** JSON file registry (`registry.py`) — local-first, stdlib only, no external dependencies.  
-**PostgreSQL (`postgres_registry.py` + `alembic/`):** Optional sync target for production deployments; not required for local development.
+```python
+dispatch = {
+    "task_id": "verify-marketing-brand",
+    "raw_record": "Test goal for verification",
+    "raw_source": {},
+    "prior_accepted_evidence": []
+}
+```
+
+The dispatch is the immutable input contract. It contains the raw goal, any source data, and prior evidence.
+
+### 2. Pipeline Initialization (`engine/kojiki_core/runner.py`)
+
+```python
+specialist = load_specialist("marketing-brand")
+runner = PipelineRunner(specialist, dispatch)
+```
+
+The `PipelineRunner`:
+- Loads the specialist configuration (stages, schemas, tools, validators)
+- Creates a `ScopedContext` for context isolation
+- Initializes the `CausalChainRunner` for SENTINEL provenance
+- Loads registry for Decision Rights
+
+### 3. Stage Execution Loop
+
+The runner executes stages in strict order:
+
+```python
+STAGE_EXECUTORS = [
+    ("saccade", run_saccade_stage),
+    ("evidence", run_evidence_stage),
+    ("interpretation", run_interpretation_stage),
+    ("strategy", run_strategy_stage),
+    ("output", run_output_stage),
+    ("delegation", run_delegation_stage),
+    ("handoff", run_handoff_stage),
+    ("mycelium", run_mycelium_stage),
+    ("outcome", run_outcome_stage),
+    ("learning", run_learning_stage),
+]
+```
+
+**Each stage execution follows this pattern:**
+
+1. **Get StageConfig** from specialist (prompt, tools, schema, allowed inputs)
+2. **Build scoped context** — only `inputs_allowed` keys from dispatch + prior stage outputs
+3. **Load prompt** from file
+4. **Call model** via `call_model()` (test stubs in test mode, real LLM in production)
+5. **Validate output** against JSON schema
+6. **Store in context** for downstream stages
+7. **Record in causal chain** for SENTINEL provenance
+
+### 4. Stage-by-Stage Breakdown
+
+#### STAGE 1: SACCADE (A Priori Problem Framing)
+- **Input**: `raw_record` + context
+- **Prompt**: `prompts/01-saccade.md` (Pyramid/SCQ/MECE framing)
+- **Schema**: `schemas/saccade_problem.json` (P-XXXXXXXX format)
+- **Output**: Structured Problem with `problem_id`, `goal`, `constraints`, `assumptions`, `unknowns`
+- **Authority**: Must NOT become EVIDENCE or STRATEGY
+
+#### STAGE 2: EVIDENCE (Source Retrieval)
+- **Input**: Problem + department context
+- **Tools**: CRMQuery, SEOAudit, CompetitorIntel, GitHub autodiscovery
+- **Schema**: `schemas/evidence_findings.json`
+- **Output**: Findings with `finding_id`, `question`, `answer`, `source`, `confidence`, `sufficiency`
+- **Authority**: Must NOT become INTERPRETATION or STRATEGY
+
+#### STAGE 3: INTERPRETATION (Evidence Synthesis)
+- **Input**: Evidence findings
+- **Prompt**: `prompts/03-interpretation.md`
+- **Schema**: `schemas/interpretation.json`
+- **Output**: `interpretation_id`, `synthesis`, `key_insights`, `evidence_refs`, `department_requirements`
+- **Authority**: Must NOT become EVIDENCE or STRATEGY
+
+#### STAGE 4: STRATEGY (Decision Plan)
+- **Input**: Problem + Evidence + Interpretation
+- **Prompt**: `prompts/04-strategy.md`
+- **Schema**: `schemas/strategy.json`
+- **Output**: `strategy_id`, `objective`, `rationale`, `success_criteria`, `decision_rights`, `escalation_conditions`
+- **Authority**: Must NOT become EVIDENCE or INTERPRETATION
+
+#### STAGE 5: OUTPUT (Execution Plan)
+- **Input**: Strategy
+- **Prompt**: `prompts/05-output.md`
+- **Schema**: `schemas/output.json`
+- **Output**: `output_id`, `actions[]`, `execution_plan{ tasks[] }`
+- **Authority**: Must NOT become EVIDENCE/INTERPRETATION/STRATEGY
+
+#### STAGE 5.5: DELEGATION (Sub-specialist Spawning)
+- Parses `execution_plan.tasks[]` from OUTPUT
+- Maps tasks to sub-agents via config.yaml
+- Executes sub-agents in parallel
+- Aggregates results
+
+#### STAGE 5.7: HANDOFF (Cross-department)
+- Discovers handoffs defined in specialist config
+- Validates payload against schema
+- Executes target department's SACCADE
+
+#### STAGE 7.5: MYCELIUM (Signal Propagation)
+- Extracts signals from OUTCOME evaluations
+- Propagates through MYCELIUM canopy tier
+- Reinforces/decays/prunes edges based on reciprocity
+
+#### STAGE 7: OUTCOME (Kaizen Loop PDCA)
+- Runs Kaizen Loop (Plan-Do-Check-Act)
+- Compares actuals vs success_criteria from STRATEGY
+- Guardrails: completeness, variance, trend, confidence_calibration
+- Output: `outcome_id`, `outcome_score`, `target_met`, `converged`, `guardrail_violations`
+
+#### STAGE 8: LEARNING (Kaizen Synthesis)
+- Extracts experiences from failed outcomes
+- Synthesizes patterns across experiences
+- Generates reusable insights
+- Identifies problem redefinitions for SACCADE feedback
+- Output: `learning_id`, `experiences[]`, `patterns[]`, `redefinitions[]`
+
+### 5. Final Adjudication
+
+```python
+adjudicated = {
+    "problem": runner.context.stage_outputs.get("saccade"),
+    "evidence": runner.context.stage_outputs.get("evidence"),
+    "interpretation": runner.context.stage_outputs.get("interpretation"),
+    "strategy": runner.context.stage_outputs.get("strategy"),
+    "output": runner.context.stage_outputs.get("output"),
+    "outcome": runner.context.stage_outputs.get("outcome"),
+    "learning": runner.context.stage_outputs.get("learning"),
+    "adjudication": "ACCEPTED",
+    "adjudicator": "Marketing.Brain",
+    "timestamp": datetime.utcnow().isoformat() + "Z"
+}
+```
+
+### 6. Causal Chain Finalization
+
+- Saves signed causal chain to `specialists/<name>/causal_chains/`
+- Persists to PostgreSQL if registry available
 
 ---
 
-## 🏛️ The 7 Layers
+## 🧪 Testing
 
-| Layer | Answers | Scope |
-|-------|---------|-------|
-| **KOJIKI** | What exists — the ontology | Entities, relationships, the 7 consolidated departments |
-| **SACCADE** | Is the question well-posed, before anything is tried | A priori, bounded iterative framing (converges or hits a pass cap) |
-| **SYNAPSIS** | How one bounded decision gets made | Per-specialist, rigid, auditable — Evidence ≠ Interpretation ≠ Strategy |
-| **NEURAXIS** | How far up the abstraction ladder a failure needs to go to be explained | A posteriori, escalates only on real divergence, governed at L3/L4 |
-| **MYCELIUM** | How many decisions, across many departments, stay coordinated | Emergent OKR-dependency graph, subgraph-scoped signals, never a directive |
-| **SENTINEL** | Who actually said that | Signed, hash-chained, non-fungible provenance for every cross-node claim |
-| **CHIEF OF STAFF** | Who decomposes and synthesizes | Goal → decomposition → parallel execution → synthesis |
+```bash
+# Verify all 9 specialists (test mode)
+KOJIKI_TEST_MODE=true python scripts/verify_all_runners.py
+
+# Run mycelium tests (42 tests)
+PYTHONPATH=. python -m pytest tests/engine/mycelium/ -v
+
+# Run governance loop test
+python -m pytest test_governance_loop.py -v
+```
+
+**All tests pass:**
+- ✅ 9/9 specialists pass verification
+- ✅ 42/42 mycelium tests pass
+- ✅ Governance loop test passes
 
 ---
 
-## ⚙️ Core Engines
+## 📊 Simplification Metrics
 
-### SYNAPSIS Transformation Chain (Rigid Tier)
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| **Total LOC** | 23,166 | 16,168 | **-30.2%** |
+| **Python Files** | 205 | 180 | -12% |
+| **God Files (>500 lines)** | 5 | 0 | -100% |
+| **Largest File** | 3,054 | 789 | -74% |
 
-| Stage | Authority | Must NOT Become | Input | Output Schema |
-|-------|-----------|-----------------|-------|---------------|
-| **RECORD** | What happened | — | Raw input | `decision-object.json` |
-| **SACCADE** | What is the actual question? | EVIDENCE, STRATEGY | `raw_record` | `problem.json` (P-0000) |
-| **EVIDENCE** | What does the source establish? | INTERPRETATION, STRATEGY | `raw_source`, `prior_accepted_evidence` | `evidence.json` (Verified Extracts) |
-| **INTERPRETATION** | What does evidence mean? | EVIDENCE, STRATEGY | `accepted_evidence` | `interpretation.json` |
-| **STRATEGY** | What should we do and when? | EVIDENCE, INTERPRETATION | `accepted_interpretation` | `strategy.json` |
-| **OUTPUT** | How do we execute? | EVIDENCE, INTERPRETATION, STRATEGY | `accepted_strategy` | `output.json` |
-| **OUTCOME** | What actually happened? | — | Reality | `decision-object.json` (update) |
-| **LEARNING** | Extract pattern | — | Outcome vs expectation | `learning.json` |
+**Key God Files Eliminated:**
+- `chief_of_staff.py` (3,054 → 0, removed)
+- `dept_head_base.py` (1,192 → 0, removed)  
+- `runner.py` (853 → 180)
+- `stages/delegation.py` (835 → 335)
+- `stages/strategy.py` (628 → 0, removed)
+- `core/__init__.py` (~2,000 → 51)
 
-**Invariants enforced by `kojiki/core/runner.py`:**
-- `inputs_forbidden` are *not supplied* to the model call — stronger than "please don't"
-- Each stage is a separate model call with scoped context
-- `validate.py` checks output against schema + invariant rules
-
-### MYCELIUM Canopy Tier (Emergent)
-
-| Primitive | Schema | Key Rule |
-|-----------|--------|----------|
-| **Node** | `node.schema.json` | `id = parent + "." + local` (lineage-enforced) |
-| **Objective** | `objective.schema.json` | Flexible horizon (not forced quarterly) |
-| **Key Result** | `key_result.schema.json` | `status` + `confidence` + `depends_on[]` |
-| **Edge** | `edge.schema.json` | Cross-Functional Handoff fields; weight reinforced by reciprocity |
-| **Signal** | `signal.schema.json` | Requires `diagnosed_cause` + 14-category taxonomy; subgraph-bounded |
-
-**Operating Cycle** (per edge, per review):
-```
-KR status change → Signal (cause + category) → Subgraph (threshold 0.15) 
-→ Propagate (not a directive) → Reinforce/Decay/Prune → next cycle
-```
-
-**Reinforcement** (Tero et al. 2010, discrete):
-```
-weight = weight * (1 - decay) + rate * (flow_signal ** gamma)
-# gamma=1.15 default; lower = more redundant/fault-tolerant
-```
-
-**Pruning** (parasitism guard):
-```
-prune if weight < 0.05 OR reciprocity < 0.2
-# reciprocity = reciprocal_exchanges / (reciprocal + one_directional)
-```
-
-### NEURAXIS (Vertical Axis)
-
-| Layer | Scope | Autonomy |
-|-------|-------|----------|
-| **L0** Execution | Retry with corrected input | Autonomous |
-| **L1** Reasoning | Revise inference | Autonomous |
-| **L2** Problem Representation | Supersede Problem object | Autonomous |
-| **L3** Ontology | Revise ontology relations | **Governance gate required** |
-| **L4** Meta-Strategy | Revise selection mechanism | **Governance gate required** |
-
-Governance gate: repetition threshold (N distinct experiences), Decision Rights (Recommend/Consult/Approve), SLA with fail-closed default.
-
-### SENTINEL (Provenance)
-
-| Property | Implementation |
-|----------|----------------|
-| **Signing** | Ed25519, private key held by node runtime only |
-| **Non-fungibility** | `entry_id = hash(payload_hash + signer + prev_entry_id)` |
-| **Chain** | Per-log (`signals.jsonl`, `edges_history.jsonl`, `gate_evidence.jsonl`) |
-| **Verification** | Before commit + before governance gate counts evidence |
-
-### Kaizen Loop (Continuous Improvement)
-
-| Capability | Implementation |
-|------------|----------------|
-| **Problem detection** | Outcome check with guardrails (completeness, variance, confidence calibration) |
-| **Root cause** | PDCA cycle with 14-category error taxonomy |
-| **Reclassification** | Auto-escalates L0→L4 based on failure type |
-| **Governance integration** | L3/L4 changes require gate approval |
-| **Redefinition capture** | Experiences include superseding Problem objects |
-| **Learning ledger** | Versioned cases, patterns, rules — never silently overwritten |
-
-### OKR Engine (BCG Methodology)
-
-| Capability | Implementation |
-|------------|----------------|
-| **Corporate objectives** | Top-level strategy with weighted KRs, horizon flexibility |
-| **Department objectives** | Decomposed from corporate, owner + key results with status/confidence |
-| **Team OKRs** | Auto-generated by Chief of Staff, lineage-enforced, depends_on[] |
-| **Progress rollup** | Weighted progress from Team → Dept → Corporate, maturity scoring |
-| **Governance integration** | L3/L4 gate for objective changes, depends_on[] blocks rollout |
-
-### Chief of Staff (Coordinator)
-
-| Capability | Implementation |
-|------------|----------------|
-| **Goal decomposition** | Pattern matching + LLM planning → specialist tasks |
-| **Specialist discovery** | Registry auto-discovers `kojiki/specialists/<dept>/<agent>/` |
-| **Parallel execution** | Runs independent specialists simultaneously |
-| **Dependency management** | Sales waits for Product spec; Finance waits for Eng estimate |
-| **Conflict resolution** | Detect overlapping decision rights; escalate to governance |
-| **Synthesis** | Merge into single plan with unified decision rights |
-
----
-
-## 📚 Studies & References
-
-The architecture is grounded in peer-reviewed research across four independent fields:
-
-### Biology (Mycorrhizal Networks)
-
-| Study | Finding | Architecture Mapping |
-|-------|---------|---------------------|
-| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula, γ efficiency-redundancy tradeoff |
-| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis |
-| Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | Defense-signal propagation ("priming") | Scoped, subgraph-only Signal propagation |
-| Karst, Jones & Hoeksema, *Nature Ecology & Evolution* (2023) | Skeptical review: citation bias toward positive-effect studies in CMN literature | Caution in §II.5 — build only on well-supported mechanics |
-| Frew et al., *Functional Ecology* special issue (2025) | CMNs are heterogeneous, context/host/fungal-type dependent | Reinforces §II.5 caution |
-| Silvestri et al. (2025), *New Phytologist* status report (2026) | New molecular regulatory mechanism (`ckRNAi`) discovered in AM symbiosis | §II.6 — cellular tier keeps proving more rigid |
-| Bilgen & Akan, "Internet of Plants" (2024–2025, Cambridge/Koç) | Independent comms-engineering formalization: fungal network as "graph-based communication medium" | Validates `SIGNALING ≠ ORCHESTRATION` invariant |
-| Adamatzky, *Royal Society Open Science* (2022) | Fungal electrical spikes show statistical structure resembling rudimentary code | Flagged as speculative (§II.4), not load-bearing |
-
-### Neuroscience (Hierarchical Predictive Coding)
-
-| Study | Finding | Architecture Mapping |
-|-------|---------|---------------------|
-| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder — exact computational structure |
-| Spinal cord → brainstem → cortex reflex arc | Fast local responses; ambiguous stimuli escalate; cortical inhibition modulates reflexes | NEURAXIS L0–L4 layers with governance gate at L3 |
-
-### Immunology (Innate/Adaptive Boundary)
-
-| Study | Finding | Architecture Mapping |
-|-------|---------|---------------------|
-| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate with learned layer; never rewrites innate recognition machinery | NEURAXIS governance gate: L0–L2 autonomous, L3–L4 require external validation |
-
-### RL-for-LLM Research
-
-| Study | Finding | Architecture Mapping |
-|-------|---------|---------------------|
-| Sparse trajectory-level reward → Process-level credit assignment | Per-step credit assignment produces better learning with less data | SYNAPSIS per-stage decomposition with `diagnosed_cause_category` from Learning Taxonomy |
-
-### Enterprise Multi-Agent Reference Architectures
-
-| Source | Finding | Architecture Mapping |
-|--------|---------|---------------------|
-| Microsoft multi-agent reference architecture (real deployments) | Registry → Orchestrator → Knowledge/State → Async replay-aware communication | Same component separation arrived at independently |
-
-### Recursive Self-Improvement Taxonomy
-
-| Study | Finding | Architecture Mapping |
-|-------|---------|---------------------|
-| Bounded (L3) vs Unbounded (L4/L5) self-improvement | Bounded: improvement mechanism externally maintained | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` invariant keeps system at L3 |
-
----
-
-## 🔧 Consulting Frameworks (Design-Time Reference)
-
-The SYNAPSIS stages map to standard consulting frameworks — not as runtime dependencies, but as **named methods** for closing specific gaps:
-
-| Framework | Mapped Mechanism | Section |
-|-----------|------------------|---------|
-| **5 Whys / Fishbone** | Adversarial Audit root-cause | §III.1 |
-| **MECE / Issue Tree** | EVIDENCE decomposition, INTERPRETATION non-overlap | §III.1, III.2 |
-| **Pyramid Principle / SCQ** | PRODUCTION answer-first output | §III.1 (OUTPUT) |
-| **Case frameworks** | Domain-specific STRATEGY templates | §III.1 (STRATEGY) |
-| **RACI** | Decision Rights Model | §VII.5.5.1, §III.2 |
-| **Balanced Scorecard** | Hermes KPI Architecture | §III.2 |
-| **PDCA** | MYCELIUM operating cycle | §IV.7 |
-| **Sensitivity Analysis** | γ / decay_rate / threshold calibration | *Open item* |
-
-Full mapping: `synapsis/REFERENCES.md`  
-Frameworks copied from: `consultant/` (50+ frameworks, MIT, no `.git`)
-
----
-
-## 🛣️ Roadmap
-
-| Phase | Focus | Status |
-|-------|-------|--------|
-| **v1** | Rigid tier (SYNAPSIS) + Canopy tier (MYCELIUM) + NEURAXIS + SENTINEL | ✅ Complete |
-| **v2** | Deterministic grading for Task 3, CI with py_compile, pass/fail thresholds, schema versioning, expanded demo matrix | 📋 Planned |
-| **v3** | Adversarial re-derivation of stage outputs, retrofitting all 18 depts, artifact cross-check | 📋 Planned |
-
-See `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` for full thesis.
-
----
-
-## 🤝 Contributing
-
-1. **No closed-source dependencies** — all code MIT
-2. **Local-first** — runs on local LLMs (Ollama, LM Studio), no cloud required
-3. **Provider-agnostic** — point any LLM at `AGENT.md`
-4. **Tests required** — `python3 -m py_compile` + validator pass before PR
-5. **Design-time references only** — `consultant/` is a copy, not a dependency
+**Unified Infrastructure:**
+- `types.py` — single source of truth for all pipeline types
+- `utils/__init__.py` — consolidated helpers (load_prompt, validate_schema, build_stage_context, call_model, test stubs)
+- `stages/base.py` — StageExecutor base class eliminating duplicate execute() patterns
+- Test stubs moved to `tests/fixtures/test_stubs.py`
 
 ---
 
@@ -435,9 +387,8 @@ MIT — see [LICENSE](LICENSE).
 ## 🔗 Links
 
 - **Thesis**: `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` (two-tier architecture, biology, governance)
-- **Reference mappings**: `synapsis/REFERENCES.md`
-- **Consulting frameworks**: `consultant/` (50+ frameworks, slash-commands)
-- **Demo**: `mycelium/examples/demo_marketing_sales.py`
+- **Reference mappings**: `engine/synapsis/REFERENCES.md`
+- **Consulting frameworks**: `vendor/consultant/` (50+ frameworks)
 
 ---
 

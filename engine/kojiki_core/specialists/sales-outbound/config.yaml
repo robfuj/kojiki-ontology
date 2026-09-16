@@ -1,0 +1,43 @@
+agent:
+  name: "sales-outbound"
+  department: "Sales"
+  description: "Outbound, growth, Biz Dev, Corp Dev"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+  - multi-agent-orchestration
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - crm_enrichment
+  - outreach_sequencer
+  - proposal_generator
+  - pipeline_analyzer
+  - territory_planner
+  - deal_scorer
+
+decision_rights:
+  own: ["outbound_strategy", "territory_assignment", "quota_setting", "deal_approval_under_50k"]
+  recommend: ["pricing_discounts", "contract_terms", "partnership_deals"]
+  consult: ["product_roadmap", "marketing_campaigns", "legal_contracts", "finance_terms"]
+  approve: ["enterprise_deals_over_100k", "strategic_partnerships", "channel_partner_agreements"]
+  execute: ["outbound_sequences", "demo_scheduling", "proposal_delivery", "follow_up_cadence"]
+  escalate: ["deal_stalled_60_days", "competitive_displacement", "pricing_exception", "legal_redline"]
+  automate: ["lead_routing", "sequence_enrollment", "activity_logging", "forecast_updates"]
+
+handoffs:
+  - target: "engineering-platform"
+    trigger: "technical_requirements"
+    payload_schema: "schemas/handoff-tech-requirements.json"
+  - target: "legal-compliance"
+    trigger: "contract_review"
+    payload_schema: "schemas/handoff-contract-review.json"
+  - target: "finance-accounting"
+    trigger: "revenue_recognition"
+    payload_schema: "schemas/handoff-revenue-recognition.json"

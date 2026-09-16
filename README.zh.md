@@ -106,12 +106,14 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 git clone <your-repo-url>
 cd decision-systems
 
-# 安装完整包：本体 + 7 部门 + 元 Agent
-bash install-all.sh
+# 安装依赖
+pip install -r requirements.txt
 
-# 或安装单个部门（如缺失会自动克隆本体）
-cd 03-marketing
-bash bots/install_bots.py brand growth
+# 运行专家
+python -m kojiki.core.runner marketing-brand dispatch.json
+
+# 运行所有 8 个专家
+python scripts/verify_all_runners.py
 ```
 
 ### 安装后
@@ -196,6 +198,7 @@ decision-systems/
 ├── requirements.txt
 ├── .github/workflows/ci.yml
 ├── README.md / .ja.md / .zh.md
+├── PROMO.md
 └── LICENSE
 ```
 
@@ -205,12 +208,13 @@ decision-systems/
 
 | 层 | 回答的问题 | 范围 |
 |------|-----------|------|
-| **KOJIKI** | 什么存在 — 本体 | 实体、关系、7 个合并部门 |
+| **KOJIKI** | 什么存在 — 本体 | 实体、关系、8 个统合部门 |
 | **SACCADE** | 尝试前问题是否恰当 | 先验、有界迭代框架（收敛或达上限） |
 | **SYNAPSIS** | 单个有界决策如何产生 | 单 Bot、刚性、可审计 — Evidence ≠ Interpretation ≠ Strategy |
 | **NEURAXIS** | 失败需沿抽象阶梯上溯多远才能解释 | 事后、仅实发散时升级、L3/L4 治理 |
 | **MYCELIUM** | 多部门多决策如何保持协调 | 涌现 OKR 依赖图、子图级 Signal、非指令 |
 | **SENTINEL** | 到底是谁说的 | 每个跨节点声明都有签名、哈希链、非同质化来源 |
+| **CHIEF OF STAFF** | 谁分解、谁统合 | Goal → 分解 → 并列执行 → 统合 |
 
 ---
 
@@ -227,7 +231,7 @@ decision-systems/
 | **STRATEGY** | 应该做什么、何时做？ | EVIDENCE, INTERPRETATION | `accepted_interpretation` | `strategy.json` |
 | **OUTPUT** | 如何执行？ | EVIDENCE, INTERPRETATION, STRATEGY | `accepted_strategy` | `output.json` |
 | **OUTCOME** | 实际发生了什么？ | — | 现实 | `decision-object.json` (更新) |
-| **LEARNING** | 提取模式 | — | 结果 vs 期望 | `learning.json` |
+| **LEARNING** | 提取模式 | — | Outcome vs expectation | `learning.json` |
 
 **`kojiki/core/runner.py` 强制的不变量：**
 - `inputs_forbidden` **不提供**给模型调用——比"请不要"更强
@@ -281,7 +285,7 @@ prune if weight < 0.05 OR reciprocity < 0.2
 | **签名** | Ed25519，私钥仅由节点运行时持有 |
 | **非同质化** | `entry_id = hash(payload_hash + signer + prev_entry_id)` |
 | **链** | 每日志（`signals.jsonl`, `edges_history.jsonl`, `gate_evidence.jsonl`） |
-| **验证** | 提交前 + 治理门控计算证据前 |
+| **验证** | 提交前 + 治理门槛计算证据前 |
 
 ### Kaizen 循环（持续改进）
 
@@ -403,7 +407,7 @@ SYNAPSIS 阶段映射到标准咨询框架——不是运行时依赖，而是�
 
 1. **无闭源依赖** — 所有代码 MIT
 2. **本地优先** — 可在本地运行，无需云端
-3. **提供商无关** — 将任何 LLM 指向 `AGENT.md`
+3. **提供商无关** — 将任意 LLM 指向 `AGENT.md`
 4. **必须测试** — `python3 -m py_compile` + 验证器通过
 5. **仅设计时参考** — `consultant/` 是副本，非依赖
 

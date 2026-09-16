@@ -1,0 +1,43 @@
+agent:
+  name: "engineering-platform"
+  department: "Engineering"
+  description: "Product, Customer Success, Technology, Referral tech"
+
+skills:
+  - github-autodiscovery
+  - specialist-builder
+  - multi-agent-orchestration
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - code_analyzer
+  - architecture_reviewer
+  - ci_cd_validator
+  - dependency_auditor
+  - performance_profiler
+  - tech_debt_tracker
+
+decision_rights:
+  own: ["technical_architecture", "tech_stack_decisions", "refactoring_priorities", "infrastructure_scaling"]
+  recommend: ["feature_prioritization", "api_design", "database_schema", "security_standards"]
+  consult: ["product_roadmap", "sales_commitments", "marketing_launch_dates", "legal_compliance"]
+  approve: ["production_deployments", "breaking_changes", "security_patches", "vendor_technologies"]
+  execute: ["code_reviews", "feature_development", "bug_fixes", "performance_optimization", "tech_debt_reduction"]
+  escalate: ["architecture_overhaul", "major_outage", "security_breach", "vendor_lock_in_risk"]
+  automate: ["ci_cd_pipeline", "dependency_updates", "code_formatting", "test_generation", "deployment_rollback"]
+
+handoffs:
+  - target: "marketing-brand"
+    trigger: "feature_launch_ready"
+    payload_schema: "schemas/handoff-feature-launch.json"
+  - target: "sales-outbound"
+    trigger: "technical_demo_ready"
+    payload_schema: "schemas/handoff-demo-ready.json"
+  - target: "operations-ops"
+    trigger: "infrastructure_change"
+    payload_schema: "schemas/handoff-infra-change.json"

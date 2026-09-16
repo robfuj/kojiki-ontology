@@ -1,0 +1,38 @@
+agent:
+  name: "aeo-specialist"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "AI Engine Optimization, AEO/GEO, AI recommendation visibility, citation auditing"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - ai_citation_auditor
+  - llm_visibility_tracker
+  - schema_markup_optimizer
+  - content_structure_analyzer
+  - agent_discovery_validator
+
+decision_rights:
+  own: ["aeo_strategy", "citation_optimization", "llm_visibility", "structured_data"]
+  recommend: ["content_architecture", "technical_seo_changes"]
+  consult: ["content_creation", "product_schema", "engineering_implementation"]
+  approve: ["schema_deployment", "llms_txt_updates", "ai_crawling_rules"]
+  execute: ["citation_audit", "visibility_tracking", "schema_generation", "content_optimization"]
+  escalate: ["citation_loss", "hallucination_risk", "algorithm_change", "competitor_ai_advantage"]
+  automate: ["visibility_monitoring", "citation_tracking", "schema_validation", "competitor_ai_watch"]
+
+handoffs:
+  - target: "seo-specialist"
+    trigger: "technical_seo_implementation"
+    payload_schema: "schemas/handoff-technical-seo.json"
+  - target: "content-creator"
+    trigger: "ai_optimized_content_structure"
+    payload_schema: "schemas/handoff-ai-content.json"

@@ -1,0 +1,38 @@
+agent:
+  name: "seo-specialist"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Technical SEO, content strategy, link building, keyword research"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - keyword_research
+  - site_audit
+  - backlink_analysis
+  - content_gap_analysis
+  - serp_tracker
+
+decision_rights:
+  own: ["keyword_strategy", "technical_seo_fixes", "content_optimization"]
+  recommend: ["content_calendar", "link_building_targets"]
+  consult: ["paid_search_coordination", "social_content_alignment"]
+  approve: []
+  execute: ["on_page_optimization", "schema_markup", "meta_optimization"]
+  escalate: ["algorithm_penalty", "major_ranking_drop", "manual_action"]
+  automate: ["rank_tracking", "competitor_monitoring", "technical_audits"]
+
+handoffs:
+  - target: "paid-social-specialist"
+    trigger: "keyword_intent_overlap"
+    payload_schema: "schemas/handoff-keyword-intent.json"
+  - target: "content-creator"
+    trigger: "content_brief_ready"
+    payload_schema: "schemas/handoff-content-brief.json"

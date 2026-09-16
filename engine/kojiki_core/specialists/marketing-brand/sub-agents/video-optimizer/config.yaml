@@ -1,0 +1,39 @@
+agent:
+  name: "video-optimizer"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "YouTube algorithm strategy, chaptering, thumbnail concepts, video SEO"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - youtube_optimizer
+  - thumbnail_designer
+  - chapter_generator
+  - video_seo_analyzer
+  - retention_analyzer
+
+decision_rights:
+  own: ["video_strategy", "thumbnail_concepts", "chapter_structure", "optimization_tactics"]
+  recommend: ["content_topics", "series_planning", "collaboration_targets"]
+  consult: ["brand_guidelines", "product_launches", "legal_clearance"]
+  approve: ["video_publish", "thumbnail_final", "metadata_final"]
+  execute: ["optimization_implementation", "thumbnail_creation", "chapter_writing", "metadata_optimization"]
+  escalate: ["copyright_strike", "algorithm_penalty", "brand_safety_violation", "monetization_issue"]
+  automate: ["thumbnail_ab_testing", "chapter_generation", "metadata_updates", "performance_reporting"]
+
+handoffs:
+  - target: "visual-storyteller"
+    trigger: "video_narrative_structure"
+    payload_schema: "schemas/handoff-video-narrative.json"
+  - target: "carousel-growth"
+    trigger: "short_form_adaptation"
+    payload_schema: "schemas/handoff-shortform.json"

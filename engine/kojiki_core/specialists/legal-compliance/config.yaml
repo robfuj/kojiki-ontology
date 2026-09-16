@@ -1,0 +1,42 @@
+agent:
+  name: "legal-compliance"
+  department: "Legal"
+  description: "Compliance, Risk, contracts, regulatory"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - contract_analyzer
+  - compliance_checker
+  - risk_assessor
+  - regulatory_tracker
+  - policy_generator
+  - litigation_tracker
+
+decision_rights:
+  own: ["contract_templates", "compliance_policy", "risk_framework", "regulatory_strategy"]
+  recommend: ["contract_terms", "litigation_strategy", "ip_protection", "data_privacy"]
+  consult: ["product_features", "marketing_claims", "sales_contracts", "hr_policies", "engineering_security"]
+  approve: ["major_contracts", "settlement_agreements", "regulatory_filings", "policy_changes"]
+  execute: ["contract_review", "compliance_audit", "risk_assessment", "policy_drafting", "regulatory_response"]
+  escalate: ["litigation_risk", "regulatory_investigation", "data_breach", "ip_infringement"]
+  automate: ["contract_redlining", "compliance_monitoring", "policy_distribution", "training_tracking"]
+
+handoffs:
+  - target: "sales-outbound"
+    trigger: "contract_approved"
+    payload_schema: "schemas/handoff-contract-approved.json"
+  - target: "engineering-platform"
+    trigger: "compliance_requirement"
+    payload_schema: "schemas/handoff-compliance-req.json"
+  - target: "people-hr"
+    trigger: "policy_update"
+    payload_schema: "schemas/handoff-policy-update.json"

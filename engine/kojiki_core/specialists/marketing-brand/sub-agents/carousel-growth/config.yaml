@@ -1,0 +1,39 @@
+agent:
+  name: "carousel-growth"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "TikTok/Instagram carousels, autonomous publishing, viral content"
+
+skills:
+  - github-autodiscovery
+  - deck-builder
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.5
+  max_tokens: 4000
+
+tools:
+  - carousel_designer
+  - trend_analyzer
+  - auto_publisher
+  - hook_writer
+  - performance_tracker
+
+decision_rights:
+  own: ["carousel_concepts", "hook_strategies", "publishing_schedule", "platform_optimization"]
+  recommend: ["content_themes", "posting_frequency"]
+  consult: ["brand_guidelines", "legal_compliance", "product_messaging"]
+  approve: ["carousel_assets", "publishing_calendar"]
+  execute: ["design_creation", "copy_writing", "scheduling", "engagement_monitoring"]
+  escalate: ["platform_policy_violation", "brand_safety_issue", "viral_negative_feedback"]
+  automate: ["trend_detection", "hook_generation", "scheduling", "cross_posting"]
+
+handoffs:
+  - target: "content-creator"
+    trigger: "long_form_content_needed"
+    payload_schema: "schemas/handoff-longform.json"
+  - target: "video-optimizer"
+    trigger: "carousel_to_video_adaptation"
+    payload_schema: "schemas/handoff-video-adaptation.json"

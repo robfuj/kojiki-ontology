@@ -1,0 +1,38 @@
+agent:
+  name: "agentic-search-optimizer"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "WebMCP, agentic task completion, making sites usable by AI browsing agents"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - mcp_server_builder
+  - agent_task_tester
+  - api_discovery_optimizer
+  - structured_data_enhancer
+  - agent_crawlability_tester
+
+decision_rights:
+  own: ["mcp_architecture", "agent_interfaces", "task_completion_flows", "tool_schemas"]
+  recommend: ["api_design", "data_exposure_strategy"]
+  consult: ["engineering_api", "product_features", "security_boundaries"]
+  approve: ["mcp_deployment", "tool_registry_updates", "agent_permissions"]
+  execute: ["mcp_development", "task_testing", "schema_generation", "integration_testing"]
+  escalate: ["security_vulnerability", "data_exposure_risk", "agent_misbehavior", "rate_limiting_issues"]
+  automate: ["task_regression_testing", "schema_validation", "performance_monitoring", "agent_health_checks"]
+
+handoffs:
+  - target: "engineering-platform"
+    trigger: "api_mcp_integration"
+    payload_schema: "schemas/handoff-api-mcp.json"
+  - target: "aeo-specialist"
+    trigger: "structured_data_alignment"
+    payload_schema: "schemas/handoff-structured-data.json"

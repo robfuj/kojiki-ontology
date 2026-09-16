@@ -1,0 +1,38 @@
+agent:
+  name: "paid-social-specialist"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Meta, LinkedIn, TikTok paid social campaigns, creative strategy, audience targeting"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - audience_builder
+  - creative_analyzer
+  - budget_optimizer
+  - ab_test_designer
+  - platform_api_client
+
+decision_rights:
+  own: ["campaign_structure", "audience_segmentation", "creative_concepts", "bid_strategy"]
+  recommend: ["budget_allocation", "platform_mix"]
+  consult: ["brand_guidelines", "seo_keyword_alignment", "email_retargeting"]
+  approve: ["creative_assets", "campaign_launch"]
+  execute: ["campaign_setup", "ad_creation", "pixel_implementation", "performance_monitoring"]
+  escalate: ["account_ban", "spend_anomaly", "creative_rejection", "policy_violation"]
+  automate: ["budget_pacing", "creative_rotation", "audience_expansion", "reporting"]
+
+handoffs:
+  - target: "seo-specialist"
+    trigger: "high_intent_keywords"
+    payload_schema: "schemas/handoff-keyword-intent.json"
+  - target: "email-strategist"
+    trigger: "retargeting_audience_ready"
+    payload_schema: "schemas/handoff-retargeting.json"

@@ -8,7 +8,7 @@ import subprocess
 
 def find_all_specialists():
     """Find all specialist directories (those with __init__.py directly under specialists/)."""
-    base = Path("/Users/Fujita/Documents/AI Filing System/decision-systems/kojiki/specialists")
+    base = Path("/Users/Fujita/Documents/AI Filing System/decision-systems/engine/kojiki_core/specialists")
     specialists = []
     for spec_dir in base.iterdir():
         if spec_dir.is_dir() and not spec_dir.name.startswith('.') and (spec_dir / "__init__.py").exists():
@@ -33,7 +33,7 @@ def run_specialist(specialist_name):
         env = os.environ.copy()
         env["KOJIKI_TEST_MODE"] = "true"
         result = subprocess.run(
-            [sys.executable, "-m", "kojiki.core.runner", specialist_name, dispatch_file],
+            [sys.executable, "-m", "engine.kojiki_core.runner", specialist_name, dispatch_file],
             capture_output=True,
             text=True,
             timeout=60,

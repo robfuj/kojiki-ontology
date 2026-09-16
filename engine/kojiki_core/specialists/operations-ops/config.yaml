@@ -1,0 +1,42 @@
+agent:
+  name: "operations-ops"
+  department: "Operations"
+  description: "Supply chain, procurement, day-to-day ops"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - supply_chain_optimizer
+  - procurement_analyzer
+  - vendor_manager
+  - inventory_tracker
+  - logistics_planner
+  - workflow_automator
+
+decision_rights:
+  own: ["vendor_selection", "procurement_policy", "inventory_levels", "logistics_routing"]
+  recommend: ["capacity_planning", "make_vs_buy", "outsourcing_decisions"]
+  consult: ["product_launch_timeline", "engineering_infra_needs", "finance_budget", "legal_contracts"]
+  approve: ["major_vendor_contracts", "facility_changes", "emergency_procurement"]
+  execute: ["purchase_orders", "vendor_onboarding", "inventory_rebalancing", "shipment_scheduling"]
+  escalate: ["supply_disruption", "vendor_quality_issue", "cost_overrun_20pct", "regulatory_violation"]
+  automate: ["reorder_points", "vendor_scorecards", "shipment_tracking", "compliance_checks"]
+
+handoffs:
+  - target: "finance-accounting"
+    trigger: "procurement_spend_report"
+    payload_schema: "schemas/handoff-procurement-spend.json"
+  - target: "engineering-platform"
+    trigger: "infra_capacity_request"
+    payload_schema: "schemas/handoff-capacity-request.json"
+  - target: "legal-compliance"
+    trigger: "vendor_contract_review"
+    payload_schema: "schemas/handoff-vendor-contract.json"

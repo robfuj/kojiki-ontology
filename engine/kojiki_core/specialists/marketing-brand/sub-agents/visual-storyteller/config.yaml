@@ -1,0 +1,39 @@
+agent:
+  name: "visual-storyteller"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Visual narratives, multimedia content, brand storytelling"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.5
+  max_tokens: 4000
+
+tools:
+  - storyboard_creator
+  - visual_asset_creator
+  - narrative_arc_designer
+  - multimedia_editor
+  - brand_story_framework
+
+decision_rights:
+  own: ["visual_narratives", "story_angles", "multimedia_formats", "brand_story_arc"]
+  recommend: ["content_series", "campaign_themes"]
+  consult: ["brand_guidelines", "product_features", "audience_insights"]
+  approve: ["visual_assets", "video_concepts", "campaign_visuals"]
+  execute: ["storyboard_creation", "asset_production", "editing", "publishing_coordination"]
+  escalate: ["creative_block", "budget_constraint", "legal_review", "technical_limitation"]
+  automate: ["asset_organization", "version_tracking", "format_adaptation", "distribution_prep"]
+
+handoffs:
+  - target: "carousel-growth"
+    trigger: "carousel_story_format"
+    payload_schema: "schemas/handoff-carousel-story.json"
+  - target: "video-optimizer"
+    trigger: "video_story_adaptation"
+    payload_schema: "schemas/handoff-video-story.json"

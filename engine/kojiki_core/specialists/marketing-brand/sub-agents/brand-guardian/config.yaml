@@ -1,0 +1,39 @@
+agent:
+  name: "brand-guardian"
+  parent_department: "Marketing"
+  parent_agent: "marketing-brand"
+  description: "Brand identity, consistency, positioning, guidelines enforcement"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - brand_auditor
+  - guideline_checker
+  - asset_validator
+  - consistency_scorer
+  - brand_asset_manager
+
+decision_rights:
+  own: ["brand_guidelines", "visual_identity", "voice_tone", "asset_approval"]
+  recommend: ["brand_extensions", "co_branding", "partnership_alignments"]
+  consult: ["campaign_concepts", "product_design", "hiring_brand_impact"]
+  approve: ["external_assets", "brand_applications", "merchandise", "swag"]
+  execute: ["guideline_updates", "audit_reports", "training_materials", "asset_distribution"]
+  escalate: ["brand_infringement", "major_inconsistency", "rebrand_decision", "crisis_brand_impact"]
+  automate: ["asset_tagging", "usage_monitoring", "compliance_scanning", "version_control"]
+
+handoffs:
+  - target: "content-creator"
+    trigger: "brand_voice_guidance"
+    payload_schema: "schemas/handoff-brand-voice.json"
+  - target: "pr-communications"
+    trigger: "messaging_alignment"
+    payload_schema: "schemas/handoff-brand-messaging.json"

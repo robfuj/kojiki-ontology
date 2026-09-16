@@ -112,7 +112,7 @@ pip install -r requirements.txt
 # スペシャリストを実行
 python -m kojiki.core.runner marketing-brand dispatch.json
 
-# 全7スペシャリストを実行
+# 全8スペシャリストを実行
 python scripts/verify_all_runners.py
 ```
 
@@ -198,6 +198,7 @@ decision-systems/
 ├── requirements.txt
 ├── .github/workflows/ci.yml
 ├── README.md / .ja.md / .zh.md
+├── PROMO.md
 └── LICENSE
 ```
 
@@ -207,7 +208,7 @@ decision-systems/
 
 | レイヤー | 答える問い | 範囲 |
 |-------|---------|------|
-| **KOJIKI** | 何が存在するか——本体 | エンティティ、関係、7つの統合部門 |
+| **KOJIKI** | 何が存在するか——本体 | エンティティ、関係、8つの統合部門 |
 | **SACCADE** | 何かを試す前に問いは適切か | 先験、境界付き反復的フレーミング（収束またはパス上限） |
 | **SYNAPSIS** | 1つの境界付き意思決定がどうなされるか | 単Bot、剛性、監査可能——Evidence ≠ Interpretation ≠ Strategy |
 | **NEURAXIS** | 失敗が説明のためにどこまで抽象化階層を登るか | 事後、実質的乖離時のみエスカレーション、L3/L4でガバナンス |
@@ -237,7 +238,7 @@ decision-systems/
 - 各ステージはスコープ付きコンテキストで別モデル呼び出し
 - `validate.py`が出力をスキーマ+不変ルールでチェック
 
-### MYCELIUM Canopy Tier（涌現）
+### MYCELIUM Canopy層（涌現）
 
 | プリミティブ | スキーマ | キールール |
 |-----------|--------|----------|
@@ -354,7 +355,7 @@ prune if weight < 0.05 OR reciprocity < 0.2
 
 | 研究 | 発見 | アーキテクチャマッピング |
 |-------|---------|---------------------|
-| 疎軌道レベル報酬→プロセスレベル信用割当 | ステップごとの信用割当が少ないデータでより良い学習を生成 | SYNAPSIS段階ごと分解、`diagnosed_cause_category`付き（学習分類学由来） |
+| 疎軌道レベル報酬→プロセスレベル信用割当 | ステップごとの信用割当が少ないデータでより良い学習を生成 | SYNAPSIS段階ごと分解、`diagnosed_cause_category`付き（学習分類法由来） |
 
 ### エンタープライズマルチAgent参照アーキテクチャ
 
@@ -393,7 +394,7 @@ SYNAPSISステージは標準コンサルティングフレームワークにマ
 ## 🛣️ ロードマップ
 
 | フェーズ | フォーカス | ステータス |
-|-------|-------|--------|
+|-------|---------|--------|
 | **v1** | 剛性層(SYNAPSIS) + 涌現層(MYCELIUM) + NEURAXIS + SENTINEL | ✅ 完了 |
 | **v2** | Task 3決定論的採点、py_compile付きCI、合否閾値、スキーマバージョニング、拡張デモマトリックス | 📋 計画中 |
 | **v3** | ステージ出力の敵対的再導出、全18部門への後付け、アーティファクト相互確認 | 📋 計画中 |

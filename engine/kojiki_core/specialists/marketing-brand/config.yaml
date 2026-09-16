@@ -1,0 +1,43 @@
+agent:
+  name: "marketing-brand"
+  department: "Marketing"
+  description: "Brand, growth, referral, paid media"
+
+skills:
+  - deck-builder
+  - github-autodiscovery
+  - multi-agent-orchestration
+
+model:
+  provider: "openrouter"
+  model: "anthropic/claude-3-haiku:beta"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - brand_analysis
+  - campaign_optimizer
+  - referral_tracker
+  - paid_media_analyzer
+  - seo_auditor
+  - content_calendar
+
+decision_rights:
+  own: ["brand_strategy", "campaign_budget", "creative_direction", "channel_mix"]
+  recommend: ["product_positioning", "pricing_strategy", "market_entry"]
+  consult: ["engineering_roadmap", "sales_capacity", "legal_compliance"]
+  approve: ["brand_guidelines", "major_campaign_launch", "influencer_contracts"]
+  execute: ["campaign_launch", "content_publishing", "social_scheduling", "ab_tests"]
+  escalate: ["brand_crisis", "budget_over_100k", "regulatory_complaint"]
+  automate: ["social_scheduling", "ab_test_variants", "performance_reporting", "lead_scoring"]
+
+handoffs:
+  - target: "sales-outbound"
+    trigger: "qualified_lead"
+    payload_schema: "schemas/handoff-lead.json"
+  - target: "engineering-platform"
+    trigger: "landing_page_request"
+    payload_schema: "schemas/handoff-landing-page.json"
+  - target: "finance-accounting"
+    trigger: "campaign_budget_request"
+    payload_schema: "schemas/handoff-budget-request.json"
