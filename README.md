@@ -351,34 +351,7 @@ python -m pytest test_governance_loop.py -v
 - ✅ 42/42 mycelium tests pass
 - ✅ Governance loop test passes
 
----
-
-## 📊 Simplification Metrics
-
-| Metric | Before | After | Change |
-|--------|--------|-------|--------|
-| **Total LOC** | 23,166 | 16,168 | **-30.2%** |
-| **Python Files** | 205 | 180 | -12% |
-| **God Files (>500 lines)** | 5 | 0 | -100% |
-| **Largest File** | 3,054 | 789 | -74% |
-
-**Key God Files Eliminated:**
-- `chief_of_staff.py` (3,054 → 0, removed)
-- `dept_head_base.py` (1,192 → 0, removed)  
-- `runner.py` (853 → 180)
-- `stages/delegation.py` (835 → 335)
-- `stages/strategy.py` (628 → 0, removed)
-- `core/__init__.py` (~2,000 → 51)
-
-**Unified Infrastructure:**
-- `types.py` — single source of truth for all pipeline types
-- `utils/__init__.py` — consolidated helpers (load_prompt, validate_schema, build_stage_context, call_model, test stubs)
-- `stages/base.py` — StageExecutor base class eliminating duplicate execute() patterns
-- Test stubs moved to `tests/fixtures/test_stubs.py`
-
----
-
-## 📄 License
+---\n\n## 🔬 Research Foundations\n\nThe architecture is grounded in peer-reviewed research across four independent fields:\n\n### Biology (Mycorrhizal Networks)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula, γ efficiency-redundancy tradeoff |\n| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis |\n| Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | Defense-signal propagation (\"priming\") | Scoped, subgraph-only Signal propagation |\n| Karst et al., *Nature Ecology & Evolution* (2023) | Skeptical review: citation bias toward positive-effect studies | Caution in §II.5 — build only on well-supported mechanics |\n| Frew et al., *Functional Ecology* (2025) | CMNs are heterogeneous, context/host/fungal-type dependent | Reinforces §II.5 caution |\n| Bilgen & Akan, \"Internet of Plants\" (2024–2025) | Independent comms-engineering formalization: fungal network as \"graph-based communication medium\" | Validates `SIGNALING ≠ ORCHESTRATION` invariant |\n\n### Neuroscience (Hierarchical Predictive Coding)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder — exact computational structure |\n| Spinal cord → brainstem → cortex reflex arc | Fast local responses; ambiguous stimuli escalate; cortical inhibition modulates reflexes | NEURAXIS L0–L4 layers with governance gate at L3 |\n\n### Immunology (Innate/Adaptive Boundary)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate with learned layer; never rewrites innate recognition machinery | NEURAXIS governance gate: L0–L2 autonomous, L3–L4 require external validation |\n\n### RL-for-LLM Research\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Sparse trajectory-level reward → Process-level credit assignment | Per-step credit assignment produces better learning with less data | SYNAPSIS per-stage decomposition with `diagnosed_cause_category` from Learning Taxonomy |\n\n### Enterprise Multi-Agent Reference Architectures\n\n| Source | Finding | Architecture Mapping |\n|--------|---------|---------------------|\n| Microsoft multi-agent reference architecture (real deployments) | Registry → Orchestrator → Knowledge/State → Async replay-aware communication | Same component separation arrived at independently |\n\n### Recursive Self-Improvement Taxonomy\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Bounded (L3) vs Unbounded (L4/L5) self-improvement | Bounded: improvement mechanism externally maintained | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` invariant keeps system at L3 |\n\n---\n\n## 🤖 Orchestrator\n\nThe **Orchestrator** (replacing Chief of Staff) provides transparent goal decomposition:\n\n```bash\n# Run orchestration with user approval gate\npython -m engine.orchestrator.orchestrator \"Create a beef broth brand for Canadian market\"\n\n# Run without approval gate (for automation)\npython -m engine.orchestrator.orchestrator \"Goal here\" --no-approval\n```\n\n**Flow:**\n1. **Orientation Protocol** — industry research on the goal\n2. **SACCADE Framing** — sharpen raw goal into structured Problem\n3. **Department Selection** — which dept heads own this, with reasoning\n4. **OKR Decomposition** — corporate OKR → dept OKRs → team OKRs\n5. **Parallel Dispatch** — each dept head runs full SYNAPSIS pipeline\n6. **Mycelium Coordination** — cross-dept signals\n6. **User Approval Gate** — review before re-loop\n\n---\n\n## 📄 License
 
 MIT — see [LICENSE](LICENSE).
 

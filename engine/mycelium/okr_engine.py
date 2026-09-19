@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""
+OKR Engine — BCG-style OKR management for the Orchestrator.
+Simple implementation for goal decomposition.
+"""
+
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Any
+from enum import Enum
+from datetime import datetime
+import uuid
+
+
+class OKRLevel(Enum):
+    CORPORATE = "corporate"
+    DEPARTMENT = "department"
+    TEAM = "team"
+    INDIVIDUAL = "individual"
+
+
+class KRType(Enum):
+    METRIC = "metric"
+    MILESTONE = "milestone"
+    TASK = "task"
+
+
+@dataclass
+class KeyResult:
+    id: str
+    name: str
+    type: KRType
+    target: float
+    unit: str
+    weight: float = 1.0
+    current: float = 0.0
+    confidence: float = 0.5
+    depends_on: List[str] = field(default_factory=list)
+
+    def progress(self) -> float:
+        if self.target == 0:
+            return 0.0
+        return min(self.current / self.target, 1.0)
+
+
+@dataclass
+class Objective:
+    id: str
+    name: str
+    description: str
+    level: OKRLevel
+    owner: str
+    parent_id: Optional[str] = None
+    key_results: List[KeyResult] = field(default_factory=list)
+    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat() + "Z")
+
+    def weighted_progress(self) -> float:
+        if not self.key_results:
+            return 0.0
+        total_weight = sum(kr.weight for kr in self.key_results)
+        if total_weight == 0:
+            return 0.0
+        return sum(kr.progress() * kr.weight for kr in self.key_results) / total_weight
+
+
+class OKREngine:
+    """Simple OKR engine for goal decomposition."""
+    
+    def __init__(self):
+        self.objectives: Dict[str, Objective] = {}
+        self.key_results: Dict[str, KeyResult] = {}
+    
+    def create_objective(
+        self, 
+        name: str, 
+        description: str, 
+        level: OKRLevel, 
+        owner: str, 
+        parent_id: Optional[str] = None
+    ) -> Objective:
+        obj = Objective(
+            id=f"OKR-{uuid.uuid4().hex[:8]}",
+            name=name,
+            description=description,
+            level=level,
+            owner=owner,
+            parent_id=parent_id
+        )
+        self.objectives[obj.id] = obj
+        return obj
+    
+    def add_key_result(
+        self, 
+        objective_id: str, 
+        name: str, 
+        type: KRType, 
+        target: float, 
+        unit: str,
+        weight: float = 1.0
+    ) -> KeyResult:
+        kr = KeyResult(
+            id=f"KR-{uuid.uuid4().hex[:8]}",
+            name=name,
+            type=type,
+            target=target,
+            unit=unit,
+            weight=weight
+        )
+        self.key_results[kr.id] = kr
+        
+        if objective_id in self.objectives:
+            self.objectives[objective_id].key_results.append(kr)
+        
+        return kr
+    
+    def get_key_results(self, objective_id: str) -> List[KeyResult]:
+        if objective_id in self.objectives:
+            return self.objectives[objective_id].key_results
+        return []
+    
+    def get_objective(self, objective_id: str) -> Optional[Objective]:
+        return self.objectives.get(objective_id)
+    
+    def rollup_progress(self, objective_id: str) -> float:
+        """Roll up progress from children to parent."""
+        obj = self.objectives.get(objective_id)
+        if not obj:
+            return 0.0
+        
+        # Own progress
+        own_progress = obj.weighted_progress()
+        
+        # Children progress
+        children = [o for o in self.objectives.values() if o.parent_id == objective_id]
+        if not children:
+            return own_progress
+        
+        child_progress = sum(self.rollup_progress(c.id) for c in children) / len(children)
+        
+        # Weighted combination: 60% own, 40% children
+        return 0.6 * own_progress + 0.4 * child_progress
