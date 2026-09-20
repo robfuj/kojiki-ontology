@@ -6,6 +6,7 @@ Replaces Chief of Staff with transparent orchestration.
 
 import asyncio
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Set
@@ -13,11 +14,12 @@ from dataclasses import dataclass, asdict, field
 
 from engine.kojiki_core import load_specialist
 from engine.kojiki_core.runner import PipelineRunner
-from engine.kojiki_core.stages import run_saccade_stage
+from engine.kojiki_core.stages import run_saccade_stage, run_evidence_stage
 from engine.kojiki_core.utils import is_test_mode, create_dispatch
 from engine.mycelium.okr_engine import OKREngine, OKRLevel, KRType
 from engine.mycelium.propagate import SignalPropagator
 from engine.mycelium.registry import NodeRegistry
+from engine.mycelium.conversation_layer import MyceliumConversationLayer
 from engine.sentinel import SentinelEngine, KeyManager
 
 
@@ -54,28 +56,47 @@ class Orchestrator:
     2. SACCADE Framing — sharpen raw goal into structured Problem
     3. Department Selection — which dept heads own this, with reasoning
     4. OKR Decomposition — corporate OKR → dept OKRs → team OKRs
-    4. Parallel Dispatch — each dept head runs full SYNAPSIS pipeline
-    5. Mycelium Coordination — cross-dept signals
-    6. Synthesis + User Approval Gate
-    7. Re-loop if needed
+    5. Parallel Dispatch — each dept head runs full SYNAPSIS pipeline
+       - BATCH 1: EVIDENCE for independent departments
+       - CONSULTATION: MyceliumConversationLayer
+       - BATCH 2: INTERPRETATION/STRATEGY/OUTPUT/DELEGATION/HANDOFF/MYCELIUM/OUTCOME/LEARNING
+    6. Mycelium Coordination — cross-dept signals
+    7. Synthesis + User Approval Gate
+    8. Re-loop if needed
     """
     
-    def __init__(self):
+    def __init__(self, data_dir: Optional[str] = None):
+        # Resolve data directory from env or parameter (NOT /tmp)
+        if data_dir is None:
+            data_dir = os.environ.get("KOJIKI_DATA_DIR", str(Path.home() / ".kojiki" / "data"))
+        
+        self.data_dir = Path(data_dir)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        
         self.sentinel = SentinelEngine()
-        self.okr_engine = OKREngine()
+        self.okr_engine = OKREngine(store_path=str(self.data_dir / "okrs.json"))
         self.key_manager = KeyManager()
-        self.registry = NodeRegistry(registry_path="/tmp/nodes.json")
+        self.registry = NodeRegistry(registry_path=str(self.data_dir / "nodes.json"))
         self.propagator = SignalPropagator(
-            edge_store_path="/tmp/edges.json",
-            log_path="/tmp/signals.jsonl",
+            edge_store_path=str(self.data_dir / "edges.json"),
+            log_path=str(self.data_dir / "signals.jsonl"),
             registry=self.registry
+        )
+        self.conversation_layer = MyceliumConversationLayer(
+            propagator=self.propagator,
+            registry=self.registry,
+            sentinel=self.sentinel,
+            max_rounds=3,
+            consultation_store_path=str(self.data_dir / "consultations.json")
         )
         
     async def orchestrate(
         self, 
         raw_goal: str, 
         context: Optional[Dict[str, Any]] = None,
-        require_approval: bool = True
+        require_approval: bool = True,
+        feedback: Optional[str] = None,
+        retry_count: int = 0
     ) -> OrchestrationResult:
         """Main entry: orchestrate a goal end-to-end."""
         
@@ -98,8 +119,8 @@ class Orchestrator:
         # Phase 4: OKR Decomposition
         okr_decomposition = self._decompose_okrs(problem, dept_choices)
         
-        # Phase 5: Parallel Dispatch
-        execution_results = await self._dispatch_parallel(
+        # Phase 5: Parallel Dispatch with consultation rounds
+        execution_results = await self._dispatch_with_consultation(
             problem, dept_choices, okr_decomposition, context
         )
         
@@ -110,8 +131,15 @@ class Orchestrator:
         if require_approval:
             approved = await self._user_approval_gate(execution_results)
             if not approved:
-                # Re-loop with feedback
-                pass
+                # Re-loop with feedback - actual re-loop
+                feedback = "Rejected by user approval gate"
+                return await self.orchestrate(
+                    raw_goal, 
+                    context=context, 
+                    require_approval=require_approval,
+                    feedback=feedback,
+                    retry_count=retry_count + 1
+                )
         
         result = OrchestrationResult(
             orchestration_id=orchestration_id,
@@ -336,21 +364,93 @@ class Orchestrator:
             "department_okrs": dept_okrs
         }
     
-    async def _dispatch_parallel(
+    def _topological_batches(self, dept_choices: List[DepartmentChoice]) -> List[List[DepartmentChoice]]:
+        """Batch departments by dependency layer (topological sort)."""
+        remaining = {c.specialist_name: c for c in dept_choices}
+        done = set()
+        batches = []
+        
+        while remaining:
+            ready = [c for c in remaining.values() if all(d in done for d in c.dependencies)]
+            if not ready:
+                # Circular or unresolvable dependency — break the cycle rather than hang
+                ready = list(remaining.values())
+            batches.append(ready)
+            for c in ready:
+                done.add(c.specialist_name)
+                del remaining[c.specialist_name]
+        
+        return batches
+    
+    async def _dispatch_with_consultation(
         self,
         problem: Dict[str, Any],
         dept_choices: List[DepartmentChoice],
         okr_decomposition: Dict[str, Any],
         context: Optional[Dict[str, Any]]
     ) -> Dict[str, Any]:
-        """Phase 5: Dispatch each dept head in parallel."""
-        print("\n--- PHASE 5: PARALLEL DISPATCH ---")
+        """
+        Phase 5: Dispatch with consultation rounds.
+        
+        Flow:
+        1. Batch departments by dependencies
+        2. For each batch:
+           a. Run EVIDENCE for all departments in batch (parallel)
+           b. Open MyceliumConversationLayer consultation
+           c. Run INTERPRETATION/STRATEGY/OUTPUT/DELEGATION/HANDOFF/MYCELIUM/OUTCOME/LEARNING
+        """
+        print("\n--- PHASE 5: PARALLEL DISPATCH WITH CONSULTATION ---")
         
         results = {}
+        batches = self._topological_batches(dept_choices)
         
-        async def run_department(choice: DepartmentChoice):
+        for batch_idx, batch in enumerate(batches):
+            print(f"\n  📦 Batch {batch_idx + 1}/{len(batches)}: {[c.specialist_name for c in batch]}")
+            
+            # Step 1: Run EVIDENCE for all departments in this batch
+            evidence_outputs = await self._run_evidence_batch(batch, problem, okr_decomposition, context)
+            
+            # Step 2: Open consultation window
+            session = self.conversation_layer.open_consultation(
+                batch_departments=[c.specialist_name for c in batch],
+                evidence_outputs=evidence_outputs,
+                problem_context=problem
+            )
+            
+            # Step 3: Run consultation rounds
+            consultation_contexts = await self.conversation_layer.run_consultation_round(
+                session=session,
+                run_department_stage=self._run_department_stage,
+                problem=problem,
+                context=context
+            )
+            
+            # Step 4: Run remaining stages for each department with consultation context
+            for choice in batch:
+                dept_name = choice.specialist_name
+                dept_result = await self._run_department_full_pipeline(
+                    choice, problem, okr_decomposition, context, consultation_contexts.get(dept_name, {})
+                )
+                results[dept_name] = dept_result
+                print(f"  ✅ {dept_name} completed full pipeline")
+        
+        return results
+    
+    async def _run_evidence_batch(
+        self,
+        batch: List[DepartmentChoice],
+        problem: Dict[str, Any],
+        okr_decomposition: Dict[str, Any],
+        context: Optional[Dict[str, Any]]
+    ) -> Dict[str, Any]:
+        """Run EVIDENCE stage for a batch of departments in parallel."""
+        print(f"    🔍 Running EVIDENCE for {len(batch)} departments...")
+        
+        evidence_outputs = {}
+        
+        async def run_evidence(choice: DepartmentChoice):
             dispatch = create_dispatch(
-                task_id=f"orch-{choice.specialist_name}-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
+                task_id=f"orch-{choice.specialist_name}-evidence-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
                 raw_record=problem.get("goal", ""),
                 raw_source={"problem": problem, "okr": okr_decomposition.get("department_okrs", {}).get(choice.specialist_name, {})},
                 prior_accepted_evidence=[]
@@ -362,24 +462,77 @@ class Orchestrator:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             try:
-                result = await runner.run()
-                return choice.specialist_name, result
+                # Run only EVIDENCE stage
+                await run_evidence_stage(runner, dispatch, runner.context, "orchestrator")
+                evidence = runner.context.stage_outputs.get("evidence", {})
+                return choice.specialist_name, evidence
             finally:
                 loop.close()
         
-        # Run all in parallel
-        tasks = [run_department(c) for c in dept_choices]
+        tasks = [run_evidence(c) for c in batch]
         completed = await asyncio.gather(*tasks, return_exceptions=True)
         
         for result in completed:
-            if isinstance(result, Exception):
-                print(f"  ❌ Department failed: {result}")
+            if isinstance(result, BaseException):
+                print(f"    ❌ EVIDENCE failed: {result}")
             else:
-                dept_name, dept_result = result
-                results[dept_name] = dept_result
-                print(f"  ✅ {dept_name} completed")
+                dept_name, evidence = result
+                evidence_outputs[dept_name] = evidence
+                print(f"    ✅ {dept_name} EVIDENCE complete")
         
-        return results
+        return evidence_outputs
+    
+    async def _run_department_stage(
+        self,
+        dept: str,
+        stage_name: str,
+        consultation_context: Dict[str, Any],
+        problem: Dict[str, Any],
+        context: Optional[Dict[str, Any]]
+    ) -> Dict[str, Any]:
+        """Run a specific stage for a department (used during consultation)."""
+        # This is called by MyceliumConversationLayer during consultation rounds
+        # The department can respond to consultation requests, ask questions, etc.
+        # Returns consultation_output with possible "consultation_requests" and "continue_consultation"
+        
+        # For now, return a basic response - in production this would call the actual
+        # department's consultation handling logic
+        return {
+            "consultation_requests": [],
+            "continue_consultation": False,
+            "consultation_notes": f"{dept} acknowledged consultation context"
+        }
+    
+    async def _run_department_full_pipeline(
+        self,
+        choice: DepartmentChoice,
+        problem: Dict[str, Any],
+        okr_decomposition: Dict[str, Any],
+        context: Optional[Dict[str, Any]],
+        consultation_context: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """Run full SYNAPSIS pipeline for a department (after consultation)."""
+        dispatch = create_dispatch(
+            task_id=f"orch-{choice.specialist_name}-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
+            raw_record=problem.get("goal", ""),
+            raw_source={
+                "problem": problem, 
+                "okr": okr_decomposition.get("department_okrs", {}).get(choice.specialist_name, {}),
+                "consultation": consultation_context
+            },
+            prior_accepted_evidence=[]
+        )
+        
+        specialist = load_specialist(choice.specialist_name)
+        runner = PipelineRunner(specialist, dispatch)
+        
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            result = await runner.run()
+            return result
+        finally:
+            loop.close()
     
     async def _coordinate_mycelium(
         self,
@@ -398,7 +551,7 @@ class Orchestrator:
                     # Create failure signal
                     signal = {
                         "signal_id": f"SIG-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
-                        "source_node": f"{dept_name}.Head",
+                        "origin_kr": f"{dept_name}.Head",
                         "target_node": "cross-department",
                         "signal_type": "FAILURE",
                         "diagnosed_cause": f"KPI {eval.get('metric')} missed target",
@@ -432,23 +585,24 @@ class Orchestrator:
         if is_test_mode():
             return all_converged
         
-        # Real approval would happen here
-        return True
+        # Real approval would happen here - FAIL CLOSED for safety
+        # Instead of defaulting to True, require explicit approval mechanism
+        print("  ❌ No approval channel configured — FAILING CLOSED for safety")
+        print("  Set require_approval=False or implement approval_channel")
+        return False  # Fail closed - safe default
     
     def _sign_orchestration(self, result: OrchestrationResult):
         """Record orchestration in SENTINEL."""
-        self.sentinel.write_signal({
-            "signal_id": f"ORCH-{result.orchestration_id}",
-            "source_node": "ORCHESTRATOR",
-            "target_node": "SYSTEM",
-            "signal_type": "ORCHESTRATION_COMPLETE",
-            "payload": {
+        # Use registry signer for audit log integrity
+        self.sentinel.write_signal(
+            signer="registry",
+            signal_id=f"ORCH-{result.orchestration_id}",
+            signal={
                 "orchestration_id": result.orchestration_id,
                 "departments": [c.specialist_name for c in result.department_choices],
                 "approval_required": True
-            },
-            "timestamp": result.timestamp
-        })
+            }
+        )
         print(f"  🔐 Signed in SENTINEL: {result.orchestration_id}")
 
 

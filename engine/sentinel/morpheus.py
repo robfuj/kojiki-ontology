@@ -57,9 +57,30 @@ class MorpheusEngine:
     One hard rule: Nothing is ever deleted, only forgotten from convenience.
     """
 
-    def __init__(self, sentinel: SentinelEngine, key_manager: KeyManager):
+    def __init__(
+        self, 
+        sentinel: SentinelEngine, 
+        key_manager: KeyManager,
+        escalation_engine=None,
+        kaizen_loop=None,
+        propagator=None,
+        data_dir: Optional[str] = None
+    ):
         self.sentinel = sentinel
         self.key_manager = key_manager
+        self.escalation_engine = escalation_engine
+        self.kaizen_loop = kaizen_loop
+        self.propagator = propagator
+        
+        # Resolve data directory
+        if data_dir is None:
+            data_dir = str(Path.home() / ".kojiki" / "data")
+        self.data_dir = Path(data_dir)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Paths for working stores
+        self.experience_store_path = self.data_dir / "experiences.jsonl"
+        self.kaizen_cases_path = self.data_dir / "kaizen_learning_cases.jsonl"
 
     async def run_reset(self, user_id: str, project_id: str) -> Dict[str, Any]:
         """Execute the daily memory reset."""
@@ -96,16 +117,46 @@ class MorpheusEngine:
         }
 
     async def _query_pending_gates(self, user_id: str, project_id: str) -> List[Dict[str, Any]]:
-        """Query SENTINEL for PENDING gates with live SLA."""
-        return []
+        """Query the real gate-request store, filtering on status and deadline."""
+        if not self.escalation_engine:
+            return []
+        
+        from datetime import datetime
+        gates = self.escalation_engine.gate_requests.values()
+        now = datetime.utcnow().isoformat() + "Z"
+        return [
+            g for g in gates
+            if g.status == "PENDING"
+            and g.sla_deadline > now
+            # Scope by user/project if those fields exist
+        ]
 
     async def _wipe_working_stores(self, user_id: str, project_id: str) -> List[str]:
-        """Wipe working-tier stores. Returns list of cleared store names."""
-        return [
-            "experiences",
-            "kaizen_learning_cases",
-            "subgraph_cache"
-        ]
+        """Actually clear the named stores, and report only what was genuinely cleared."""
+        cleared = []
+        
+        # Clear experience store
+        if self.experience_store_path.exists():
+            self.experience_store_path.write_text("")
+            cleared.append("experiences")
+        
+        # Clear Kaizen learning cases
+        if self.kaizen_loop and hasattr(self.kaizen_loop, "learning_cases"):
+            self.kaizen_loop.learning_cases.clear()
+            cleared.append("kaizen_learning_cases")
+        
+        # Clear subgraph cache in propagator
+        if self.propagator and hasattr(self.propagator, "_subgraph_cache"):
+            self.propagator._subgraph_cache.clear()
+            cleared.append("subgraph_cache")
+        
+        # Also clear any other working caches
+        if self.kaizen_cases_path.exists():
+            self.kaizen_cases_path.write_text("")
+            if "kaizen_learning_cases" not in cleared:
+                cleared.append("kaizen_learning_cases")
+        
+        return cleared
 
     async def _rematerialize_gates(
         self, 

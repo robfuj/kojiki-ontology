@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
 OKR Engine — BCG-style OKR management for the Orchestrator.
-Simple implementation for goal decomposition.
+Simple implementation for goal decomposition with JSON file persistence.
 """
 
-from dataclasses import dataclass, field
+import json
+from dataclasses import dataclass, field, asdict
 from typing import Dict, List, Optional, Any
 from enum import Enum
 from datetime import datetime
+from pathlib import Path
 import uuid
 
 
@@ -63,20 +65,55 @@ class Objective:
 
 
 class OKREngine:
-    """Simple OKR engine for goal decomposition."""
-    
-    def __init__(self):
+    """Simple OKR engine for goal decomposition with JSON persistence."""
+
+    def __init__(self, store_path: Optional[str] = None):
+        self.store_path = Path(store_path or (Path.home() / ".kojiki" / "data" / "okrs.json"))
         self.objectives: Dict[str, Objective] = {}
         self.key_results: Dict[str, KeyResult] = {}
-    
+        self._load()
+
+    def _load(self):
+        """Load OKRs from JSON file."""
+        if self.store_path.exists():
+            try:
+                data = json.loads(self.store_path.read_text())
+                for o in data.get("objectives", []):
+                    kr_list = [
+                        KeyResult(**{**kr, "type": KRType(kr["type"])}) 
+                        for kr in o.pop("key_results", [])
+                    ]
+                    obj = Objective(**{**o, "level": OKRLevel(o["level"])})
+                    obj.key_results = kr_list
+                    self.objectives[obj.id] = obj
+                    for kr in kr_list:
+                        self.key_results[kr.id] = kr
+            except Exception:
+                pass  # Corrupted file, start fresh
+
+    def _save(self):
+        """Save OKRs to JSON file."""
+        self.store_path.parent.mkdir(parents=True, exist_ok=True)
+        data = {"objectives": [
+            {**asdict(o), "level": o.level.value,
+             "key_results": [{**asdict(kr), "type": kr.type.value} for kr in o.key_results]}
+            for o in self.objectives.values()
+        ]}
+        self.store_path.write_text(json.dumps(data, indent=2))
+
     def create_objective(
         self, 
         name: str, 
         description: str, 
         level: OKRLevel, 
         owner: str, 
-        parent_id: Optional[str] = None
+        parent_id: Optional[str] = None,
+        registry=None
     ) -> Objective:
+        # Validate owner against registry if provided
+        if registry and not registry.get_node(owner):
+            raise ValueError(f"Objective owner '{owner}' is not a registered node")
+        
         obj = Objective(
             id=f"OKR-{uuid.uuid4().hex[:8]}",
             name=name,
@@ -86,8 +123,9 @@ class OKREngine:
             parent_id=parent_id
         )
         self.objectives[obj.id] = obj
+        self._save()
         return obj
-    
+
     def add_key_result(
         self, 
         objective_id: str, 
@@ -106,35 +144,36 @@ class OKREngine:
             weight=weight
         )
         self.key_results[kr.id] = kr
-        
+
         if objective_id in self.objectives:
             self.objectives[objective_id].key_results.append(kr)
         
+        self._save()
         return kr
-    
+
     def get_key_results(self, objective_id: str) -> List[KeyResult]:
         if objective_id in self.objectives:
             return self.objectives[objective_id].key_results
         return []
-    
+
     def get_objective(self, objective_id: str) -> Optional[Objective]:
         return self.objectives.get(objective_id)
-    
+
     def rollup_progress(self, objective_id: str) -> float:
         """Roll up progress from children to parent."""
         obj = self.objectives.get(objective_id)
         if not obj:
             return 0.0
-        
+
         # Own progress
         own_progress = obj.weighted_progress()
-        
+
         # Children progress
         children = [o for o in self.objectives.values() if o.parent_id == objective_id]
         if not children:
             return own_progress
-        
+
         child_progress = sum(self.rollup_progress(c.id) for c in children) / len(children)
-        
+
         # Weighted combination: 60% own, 40% children
         return 0.6 * own_progress + 0.4 * child_progress
