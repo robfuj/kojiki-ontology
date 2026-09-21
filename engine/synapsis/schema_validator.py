@@ -18,8 +18,8 @@ class SchemaValidator:
     
     def __init__(self, schema_root: Path = None):
         if schema_root is None:
-            # Default to synapsis/schemas in the ontology
-            schema_root = Path(__file__).parent.parent.parent / "00-kojiki-ontology" / "synapsis" / "schemas"
+            # Default to synapsis/schemas in the engine
+            schema_root = Path(__file__).parent / "schemas"
         
         self.schema_root = Path(schema_root)
         self._schemas: Dict[str, Dict] = {}
@@ -49,7 +49,7 @@ class SchemaValidator:
         # Also check for Kaizen schemas in brand bot
         # Try multiple possible locations
         possible_kaizen_roots = [
-            Path(__file__).parent.parent / "03-marketing" / "bots" / "brand" / "schema",
+            Path(__file__).parent.parent.parent / "engine" / "kojiki_core" / "specialists" / "marketing-brand" / "schemas",
             Path(__file__).parent.parent.parent / "03-marketing" / "bots" / "brand" / "schema",
             Path.cwd() / "03-marketing" / "bots" / "brand" / "schema",
         ]

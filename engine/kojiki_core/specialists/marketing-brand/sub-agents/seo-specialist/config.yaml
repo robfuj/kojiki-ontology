@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "google/gemma-4-26b-a4b-it:free"
   temperature: 0.3
   max_tokens: 4000
 
@@ -36,3 +36,13 @@ handoffs:
   - target: "content-creator"
     trigger: "content_brief_ready"
     payload_schema: "schemas/handoff-content-brief.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["technical-seo", "content-seo", "link-building", "keyword-research", "serp-tracking", "site-audit"]
+  min_stars: 100
+  suggested_repos:
+    - "ahrefs/ahrefs"
+    - "semrush/semrush"
+    - "moz/moz"
+    - "screamingfrog/screamingfrog"

@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "google/gemma-4-31b-it:free"
   temperature: 0.3
   max_tokens: 4000
 
@@ -36,3 +36,13 @@ handoffs:
   - target: "content-creator"
     trigger: "ai_optimized_content_structure"
     payload_schema: "schemas/handoff-ai-content.json"
+
+github_discovery:
+  domain: "ai"
+  keywords: ["llm-visibility", "ai-seo", "answer-engine-optimization", "structured-data", "citation-tracking"]
+  min_stars: 50
+  suggested_repos:
+    - "vercel-labs/agent-browser"
+    - "langchain-ai/langchain"
+    - "microsoft/autogen"
+    - "openai/openai-cookbook"

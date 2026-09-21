@@ -15,8 +15,15 @@ async def run_deck_stage(
     context: ScopedContext,
     department: str
 ) -> Dict[str, Any]:
-    """Execute DECK stage using deck-builder skill."""
+    """Execute DECK stage using deck-builder skill - only if explicitly requested."""
     print("\n--- STAGE 6: DECK ---")
+    
+    # Check if deck building is explicitly requested
+    if not dispatch.get("build_deck", False):
+        print("  Deck building not requested (build_deck=False), skipping")
+        deck_result = {"skipped": True, "reason": "build_deck not set to true in dispatch"}
+        context.set_stage_output("deck", deck_result)
+        return deck_result
     
     # Import deck-builder bridge - check both locations
     SKILL_DIRS = [

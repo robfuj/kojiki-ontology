@@ -148,13 +148,16 @@ class DelegationEngine:
     
     def _get_relevant_parent_context(self, output_stage_result: Dict[str, Any]) -> Dict[str, Any]:
         """Extract relevant context from parent for sub-agent."""
+        strategy = output_stage_result.get("accepted_strategy", {})
+        sub_agent_llm = strategy.get("sub_agent_llm", {})
         return {
-            "strategy": output_stage_result.get("accepted_strategy", {}),
+            "strategy": strategy,
             "interpretation": output_stage_result.get("accepted_interpretation", {}),
             "evidence": output_stage_result.get("accepted_evidence", {}),
             "problem": output_stage_result.get("accepted_problem", {}),
             "department": self.department,
-            "parent_agent": self.parent_specialist.name
+            "parent_agent": self.parent_specialist.name,
+            "sub_agent_llm": sub_agent_llm
         }
     
     def get_stage_output(self, context: ScopedContext, stage: str) -> Optional[Dict[str, Any]]:
@@ -162,46 +165,50 @@ class DelegationEngine:
         return context.stage_outputs.get(stage)
     
     async def execute_sub_task(self, sub_task: SubTask) -> SubTaskResult:
-        """Execute a single sub-task by spawning a sub-specialist."""
-        start_time = datetime.now()
-        
-        try:
-            # Load sub-specialist
-            sub_specialist_name = f"{self.parent_specialist.name}.{sub_task.sub_agent_name}"
-            sub_specialist = load_specialist(sub_specialist_name)
-            
-            # Create sub-dispatch
-            sub_dispatch = {
-                "task_id": f"{self.dispatch.get('task_id', 'unknown')}.{sub_task.sub_agent_name}",
-                "parent_task_id": self.dispatch.get("task_id"),
-                "delegated_from": self.parent_specialist.name,
-                "sub_task": asdict(sub_task),
-                **self.dispatch
-            }
-            
-            # Run sub-specialist pipeline
-            from kojiki.core.runner import PipelineRunner
-            runner = PipelineRunner(sub_specialist, sub_dispatch)
-            result = await runner.run()
-            
-            execution_time = int((datetime.now() - start_time).total_seconds() * 1000)
-            
-            return SubTaskResult(
-                sub_agent_name=sub_task.sub_agent_name,
-                success=True,
-                output=result,
-                execution_time_ms=execution_time
-            )
-            
-        except Exception as e:
-            execution_time = int((datetime.now() - start_time).total_seconds() * 1000)
-            return SubTaskResult(
-                sub_agent_name=sub_task.sub_agent_name,
-                success=False,
-                output={},
-                error=str(e),
-                execution_time_ms=execution_time
-            )
+            """Execute a single sub-task by spawning a sub-specialist."""
+            start_time = datetime.now()
+
+            try:
+                # Load sub-specialist
+                sub_specialist_name = f"{self.parent_specialist.name}.{sub_task.sub_agent_name}"
+                sub_specialist = load_specialist(sub_specialist_name)
+
+                # Get LLM config for sub-agent from parent context
+                sub_agent_llm = sub_task.input_data.get("parent_context", {}).get("sub_agent_llm", {})
+
+                # Create sub-dispatch with LLM config
+                sub_dispatch = {
+                    "task_id": f"{self.dispatch.get('task_id', 'unknown')}.{sub_task.sub_agent_name}",
+                    "parent_task_id": self.dispatch.get("task_id"),
+                    "delegated_from": self.parent_specialist.name,
+                    "sub_task": asdict(sub_task),
+                    "sub_agent_llm": sub_agent_llm,  # Pass LLM config to sub-agent
+                    **self.dispatch
+                }
+
+                # Run sub-specialist pipeline
+                from kojiki.core.runner import PipelineRunner
+                runner = PipelineRunner(sub_specialist, sub_dispatch)
+                result = await runner.run()
+
+                execution_time = int((datetime.now() - start_time).total_seconds() * 1000)
+
+                return SubTaskResult(
+                    sub_agent_name=sub_task.sub_agent_name,
+                    success=True,
+                    output=result,
+                    execution_time_ms=execution_time
+                )
+
+            except Exception as e:
+                execution_time = int((datetime.now() - start_time).total_seconds() * 1000)
+                return SubTaskResult(
+                    sub_agent_name=sub_task.sub_agent_name,
+                    success=False,
+                    output={},
+                    error=str(e),
+                    execution_time_ms=execution_time
+                )
     
     async def execute_all(self, sub_tasks: List[SubTask]) -> List[SubTaskResult]:
         """Execute all sub-tasks with dependency resolution."""

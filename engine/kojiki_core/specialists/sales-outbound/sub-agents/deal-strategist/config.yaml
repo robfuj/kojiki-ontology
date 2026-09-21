@@ -1,0 +1,48 @@
+agent:
+  name: "deal-strategist"
+  parent_department: "Sales"
+  parent_agent: "sales-outbound"
+  description: "MEDDPICC qualification, competitive positioning, win planning"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "qwen/qwen3.8-27b:free"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - meddpicc_scorer
+  - competitive_mapper
+  - win_plan_builder
+  - stakeholder_mapper
+  - pricing_calculator
+
+decision_rights:
+  own: ["deal_strategy", "qualification_framework", "win_themes", "pricing_approach"]
+  recommend: ["discount_authority", "contract_terms", "timeline_acceleration"]
+  consult: ["legal_terms", "product_capability", "implementation_capacity"]
+  approve: ["deal_approval", "pricing_exceptions", "custom_terms"]
+  execute: ["meddpicc_assessment", "battlecard_creation", "roi_modeling", "proposal_generation"]
+  escalate: ["deal_stall", "competitive_threat", "legal_blocker", "executive_intervention_needed"]
+  automate: ["meddpicc_tracking", "win_plan_updates", "competitive_alerts", "stakeholder_reminders"]
+
+handoffs:
+  - target: "proposal-strategist"
+    trigger: "proposal_needed"
+    payload_schema: "schemas/handoff-proposal-request.json"
+  - target: "account-strategist"
+    trigger: "post_sale_expansion"
+    payload_schema: "schemas/handoff-expansion-opportunity.json"
+
+github_discovery:
+  domain: "sales"
+  keywords: ["meddpicc", "deal-management", "competitive-intelligence", "win-planning", "stakeholder-mapping", "roi-calculator"]
+  min_stars: 100
+  suggested_repos:
+    - "clari/clari"
+    - "gong-io/gong"
+    - "outreach/outreach"
+    - "salesforce/salesforce"

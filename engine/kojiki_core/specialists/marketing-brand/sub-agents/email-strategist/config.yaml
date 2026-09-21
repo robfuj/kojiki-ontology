@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "thinkingmachines/inkling:free"
   temperature: 0.3
   max_tokens: 4000
 
@@ -36,3 +36,14 @@ handoffs:
   - target: "paid-social-specialist"
     trigger: "email_capture_audience"
     payload_schema: "schemas/handoff-email-capture.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["email-marketing", "marketing-automation", "deliverability", "segmentation", "lifecycle-email", "newsletter"]
+  min_stars: 100
+  suggested_repos:
+    - "ghost-org/ghost"
+    - "mailgun/mailgun"
+    - "sendgrid/sendgrid"
+    - "braze/braze"
+    - "iterable/iterable"

@@ -26,7 +26,7 @@ async def run_interpretation_stage(
     tools = stage_config.tools
 
     schema = specialist.get_schema("interpretation")
-    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="interpretation")
+    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="interpretation", model=specialist.get_model())
 
     if schema:
         validate_against_schema(output, schema, "interpretation")

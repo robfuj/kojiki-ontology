@@ -10,7 +10,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "google/gemma-4-26b-a4b-it:free"
   temperature: 0.2
   max_tokens: 4000
 
@@ -37,3 +37,13 @@ handoffs:
   - target: "pr-communications"
     trigger: "messaging_alignment"
     payload_schema: "schemas/handoff-brand-messaging.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["brand-guidelines", "design-systems", "brand-management", "visual-identity", "brand-compliance"]
+  min_stars: 100
+  suggested_repos:
+    - "figma/figma-plugins"
+    - "storybookjs/storybook"
+    - "airbnb/design-system"
+    - "shopify/polaris"

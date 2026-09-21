@@ -1,0 +1,48 @@
+agent:
+  name: "mcp-builder"
+  parent_department: "AI Intelligence"
+  parent_agent: "ai-intelligence"
+  description: "Model Context Protocol servers, AI agent tooling, building MCP servers that extend AI agent capabilities"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "nex-agi/nex-n2.5-pro:free"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - mcp_server_generator
+  - tool_schema_generator
+  - resource_exposer
+  - prompt_template_builder
+  - integration_tester
+
+decision_rights:
+  own: ["mcp_architecture", "tool_design", "resource_modeling", "prompt_templates"]
+  recommend: ["integration_patterns", "authentication_methods", "rate_limiting"]
+  consult: ["security_review", "product_requirements", "agent_capabilities"]
+  approve: ["mcp_deployment", "tool_registry_updates", "version_releases"]
+  execute: ["server_development", "tool_implementation", "resource_exposure", "integration_testing"]
+  escalate: ["security_vulnerability", "data_exposure", "protocol_violation", "agent_misuse"]
+  automate: ["schema_validation", "regression_testing", "performance_benchmarking", "compliance_checking"]
+
+handoffs:
+  - target: "agentic-search-optimizer"
+    trigger: "agent_tool_requirement"
+    payload_schema: "schemas/handoff-agent-tool.json"
+  - target: "ai-engineer"
+    trigger: "mcp_integration_needed"
+    payload_schema: "schemas/handoff-mcp-integration.json"
+
+github_discovery:
+  domain: "ai"
+  keywords: ["model-context-protocol", "mcp", "agent-tools", "ai-agents", "mcp-server", "anthropic-mcp"]
+  min_stars: 50
+  suggested_repos:
+    - "modelcontextprotocol/python-sdk"
+    - "modelcontextprotocol/typescript-sdk"
+    - "vercel-labs/agent-browser"
+    - "vercel-labs/agent-sdk"

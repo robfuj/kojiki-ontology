@@ -1,0 +1,48 @@
+agent:
+  name: "discovery-coach"
+  parent_department: "Sales"
+  parent_agent: "sales-outbound"
+  description: "SPIN, Gap Selling, Sandler — question design and call structure"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "thinkingmachines/inkling-small:free"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - question_designer
+  - framework_mapper
+  - call_analyzer
+  - objection_handler
+  - coaching_playbook
+
+decision_rights:
+  own: ["question_frameworks", "call_structures", "coaching_methodology", "discovery_templates"]
+  recommend: ["talk_tracks", "objection_responses", "qualification_criteria"]
+  consult: ["product_knowledge", "competitive_positioning", "pricing_strategy"]
+  approve: ["playbook_updates", "certification_programs"]
+  execute: ["call_reviews", "roleplay_sessions", "skill_assessments", "feedback_delivery"]
+  escalate: ["rep_performance_crisis", "methodology_conflict", "ethical_concern"]
+  automate: ["call_scoring", "framework_compliance", "progress_tracking", "certification_management"]
+
+handoffs:
+  - target: "outbound-strategist"
+    trigger: "discovery_gaps_identified"
+    payload_schema: "schemas/handoff-discovery-gaps.json"
+  - target: "deal-strategist"
+    trigger: "qualification_complete"
+    payload_schema: "schemas/handoff-qualification-complete.json"
+
+github_discovery:
+  domain: "sales"
+  keywords: ["sales-coaching", "discovery-frameworks", "spin-selling", "gap-selling", "sandler", "call-coaching"]
+  min_stars: 50
+  suggested_repos:
+    - "gong-io/gong"
+    - "chorus-ai/chorus"
+    - "refract/refract"
+    - "salesforce/salesforce"

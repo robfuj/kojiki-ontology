@@ -112,81 +112,115 @@ pip install -r requirements.txt
 # Run a specialist
 python -m engine.kojiki_core.runner marketing-brand dispatch.json
 
-# Run all 8 specialists
-python scripts/verify_all_runners.py
+# Run all 9 specialists (test mode)
+KOJIKI_TEST_MODE=true python tests/scripts/verify_all_runners.py
 ```
 
 ---
 
-## 📁 Repository Structure (Simplified)
+## 🤖 Orchestrator
 
+The **Orchestrator** (replacing Chief of Staff) provides transparent goal decomposition:
+
+```bash
+# Run orchestration with user approval gate
+python -m engine.orchestrator.orchestrator "Create a beef broth brand for Canadian market"
+
+# Run without approval gate (for automation)
+python -m engine.orchestrator.orchestrator "Goal here" --no-approval
 ```
-decision-systems/
-├── engine/                          # All engine modules by division of task
-│   ├── kojiki_core/                 # Core SYNAPSIS pipeline
-│   │   ├── types.py                 # Unified type definitions (single source of truth)
-│   │   ├── utils/__init__.py        # Consolidated helpers (load_prompt, validate_schema, etc.)
-│   │   ├── stages/                  # 8 stage executors
-│   │   │   ├── base.py              # StageExecutor base class
-│   │   │   ├── saccade.py
-│   │   │   ├── evidence.py
-│   │   │   ├── interpretation.py
-│   │   │   ├── strategy.py
-│   │   │   ├── output.py
-│   │   │   ├── delegation.py
-│   │   │   ├── handoff.py
-│   │   │   ├── mycelium.py
-│   │   │   ├── outcome.py
-│   │   │   └── learning.py
-│   │   ├── runner.py                # Slim orchestrator (~180 lines)
-│   │   └── skills/                  # Shared tools (github, specialist autodiscovery)
-│   ├── mycelium/                    # Horizontal signal propagation
-│   │   ├── registry.py              # JSON file-based node registry + SENTINEL key lifecycle
-│   │   ├── postgres_registry.py     # PostgreSQL sync target (optional)
-│   │   ├── postgres_persistence.py  # PostgreSQL connection pooling
-│   │   ├── propagate.py             # Signal propagation across subgraph-bounded edges
-│   │   ├── reinforcement.py         # Tero-style discrete reinforcement/decay
-│   │   ├── governance_handler.py    # L3/L4 governance gates
-│   │   ├── measurement_adapter.py   # Adapter registry for real BI/analytics
-│   │   ├── saccade.py               # SACCADE: a priori problem framing
-│   │   └── decision_rights.py       # Decision Rights gating
-│   ├── neuraxis/                    # Vertical escalation engine (L0–L4)
-│   │   └── escalation.py            # NEURAXIS: recursive problem redefinition
-│   ├── kaizen/                      # Learning loop
-│   │   ├── kaizen_loop.py           # PDCA continuous improvement
-│   │   └── kaizen_compression.py    # Context compression for Kaizen learning
-│   ├── sentinel/                    # Provenance: Ed25519, hash-chained logs
-│   │   └── sentinel.py
-│   └── synapsis/                    # Causal chains, schemas, validation
-│       ├── causal_chain.py
-│       ├── schema_validator.py
-│       ├── evidence_compression.py
-│       ├── validate.py
-│       └── schemas/                 # Core JSON schemas
-├── tests/
-│   ├── engine/                      # Tests organized by engine component
-│   │   └── mycelium/                # 42 passing tests
-│   ├── fixtures/
-│   │   └── test_stubs.py            # Test stubs (only loaded in test mode)
-│   ├── results/
-│   └── unit/
-├── scripts/                         # Verification & CI
-│   ├── verify_all_runners.py        # Verifies all 9 specialists pass
-│   └── verify_causal_signatures.py
-├── skills/                          # Agent skills (agency-agents, github-autodiscovery, etc.)
-├── bots/                            # Reference bots
-├── vendor/                          # External references (consultant frameworks)
-├── var/                             # Runtime data (gitignored)
-├── test_governance_loop.py          # End-to-end governance test
-├── requirements.txt
-├── .github/workflows/ci.yml
-├── README.md / .ja.md / .zh.md
-└── LICENSE
-```
+
+**Flow:**
+1. **Orientation Protocol** — industry research on the goal
+2. **SACCADE Framing** — sharpen raw goal into structured Problem
+3. **Department Selection** — which dept heads own this, with reasoning
+4. **OKR Decomposition** — corporate OKR → dept OKRs → team OKRs
+5. **Parallel Dispatch** — each dept head runs full SYNAPSIS pipeline
+6. **Mycelium Coordination** — cross-dept signals
+7. **User Approval Gate** — review before re-loop
 
 ---
 
-## 🔄 How a Prompt Flows Through the System
+## 🤖 Sub-Agents by Department
+
+| Department | Sub-Agents |
+|------------|------------|
+| Ai Intelligence | `agentic-identity`, `agents-orchestrator`, `ai-code-auditor`, `ai-engineer`, `ai-remediation`, `doc-generator`, `identity-graph`, `llm-post-training`, `mcp-builder`, `model-qa`, `multi-agent-architect`, `prompt-engineer`, `rag-pipeline`, `secrets-hygiene`, `strategy-duel`, `zk-steward` |
+| Engineering Platform | `ai-engineer`, `api-engineer`, `appsec-engineer`, `backend-architect`, `code-reviewer`, `data-viz`, `database-optimizer`, `devops-automator`, `frontend-developer`, `llm-post-training`, `multi-agent-architect`, `platform-engineer`, `rag-engineer`, `reality-checker`, `security-architect`, `software-architect`, `sre`, `test-automation` |
+| Finance Accounting | `accounts-payable`, `bookkeeper`, `cfo`, `esg-officer`, `financial-analyst`, `fp-a-analyst`, `grant-writer`, `investment-researcher`, `loan-officer`, `medical-billing`, `pricing-analyst`, `tax-strategist` |
+| Legal Compliance | `compliance-auditor`, `data-privacy`, `esg-officer`, `fedramp`, `gov-presales`, `legal-billing`, `legal-client-intake`, `legal-doc-review` |
+| Marketing Brand | `aeo-specialist`, `agentic-search-optimizer`, `brand-guardian`, `carousel-growth`, `content-creator`, `email-strategist`, `growth-hacker`, `paid-social-specialist`, `pr-communications`, `seo-specialist`, `video-optimizer`, `visual-storyteller` |
+| Operations Ops | `business-strategist`, `change-management`, `ma-integration`, `operations-manager`, `supply-chain-strategist` |
+| People Hr | `change-management`, `corporate-training`, `customer-service`, `customer-success`, `dev-advocate`, `hr-onboarding`, `org-psychologist`, `pr-comms`, `recruitment`, `support-responder` |
+| Sales Outbound | `account-strategist`, `data-consolidation`, `deal-strategist`, `discovery-coach`, `lead-gen-strategist`, `outbound-strategist`, `pipeline-analyst`, `proposal-strategist`, `report-distribution`, `sales-coach`, `sales-data-extraction`, `sales-engineer`, `sales-outreach`, `salesforce-architect` |
+
+**Total: 95 sub-agents across 8 departments**
+
+---
+
+## 🔍 Orientation Protocol — Research-Informed Goal Clarification
+
+**Purpose:** Before any department selection or planning, the system runs an **adaptive, research-first orientation** that prevents wasted research on vague goals (e.g., "raise Q4 sales" → research adapts to "SaaS B2B pipeline acceleration").
+
+### Flow
+
+```
+CLARIFYING QUESTIONS (2–4 adaptive) 
+    → LIVE WEB RESEARCH (market, competitors, regulation, risks)
+    → RESEARCH BRIEF + CONTEXTUAL FOLLOW-UPS (3–4 generated FROM findings)
+    → USER ANSWERS
+    → OPTIONAL: TARGETED RE-RESEARCH (if answers reveal gaps) + MORE FOLLOW-UPS
+    → REFINED GOAL → DEPARTMENT SELECTION → OKR DECOMPOSITION
+```
+
+### Why Research-First?
+
+- **Clarifying questions** make the goal specific enough for *targeted* research
+- **Live research** grounds follow-ups in current reality (not stale templates)
+- **Follow-ups generated FROM findings** — not a static question bank
+- **Re-research loop** catches gaps opened by user answers
+
+### Example (from Vercel flow)
+
+```
+Goal: "Launch gacha game"
+Research finds: Belgium/Netherlands ban loot boxes; EU Digital Fairness Act pending
+Follow-up Q1: "What is the launch-country sequence — soft-launch EU before UK/BE/NL?"
+Follow-up Q2: "Does monetization need odds disclosure + spending controls for EU compliance?"
+Follow-up Q3: "What revenue threshold defines FY27 launch success?"
+```
+
+### Research on Asking Good Questions (Open-Source Foundations)
+
+| Source | Key Finding | Applied In |
+|--------|-------------|------------|
+| **Cognitive Interviewing Guide** (UCLA/Chime) | Open-ended, non-leading questions reduce recall bias; "What happened?" > "Did X happen?" | Clarifying phase: "What specifically does that involve?" |
+| **Oxford Handbook of Survey Methodology** (2018) | Funnel sequence: broad → specific; avoid double-barreled questions | Phase 1 → Phase 3 narrowing |
+| **Karpathy's LLM Wiki / Akinator-style entropy** | Adaptive question selection via information gain; stop when entropy < threshold | Dynamic question count (2–4) |
+| **Deep Research pattern** (OpenAI/Perplexity) | Iterative: clarify → search → synthesize → follow-up → re-search | 3-phase orientation loop |
+| **Police PEACE model / CI guidelines** | Context reinstatement before recall; free narrative before specific probes | "What happened recently that made this a priority?" |
+
+---
+
+## 🧠 MORPHEUS Protocol — Daily Memory Reset with SENTINEL Verification
+
+**Purpose:** Prevents memory drift in long-running orchestrations by enforcing a daily **Hibernate → Hypnos → Morpheus → Awaken** cycle that cryptographically verifies no pending gates or active SLAs are lost.
+
+| Phase | Action | SENTINEL Check |
+|-------|--------|----------------|
+| **Hibernate** | Snapshot working stores (experiences, kaizen, subgraph edges) | Hash written to chain |
+| **Hypnos** | Seal snapshot — mark reset entry | Signed checkpoint |
+| **Morpheus** | Wipe working stores; rematerialize gates with live SLA deadlines | Query real gate store (`escalation_engine.gate_requests`) |
+| **Awaken** | Verify chain integrity; confirm pending gates restored | Fail-closed if hash mismatch |
+
+**Key guarantees:**
+- Any gate with a live SLA deadline survives the wipe (queried from real store, not stub)
+- Chain verification is mandatory — orchestration cannot resume with broken provenance
+- 7/7 acceptance criteria verified in test suite
+
+---
+
+## 🔄 How a Prompt Goes Through the System
 
 ### 1. Entry Point: Dispatch Creation
 
@@ -245,91 +279,92 @@ STAGE_EXECUTORS = [
 
 ### 4. Stage-by-Stage Breakdown
 
-#### STAGE 1: SACCADE (A Priori Problem Framing)
-- **Input**: `raw_record` + context
-- **Prompt**: `prompts/01-saccade.md` (Pyramid/SCQ/MECE framing)
-- **Schema**: `schemas/saccade_problem.json` (P-XXXXXXXX format)
-- **Output**: Structured Problem with `problem_id`, `goal`, `constraints`, `assumptions`, `unknowns`
-- **Authority**: Must NOT become EVIDENCE or STRATEGY
+| Stage | Purpose | Output | Authority |
+|-------|---------|--------|-----------|
+| **SACCADE** | A Priori Problem Framing | Structured Problem | Must NOT become EVIDENCE or STRATEGY |
+| **EVIDENCE** | Source Retrieval | Findings with citations | Must NOT become INTERPRETATION or STRATEGY |
+| **INTERPRETATION** | Evidence Synthesis | Diagnosis + insights | Must NOT become EVIDENCE or STRATEGY |
+| **STRATEGY** | Decision Plan | Objective + decision rights | Must NOT become EVIDENCE or INTERPRETATION |
+| **OUTPUT** | Intervention Design | Tactics + measurement | Must NOT become EVIDENCE/INTERPRETATION/STRATEGY |
+| **DELEGATION** | Sub-Agent Dispatch | Task assignments | — |
+| **HANDOFF** | Cross-Agent Coordination | Handoff tracking | — |
+| **MYCELIUM** | Signal Propagation | Cross-dept signals | — |
+| **OUTCOME** | Kaizen Evaluation | Score + convergence | — |
+| **LEARNING** | Kaizen Synthesis | Patterns + redefinitions | — |
 
-#### STAGE 2: EVIDENCE (Source Retrieval)
-- **Input**: Problem + department context
-- **Tools**: CRMQuery, SEOAudit, CompetitorIntel, GitHub autodiscovery
-- **Schema**: `schemas/evidence_findings.json`
-- **Output**: Findings with `finding_id`, `question`, `answer`, `source`, `confidence`, `sufficiency`
-- **Authority**: Must NOT become INTERPRETATION or STRATEGY
+### Key Invariants
 
-#### STAGE 3: INTERPRETATION (Evidence Synthesis)
-- **Input**: Evidence findings
-- **Prompt**: `prompts/03-interpretation.md`
-- **Schema**: `schemas/interpretation.json`
-- **Output**: `interpretation_id`, `synthesis`, `key_insights`, `evidence_refs`, `department_requirements`
-- **Authority**: Must NOT become EVIDENCE or STRATEGY
+- `EVIDENCE ≠ INTERPRETATION ≠ STRATEGY` (no bleed)
+- `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` (bounded L3)
+- `SIGNALING ≠ ORCHESTRATION` (canopy autonomy)
 
-#### STAGE 4: STRATEGY (Decision Plan)
-- **Input**: Problem + Evidence + Interpretation
-- **Prompt**: `prompts/04-strategy.md`
-- **Schema**: `schemas/strategy.json`
-- **Output**: `strategy_id`, `objective`, `rationale`, `success_criteria`, `decision_rights`, `escalation_conditions`
-- **Authority**: Must NOT become EVIDENCE or INTERPRETATION
+---
 
-#### STAGE 5: OUTPUT (Execution Plan)
-- **Input**: Strategy
-- **Prompt**: `prompts/05-output.md`
-- **Schema**: `schemas/output.json`
-- **Output**: `output_id`, `actions[]`, `execution_plan{ tasks[] }`
-- **Authority**: Must NOT become EVIDENCE/INTERPRETATION/STRATEGY
+## 📁 Repository Structure
 
-#### STAGE 5.5: DELEGATION (Sub-specialist Spawning)
-- Parses `execution_plan.tasks[]` from OUTPUT
-- Maps tasks to sub-agents via config.yaml
-- Executes sub-agents in parallel
-- Aggregates results
-
-#### STAGE 5.7: HANDOFF (Cross-department)
-- Discovers handoffs defined in specialist config
-- Validates payload against schema
-- Executes target department's SACCADE
-
-#### STAGE 7.5: MYCELIUM (Signal Propagation)
-- Extracts signals from OUTCOME evaluations
-- Propagates through MYCELIUM canopy tier
-- Reinforces/decays/prunes edges based on reciprocity
-
-#### STAGE 7: OUTCOME (Kaizen Loop PDCA)
-- Runs Kaizen Loop (Plan-Do-Check-Act)
-- Compares actuals vs success_criteria from STRATEGY
-- Guardrails: completeness, variance, trend, confidence_calibration
-- Output: `outcome_id`, `outcome_score`, `target_met`, `converged`, `guardrail_violations`
-
-#### STAGE 8: LEARNING (Kaizen Synthesis)
-- Extracts experiences from failed outcomes
-- Synthesizes patterns across experiences
-- Generates reusable insights
-- Identifies problem redefinitions for SACCADE feedback
-- Output: `learning_id`, `experiences[]`, `patterns[]`, `redefinitions[]`
-
-### 5. Final Adjudication
-
-```python
-adjudicated = {
-    "problem": runner.context.stage_outputs.get("saccade"),
-    "evidence": runner.context.stage_outputs.get("evidence"),
-    "interpretation": runner.context.stage_outputs.get("interpretation"),
-    "strategy": runner.context.stage_outputs.get("strategy"),
-    "output": runner.context.stage_outputs.get("output"),
-    "outcome": runner.context.stage_outputs.get("outcome"),
-    "learning": runner.context.stage_outputs.get("learning"),
-    "adjudication": "ACCEPTED",
-    "adjudicator": "Marketing.Brain",
-    "timestamp": datetime.utcnow().isoformat() + "Z"
-}
 ```
-
-### 6. Causal Chain Finalization
-
-- Saves signed causal chain to `specialists/<name>/causal_chains/`
-- Persists to PostgreSQL if registry available
+decision-systems/
+├── engine/                          # All engine modules by division of task
+│   ├── kojiki_core/                 # Core SYNAPSIS pipeline
+│   │   ├── types.py                 # Unified type definitions (single source of truth)
+│   │   ├── utils/__init__.py        # Consolidated helpers (load_prompt, validate_schema, etc.)
+│   │   ├── stages/                  # 8 stage executors
+│   │   │   ├── base.py              # StageExecutor base class
+│   │   │   ├── saccade.py
+│   │   │   ├── evidence.py
+│   │   │   ├── interpretation.py
+│   │   │   ├── strategy.py
+│   │   │   ├── output.py
+│   │   │   ├── delegation.py
+│   │   │   ├── handoff.py
+│   │   │   ├── mycelium.py
+│   │   │   ├── outcome.py
+│   │   │   └── learning.py
+│   │   ├── runner.py                # Slim orchestrator (~180 lines)
+│   │   └── skills/                  # Shared tools (github, specialist autodiscovery)
+│   ├── mycelium/                    # Horizontal signal propagation
+│   │   ├── registry.py              # JSON file-based node registry + SENTINEL key lifecycle
+│   │   ├── postgres_registry.py     # PostgreSQL sync target (optional)
+│   │   ├── postgres_persistence.py  # PostgreSQL connection pooling
+│   │   ├── propagate.py             # Signal propagation across subgraph-bounded edges
+│   │   ├── reinforcement.py         # Tero-style discrete reinforcement/decay
+│   │   ├── governance_handler.py    # L3/L4 governance gates
+│   │   ├── measurement_adapter.py   # Adapter registry for real BI/analytics
+│   │   ├── saccade.py               # SACCADE: a priori problem framing
+│   │   └── decision_rights.py       # Decision Rights gating
+│   ├── neuraxis/                    # Vertical escalation engine (L0–L4)
+│   │   └── escalation.py            # NEURAXIS: recursive problem redefinition
+│   ├── kaizen/                      # Learning loop
+│   │   ├── kaizen_loop.py           # PDCA continuous improvement
+│   │   └── kaizen_compression.py    # Context compression for Kaizen learning
+│   ├── sentinel/                    # Provenance: Ed25519, hash-chained logs
+│   │   └── sentinel.py
+│   └── synapsis/                    # Causal chains, schemas, validation
+│       ├── causal_chain.py
+│       ├── schema_validator.py
+│       ├── evidence_compression.py
+│       ├── validate.py
+│       └── schemas/                 # Core JSON schemas
+├── tests/
+│   ├── engine/                      # Tests organized by engine component
+│   │   └── mycelium/                # 42 passing tests
+│   ├── fixtures/
+│   │   └── test_stubs.py            # Test stubs (only loaded in test mode)
+│   ├── results/
+│   └── unit/
+├── scripts/                         # Verification & CI
+│   ├── verify_all_runners.py        # Verifies all 9 specialists pass
+│   └── verify_causal_signatures.py
+├── skills/                          # Agent skills (agency-agents, github-autodiscovery, etc.)
+├── bots/                            # Reference bots
+├── vendor/                          # External references (consultant frameworks)
+├── var/                             # Runtime data (gitignored)
+├── mycelium_data/                   # Runtime data (renamed from mycelium/)
+├── ui/                              # Next.js frontend
+├── api_server.py                    # FastAPI backend
+├── requirements.txt
+└── README.md / .ja.md / .zh.md
+```
 
 ---
 
@@ -337,13 +372,13 @@ adjudicated = {
 
 ```bash
 # Verify all 9 specialists (test mode)
-KOJIKI_TEST_MODE=true python scripts/verify_all_runners.py
+KOJIKI_TEST_MODE=true python tests/scripts/verify_all_runners.py
 
 # Run mycelium tests (42 tests)
 PYTHONPATH=. python -m pytest tests/engine/mycelium/ -v
 
 # Run governance loop test
-python -m pytest test_governance_loop.py -v
+python -m pytest tests/integration/test_governance_loop.py -v
 ```
 
 **All tests pass:**
@@ -351,7 +386,68 @@ python -m pytest test_governance_loop.py -v
 - ✅ 42/42 mycelium tests pass
 - ✅ Governance loop test passes
 
----\n\n## 🔬 Research Foundations\n\nThe architecture is grounded in peer-reviewed research across four independent fields:\n\n### Biology (Mycorrhizal Networks)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula, γ efficiency-redundancy tradeoff |\n| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis |\n| Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | Defense-signal propagation (\"priming\") | Scoped, subgraph-only Signal propagation |\n| Karst et al., *Nature Ecology & Evolution* (2023) | Skeptical review: citation bias toward positive-effect studies | Caution in §II.5 — build only on well-supported mechanics |\n| Frew et al., *Functional Ecology* (2025) | CMNs are heterogeneous, context/host/fungal-type dependent | Reinforces §II.5 caution |\n| Bilgen & Akan, \"Internet of Plants\" (2024–2025) | Independent comms-engineering formalization: fungal network as \"graph-based communication medium\" | Validates `SIGNALING ≠ ORCHESTRATION` invariant |\n\n### Neuroscience (Hierarchical Predictive Coding)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder — exact computational structure |\n| Spinal cord → brainstem → cortex reflex arc | Fast local responses; ambiguous stimuli escalate; cortical inhibition modulates reflexes | NEURAXIS L0–L4 layers with governance gate at L3 |\n\n### Immunology (Innate/Adaptive Boundary)\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate with learned layer; never rewrites innate recognition machinery | NEURAXIS governance gate: L0–L2 autonomous, L3–L4 require external validation |\n\n### RL-for-LLM Research\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Sparse trajectory-level reward → Process-level credit assignment | Per-step credit assignment produces better learning with less data | SYNAPSIS per-stage decomposition with `diagnosed_cause_category` from Learning Taxonomy |\n\n### Enterprise Multi-Agent Reference Architectures\n\n| Source | Finding | Architecture Mapping |\n|--------|---------|---------------------|\n| Microsoft multi-agent reference architecture (real deployments) | Registry → Orchestrator → Knowledge/State → Async replay-aware communication | Same component separation arrived at independently |\n\n### Recursive Self-Improvement Taxonomy\n\n| Study | Finding | Architecture Mapping |\n|-------|---------|---------------------|\n| Bounded (L3) vs Unbounded (L4/L5) self-improvement | Bounded: improvement mechanism externally maintained | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` invariant keeps system at L3 |\n\n---\n\n## 🤖 Orchestrator\n\nThe **Orchestrator** (replacing Chief of Staff) provides transparent goal decomposition:\n\n```bash\n# Run orchestration with user approval gate\npython -m engine.orchestrator.orchestrator \"Create a beef broth brand for Canadian market\"\n\n# Run without approval gate (for automation)\npython -m engine.orchestrator.orchestrator \"Goal here\" --no-approval\n```\n\n**Flow:**\n1. **Orientation Protocol** — industry research on the goal\n2. **SACCADE Framing** — sharpen raw goal into structured Problem\n3. **Department Selection** — which dept heads own this, with reasoning\n4. **OKR Decomposition** — corporate OKR → dept OKRs → team OKRs\n5. **Parallel Dispatch** — each dept head runs full SYNAPSIS pipeline\n6. **Mycelium Coordination** — cross-dept signals\n6. **User Approval Gate** — review before re-loop\n\n---\n\n## 📄 License
+---
+
+## 🔬 Research Foundations
+
+The architecture is grounded in peer-reviewed research across six independent fields:
+
+### Biology (Mycorrhizal Networks)
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Tero et al., *Science* (2010) | Physarum reinforcement/decay converges on efficient, fault-tolerant topologies without central planner | MYCELIUM reinforcement formula, γ efficiency-redundancy tradeoff |
+| Gorzelak et al., *AoB Plants* (2015) | Mainstream case for CMN-mediated plant communication | Signal propagation basis |
+| Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | Defense-signal propagation ("priming") | Scoped, subgraph-only Signal propagation |
+| Karst et al., *Nature Ecology & Evolution* (2023) | Skeptical review: citation bias toward positive-effect studies | Caution in §II.5 — build only on well-supported mechanics |
+| Frew et al., *Functional Ecology* (2025) | CMNs are heterogeneous, context/host/fungal-type dependent | Reinforces §II.5 caution |
+| Bilgen & Akan, "Internet of Plants" (2024–2025) | Independent comms-engineering formalization: fungal network as "graph-based communication medium" | Validates `SIGNALING ≠ ORCHESTRATION` invariant |
+
+### Neuroscience (Hierarchical Predictive Coding)
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Rao & Ballard (1999) | Hierarchical predictive coding: predictions down, residual errors up; error climbs until absorbed | NEURAXIS escalation ladder — exact computational structure |
+| Spinal cord → brainstem → cortex reflex arc | Fast local responses; ambiguous stimuli escalate; cortical inhibition modulates reflexes | NEURAXIS L0–L4 layers with governance gate at L3 |
+
+### Immunology (Innate/Adaptive Boundary)
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Innate immunity (TLRs, fixed) → Adaptive immunity (antibodies, memory) | Adaptive supplements innate; doesn't replace it; memory enables faster secondary response | SYNAPSIS root tier = innate (fixed pipeline); MYCELIUM canopy = adaptive (emergent coordination) |
+| Janeway (1989) "Approaching the asymptote" | Innate recognition instructs adaptive; signal 2 (co-stimulation) required | MYCELIUM signals require both evidence (signal 1) and decision rights (signal 2) |
+| Gause et al., *Nature* (2012) | Memory T cells persist decades; cross-reactive to novel pathogens | Kaizen learning: experiences compressed → reusable insights for novel problems |
+
+### Decision Science (Dual-Process / Structured Analytic Techniques)
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Kahneman & Klein (2009) "Conditions for intuitive expertise" | Expertise requires stable environment + rapid feedback + deliberate practice | Stage isolation prevents System 1 bleed: EVIDENCE ≠ INTERPRETATION ≠ STRATEGY |
+| Heuer, *Psychology of Intelligence Analysis* (1999) | ACH (Analysis of Competing Hypotheses): matrix evidence × hypotheses prevents confirmation bias | INTERPRETATION stage requires `contradictions[]`, `alternative_diagnoses_considered[]` |
+| Tetlock, *Superforecasting* (2015) | Fermi decomposition + base rates + belief updating beats experts | OKR decomposition → STRATEGY success_criteria → OUTCOME Bayesian update |
+| Morgan et al., *Structured Decision Making* (2017) | Decision rights (OWN/CONSULT/INFORM) clarify accountability | DecisionRightsGate wired in MYCELIUM consultation |
+
+### RL-for-LLM Research
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Sparse trajectory-level reward → Process-level credit assignment | Per-step credit assignment produces better learning with less data | SYNAPSIS per-stage decomposition with `diagnosed_cause_category` from Learning Taxonomy |
+
+### Enterprise Multi-Agent Reference Architectures
+
+| Source | Finding | Architecture Mapping |
+|--------|---------|---------------------|
+| Microsoft multi-agent reference architecture (real deployments) | Registry → Orchestrator → Knowledge/State → Async replay-aware communication | Same component separation arrived at independently |
+
+### Recursive Self-Improvement Taxonomy
+
+| Study | Finding | Architecture Mapping |
+|-------|---------|---------------------|
+| Bounded (L3) vs Unbounded (L4/L5) self-improvement | Bounded: improvement mechanism externally maintained | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` invariant keeps system at L3 |
+
+---
+
+## 📄 License
 
 MIT — see [LICENSE](LICENSE).
 
@@ -362,6 +458,23 @@ MIT — see [LICENSE](LICENSE).
 - **Thesis**: `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` (two-tier architecture, biology, governance)
 - **Reference mappings**: `engine/synapsis/REFERENCES.md`
 - **Consulting frameworks**: `vendor/consultant/` (50+ frameworks)
+
+---
+
+## 🤖 Sub-Agents by Department
+
+| Department | Sub-Agents |
+|------------|------------|
+| Ai Intelligence | `agentic-identity`, `agents-orchestrator`, `ai-code-auditor`, `ai-engineer`, `ai-remediation`, `doc-generator`, `identity-graph`, `llm-post-training`, `mcp-builder`, `model-qa`, `multi-agent-architect`, `prompt-engineer`, `rag-pipeline`, `secrets-hygiene`, `strategy-duel`, `zk-steward` |
+| Engineering Platform | `ai-engineer`, `api-engineer`, `appsec-engineer`, `backend-architect`, `code-reviewer`, `data-viz`, `database-optimizer`, `devops-automator`, `frontend-developer`, `llm-post-training`, `multi-agent-architect`, `platform-engineer`, `rag-engineer`, `reality-checker`, `security-architect`, `software-architect`, `sre`, `test-automation` |
+| Finance Accounting | `accounts-payable`, `bookkeeper`, `cfo`, `esg-officer`, `financial-analyst`, `fp-a-analyst`, `grant-writer`, `investment-researcher`, `loan-officer`, `medical-billing`, `pricing-analyst`, `tax-strategist` |
+| Legal Compliance | `compliance-auditor`, `data-privacy`, `esg-officer`, `fedramp`, `gov-presales`, `legal-billing`, `legal-client-intake`, `legal-doc-review` |
+| Marketing Brand | `aeo-specialist`, `agentic-search-optimizer`, `brand-guardian`, `carousel-growth`, `content-creator`, `email-strategist`, `growth-hacker`, `paid-social-specialist`, `pr-communications`, `seo-specialist`, `video-optimizer`, `visual-storyteller` |
+| Operations Ops | `business-strategist`, `change-management`, `ma-integration`, `operations-manager`, `supply-chain-strategist` |
+| People Hr | `change-management`, `corporate-training`, `customer-service`, `customer-success`, `dev-advocate`, `hr-onboarding`, `org-psychologist`, `pr-comms`, `recruitment`, `support-responder` |
+| Sales Outbound | `account-strategist`, `data-consolidation`, `deal-strategist`, `discovery-coach`, `lead-gen-strategist`, `outbound-strategist`, `pipeline-analyst`, `proposal-strategist`, `report-distribution`, `sales-coach`, `sales-data-extraction`, `sales-engineer`, `sales-outreach`, `salesforce-architect` |
+
+**Total: 95 sub-agents across 8 departments**
 
 ---
 

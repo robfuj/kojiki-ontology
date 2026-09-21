@@ -22,7 +22,7 @@ Kojikiは、任意のLLM（Claude、GPT、ローカルモデル、エージェ�
 RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → OUTCOME → LEARNING
 ```
 
-各ステージは**境界付き変換**であり、明示的な権限と「黙ってはならないもの」（evidence ≠ interpretation ≠ belief ≠ doctrine）を持ちます。**Brain**が調整し、独立した**Adversarial Audit**が挑戦します。部門横断的な調整は**MYCELIUMキャノピー層**で行われます——菌根ネットワークをモデルにした分散型・ニーズ駆動の基盤です。
+各ステージは**境界付き変換**であり、明示的な権限と「黙って何かに変わってはいけないもの」があります。**Brain**が統括し、独立した**Adversarial Audit**が異議を唱えます。部門横断の調整は**MYCELIUMキャノピー層**で行われます——菌根ネットワークをモデルにした分散型・ニーズ駆動の基盤です。
 
 > **「現在」は安価な部分です。** なぜその意思決定がなされたのか——どの証拠が支持し、どの仮定が失敗し、ガバナンスゲートが何を要求したのか——をトレースしようとした瞬間、その構造が元を取ります。
 
@@ -30,16 +30,16 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 
 ## 🏗️ アーキテクチャ概要
 
-### 二層設計（論文：`MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md`）
+### 二層設計
 
 | 層 | 目的 | 主な特性 |
 |------|---------|--------------|
-| **Root（Rigid）** | 単一Botの内部パイプライン | 順序強制、コンテキスト分離、`EVALUATION ≠ ORIGINATION` |
-| **Canopy（Emergent）** | Bot間調整 | 冗長ルーティング、相互強化、中央コントローラーなし |
+| **Root（剛性）** | 単一スペシャリストの内部パイプライン | 順序強制、コンテキスト隔離、`EVALUATION ≠ ORIGINATION` |
+| **Canopy（創発）** | スペシャリスト横断の調整 | 冗長ルーティング、相互強化、中央コントローラなし |
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  MYCELIUM Canopy Tier（涌現調整）                            │
+│  MYCELIUM Canopy Tier（創発調整）                            │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
 │  │Marketing│──│  Sales  │──│Finance  │──│Engineer │  8     │
 │  │  Head   │  │  Head   │  │  Head   │  │  Head   │ lines  │
@@ -60,7 +60,7 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  SYNAPSIS Root Tier（各Botの剛性パイプライン）                │
+│  SYNAPSIS Root Tier（各スペシャリストの剛性パイプライン）        │
 │  RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY    │
 │       → OUTPUT → OUTCOME → LEARNING                          │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
@@ -76,61 +76,222 @@ RECORD → SACCADE → EVIDENCE → INTERPRETATION → STRATEGY → OUTPUT → O
 |------|-----------|---------|
 | **水平** | MYCELIUM | 部門横断調整（OKR基盤） |
 | **垂直** | NEURAXIS | 再帰的問題再定義（L0–L4エスカレーション） |
-| **先験** | SACCADE | 証拠収集前の問題フレーミング |
+| **アプリオリ** | SACCADE | 証拠収集前の問題フレーミング |
 
-### 来歴層 (SENTINEL)
+### 由来層（SENTINEL）
 
-すべてのシグナル、エッジ変更、ゲート証拠が**非代替性・ハッシュチェーン・Ed25519署名付きプロベナンストークン**でラップされます——ガバナンスゲートの「N個の異なる経験」基準が、捏造された主張ではなく*検証済み*裏付けをカウントできるように。
+全ての信号、エッジ変更、ゲート証拠は**非代替性、ハッシュチェーン、Ed25519署名付き由来トークン**でラップされます——ガバナンスゲートの「N個の異なる経験」基準が、捏造された主張ではなく*検証済み*裏付けを数えます。
 
 ---
 
 ## 🏛️ 8つの統合部門
 
 | 部門 | 範囲 |
-|------|------|
-| **Finance** | Budget, CAC, ROI, FP&A, treasury |
-| **Marketing** | Brand, growth, referral, paid media |
-| **Sales** | Outbound, growth, Biz Dev, Corp Dev |
-| **Engineering** | Product, Customer Success, Technology, Referral tech |
-| **Operations** | Supply chain, procurement, day-to-day ops |
-| **Legal** | Compliance, Risk, contracts, regulatory |
-| **People & Comms** | HR, Internal comms, Public Affairs |
-| **Technology Platform** | AI strategy, models, governance, InfoSec, identity, tools |
+|------------|-------|
+| **Finance** | 予算、CAC、ROI、FP&A、財務 |
+| **Marketing** | ブランド、成長、紹介、有料メディア |
+| **Sales** | アウトバウンド、成長、Biz Dev、Corp Dev |
+| **Engineering** | 製品、カスタマーサクセス、テクノロジー、紹介技術 |
+| **Operations** | サプライチェーン、調達、日常運用 |
+| **Legal** | コンプライアンス、リスク、契約、規制 |
+| **People & Comms** | HR、社内コミュニケーション、広報 |
+| **Technology Platform** | AI戦略、モデル、ガバナンス、InfoSec、アイデンティティ、ツール |
 
 ---
 
 ## 🚀 クイックスタート
 
 ```bash
-# 決策システムをクローン
-git clone <your-repo-url>
-cd decision-systems
-
 # 依存関係をインストール
 pip install -r requirements.txt
 
-# スペシャリストを実行
-python -m kojiki.core.runner marketing-brand dispatch.json
+# スペシャリストを実行（テストモード）
+KOJIKI_TEST_MODE=true python -m engine.kojiki_core.runner marketing-brand dispatch.json
 
-# 全8スペシャリストを実行
-python scripts/verify_all_runners.py
+# 全9スペシャリストを実行（テストモード）
+KOJIKI_TEST_MODE=true python tests/scripts/verify_all_runners.py
 ```
 
-### インストール後
+---
 
-各エージェントは初回実行時に**Kojiki Orientation Protocol（定向プロトコル）**を実行します：
+## 🤖 Orchestrator（オーケストレーター）
 
-1. **Name + function** — 私は誰？
-2. **Industry / sector** — リサーチをトリガー
-3. **Jurisdiction**（国 / 地域 / 規制）
-4. **Geography + business model**
-5. **Sibling registration** — `handoffs/registry.json` の親 `group_id` 配下に登録
-
-その後、エージェントはSYNAPSISチェーンで作業を実行し、以下で検証します：
+**Orchestrator**が透過的な目標分解を提供：
 
 ```bash
-python3 ../synapsis/validate.py --mycelium-registry ../handoffs/registry.json bot-output.json
+# ユーザー承認ゲート付きで実行
+python -m engine.orchestrator.orchestrator "カナダ市場向けビーフブロスブランドを作成"
+
+# 承認ゲートなしで実行（自動化用）
+python -m engine.orchestrator.orchestrator "目標をここに" --no-approval
 ```
+
+**フロー：**
+1. **Orientation Protocol** — 目標に関する業界調査
+2. **SACCADE Framing** — 生目標を構造化された問題に研ぎ澄ます
+3. **Department Selection** — どの部門長が担当か、理由付きで決定
+4. **OKR Decomposition** — 企業OKR → 部門OKR → チームOKR
+5. **Parallel Dispatch** — 各部門長が完全SYNAPSISパイプラインを実行
+6. **Mycelium Coordination** — 部門横断シグナル
+7. **User Approval Gate** — 再ループ前のレビュー
+
+---
+
+## 🤖 部門別サブエージェント
+
+| 部門 | サブエージェント |
+|------------|------------|
+| Ai Intelligence | `agentic-identity`, `agents-orchestrator`, `ai-code-auditor`, `ai-engineer`, `ai-remediation`, `doc-generator`, `identity-graph`, `llm-post-training`, `mcp-builder`, `model-qa`, `multi-agent-architect`, `prompt-engineer`, `rag-pipeline`, `secrets-hygiene`, `strategy-duel`, `zk-steward` |
+| Engineering Platform | `ai-engineer`, `api-engineer`, `appsec-engineer`, `backend-architect`, `code-reviewer`, `data-viz`, `database-optimizer`, `devops-automator`, `frontend-developer`, `llm-post-training`, `multi-agent-architect`, `platform-engineer`, `rag-engineer`, `reality-checker`, `security-architect`, `software-architect`, `sre`, `test-automation` |
+| Finance Accounting | `accounts-payable`, `bookkeeper`, `cfo`, `esg-officer`, `financial-analyst`, `fp-a-analyst`, `grant-writer`, `investment-researcher`, `loan-officer`, `medical-billing`, `pricing-analyst`, `tax-strategist` |
+| Legal Compliance | `compliance-auditor`, `data-privacy`, `esg-officer`, `fedramp`, `gov-presales`, `legal-billing`, `legal-client-intake`, `legal-doc-review` |
+| Marketing Brand | `aeo-specialist`, `agentic-search-optimizer`, `brand-guardian`, `carousel-growth`, `content-creator`, `email-strategist`, `growth-hacker`, `paid-social-specialist`, `pr-communications`, `seo-specialist`, `video-optimizer`, `visual-storyteller` |
+| Operations Ops | `business-strategist`, `change-management`, `ma-integration`, `operations-manager`, `supply-chain-strategist` |
+| People Hr | `change-management`, `corporate-training`, `customer-service`, `customer-success`, `dev-advocate`, `hr-onboarding`, `org-psychologist`, `pr-comms`, `recruitment`, `support-responder` |
+| Sales Outbound | `account-strategist`, `data-consolidation`, `deal-strategist`, `discovery-coach`, `lead-gen-strategist`, `outbound-strategist`, `pipeline-analyst`, `proposal-strategist`, `report-distribution`, `sales-coach`, `sales-data-extraction`, `sales-engineer`, `sales-outreach`, `salesforce-architect` |
+
+**合計: 8部門で95サブエージェント**
+
+---
+
+## 🔍 Orientation Protocol — 研究に基づく目標明確化
+
+**目的:** 部門選択や計画の前に、システムが**適応的・研究優先のオリエンテーション**を実行し、曖昧な目標への無駄な調査を防ぎます（例: 「Q4売上を上げる」→ 研究が「SaaS B2Bパイプライン加速」に適応）。
+
+### フロー
+
+```
+CLARIFYING QUESTIONS (2–4 adaptive) 
+    → LIVE WEB RESEARCH (market, competitors, regulation, risks)
+    → RESEARCH BRIEF + CONTEXTUAL FOLLOW-UPS (3–4 generated FROM findings)
+    → USER ANSWERS
+    → OPTIONAL: TARGETED RE-RESEARCH (if answers reveal gaps) + MORE FOLLOW-UPS
+    → REFINED GOAL → DEPARTMENT SELECTION → OKR DECOMPOSITION
+```
+
+### なぜ研究優先か？
+
+- **Clarifying questions** で目標を *targeted* 研究に十分具体化
+- **Live research** でフォローアップを現在の現実に接地（古いテンプレートではない）
+- **Findings FROM generated follow-ups** — 静的な質問バンクではない
+- **Re-research loop** でユーザー回答が開くギャップを検出
+
+### 例（Vercelフローから）
+
+```
+Goal: "Launch gacha game"
+Research finds: Belgium/Netherlands ban loot boxes; EU Digital Fairness Act pending
+Follow-up Q1: "What is the launch-country sequence — soft-launch EU before UK/BE/NL?"
+Follow-up Q2: "Does monetization need odds disclosure + spending controls for EU compliance?"
+Follow-up Q3: "What revenue threshold defines FY27 launch success?"
+```
+
+### 良い質問をするための研究（オープンソース基盤）
+
+| Source | Key Finding | Applied In |
+|--------|-------------|------------|
+| **Cognitive Interviewing Guide** (UCLA/Chime) | Open-ended, non-leading questions reduce recall bias; "What happened?" > "Did X happen?" | Clarifying phase: "What specifically does that involve?" |
+| **Oxford Handbook of Survey Methodology** (2018) | Funnel sequence: broad → specific; avoid double-barreled questions | Phase 1 → Phase 3 narrowing |
+| **Karpathy's LLM Wiki / Akinator-style entropy** | Adaptive question selection via information gain; stop when entropy < threshold | Dynamic question count (2–4) |
+| **Deep Research pattern** (OpenAI/Perplexity) | Iterative: clarify → search → synthesize → follow-up → re-search | 3-phase orientation loop |
+| **Police PEACE model / CI guidelines** | Context reinstatement before recall; free narrative before specific probes | "What happened recently that made this a priority?" |
+
+---
+
+## 🧠 MORPHEUS Protocol — SENTINEL検証付き日次メモリリセット
+
+**目的:** 長時間実行オーケストレーションでのメモリドリフトを防ぐため、**Hibernate → Hypnos → Morpheus → Awaken** の日次サイクルを暗号学的に強制し、保留中のゲートやアクティブなSLAが失われないことを検証。
+
+| フェーズ | アクション | SENTINELチェック |
+|-------|--------|----------------|
+| **Hibernate** | 作業ストアのスナップショット（経験、kaizen、サブグラフエッジ） | ハッシュをチェーンに書き込み |
+| **Hypnos** | スナップショットを封印 — リセットエントリをマーク | 署名済みチェックポイント |
+| **Morpheus** | 作業ストアをワイプ; ライブSLA期限付きゲートを再物質化 | 実ゲートストアをクエリ (`escalation_engine.gate_requests`) |
+| **Awaken** | チェーン整合性を検証; 保留ゲートの復元を確認 | Fail-closed if hash mismatch |
+
+**主要保証:**
+- ライブSLA期限を持つゲートはワイプ後も生存（実ストアからクエリ、スタブではない）
+- チェーン検証は必須 — 由来が壊れていればオーケストレーション再開不可
+- テストスイートで7/7の受入基準を検証済み
+
+---
+
+## 🔄 プロンプトがシステムを流れる仕組み
+
+### 1. エントリポイント: Dispatch作成
+
+```python
+dispatch = {
+    "task_id": "verify-marketing-brand",
+    "raw_record": "Test goal for verification",
+    "raw_source": {},
+    "prior_accepted_evidence": []
+}
+```
+
+Dispatchは不変の入力契約。生目標、ソースデータ、過去の証拠を含む。
+
+### 2. パイプライン初期化 (`engine/kojiki_core/runner.py`)
+
+```python
+specialist = load_specialist("marketing-brand")
+runner = PipelineRunner(specialist, dispatch)
+```
+
+`PipelineRunner`:
+- スペシャリスト設定（ステージ、スキーマ、ツール、バリデータ）をロード
+- コンテキスト隔離用 `ScopedContext` を作成
+- SENTINEL由来用 `CausalChainRunner` を初期化
+- Decision Rights用レジストリをロード
+
+### 3. ステージ実行ループ
+
+ランナーは厳密な順序でステージを実行:
+
+```python
+STAGE_EXECUTORS = [
+    ("saccade", run_saccade_stage),
+    ("evidence", run_evidence_stage),
+    ("interpretation", run_interpretation_stage),
+    ("strategy", run_strategy_stage),
+    ("output", run_output_stage),
+    ("delegation", run_delegation_stage),
+    ("handoff", run_handoff_stage),
+    ("mycelium", run_mycelium_stage),
+    ("outcome", run_outcome_stage),
+    ("learning", run_learning_stage),
+]
+```
+
+**各ステージ実行パターン:**
+1. スペシャリストから **StageConfig** 取得（プロンプト、ツール、スキーマ、許可入力）
+2. **スコープ付きコンテキスト構築** — dispatch + 過去ステージ出力から `inputs_allowed` キーのみ
+3. ファイルから **プロンプト読み込み**
+4. `call_model()` で **モデル呼び出し** （テストモードはスタブ、本番は実LLM）
+5. JSONスキーマで **出力検証**
+6. 下流ステージ用 **コンテキストに格納**
+7. SENTINEL由来用 **因果チェーンに記録**
+
+### 4. ステージ別内訳
+
+| ステージ | 目的 | 出力 | 権限 |
+|-------|---------|--------|-----------|
+| **SACCADE** | アプリオリ問題フレーミング | 構造化された問題 | Must NOT become EVIDENCE or STRATEGY |
+| **EVIDENCE** | ソース検索 | 引用付き発見事項 | Must NOT become INTERPRETATION or STRATEGY |
+| **INTERPRETATION** | 証拠合成 | 診断 + インサイト | Must NOT become EVIDENCE or STRATEGY |
+| **STRATEGY** | 意思決定計画 | 目的 + 決定権 | Must NOT become EVIDENCE or INTERPRETATION |
+| **OUTPUT** | 介入設計 | 戦術 + 測定 | Must NOT become EVIDENCE/INTERPRETATION/STRATEGY |
+| **DELEGATION** | サブエージェント派遣 | タスク割り当て | — |
+| **HANDOFF** | エージェント間連携 | ハンドオフ追跡 | — |
+| **MYCELIUM** | 信号伝播 | 部門横断シグナル | — |
+| **OUTCOME** | 改善評価 | スコア + 収束 | — |
+| **LEARNING** | 改善合成 | パターン + 再定義 | — |
+
+### キー不変条件
+
+- `EVIDENCE ≠ INTERPRETATION ≠ STRATEGY`（混入なし）
+- `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE`（有界L3）
+- `SIGNALING ≠ ORCHESTRATION`（キャノピー自律）
 
 ---
 
@@ -138,192 +299,56 @@ python3 ../synapsis/validate.py --mycelium-registry ../handoffs/registry.json bo
 
 ```
 decision-systems/
-├── synapsis/                    # SYNAPSISチェーン + バリデータ
-│   ├── SYNAPSIS.md             # 完全仕様
-│   ├── validate.py             # 不変条件チェッカー（標準ライブラリのみ）
-│   ├── REFERENCES.md           # コンサルフレームワークマッピング
-│   └── transformations.json    # ステージ定義
-├── schemas/                    # コアJSONスキーマ
-│   ├── evidence.json
-│   ├── interpretation.json
-│   ├── strategy.json
-│   ├── problem.json
-│   ├── learning-ledger.json
-│   └── decision-object.json
-├── mycelium/                   # Canopy層（涌現調整）
-│   ├── schemas/                # node, objective, key_result, edge, signal, provenance_token
-│   ├── engine/                 # Core MYCELIUM engine modules
-│   ├── neuraxis/               # 垂直軸: experience, problem, gate_request, escalation
-│   ├── tests/                  # すべて通過
-│   └── examples/               # demo_marketing_sales.py
-├── sentinel/                   # 来歴: Ed25519, ハッシュチェーン
-├── learning/                   # 組織記憶（ケース、パターン、ルール）
-├── handoffs/                   # 跨部門レジストリ + ハンドオフ標準
-├── decision-rights/            # Own/Recommend/Consult/Approve/Execute/Escalate/Automate
-├── consultant/                 # 50+ コンサルフレームワーク（コピー、MIT、設計時参照）
-├── var/                        # ランタイムデータ（gitignore: ログ、鍵）
-├── README.md / .ja.md / .zh.md
-├── PROMO.md
-└── LICENSE
-
-├── kojiki/                     # 統一ランタイム
-│   ├── core/                   # 共有実行エンジン
-│   │   ├── runner.py           # Slim orchestrator（約500行）
-│   │   ├── stages/             # 8ステージ実行子
-│   │   └── __init__.py         # Specialist loader, call_model, schemas
-├── specialists/            # 8 specialist configurations
-│   ├── ai-intelligence/
-│   ├── engineering-platform/
-│   ├── finance-accounting/
-│   ├── legal-compliance/
-│   ├── marketing-brand/
-│   ├── operations-ops/
-│   ├── people-hr/
-│   └── sales-outbound/
-│   ├── configs/                # 部門長 + 参謀長設定
-│   │   ├── dept-heads/
-│   │   └── chief-of-staff.yaml
-│   └── cli.py                  # 簡単CLI: `kojiki decide "goal"`
-
-├── scripts/                    # 検証とCI
-│   ├── verify_all_runners.py
-│   ├── verify_causal_signatures.py
-│   └── test_runner_group.py
-
-├── shared/                     # 共有リソース（シンボリックリンク）
-│   ├── prompts/                # 8ステージプロンプト
-│   └── schemas/                # 11 JSONスキーマ
-
-├── test_governance_loop.py     # エンドツーエンドガバナンステスト
+├── engine/                          # 全エンジンモジュール
+│   ├── kojiki_core/                 # コアSYNAPSISパイプライン
+│   ├── mycelium/                    # 水平信号伝播
+│   ├── neuraxis/                    # 垂直エスカレーションエンジン（L0–L4）
+│   ├── kaizen/                      # 学習ループ（PDCA）
+│   ├── sentinel/                    # 由来：Ed25519、ハッシュチェーンログ
+│   └── synapsis/                    # 因果チェーン、スキーマ、検証
+├── tests/
+│   ├── engine/                      # エンジンコンポーネント別テスト
+│   ├── fixtures/                    # テストデータ
+│   ├── integration/                 # 統合テスト
+│   ├── scripts/                     # 検証スクリプト
+│   ├── unit/                        # 単体テスト
+│   └── results/                     # テスト出力成果物
+├── skills/                          # エージェントスキル
+├── bots/                            # 参照ボット
+├── vendor/                          # 外部参照（コンサルティングフレームワーク）
+├── var/                             # 実行時データ（gitignore）
+├── mycelium_data/                   # 実行時データ（mycelium/から改名）
+├── ui/                              # Next.jsフロントエンド
+├── api_server.py                    # FastAPIバックエンド
 ├── requirements.txt
-├── .github/workflows/ci.yml
-├── README.md / .ja.md / .zh.md
-├── PROMO.md
-└── LICENSE
+└── README.md / .ja.md / .zh.md
 ```
 
 ---
 
-## 🏛️ 7つのレイヤー
+## 🧪 テスト
 
-| レイヤー | 答える問い | 範囲 |
-|-------|---------|------|
-| **KOJIKI** | 何が存在するか——本体 | エンティティ、関係、8つの統合部門 |
-| **SACCADE** | 何かを試す前に問いは適切か | 先験、境界付き反復的フレーミング（収束またはパス上限） |
-| **SYNAPSIS** | 1つの境界付き意思決定がどうなされるか | 単Bot、剛性、監査可能——Evidence ≠ Interpretation ≠ Strategy |
-| **NEURAXIS** | 失敗が説明のためにどこまで抽象化階層を登るか | 事後、実質的乖離時のみエスカレーション、L3/L4でガバナンス |
-| **MYCELIUM** | 多部門横断でどう意思決定を調整し続けるか | 創発的OKR依存グラフ、サブグラフ限定シグナル、決して指令ではない |
-| **SENTINEL** | 誰が実際に言ったか | すべての部門横断主張に対する署名済み・ハッシュチェーン・非代替性プロベナンス |
-| **CHIEF OF STAFF** | 誰が分解・統合するか | Goal → 分解 → 並列実行 → 統合 |
+```bash
+# 全9スペシャリストを検証（テストモード）
+KOJIKI_TEST_MODE=true python tests/scripts/verify_all_runners.py
+
+# Myceliumテスト実行（42テスト）
+PYTHONPATH=. python -m pytest tests/engine/mycelium/ -v
+
+# ガバナンスループテスト実行
+python -m pytest tests/integration/test_governance_loop.py -v
+```
+
+**全テスト通過:**
+- ✅ 9/9 スペシャリストが検証通過
+- ✅ 42/42 Myceliumテスト通過
+- ✅ ガバナンスループテスト通過
 
 ---
 
-## ⚙️ コア概念
+## 🔬 研究基盤
 
-### SYNAPSIS変換チェーン（剛性層）
-
-| ステージ | 権限 | 絶対になってはならないもの | 入力 | 出力スキーマ |
-|-------|-----------|-----------------|-------|---------------|
-| **RECORD** | 何が起きたか | — | 生入力 | `decision-object.json` |
-| **SACCADE** | 本当の問いは何か？ | EVIDENCE, STRATEGY | `raw_record` | `problem.json` (P-0000) |
-| **EVIDENCE** | ソースは何を確立するか？ | INTERPRETATION, STRATEGY | `raw_source`, `prior_accepted_evidence` | `evidence.json` (Verified Extracts) |
-| **INTERPRETATION** | 証拠は何を意味するか？ | EVIDENCE, STRATEGY | `accepted_evidence` | `interpretation.json` |
-| **STRATEGY** | 何をいつやるか？ | EVIDENCE, INTERPRETATION | `accepted_interpretation` | `strategy.json` |
-| **OUTPUT** | どう実行するか？ | EVIDENCE, INTERPRETATION, STRATEGY | `accepted_strategy` | `output.json` |
-| **OUTCOME** | 実際に何が起きたか？ | — | 現実 | `decision-object.json` (更新) |
-| **LEARNING** | パターンを抽出 | — | Outcome vs expectation | `learning.json` |
-
-**`kojiki/core/runner.py`が強制する不変条件：**
-- `inputs_forbidden`はモデル呼び出しに*供給されない*——「しないでください」より強力
-- 各ステージはスコープ付きコンテキストで別モデル呼び出し
-- `validate.py`が出力をスキーマ+不変ルールでチェック
-
-### MYCELIUM Canopy層（涌現）
-
-| プリミティブ | スキーマ | キールール |
-|-----------|--------|----------|
-| **Node** | `node.schema.json` | `id = parent + "." + local`（血統強制） |
-| **Objective** | `objective.schema.json` | 柔軟なホライズン（四半期固定ではない） |
-| **Key Result** | `key_result.schema.json` | `status` + `confidence` + `depends_on[]` |
-| **Edge** | `edge.schema.json` | Cross-Functional Handoffフィールド；相互性で重み強化 |
-| **Signal** | `signal.schema.json` | `diagnosed_cause` + 14カテゴリ分類必須；サブグラフ限定 |
-
-**運用サイクル**（各エッジ、各レビュー）：
-```
-KRステータス変更 → Signal（原因 + カテゴリ） → Subgraph（閾値 0.15）
-→ Propagate（指令ではない） → Reinforce/Decay/Prune → 次のサイクル
-```
-
-**強化**（Tero et al. 2010、離散版）：
-```
-weight = weight * (1 - decay) + rate * (flow_signal ** gamma)
-# gamma=1.15 デフォルト；lower = より冗長/耐故障
-```
-
-**剪枝**（寄生ガード）：
-```
-prune if weight < 0.05 OR reciprocity < 0.2
-# reciprocity = reciprocal_exchanges / (reciprocal + one_directional)
-```
-
-### NEURAXIS（垂直軸）
-
-| 層 | 範囲 | 自律性 |
-|-------|-------|----------|
-| **L0** Execution | 修正入力でリトライ | 自律 |
-| **L1** Reasoning | 推論を修正 | 自律 |
-| **L2** Problem Representation | Problemオブジェクトを置換 | 自律 |
-| **L3** Ontology | オントロジー関係を修正 | **ガバナンスゲート必要** |
-| **L4** Meta-Strategy | 選択メカニズムを修正 | **ガバナンスゲート必要** |
-
-ガバナンスゲート：反復閾値（N個の異なる経験）、Decision Rights（Recommend/Consult/Approve）、失敗時クローズデフォルトのSLA。
-
-### SENTINEL（来歴）
-
-| プロパティ | 実装 |
-|----------|----------------|
-| **署名** | Ed25519、秘密鍵はノードランタイムのみ保持 |
-| **非代替性** | `entry_id = hash(payload_hash + signer + prev_entry_id)` |
-| **チェーン** | ログ毎（`signals.jsonl`, `edges_history.jsonl`, `gate_evidence.jsonl`） |
-| **検証** | コミット前 + ガバナンスゲートが証拠を数える前 |
-
-### Kaizen ループ（継続的改善）
-
-| 能力 | 実装 |
-|----------|----------------|
-| **問題検出** | ガードレール付き結果チェック（完全性、分散、信頼度キャリブレーション） |
-| **根本原因** | 14カテゴリエラー分類学によるPDCAサイクル |
-| **再分類** | 失敗タイプに基づくL0→L4自動エスカレーション |
-| **ガバナンス統合** | L3/L4変更はゲート承認必要 |
-| **再定義取得** | 経験は置き換えProblemオブジェクトを含む |
-| **学習台帳** | バージョン化されたケース、パターン、ルール——決して静かに上書きされない |
-
-### OKR Engine (BCG Methodology)
-
-| 能力 | 実装 |
-|----------|----------------|
-| **Corporate objectives** | トップレベル戦略、重み付きKRs、ホライズン柔軟性 |
-| **Department objectives** | Corporateから分解、オーナー + ステータス/信頼度付きKRs |
-| **Team OKRs** | 参謀長が自動生成、血統強制、depends_on[] |
-| **進捗ロールアップ** | Team → Dept → Corporateの加重進捗、成熟度スコアリング |
-| **ガバナンス統合** | 目的変更はL3/L4ゲート、depends_on[]でロールアウト阻止 |
-
-### 参謀長（コーディネーター）
-
-| 能力 | 実装 |
-|----------|----------------|
-| **目標分解** | パターンマッチング + LLMプランニング → 専門家タスク |
-| **専門家発見** | レジストリが`specialists/<dept>/<agent>/`を自動発見 |
-| **並列実行** | 独立専門家を同時に実行 |
-| **依存管理** | SalesはProduct仕様を待つ；FinanceはEng見積もりを待つ |
-| **競合解決** | 重複する意思決定権を検出；ガバナンスにエスカレート |
-| **統合** | 統一された意思決定権を持つ単一計画にマージ |
-
----
-
-## 📚 研究と参考文献
-
-アーキテクチャは4つの独立分野の査読済み研究に基づいています：
+アーキテクチャは6つの独立分野の査読済み研究に基づく：
 
 ### 生物学（菌根ネットワーク）
 
@@ -332,11 +357,9 @@ prune if weight < 0.05 OR reciprocity < 0.2
 | Tero et al., *Science* (2010) | Physarum強化/減衰が中央プランナーなしで効率的・耐障害トポロジーに収束 | MYCELIUM強化公式、γ効率-冗長性トレードオフ |
 | Gorzelak et al., *AoB Plants* (2015) | CMN媒介植物通信の主流事例 | 信号伝播の基盤 |
 | Song et al., *PLoS ONE* (2010); Babikova et al. (2013) | 防衛信号伝播（"priming"） | スコープ付きサブグラフのみSignal伝播 |
-| Karst, Jones & Hoeksema, *Nature Ecology & Evolution* (2023) | 懐疑的レビュー：CMN文献の正の効果研究への引用バイアス | §II.5での警告——十分支持されたメカニズムのみ構築 |
-| Frew et al., *Functional Ecology* 特集 (2025) | CMNは異質、文脈/宿主/真菌タイプ依存 | §II.5の警告を強化 |
-| Silvestri et al. (2025), *New Phytologist* ステータスレポート (2026) | AM共生で新分子制御機構（`ckRNAi`）発見 | §II.6——細胞層はさらに剛性を証明し続ける |
-| Bilgen & Akan, "Internet of Plants" (2024–2025, Cambridge/Koç) | 独立通信工学形式化：菌根ネットワークを"グラフベース通信媒質"として | `SIGNALING ≠ ORCHESTRATION`不変量を検証 (§IV.3, §II.7) |
-| Adamatzky, *Royal Society Open Science* (2022) | 菌類電気スパイクが初歩的コードに類似する統計構造を示す | 投機的とマーク (§II.4)、負荷を支えない |
+| Karst et al., *Nature Ecology & Evolution* (2023) | 懐疑的レビュー：正の効果研究への引用バイアス | §II.5での警告——十分支持されたメカニズムのみ構築 |
+| Frew et al., *Functional Ecology* (2025) | CMNsは異質、文脈/宿主/真菌タイプ依存 | §II.5の警告を強化 |
+| Bilgen & Akan, "Internet of Plants" (2024–2025) | 独立通信工学形式化：菌根ネットワークを"グラフベース通信媒質"として | `SIGNALING ≠ ORCHESTRATION` 不変量を検証 |
 
 ### 神経科学（階層的予測符号化）
 
@@ -367,65 +390,39 @@ prune if weight < 0.05 OR reciprocity < 0.2
 
 | 研究 | 発見 | アーキテクチャマッピング |
 |-------|---------|---------------------|
-| 有界 (L3) vs 無界 (L4/L5) 自己改善 | 有界：改善機構は外部維持 | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE`不変量でシステムをL3に維持 |
-
----
-
-## 🔧 コンサルティングフレームワーク（設計時参照）
-
-SYNAPSISステージは標準コンサルティングフレームワークにマッピング——ランタイム依存でなく、特定ギャップを埋める**名前付きメソッド**として：
-
-| フレームワーク | マッピングメカニズム | セクション |
-|-----------|------------------|---------|
-| **5 Whys / Fishbone** | Adversarial Audit根本原因 | §III.1 |
-| **MECE / Issue Tree** | EVIDENCE分解、INTERPRETATION非重複 | §III.1, III.2 |
-| **Pyramid Principle / SCQ** | PRODUCTION答え優先出力 | §III.1 (OUTPUT) |
-| **ケースフレームワーク** | ドメイン固有STRATEGYテンプレート | §III.1 (STRATEGY) |
-| **RACI** | Decision Rightsモデル | §VII.5.5.1, §III.2 |
-| **Balanced Scorecard** | Hermes KPIアーキテクチャ | §III.2 |
-| **PDCA** | MYCELIUM運用サイクル | §IV.7 |
-| **感度分析** | γ / decay_rate / 閾値キャリブレーション | *未定* |
-
-完全マッピング：`synapsis/REFERENCES.md`  
-フレームワークコピー元：`consultant/` (50+フレームワーク, MIT, `.git`なし)
-
----
-
-## 🛣️ ロードマップ
-
-| フェーズ | フォーカス | ステータス |
-|-------|---------|--------|
-| **v1** | 剛性層(SYNAPSIS) + 涌現層(MYCELIUM) + NEURAXIS + SENTINEL | ✅ 完了 |
-| **v2** | Task 3決定論的採点、py_compile付きCI、合否閾値、スキーマバージョニング、拡張デモマトリックス | 📋 計画中 |
-| **v3** | ステージ出力の敵対的再導出、全18部門への後付け、アーティファクト相互確認 | 📋 計画中 |
-
-詳細は `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` を参照。
-
----
-
-## 🤝 貢献
-
-1. **クローズドソース依存なし** — すべてMITコード
-2. **ローカルファースト** — ローカルLLM (Ollama, LM Studio) で実行、クラウド不要
-3. **プロバイダ非依存** — 任意のLLMを `AGENT.md` に向ける
-4. **テスト必須** — PR前に `python3 -m py_compile` + バリデータ通過
-5. **設計時参照のみ** — `consultant/` はコピー、依存ではない
+| 有界 (L3) vs 無界 (L4/L5) 自己改善 | 有界：改善機構は外部維持 | `LEARNING ≠ PERMISSION TO REWRITE DOCTRINE` 不変量でシステムをL3に維持 |
 
 ---
 
 ## 📄 ライセンス
 
-MIT — [LICENSE](LICENSE) を参照。
+MIT — 詳細は [LICENSE](LICENSE) を参照。
 
 ---
 
 ## 🔗 リンク
 
 - **論文**: `MYCELIAL-GOVERNANCE-COMPLETE-THESIS.md` (二層アーキテクチャ、生物学、ガバナンス)
-- **参照マッピング**: `synapsis/REFERENCES.md`
-- **コンサルティングフレームワーク**: `consultant/` (50+ フレームワーク, スラッシュコマンド)
-- **デモ**: `mycelium/examples/demo_marketing_sales.py`
+- **参照マッピング**: `engine/synapsis/REFERENCES.md`
+- **コンサルティングフレームワーク**: `vendor/consultant/` (50+ フレームワーク)
 
 ---
 
-**Kojiki Decision System. 決定を未監査のままにしない。**
+## 🤖 部門別サブエージェント
+
+| 部門 | サブエージェント |
+|------------|------------|
+| Ai Intelligence | `agentic-identity`, `agents-orchestrator`, `ai-code-auditor`, `ai-engineer`, `ai-remediation`, `doc-generator`, `identity-graph`, `llm-post-training`, `mcp-builder`, `model-qa`, `multi-agent-architect`, `prompt-engineer`, `rag-pipeline`, `secrets-hygiene`, `strategy-duel`, `zk-steward` |
+| Engineering Platform | `ai-engineer`, `api-engineer`, `appsec-engineer`, `backend-architect`, `code-reviewer`, `data-viz`, `database-optimizer`, `devops-automator`, `frontend-developer`, `llm-post-training`, `multi-agent-architect`, `platform-engineer`, `rag-engineer`, `reality-checker`, `security-architect`, `software-architect`, `sre`, `test-automation` |
+| Finance Accounting | `accounts-payable`, `bookkeeper`, `cfo`, `esg-officer`, `financial-analyst`, `fp-a-analyst`, `grant-writer`, `investment-researcher`, `loan-officer`, `medical-billing`, `pricing-analyst`, `tax-strategist` |
+| Legal Compliance | `compliance-auditor`, `data-privacy`, `esg-officer`, `fedramp`, `gov-presales`, `legal-billing`, `legal-client-intake`, `legal-doc-review` |
+| Marketing Brand | `aeo-specialist`, `agentic-search-optimizer`, `brand-guardian`, `carousel-growth`, `content-creator`, `email-strategist`, `growth-hacker`, `paid-social-specialist`, `pr-communications`, `seo-specialist`, `video-optimizer`, `visual-storyteller` |
+| Operations Ops | `business-strategist`, `change-management`, `ma-integration`, `operations-manager`, `supply-chain-strategist` |
+| People Hr | `change-management`, `corporate-training`, `customer-service`, `customer-success`, `dev-advocate`, `hr-onboarding`, `org-psychologist`, `pr-comms`, `recruitment`, `support-responder` |
+| Sales Outbound | `account-strategist`, `data-consolidation`, `deal-strategist`, `discovery-coach`, `lead-gen-strategist`, `outbound-strategist`, `pipeline-analyst`, `proposal-strategist`, `report-distribution`, `sales-coach`, `sales-data-extraction`, `sales-engineer`, `sales-outreach`, `salesforce-architect` |
+
+**合計: 8部門で95サブエージェント**
+
+---
+
+**Kojiki Decision System. どの意思決定も監査漏れなし。**

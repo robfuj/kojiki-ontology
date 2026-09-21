@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Chief of Staff Strategy Stage Output Schema (Department-Level Decomposition)",
+  "title": "Orchestrator Strategy Stage Output Schema (Department-Level Decomposition)",
   "type": "object",
   "required": ["strategy_id", "interpretation_ref", "objective", "rationale", "timeline", "success_criteria", "escalation_conditions", "actions"],
   "properties": {
@@ -24,6 +24,28 @@
       }
     },
     "escalation_conditions": {"type": "array", "items": {"type": "string"}},
+    "decision_rights": {
+      "type": "object",
+      "required": ["own", "consult", "inform"],
+      "properties": {
+        "own": {"type": "string"},
+        "consult": {"type": "array", "items": {"type": "string"}},
+        "inform": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sub_agent_llm": {
+      "type": "object",
+      "description": "Department head's LLM selection for sub-agents (cost/quality tradeoff)",
+      "properties": {
+        "provider": {"type": "string", "enum": ["openrouter", "anthropic", "openai", "ollama", "local"]},
+        "model": {"type": "string", "description": "Model identifier (e.g., anthropic/claude-3-haiku:beta, deepseek/deepseek-chat, ollama/llama3.1:8b)"},
+        "base_url": {"type": "string", "description": "Optional override for provider base URL"},
+        "temperature": {"type": "number", "minimum": 0, "maximum": 2, "default": 0.0},
+        "max_tokens": {"type": "integer", "minimum": 100, "maximum": 32000, "default": 4000},
+        "cost_per_1k_tokens": {"type": "number", "minimum": 0, "description": "Estimated cost for budgeting"}
+      },
+      "required": ["provider", "model"]
+    },
     "actions": {
       "type": "array",
       "items": {

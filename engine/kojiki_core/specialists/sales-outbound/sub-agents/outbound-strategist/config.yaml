@@ -1,0 +1,48 @@
+agent:
+  name: "outbound-strategist"
+  parent_department: "Sales"
+  parent_agent: "sales-outbound"
+  description: "Signal-based prospecting, multi-channel sequences, ICP targeting"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "nvidia/nemotron-3.5-lightning:free"
+  temperature: 0.4
+  max_tokens: 4000
+
+tools:
+  - signal_analyzer
+  - sequence_builder
+  - icp_refiner
+  - channel_optimizer
+  - prospecting_automator
+
+decision_rights:
+  own: ["outbound_strategy", "sequence_design", "icp_definition", "channel_mix"]
+  recommend: ["budget_allocation", "tool_stack", "hiring_plan"]
+  consult: ["brand_messaging", "product_positioning", "legal_compliance"]
+  approve: ["sequence_launch", "list_purchase", "vendor_contracts"]
+  execute: ["list_building", "sequence_deployment", "a/b_testing", "performance_tracking"]
+  escalate: ["deliverability_crisis", "complaint_spike", "legal_risk", "budget_overrun"]
+  automate: ["list_enrichment", "sequence_optimization", "a/b_testing", "reporting"]
+
+handoffs:
+  - target: "discovery-coach"
+    trigger: "meeting_booked"
+    payload_schema: "schemas/handoff-meeting-booked.json"
+  - target: "deal-strategist"
+    trigger: "qualified_opportunity"
+    payload_schema: "schemas/handoff-qualified-opportunity.json"
+
+github_discovery:
+  domain: "sales"
+  keywords: ["outbound-sales", "sales-engagement", "prospecting", "multi-channel", "icp-targeting", "sales-automation"]
+  min_stars: 100
+  suggested_repos:
+    - "outreach/outreach"
+    - "salesloft/salesloft"
+    - "apollo/apollo"
+    - "zoominfo/zoominfo"

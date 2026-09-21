@@ -47,19 +47,19 @@ class PeopleSubSpecialist(Specialist):
                 name="interpretation",
                 prompt=str(base_path / "prompts" / "03-interpretation.md"),
                 tools=[],
-                schema=str(base_path / "schemas" / "interpretation.json"),
+                schema=str(base_path / "schemas" / "interpretation_diagnosis.json"),
             ),
             "strategy": StageConfig(
                 name="strategy",
                 prompt=str(base_path / "prompts" / "04-strategy.md"),
                 tools=[],
-                schema=str(base_path / "schemas" / "strategy.json"),
+                schema=str(base_path / "schemas" / "strategy_team_okrs.json"),
             ),
             "output": StageConfig(
                 name="output",
                 prompt=str(base_path / "prompts" / "05-output.md"),
                 tools=[],
-                schema=str(base_path / "schemas" / "output.json"),
+                schema=str(base_path / "schemas" / "output_intervention.json"),
             ),
             "learning": StageConfig(
                 name="learning",

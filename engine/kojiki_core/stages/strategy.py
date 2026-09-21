@@ -28,7 +28,7 @@ async def run_strategy_stage(
     tools = stage_config.tools
 
     schema = specialist.get_schema("strategy")
-    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="strategy")
+    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="strategy", model=specialist.get_model())
 
     if schema:
         validate_against_schema(output, schema, "strategy")
@@ -41,12 +41,31 @@ async def run_strategy_stage(
         if isinstance(dr, dict):
             own_node = dr.get("own")
             if own_node:
-                # Pass decision_right as the 'own' value, and the full dict as decision_rights
-                runner.registry.update_decision_rights(own_node, dr.get("own", "OWN"), dr)
-                print(f"  Decision rights registered for {own_node}")
+                # Validate format: Department.Role
+                import re
+                if not re.match(r"^[A-Z][a-z]+(\.[A-Z][a-z]+)+$", own_node):
+                    # Try to extract a valid node from the string
+                    print(f"  Warning: Invalid decision_rights own format: {own_node}")
+                    # Default to specialist's decision_rights_node
+                    own_node = specialist.decision_rights_node
+                try:
+                    # Pass decision_right as the 'own' value, and the full dict as decision_rights
+                    runner.registry.update_decision_rights(own_node, dr.get("own", "OWN"), dr)
+                    print(f"  Decision rights registered for {own_node}")
+                except ValueError as e:
+                    print(f"  Warning: Failed to register decision rights: {e}")
+                    # Try with specialist's default
+                    try:
+                        runner.registry.update_decision_rights(specialist.decision_rights_node, dr.get("own", "OWN"), dr)
+                        print(f"  Decision rights registered for {specialist.decision_rights_node} (fallback)")
+                    except Exception as e2:
+                        print(f"  Error: Fallback also failed: {e2}")
         elif isinstance(dr, str) and dr != "RECOMMEND":
-            runner.registry.update_decision_rights(dr, dr, {"own": dr, "consult": [], "inform": []})
-            print(f"  Decision rights registered for {dr}")
+            try:
+                runner.registry.update_decision_rights(dr, dr, {"own": dr, "consult": [], "inform": []})
+                print(f"  Decision rights registered for {dr}")
+            except ValueError as e:
+                print(f"  Warning: Failed to register decision rights for string: {e}")
 
     if runner.chain_builder:
         agent_id = f"{specialist.agent_prefix}.Strategy"

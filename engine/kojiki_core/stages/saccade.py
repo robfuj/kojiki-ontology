@@ -33,12 +33,23 @@ async def run_saccade_stage(
     
     # Call model
     schema = specialist.get_schema("saccade")
-    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="saccade")
+    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="saccade", model=specialist.get_model())
     
     # Validate
     schema = specialist.get_schema("saccade")
     if schema:
         validate_against_schema(output, schema, "saccade")
+    
+    # Ensure valid problem_id format (P- + 10+ uppercase alphanumeric)
+    import re
+    problem_id = output.get("problem_id", "")
+    if not re.match(r"^P-[A-Z0-9]{10,}$", problem_id):
+        # Generate a valid problem_id from hash
+        import hashlib
+        hash_input = f"{output.get('goal', '')}{output.get('constraints', [])}{output.get('assumptions', [])}{output.get('unknowns', [])}"
+        hash_suffix = hashlib.sha256(hash_input.encode()).hexdigest()[:10].upper()
+        output["problem_id"] = f"P-{hash_suffix}"
+        print(f"  Fixed problem_id format: {output['problem_id']}")
     
     # Store
     context.set_stage_output("saccade", output)

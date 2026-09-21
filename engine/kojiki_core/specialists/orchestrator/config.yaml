@@ -1,0 +1,19 @@
+agent:
+  name: "orchestrator"
+  parent_department: "Orchestrator"
+  parent_agent: "orchestrator"
+  description: "Chief of Staff - goal decomposition, department selection, OKR decomposition, parallel dispatch"
+
+model:
+  primary: "qwen/qwen3.8-27b:free"
+  fallback: "google/gemma-4-26b-a4b-it:free"
+  reasoning: "nvidia/nemotron-3-ultra-550b-a55b:free"
+
+skills:
+  - github-autodiscovery
+
+tools: []
+
+decision_rights: "OWN"
+
+handoffs: []

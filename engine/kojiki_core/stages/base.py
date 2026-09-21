@@ -36,6 +36,9 @@ class StageRunner:
         self.context = context
         self.department = department
         self.stage_config = specialist.stages.get(stage_name)
+        
+        # Get LLM config for this stage (supports sub-agent override)
+        self.llm_config = self._get_llm_config(dispatch)
 
     def execute(self) -> Dict[str, Any]:
         """Execute this stage - sync wrapper for async execution."""
@@ -112,13 +115,17 @@ class StageRunner:
 
     async def _call_real_llm(self, prompt: str, context: Dict[str, Any], tools: List,
                              schema: Optional[Dict], stage_name: str, task_id: str) -> Optional[Dict[str, Any]]:
-        """Call real LLM API if configured via environment variables."""
+        """Call real LLM API if configured via environment variables or sub-agent config."""
         import os
         import httpx
 
-        api_key = os.environ.get("KOJIKI_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
-        base_url = os.environ.get("KOJIKI_LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
-        model = os.environ.get("KOJIKI_LLM_MODEL", "anthropic/claude-3-haiku:beta")
+        # Use sub-agent LLM config if available, otherwise fall back to env vars
+        llm = self.llm_config
+        api_key = llm.get("api_key") or os.environ.get("KOJIKI_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+        base_url = llm.get("base_url") or os.environ.get("KOJIKI_LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
+        model = llm.get("model") or os.environ.get("KOJIKI_LLM_MODEL", "anthropic/claude-3-haiku:beta")
+        temperature = llm.get("temperature", float(os.environ.get("KOJIKI_LLM_TEMPERATURE", "0.0")))
+        max_tokens = llm.get("max_tokens", int(os.environ.get("KOJIKI_LLM_MAX_TOKENS", "4000")))
 
         if not api_key:
             return None
@@ -131,10 +138,10 @@ class StageRunner:
             tool_defs = self._build_tool_defs(tools)
 
             payload = {
-                "model": os.environ.get("KOJIKI_LLM_MODEL", "anthropic/claude-3-haiku:beta"),
+                "model": model,
                 "messages": messages,
-                "temperature": float(os.environ.get("KOJIKI_LLM_TEMPERATURE", "0.0")),
-                "max_tokens": int(os.environ.get("KOJIKI_LLM_MAX_TOKENS", "4000")),
+                "temperature": temperature,
+                "max_tokens": max_tokens,
                 "stream": False,
                 "response_format": {"type": "json_object"},
             }
@@ -144,24 +151,47 @@ class StageRunner:
                 payload["tool_choice"] = "auto"
 
             headers = {
-                "Authorization": f"Bearer {os.environ.get('KOJIKI_LLM_API_KEY')}",
+                "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
             }
 
             async with httpx.AsyncClient(timeout=120.0) as client:
                 response = await client.post(
-                    f"{os.environ.get('KOJIKI_LLM_BASE_URL', 'https://openrouter.ai/api/v1')}/chat/completions",
+                    f"{base_url}/chat/completions",
                     json=payload,
                     headers=headers
                 )
                 response.raise_for_status()
                 data = response.json()
 
-            return self._parse_response(data, tools, context)
+            return await self._parse_response(data, tools, context)
 
         except Exception as e:
             print(f"  [LLM ERROR] {e}")
             return None
+
+    def _get_llm_config(self, dispatch: Dict[str, Any]) -> Dict[str, Any]:
+        """Get LLM config from sub_agent_llm in dispatch, or fall back to env vars."""
+        import os
+        sub_agent_llm = dispatch.get("sub_agent_llm", {})
+        if sub_agent_llm:
+            return {
+                "provider": sub_agent_llm.get("provider", "openrouter"),
+                "model": sub_agent_llm.get("model"),
+                "base_url": sub_agent_llm.get("base_url"),
+                "api_key": sub_agent_llm.get("api_key") or os.environ.get("KOJIKI_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY"),
+                "temperature": sub_agent_llm.get("temperature", float(os.environ.get("KOJIKI_LLM_TEMPERATURE", "0.0"))),
+                "max_tokens": sub_agent_llm.get("max_tokens", int(os.environ.get("KOJIKI_LLM_MAX_TOKENS", "4000"))),
+            }
+        # Fall back to env vars
+        return {
+            "provider": os.environ.get("KOJIKI_LLM_PROVIDER", "openrouter"),
+            "model": os.environ.get("KOJIKI_LLM_MODEL", "anthropic/claude-3-haiku:beta"),
+            "base_url": os.environ.get("KOJIKI_LLM_BASE_URL", "https://openrouter.ai/api/v1"),
+            "api_key": os.environ.get("KOJIKI_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY"),
+            "temperature": float(os.environ.get("KOJIKI_LLM_TEMPERATURE", "0.0")),
+            "max_tokens": int(os.environ.get("KOJIKI_LLM_MAX_TOKENS", "4000")),
+        }
 
     def _build_messages(self, prompt: str, schema: Optional[Dict], context: Dict, stage_name: str) -> List[Dict]:
         """Build messages for LLM API call."""

@@ -1,0 +1,51 @@
+agent:
+  name: "backend-architect"
+  parent_department: "Engineering"
+  parent_agent: "engineering-platform"
+  description: "API design, database architecture, scalability, microservices"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "poolside/laguna-s-2.1:free"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - api_designer
+  - schema_validator
+  - performance_profiler
+  - microservice_generator
+  - migration_planner
+
+decision_rights:
+  own: ["api_contracts", "database_schema", "service_boundaries", "scaling_strategy"]
+  recommend: ["technology_choices", "infrastructure_patterns", "data_modeling"]
+  consult: ["product_requirements", "security_requirements", "team_capacity"]
+  approve: ["schema_migrations", "service_deployments", "breaking_changes"]
+  execute: ["api_implementation", "database_optimization", "service_decomposition", "performance_tuning"]
+  escalate: ["architectural_debt", "scaling_crisis", "data_integrity_risk", "team_blocker"]
+  automate: ["schema_validation", "performance_monitoring", "deployment_verification", "contract_testing"]
+
+handoffs:
+  - target: "api-engineer"
+    trigger: "gateway_integration"
+    payload_schema: "schemas/handoff-gateway-integration.json"
+  - target: "database-optimizer"
+    trigger: "query_performance_issue"
+    payload_schema: "schemas/handoff-query-optimization.json"
+  - target: "devops-automator"
+    trigger: "deployment_pipeline_needed"
+    payload_schema: "schemas/handoff-deployment-pipeline.json"
+
+github_discovery:
+  domain: "engineering"
+  keywords: ["api-design", "microservices", "database-architecture", "scalability", "distributed-systems", "backend"]
+  min_stars: 200
+  suggested_repos:
+    - "fastapi/fastapi"
+    - "redis/redis"
+    - "postgres/postgres"
+    - "kubernetes/kubernetes"

@@ -1,0 +1,51 @@
+agent:
+  name: "cfo"
+  parent_department: "Finance"
+  parent_agent: "finance-accounting"
+  description: "Capital allocation & financial strategy, treasury, FP&A, M&A finance"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "qwen/qwen3.8-27b:free"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - capital_allocator
+  - treasury_manager
+  - m_a_modeler
+  - risk_assessor
+  - board_report_generator
+
+decision_rights:
+  own: ["capital_allocation", "treasury_policy", "financial_strategy", "m_a_approval"]
+  recommend: ["investment_thesis", "hedging_strategy", "funding_structure"]
+  consult: ["business_unit_strategy", "market_conditions", "regulatory_environment"]
+  approve: ["capital_expenditure", "acquisition_offers", "dividend_policy", "debt_issuance"]
+  execute: ["cash_management", "forecasting", "investor_relations", "board_materials"]
+  escalate: ["liquidity_crisis", "covenant_breach", "material_misstatement", "fraud_indicator"]
+  automate: ["cash_position_reporting", "covenant_monitoring", "scenario_modeling", "variance_analysis"]
+
+handoffs:
+  - target: "fp-a-analyst"
+    trigger: "budget_reforecast_needed"
+    payload_schema: "schemas/handoff-budget-reforecast.json"
+  - target: "investment-researcher"
+    trigger: "m_a_target_analysis"
+    payload_schema: "schemas/handoff-m-a-target.json"
+  - target: "treasury"
+    trigger: "liquidity_management"
+    payload_schema: "schemas/handoff-liquidity-management.json"
+
+github_discovery:
+  domain: "finance"
+  keywords: ["financial-modeling", "treasury-management", "m-a-analysis", "capital-allocation", "risk-management", "fp&a"]
+  min_stars: 100
+  suggested_repos:
+    - "quantlib/quantlib"
+    - "pandas-dev/pandas"
+    - "microsoft/pyexcel"
+    - "openpyxl/openpyxl"

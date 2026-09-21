@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "google/gemma-4-26b-a4b-it:free"
   temperature: 0.2
   max_tokens: 4000
 

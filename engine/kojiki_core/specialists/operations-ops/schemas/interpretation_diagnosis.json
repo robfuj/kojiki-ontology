@@ -1,13 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "INTERPRETATION Stage Output Schema",
   "type": "object",
+  "required": ["interpretation_id"],
   "properties": {
-    "synthesis": { "type": "string", "minLength": 20 },
-    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
-    "key_insights": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-    "contradictions": { "type": "array", "items": { "type": "string" } },
-    "evidence_gaps": { "type": "array", "items": { "type": "string" } }
+    "interpretation_id": {"type": "string", "pattern": "^INT-\\d{3}$"},
+    "evidence_refs": {"type": "array", "items": {"type": "string", "pattern": "^FE-\\d{3}$"}},
+    "synthesis": {"type": "string"},
+    "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "key_insights": {"type": "array", "items": {"type": "string"}},
+    "contradictions": {"type": "array", "items": {"type": "string"}},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "department_requirements": {"type": "object"},
+    "diagnosis": {"type": "string"},
+    "alternative_diagnoses_considered": {"type": "array", "items": {"type": "string"}},
+    "gaps_requiring_more_evidence": {"type": "array", "items": {"type": "string"}}
   },
-  "required": ["synthesis", "confidence", "key_insights", "contradictions", "evidence_gaps"],
   "additionalProperties": false
 }

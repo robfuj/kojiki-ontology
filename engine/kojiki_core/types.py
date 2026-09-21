@@ -188,6 +188,21 @@ class Specialist(ABC):
             return json.loads(schema_path.read_text())
         return None
 
+    def get_model(self) -> str:
+        """Load model from specialist's config.yaml."""
+        import yaml
+        config_path = Path(__file__).parent / "config.yaml"
+        if config_path.exists():
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+            model_config = config.get("model", {})
+            if isinstance(model_config, dict):
+                return model_config.get("primary", model_config.get("model", "nvidia/nemotron-3-ultra-550b-a55b:free"))
+            return str(model_config)
+        # Fallback to env var
+        import os
+        return os.environ.get("KOJIKI_LLM_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free")
+
 
 # ============================================================================
 # Utility Functions

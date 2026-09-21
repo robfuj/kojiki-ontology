@@ -146,10 +146,24 @@ class MyceliumConversationLayer:
         self.store_path.write_text(json.dumps(data, indent=2))
     
     def _init_decision_rights(self):
-        """Initialize Decision Rights gate for consultation signals."""
-        # Consultation signals require Consult right from sender, Inform right for recipients
-        # This is configured per node in registry
-        pass
+        """Initialize Decision Rights gate for consultation signals from registry."""
+        # Load Decision Rights from registry nodes (set by STRATEGY stage)
+        for node_id, node in self.registry.nodes.items():
+            if "decision_rights" in node:
+                # decision_rights is a dict with 'own', 'consult', 'inform' keys
+                # The primary right is in 'decision_right' field or 'own' in decision_rights
+                primary_right = node.get('decision_right') or node['decision_rights'].get('own')
+                if primary_right:
+                    try:
+                        self.gate.set_node_right(node_id, DecisionRight(primary_right))
+                    except ValueError:
+                        pass  # Invalid right value
+            # Also check for direct decision_right field
+            elif "decision_right" in node:
+                try:
+                    self.gate.set_node_right(node_id, DecisionRight(node["decision_right"]))
+                except ValueError:
+                    pass
     
     def open_consultation(
         self,
@@ -230,11 +244,25 @@ class MyceliumConversationLayer:
     def _summarize_evidence(self, evidence: Dict[str, Any]) -> Dict[str, Any]:
         """Create a concise summary of evidence for sharing."""
         findings = evidence.get("findings", [])
+        
+        def sufficiency_to_num(s):
+            if isinstance(s, (int, float)):
+                return float(s)
+            if isinstance(s, str):
+                s_lower = s.lower()
+                if "sufficient" in s_lower:
+                    return 1.0
+                if "insufficient" in s_lower:
+                    return 0.0
+                if "partial" in s_lower:
+                    return 0.5
+            return 0.5
+        
         return {
             "total_findings": len(findings),
             "high_confidence": sum(1 for f in findings if f.get("confidence", 0) > 0.7),
             "sources": list(set(f.get("source", "unknown") for f in findings)),
-            "sufficiency_avg": sum(f.get("sufficiency", 0.5) for f in findings) / max(len(findings), 1)
+            "sufficiency_avg": sum(sufficiency_to_num(f.get("sufficiency", 0.5)) for f in findings) / max(len(findings), 1)
         }
     
     async def run_consultation_round(
@@ -330,7 +358,7 @@ class MyceliumConversationLayer:
                 "turn_id": t.turn_id,
                 "round": t.round_number,
                 "from": f"{t.sender_dept}.{t.sender_node}",
-                "to": f"{t.recipient_dept}.{t.recipient_node}",
+                "to": t.recipient_node,  # Already full node ID (e.g., "Sales.Head")
                 "kind": t.signal_kind,
                 "content": t.content,
                 "timestamp": t.timestamp
@@ -362,15 +390,30 @@ class MyceliumConversationLayer:
         to_dept = request.get("target_department")
         if not to_dept or to_dept not in session.participants:
             return
-        
+
+        # Get sender and recipient node IDs (already full node IDs like "Sales.Head")
+        sender_node = session.participants[from_dept][0] if session.participants[from_dept] else f"{from_dept}.Head"
+        recipient_node = session.participants[to_dept][0] if session.participants[to_dept] else f"{to_dept}.Head"
+
+        # Check Decision Rights: sender must have OWN/RECOMMEND, recipient must have CONSULT/EXECUTE/APPROVE
+        if not self.gate.validate_origin_right(SignalType.REQUEST, sender_node):
+            print(f"  [Decision Rights: {sender_node} lacks OWN/RECOMMEND right for consultation request]")
+            return
+
+        candidate_recipients = {recipient_node}
+        filtered = self.gate.filter_recipients(SignalType.REQUEST, sender_node, candidate_recipients, "target")
+        if recipient_node not in filtered:
+            print(f"  [Decision Rights: {recipient_node} lacks CONSULT/EXECUTE/APPROVE right to receive from {sender_node}]")
+            return
+
         # Create consultation request turn
         turn = ConsultationTurn(
             turn_id=f"{session.session_id}-R{session.round_number}-{from_dept}->{to_dept}",
             round_number=session.round_number,
             sender_dept=from_dept,
-            sender_node=session.participants[from_dept][0] if session.participants[from_dept] else f"{from_dept}.Head",
+            sender_node=sender_node,
             recipient_dept=to_dept,
-            recipient_node=session.participants[to_dept][0] if session.participants[to_dept] else f"{to_dept}.Head",
+            recipient_node=recipient_node,
             content={
                 "type": "consultation_request",
                 "question": request.get("question", ""),
@@ -382,10 +425,10 @@ class MyceliumConversationLayer:
             timestamp=datetime.utcnow().isoformat() + "Z"
         )
         session.turns.append(turn)
-        
+
         # Propagate as a MYCELIUM signal for audit trail
         self._propagate_consultation_signal(session, turn, "request")
-        
+
         # If response required, target department will respond in their next turn
         # (handled in their consultation stage execution)
     
@@ -407,7 +450,6 @@ class MyceliumConversationLayer:
             "subgraph": session.participants.get(turn.recipient_dept, []),
             "fired_at": turn.timestamp,
             "status": "ROUTED",  # Required by validate_signal
-            "signature": "",  # Required by validate_signal - empty for consultation mode
             "payload": {
                 "consultation_session": session.session_id,
                 "turn": {
@@ -419,11 +461,16 @@ class MyceliumConversationLayer:
             }
         }
         
-        # Sign with sender's key (simplified - in production use actual key)
-        # For now, propagate without signature verification in consultation mode
+        # Sign with sender's key using the propagator's registry key manager
         try:
+            if self.propagator.registry and self.propagator.registry.key_manager:
+                signal_to_sign = {k: v for k, v in signal.items() if k != 'signature'}
+                signal_data = json.dumps(signal_to_sign, sort_keys=True, separators=(',', ':'))
+                signature = self.propagator.registry.key_manager.sign(turn.sender_node, signal_data)
+                signal["signature"] = signature
             self.propagator.propagate(signal)
-        except Exception:
+        except Exception as e:
+            print(f"  [Consultation signal propagation warning: {e}]")
             pass  # Non-blocking for consultation
     
     def _log_consultation_event(self, session: ConsultationSession, event_type: str, detail: Dict[str, Any]):

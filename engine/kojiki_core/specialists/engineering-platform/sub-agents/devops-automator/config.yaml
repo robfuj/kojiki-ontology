@@ -1,0 +1,51 @@
+agent:
+  name: "devops-automator"
+  parent_department: "Engineering"
+  parent_agent: "engineering-platform"
+  description: "CI/CD, infrastructure automation, cloud ops, pipeline development"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "nex-agi/nex-n2.5-pro:free"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - pipeline_builder
+  - infra_provisioner
+  - deployment_orchestrator
+  - monitoring_setup
+  - rollback_automator
+
+decision_rights:
+  own: ["pipeline_architecture", "infrastructure_as_code", "deployment_strategy", "monitoring_stack"]
+  recommend: ["cloud_provider", "kubernetes_config", "security_hardening"]
+  consult: ["application_requirements", "compliance_requirements", "cost_optimization"]
+  approve: ["production_deployments", "infrastructure_changes", "release_windows"]
+  execute: ["pipeline_creation", "environment_provisioning", "incident_response", "capacity_planning"]
+  escalate: ["production_outage", "security_incident", "cost_anomaly", "deployment_failure"]
+  automate: ["ci_cd_pipelines", "infrastructure_provisioning", "health_checks", "cost_monitoring"]
+
+handoffs:
+  - target: "backend-architect"
+    trigger: "service_deployment_needed"
+    payload_schema: "schemas/handoff-service-deployment.json"
+  - target: "sre"
+    trigger: "reliability_requirements"
+    payload_schema: "schemas/handoff-reliability-requirements.json"
+  - target: "platform-engineer"
+    trigger: "developer_experience_improvement"
+    payload_schema: "schemas/handoff-developer-experience.json"
+
+github_discovery:
+  domain: "engineering"
+  keywords: ["ci-cd", "infrastructure-as-code", "kubernetes", "terraform", "github-actions", "devops"]
+  min_stars: 200
+  suggested_repos:
+    - "hashicorp/terraform"
+    - "argoproj/argo-cd"
+    - "github/actions"
+    - "kubernetes/kubernetes"

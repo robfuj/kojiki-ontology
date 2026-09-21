@@ -18,7 +18,7 @@ from typing import Dict, Any, List, Optional
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from engine.kojiki_core import (
-    Specialist, ScopedContext, load_specialist
+    Specialist, ScopedContext, load_specialist, is_test_mode
 )
 
 # Import KeyManager from sentinel
@@ -110,7 +110,7 @@ class PipelineRunner:
         
         # Registry for Decision Rights
         self.registry = None
-        if PostgresNodeRegistry:
+        if PostgresNodeRegistry and not is_test_mode():
             self.registry = PostgresNodeRegistry()
         elif NodeRegistry:
             REGISTRY_FILE = Path(__file__).parent.parent.parent / "engine" / "mycelium" / "registry" / "nodes.json"

@@ -71,7 +71,7 @@ async def run_learning_stage(
         }
         learning_tools = ["pattern_extraction", "experience_synthesis"]
         schema = specialist.get_schema("learning")
-        learning_output = call_model(prompt, learning_context, learning_tools, schema=schema, stage_name="learning")
+        learning_output = call_model(prompt, learning_context, learning_tools, schema=schema, stage_name="learning", model=specialist.get_model())
     
     schema = specialist.get_schema("learning")
     if schema:

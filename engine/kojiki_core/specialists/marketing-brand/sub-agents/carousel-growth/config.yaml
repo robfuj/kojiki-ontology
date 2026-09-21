@@ -10,7 +10,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "nvidia/nemotron-3.5-lightning:free"
   temperature: 0.5
   max_tokens: 4000
 
@@ -37,3 +37,13 @@ handoffs:
   - target: "video-optimizer"
     trigger: "carousel_to_video_adaptation"
     payload_schema: "schemas/handoff-video-adaptation.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["social-media-automation", "tiktok-api", "instagram-api", "carousel-generator", "viral-content", "short-form-video"]
+  min_stars: 50
+  suggested_repos:
+    - "ghost-org/ghost"
+    - "bufferapp/buffer"
+    - "hootsuite/hootsuite"
+    - "later/latersocial"

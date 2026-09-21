@@ -10,7 +10,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "nvidia/nemotron-3.5-lightning:free"
   temperature: 0.5
   max_tokens: 4000
 
@@ -37,3 +37,13 @@ handoffs:
   - target: "email-strategist"
     trigger: "newsletter_content_ready"
     payload_schema: "schemas/handoff-newsletter.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["content-marketing", "editorial-calendar", "copywriting", "content-repurposing", "brand-storytelling"]
+  min_stars: 100
+  suggested_repos:
+    - "airbnb/design-system"
+    - "ghost-org/ghost"
+    - "vercel-labs/next.js"
+    - "tailwindlabs/tailwindcss"

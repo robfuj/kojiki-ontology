@@ -177,3 +177,73 @@ class OKREngine:
 
         # Weighted combination: 60% own, 40% children
         return 0.6 * own_progress + 0.4 * child_progress
+
+    def decompose_okrs(
+        self,
+        problem: Dict[str, Any],
+        dept_choices,
+        registry=None
+    ) -> Dict[str, Any]:
+        """Phase 4: OKR Decomposition — corporate OKR → dept OKRs → team OKRs."""
+        print("\n--- PHASE 4: OKR DECOMPOSITION ---")
+
+        # Create corporate objective with Orchestrator owner (now registered)
+        corporate_obj = self.create_objective(
+            name=f"Corporate: {problem.get('goal', 'Strategic Goal')}",
+            description=problem.get('goal', ''),
+            level=OKRLevel.CORPORATE,
+            owner="Orchestrator",
+            registry=registry
+        )
+
+        dept_okrs = {}
+        for choice in dept_choices:
+            # Map specialist_name to registry node ID format
+            # e.g., "finance-accounting" -> "Finance.Head", "marketing-brand" -> "Marketing.Head"
+            dept_mapping = {
+                "marketing-brand": "Marketing.Head",
+                "sales-outbound": "Sales.Head",
+                "finance-accounting": "Finance.Head",
+                "engineering-platform": "Engineering.Head",
+                "operations-ops": "Operations.Head",
+                "legal-compliance": "Legal.Head",
+                "people-hr": "People & Comms.Head",
+                "ai-intelligence": "Technology Platform.Head"
+            }
+            owner_node = dept_mapping.get(choice.specialist_name, f"{choice.department}.Head")
+            display_name = choice.department
+
+            # Create department objective under corporate
+            dept_obj = self.create_objective(
+                name=f"Dept: {display_name}",
+                description=f"Support corporate goal: {problem.get('goal', '')}",
+                level=OKRLevel.DEPARTMENT,
+                owner=owner_node,
+                parent_id=corporate_obj.id,
+                registry=registry
+            )
+
+            # Add default KRs based on department
+            if choice.specialist_name == "marketing-brand":
+                self.add_key_result(dept_obj.id, "Referral pipeline QoQ growth", KRType.METRIC, 0.15, "%")
+                self.add_key_result(dept_obj.id, "Paid CAC reduction", KRType.METRIC, -0.20, "%")
+            elif choice.specialist_name == "sales-outbound":
+                self.add_key_result(dept_obj.id, "Qualified pipeline growth", KRType.METRIC, 0.25, "%")
+                self.add_key_result(dept_obj.id, "Win rate improvement", KRType.METRIC, 0.10, "%")
+            elif choice.specialist_name == "finance-accounting":
+                self.add_key_result(dept_obj.id, "Budget variance", KRType.METRIC, -0.05, "%")
+                self.add_key_result(dept_obj.id, "CAC/LTV ratio", KRType.METRIC, 3.0, "x")
+
+            dept_okrs[choice.specialist_name] = {
+                "objective_id": dept_obj.id,
+                "name": dept_obj.name,
+                "owner": dept_obj.owner,
+                "key_results": [{"name": kr.name, "target": kr.target, "unit": kr.unit, "weight": kr.weight} for kr in self.get_key_results(dept_obj.id)]
+            }
+
+            print(f"  📊 {display_name}: {len(dept_okrs[choice.specialist_name]['key_results'])} KRs")
+
+        return {
+            "corporate_objective": {"id": corporate_obj.id, "name": corporate_obj.name, "owner": corporate_obj.owner},
+            "department_okrs": dept_okrs
+        }

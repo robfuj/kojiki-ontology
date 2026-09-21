@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DELEGATION Stage Output Schema",
+  "type": "object",
+  "required": ["delegation_id", "sub_tasks", "aggregation_strategy"],
+  "properties": {
+    "delegation_id": {"type": "string", "pattern": "^DEL-\\d{3}$"},
+    "sub_tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sub_agent", "task_description", "expected_output", "dependencies"],
+        "properties": {
+          "sub_agent": {"type": "string"},
+          "task_description": {"type": "string", "minLength": 10},
+          "expected_output": {"type": "string", "minLength": 5},
+          "dependencies": {"type": "array", "items": {"type": "string"}},
+          "priority": {"type": "integer", "minimum": 1, "maximum": 5}
+        }
+      },
+      "minItems": 1
+    },
+    "aggregation_strategy": {
+      "type": "object",
+      "properties": {
+        "method": {"type": "string", "enum": ["merge", "vote", "consensus", "weighted"]},
+        "weights": {"type": "object", "additionalProperties": {"type": "number"}}
+      },
+      "required": ["method"]
+    },
+    "sync_point": {"type": "string", "enum": ["after_each", "at_end", "on_failure"]}
+  },
+  "additionalProperties": false
+}

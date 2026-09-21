@@ -181,7 +181,7 @@ async def run_outcome_stage(
         }
         outcome_tools = ["measurement_retrieval", "tracking"]
         schema = specialist.get_schema("outcome")
-        outcome_output = call_model(prompt, outcome_context, outcome_tools, schema=schema, stage_name="outcome")
+        outcome_output = call_model(prompt, outcome_context, outcome_tools, schema=schema, stage_name="outcome", model=specialist.get_model())
         print(f"  Output: Outcome {outcome_output.get('outcome_id')}")
     
     # Validate

@@ -27,7 +27,7 @@ async def run_evidence_stage(
     tools = stage_config.tools
 
     schema = specialist.get_schema("evidence")
-    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="evidence")
+    output = call_model(prompt, stage_context, tools, schema=schema, stage_name="evidence", model=specialist.get_model())
 
     if schema:
         validate_against_schema(output, schema, "evidence")

@@ -1,0 +1,51 @@
+agent:
+  name: "compliance-auditor"
+  parent_department: "Legal"
+  parent_agent: "legal-compliance"
+  description: "SOC 2, ISO 27001, HIPAA, PCI-DSS, guiding organizations through compliance certification"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "google/gemma-4-26b-a4b-it:free"
+  temperature: 0.2
+  max_tokens: 4000
+
+tools:
+  - framework_mapper
+  - evidence_collector
+  - gap_analyzer
+  - policy_generator
+  - audit_tracker
+
+decision_rights:
+  own: ["compliance_scope", "framework_selection", "control_design", "audit_readiness"]
+  recommend: ["tool_selection", "vendor_assessment", "timeline_estimation"]
+  consult: ["engineering_capacity", "product_roadmap", "business_priorities"]
+  approve: ["audit_engagement", "certification_submission", "exception_requests"]
+  execute: ["gap_assessment", "evidence_collection", "policy_creation", "control_implementation"]
+  escalate: ["audit_failure_risk", "critical_gap", "deadline_risk", "scope_creep"]
+  automate: ["evidence_collection", "control_monitoring", "policy_updates", "compliance_dashboard"]
+
+handoffs:
+  - target: "data-privacy"
+    trigger: "privacy_regulation_overlap"
+    payload_schema: "schemas/handoff-privacy-overlap.json"
+  - target: "security-architect"
+    trigger: "technical_control_gap"
+    payload_schema: "schemas/handoff-technical-control.json"
+  - target: "devops-automator"
+    trigger: "automation_requirement"
+    payload_schema: "schemas/handoff-automation-requirement.json"
+
+github_discovery:
+  domain: "legal"
+  keywords: ["soc2", "iso27001", "hipaa", "pci-dss", "compliance-automation", "audit-management", "grc"]
+  min_stars: 100
+  suggested_repos:
+    - "secureframe/secureframe"
+    - "vanta/vanta"
+    - "drata/drata"
+    - "oscal/oscal"

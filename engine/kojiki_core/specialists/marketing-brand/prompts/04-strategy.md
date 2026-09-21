@@ -66,8 +66,10 @@ Schema: `schema/strategy.json`
 
 ## Decision Rights
 This stage outputs decision rights for the strategy:
-- **own**: The single agent who makes the final decision (Marketing.Growth)
-- **consult**: Agents who must be consulted before decision
-- **inform**: Agents who must be informed after decision
+- **own**: The single agent who makes the final decision (**format: Department.Role**, e.g., `Marketing.Growth`, `Legal.GC`, `Engineering.Platform`)
+- **consult**: Agents who must be consulted before decision (**format: Department.Role**)
+- **inform**: Agents who must be informed after decision (**format: Department.Role**)
+
+**CRITICAL**: The `own`, `consult`, and `inform` fields MUST use the exact format `Department.Role` with capitalized words separated by a dot. Do NOT use descriptive sentences, long strings, or free text. The registry will reject invalid formats.
 
 The Brain (AGENT.md) adjudicates and the human owner (Head of Brand) Approves.

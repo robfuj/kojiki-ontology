@@ -1,0 +1,48 @@
+agent:
+  name: "prompt-engineer"
+  parent_department: "AI Intelligence"
+  parent_agent: "ai-intelligence"
+  description: "LLM prompt design & optimization, turning vague instructions into reliable AI behaviors"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "nvidia/nemotron-3.5-lightning:free"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - prompt_optimizer
+  - few_shot_selector
+  - instruction_refiner
+  - chain_of_thought_builder
+  - evaluation_framework
+
+decision_rights:
+  own: ["prompt_templates", "optimization_strategies", "evaluation_criteria", "prompt_versioning"]
+  recommend: ["model_selection", "temperature_settings", "context_window_management"]
+  consult: ["task_requirements", "output_format_constraints", "latency_budget"]
+  approve: ["production_prompts", "prompt_library_releases", "ab_test_variants"]
+  execute: ["prompt_optimization", "ab_testing", "regression_testing", "performance_tracking"]
+  escalate: ["prompt_injection_risk", "hallucination_spike", "quality_regression", "cost_overrun"]
+  automate: ["prompt_ab_testing", "quality_monitoring", "template_updates", "performance_reporting"]
+
+handoffs:
+  - target: "rag-pipeline"
+    trigger: "retrieval_prompt_needed"
+    payload_schema: "schemas/handoff-retrieval-prompt.json"
+  - target: "ai-engineer"
+    trigger: "model_finetuning_prompt"
+    payload_schema: "schemas/handoff-finetuning-prompt.json"
+
+github_discovery:
+  domain: "ai"
+  keywords: ["prompt-engineering", "llm-optimization", "few-shot-learning", "chain-of-thought", "prompt-optimization", "dspy"]
+  min_stars: 100
+  suggested_repos:
+    - "dspy-ai/dspy"
+    - "langchain-ai/langchain"
+    - "microsoft/guidance"
+    - "promptslab/promptify"

@@ -1,0 +1,51 @@
+agent:
+  name: "supply-chain-strategist"
+  parent_department: "Operations"
+  parent_agent: "operations-ops"
+  description: "Supply chain management, procurement strategy, optimization and procurement planning"
+
+skills:
+  - github-autodiscovery
+
+model:
+  provider: "openrouter"
+  model: "nex-agi/nex-n2.5-pro:free"
+  temperature: 0.3
+  max_tokens: 4000
+
+tools:
+  - demand_forecaster
+  - inventory_optimizer
+  - supplier_scorer
+  - logistics_planner
+  - risk_assessor
+
+decision_rights:
+  own: ["supply_chain_strategy", "supplier_selection", "inventory_policy", "procurement_rules"]
+  recommend: ["technology_stack", "warehouse_locations", "transport_modes"]
+  consult: ["sales_forecast", "product_roadmap", "financial_constraints"]
+  approve: ["supplier_contracts", "major_purchase_orders", "inventory_writeoffs"]
+  execute: ["demand_planning", "supplier_negotiation", "inventory_rebalancing", "logistics_coordination"]
+  escalate: ["supply_disruption", "quality_crisis", "cost_overrun", "regulatory_violation"]
+  automate: ["reorder_points", "supplier_monitoring", "demand_sensing", "exception_alerts"]
+
+handoffs:
+  - target: "finance-accounting"
+    trigger: "procurement_budget_impact"
+    payload_schema: "schemas/handoff-procurement-budget.json"
+  - target: "engineering-platform"
+    trigger: "supplier_integration_needed"
+    payload_schema: "schemas/handoff-supplier-integration.json"
+  - target: "sales-outbound"
+    trigger: "demand_signal_change"
+    payload_schema: "schemas/handoff-demand-signal.json"
+
+github_discovery:
+  domain: "operations"
+  keywords: ["supply-chain", "procurement", "inventory-management", "demand-forecasting", "logistics", "supplier-management"]
+  min_stars: 100
+  suggested_repos:
+    - "apache/airflow"
+    - "kinaxis/kinaxis"
+    - "project44/project44"
+    - "flexport/flexport"

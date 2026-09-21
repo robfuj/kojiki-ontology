@@ -24,6 +24,8 @@ STAGE_STUBS = {
             "source": "Test source",
             "confidence": 0.9,
             "retrieval_state": "RETRIEVED",
+            "coverage_limits": "Test coverage",
+            "sufficiency": "SUFFICIENT"
         }],
         "evidence_gaps": [],
         "collection_plan": [],
@@ -35,6 +37,11 @@ STAGE_STUBS = {
         "key_insights": ["Test insight"],
         "evidence_refs": ["FE-001"],
         "department_requirements": {},
+        "contradictions": [],
+        "evidence_gaps": [],
+        "diagnosis": "",
+        "alternative_diagnoses_considered": [],
+        "gaps_requiring_more_evidence": []
     },
     "strategy": lambda ctx: {
         "strategy_id": "STRAT-001",
@@ -44,12 +51,23 @@ STAGE_STUBS = {
         "timeline": "Q4 2026",
         "success_criteria": [],
         "escalation_conditions": [],
-        "actions": [],
+        "team_okrs": [],
+        "decision_rights": {
+            "own": "Marketing.Head",
+            "consult": [],
+            "inform": []
+        }
     },
     "output": lambda ctx: {
         "output_id": "OUT-001",
-        "actions": [],
-        "execution_plan": {"tasks": []},
+        "strategy_ref": "STRAT-001",
+        "intervention": "Test intervention",
+        "tactics": [],
+        "channels": [],
+        "owner": "Marketing.Head",
+        "dependencies": [],
+        "sla": "Q4 2026",
+        "measurement": [],
     },
     "delegation": lambda ctx: {
         "handoffs_executed": 0,
@@ -101,6 +119,26 @@ STAGE_STUBS = {
         "confidence": 0.0,
         "kaizen_iteration": 1,
         "period": "2026-09-16",
+    },
+    "goal_synthesis": lambda ctx: {
+        "refined_goal": ctx.get('raw_record', 'Test refined goal with specific constraints and measurable outcomes'),
+        "confidence": 0.85,
+    },
+    "orientation_analysis": lambda ctx: {
+        "ambiguity_score": 0.2,
+        "completeness": 0.8,
+        "key_entities": [],
+        "sentiment": "positive",
+        "hypothesis_updates": [],
+        "new_hypotheses": [],
+        "follow_up_needed": False,
+        "suggested_follow_up": None,
+    },
+    "orientation_simulation": lambda ctx: {
+        "response": "Test user response with specific constraints and stakeholders.",
+    },
+    "think_aloud": lambda ctx: {
+        "thoughts": "Test think-aloud verbalization.",
     },
 }
 

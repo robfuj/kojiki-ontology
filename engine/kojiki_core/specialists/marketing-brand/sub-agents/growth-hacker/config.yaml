@@ -10,7 +10,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "nvidia/nemotron-3.5-lightning:free"
   temperature: 0.4
   max_tokens: 4000
 
@@ -37,3 +37,13 @@ handoffs:
   - target: "content-creator"
     trigger: "viral_content_template"
     payload_schema: "schemas/handoff-viral-template.json"
+
+github_discovery:
+  domain: "marketing"
+  keywords: ["growth-hacking", "viral-loops", "conversion-optimization", "a/b-testing", "user-acquisition", "retention"]
+  min_stars: 100
+  suggested_repos:
+    - "dropbox/dropbox-sdk"
+    - "airbnb/airflow"
+    - "netflix/conductor"
+    - "uber/uber-schema"

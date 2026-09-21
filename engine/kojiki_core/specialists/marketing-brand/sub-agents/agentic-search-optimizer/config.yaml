@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "nex-agi/nex-n2.5-pro:free"
   temperature: 0.3
   max_tokens: 4000
 
@@ -36,3 +36,13 @@ handoffs:
   - target: "aeo-specialist"
     trigger: "structured_data_alignment"
     payload_schema: "schemas/handoff-structured-data.json"
+
+github_discovery:
+  domain: "ai"
+  keywords: ["mcp", "model-context-protocol", "agentic-workflows", "webmcp", "agent-tools"]
+  min_stars: 50
+  suggested_repos:
+    - "modelcontextprotocol/python-sdk"
+    - "modelcontextprotocol/typescript-sdk"
+    - "vercel-labs/agent-browser"
+    - "vercel-labs/agent-sdk"

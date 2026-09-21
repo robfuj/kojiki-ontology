@@ -32,6 +32,19 @@
         "consult": {"type": "array", "items": {"type": "string"}},
         "inform": {"type": "array", "items": {"type": "string"}}
       }
+    },
+    "sub_agent_llm": {
+      "type": "object",
+      "description": "Department head's LLM selection for sub-agents (cost/quality tradeoff)",
+      "properties": {
+        "provider": {"type": "string", "enum": ["openrouter", "anthropic", "openai", "ollama", "local"]},
+        "model": {"type": "string", "description": "Model identifier (e.g., anthropic/claude-3-haiku:beta, deepseek/deepseek-chat, ollama/llama3.1:8b)"},
+        "base_url": {"type": "string", "description": "Optional override for provider base URL"},
+        "temperature": {"type": "number", "minimum": 0, "maximum": 2, "default": 0.0},
+        "max_tokens": {"type": "integer", "minimum": 100, "maximum": 32000, "default": 4000},
+        "cost_per_1k_tokens": {"type": "number", "minimum": 0, "description": "Estimated cost for budgeting"}
+      },
+      "required": ["provider", "model"]
     }
   },
   "additionalProperties": false

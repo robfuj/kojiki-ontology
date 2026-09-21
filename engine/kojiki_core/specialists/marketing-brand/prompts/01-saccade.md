@@ -44,6 +44,7 @@ A `Problem` object at version `P-0000` with schema `schema/saccade_problem.json`
 - **CRITICAL**: Return EXACTLY ONE JSON object, never an array
 - The object MUST have keys: problem_id, goal, constraints, assumptions, unknowns
 - `constraints`, `assumptions`, `unknowns` must be arrays of strings (can be empty)
+- **CRITICAL**: `problem_id` MUST match format `P-` followed by 10+ UPPERCASE alphanumeric characters (e.g., `P-ABCDEF1234`, `P-XYZ7890123`) - NO timestamps, NO lowercase, NO special characters
 
 ## Internal Loop (Bounded)
 You may iterate up to 4 passes. Stop when:

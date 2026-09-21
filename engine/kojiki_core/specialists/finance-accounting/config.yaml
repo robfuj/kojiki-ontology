@@ -9,7 +9,7 @@ skills:
 
 model:
   provider: "openrouter"
-  model: "anthropic/claude-3-haiku:beta"
+  model: "qwen/qwen3.8-27b:free"
   temperature: 0.3
   max_tokens: 4000
 
