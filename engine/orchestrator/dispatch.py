@@ -73,14 +73,65 @@ def topological_batches(dept_choices: List[DepartmentChoice]) -> List[List[Depar
     while remaining:
         ready = [c for c in remaining.values() if all(d in done for d in c.dependencies)]
         if not ready:
-            # Circular or unresolvable dependency — break the cycle rather than hang
-            ready = list(remaining.values())
+            # Circular dependency detected — find and isolate the cycle
+            # Use DFS to find the cycle, then break only that cycle
+            remaining_list = list(remaining.values())
+            # Find the cycle using DFS
+            cycle = find_cycle(remaining_list)
+            if cycle:
+                # Break the cycle by removing one dependency
+                # Pick the last node in the cycle and clear its dependencies
+                cycle_node = cycle[-1]
+                for c in remaining_list:
+                    if c.specialist_name == cycle_node:
+                        c.dependencies = []
+                        print(f"  ⚠️ Breaking cycle at {cycle_node} by clearing dependencies")
+                        break
+                # Recompute ready
+                ready = [c for c in remaining.values() if all(d in done for d in c.dependencies)]
+            else:
+                # No cycle found but no ready nodes - this shouldn't happen but break anyway
+                ready = list(remaining.values())
         batches.append(ready)
         for c in ready:
             done.add(c.specialist_name)
             del remaining[c.specialist_name]
 
     return batches
+
+
+def find_cycle(dept_choices: List[DepartmentChoice]) -> Optional[List[str]]:
+    """Find a cycle in the dependency graph using DFS. Returns the cycle path if found."""
+    graph = {c.specialist_name: c.dependencies for c in dept_choices}
+    visited = set()
+    rec_stack = set()
+    path = []
+
+    def dfs(node: str) -> Optional[List[str]]:
+        visited.add(node)
+        rec_stack.add(node)
+        path.append(node)
+
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited:
+                result = dfs(neighbor)
+                if result:
+                    return result
+            elif neighbor in rec_stack:
+                # Found cycle - return the cycle path
+                cycle_start = path.index(neighbor)
+                return path[cycle_start:] + [neighbor]
+
+        rec_stack.remove(node)
+        path.pop()
+        return None
+
+    for node in graph:
+        if node not in visited:
+            result = dfs(node)
+            if result:
+                return result
+    return None
 
 
 async def run_consultation_rounds(

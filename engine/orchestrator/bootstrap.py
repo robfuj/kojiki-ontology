@@ -41,8 +41,7 @@ def bootstrap_registry(registry: NodeRegistry, key_manager: KeyManager, orchestr
                     "own": "OWN",
                     "consult": [],
                     "inform": []
-                },
-                "decision_right": "OWN"
+                }
             }
             # Register department head node
             head_id = f"{dept}.Head"
@@ -63,8 +62,7 @@ def bootstrap_registry(registry: NodeRegistry, key_manager: KeyManager, orchestr
                     "own": "OWN",
                     "consult": [dept],
                     "inform": []
-                },
-                "decision_right": "OWN"
+                }
             }
 
     # Register Orchestrator node
@@ -87,8 +85,7 @@ def bootstrap_registry(registry: NodeRegistry, key_manager: KeyManager, orchestr
                 "own": "OWN",
                 "consult": [],
                 "inform": []
-            },
-            "decision_right": "OWN"
+            }
         }
 
     registry.save()
@@ -100,7 +97,7 @@ def wire_decision_rights(registry: NodeRegistry, conversation_layer):
     for node_id, node in registry.nodes.items():
         dr = node.get("decision_rights")
         if dr:
-            primary = node.get("decision_right") or dr.get("own")
+            primary = dr.get("own")
             if primary:
                 conversation_layer.gate.set_node_right(node_id, DecisionRight(primary))
 

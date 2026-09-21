@@ -14,8 +14,10 @@ from pathlib import Path
 
 from engine.sentinel import KeyManager, canonical_json, verify_signature, SentinelEngine
 
+from .registry_base import RegistryBase
 
-class NodeRegistry:
+
+class NodeRegistry(RegistryBase):
     """Registry for MYCELIUM nodes with lineage validation and cryptographic key lifecycle."""
 
     def __init__(self, registry_path: str, genesis_public_key: Optional[str] = None,
@@ -71,7 +73,7 @@ class NodeRegistry:
         with open(self.registry_path, 'w') as f:
             json.dump(data, f, indent=2)
 
-    def validate_lineage(self, node_id: str, parent_id: Optional[str]) -> bool:
+    def _validate_lineage(self, node_id: str, parent_id: Optional[str]) -> bool:
         """Validate that node_id follows lineage naming convention."""
         if node_id in self.root_departments:
             return parent_id is None
@@ -103,7 +105,7 @@ class NodeRegistry:
         if not node_id:
             return False
 
-        if not self.validate_lineage(node_id, parent_id):
+        if not self._validate_lineage(node_id, parent_id):
             self._audit('registration_rejected', node_id, signer, 'lineage validation failed')
             return False
 
@@ -240,7 +242,7 @@ class NodeRegistry:
                 parent_id = '.'.join(parts[:-1])
                 if parent_id in self.nodes:
                     # Validate lineage
-                    if not self.validate_lineage(node_id, parent_id):
+                    if not self._validate_lineage(node_id, parent_id):
                         return False  # Invalid lineage
 
                     # If auto-creating, require signer + signature authorization
@@ -344,7 +346,7 @@ class NodeRegistry:
         if not node_id:
             return False
 
-        if not self.validate_lineage(node_id, parent_id):
+        if not self._validate_lineage(node_id, parent_id):
             self._audit('registration_rejected', node_id, 'GOVERNANCE', 'lineage validation failed')
             return False
 
@@ -380,7 +382,7 @@ class NodeRegistry:
         errors = []
         for node_id, node in self.nodes.items():
             parent_id = node.get('parent')
-            if not self.validate_lineage(node_id, parent_id):
+            if not self._validate_lineage(node_id, parent_id):
                 errors.append(f"Invalid lineage: {node_id} (parent: {parent_id})")
         return errors
 

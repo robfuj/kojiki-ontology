@@ -11,6 +11,7 @@ Refactored into modular components:
 
 import asyncio
 import json
+import os
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -24,6 +25,7 @@ from engine.kojiki_core.utils import is_test_mode, create_dispatch
 from engine.mycelium.okr_engine import OKREngine, OKRLevel, KRType
 from engine.mycelium.propagate import SignalPropagator
 from engine.mycelium.registry import NodeRegistry
+from engine.mycelium.postgres_registry import PostgresNodeRegistry
 from engine.mycelium.conversation_layer import MyceliumConversationLayer
 from engine.sentinel import SentinelEngine, KeyManager
 
@@ -75,13 +77,19 @@ class Orchestrator:
         # Resolve data directory from env or parameter (NOT /tmp)
         self.data_dir = resolve_data_dir(data_dir)
 
-        self.sentinel = SentinelEngine()
+        self.sentinel = SentinelEngine(base_path=str(self.data_dir))
         self.okr_engine = OKREngine(store_path=str(self.data_dir / "okrs.json"))
         self.key_manager = KeyManager()
-        self.registry = NodeRegistry(registry_path=str(self.data_dir / "nodes.json"))
 
-        # Bootstrap registry with 8 root departments + head nodes + Orchestrator
-        bootstrap_registry(self.registry, self.key_manager, orchestrator_node_id)
+        # Use Postgres registry if DSN is configured, otherwise file-based
+        dsn = os.environ.get("KOJIKI_DSN")
+        if dsn:
+            self.registry = PostgresNodeRegistry(dsn=dsn)
+            # Postgres registry handles its own bootstrap
+        else:
+            self.registry = NodeRegistry(registry_path=str(self.data_dir / "nodes.json"))
+            # Bootstrap registry with 8 root departments + head nodes + Orchestrator
+            bootstrap_registry(self.registry, self.key_manager, orchestrator_node_id)
 
         # Handle Orchestrator node ID - prompt user if not provided
         self.orchestrator_node_id = resolve_orchestrator_node_id(orchestrator_node_id)

@@ -12,6 +12,7 @@ class DepartmentChoice:
     """Why a department was selected for a goal."""
     department: str
     specialist_name: str
+    registry_node: str  # Maps to SENTINEL registry node (e.g., "Marketing.Head")
     reason: str
     okr_alignment: str
     confidence: float
@@ -21,10 +22,22 @@ class DepartmentChoice:
 def select_departments(problem: Dict[str, Any], orientation: Dict[str, Any]) -> List[DepartmentChoice]:
     """
     Phase 3: Department Selection with transparent reasoning.
-    
+
     Maps problem domain to departments with keyword matching and adds cross-department dependencies.
     """
     print("\n--- PHASE 3: DEPARTMENT SELECTION ---")
+
+    # Map specialist names to SENTINEL registry nodes
+    specialist_to_registry = {
+        "marketing-brand": "Marketing.Head",
+        "sales-outbound": "Sales.Head",
+        "finance-accounting": "Finance.Head",
+        "engineering-platform": "Engineering.Head",
+        "operations-ops": "Operations.Head",
+        "legal-compliance": "Legal.Head",
+        "people-hr": "People & Comms.Head",
+        "ai-intelligence": "Technology Platform.Head",
+    }
 
     # Map problem domain to departments with reasoning
     dept_mapping = {
@@ -69,9 +82,11 @@ def select_departments(problem: Dict[str, Any], orientation: Dict[str, Any]) -> 
         matches = sum(1 for kw in dept_info["keywords"] if kw in problem_text)
         if matches > 0:
             confidence = min(matches / len(dept_info["keywords"]) * 2, 1.0)
+            registry_node = specialist_to_registry.get(dept_name, dept_name)
             choice = DepartmentChoice(
                 department=dept_name.replace("-", " ").title(),
                 specialist_name=dept_name,
+                registry_node=registry_node,
                 reason=f"Matched {matches}/{len(dept_info['keywords'])} domain keywords: {[kw for kw in dept_info['keywords'] if kw in problem_text]}",
                 okr_alignment=f"Aligns with {dept_info['scope']}",
                 confidence=confidence,
